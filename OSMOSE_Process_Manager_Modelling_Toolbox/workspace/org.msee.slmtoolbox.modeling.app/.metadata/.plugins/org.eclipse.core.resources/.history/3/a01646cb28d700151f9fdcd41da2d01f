@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:al="http://eclipse.org/graphiti/mm/algorithms" xmlns:org.msee.slmtoolbox.modeling.model.lang.eaStar.root="http://org/msee/slmtoolbox/modeling/model/lang/eaStar.ecore/root" xmlns:pi="http://eclipse.org/graphiti/mm/pictograms" xsi:schemaLocation="http://eclipse.org/graphiti/mm/algorithms http://eclipse.org/graphiti/mm#//algorithms http://eclipse.org/graphiti/mm/pictograms http://eclipse.org/graphiti/mm#//pictograms">
+  <pi:Diagram visible="true" gridUnit="10" diagramTypeId="eaStar" name="dg" snapToGrid="true" version="0.9.2">
+    <graphicsAlgorithm xsi:type="al:Rectangle" background="/0/@colors.1" foreground="/0/@colors.0" lineWidth="1" transparency="0.0" width="1000" height="1000"/>
+    <link businessObjects="EaProcessImpl_2d7333dc-5e48-49fd-9d4d-4852fe67ca96"/>
+    <colors red="227" green="238" blue="249"/>
+    <colors red="255" green="255" blue="255"/>
+  </pi:Diagram>
+  <org.msee.slmtoolbox.modeling.model.lang.eaStar.root:EaModel id="EaModelImpl_5c50270d-fb1f-4c68-8264-7aa96fe29771" name="dg">
+    <process id="EaProcessImpl_2d7333dc-5e48-49fd-9d4d-4852fe67ca96" name="dg" code="fdgh" decompositionCode="dfgh" osmioticProcess="MESSAGE"/>
+    <organizations id="EaOrganizationImpl_74a6c169-4fab-49cb-a464-dd2f21a3ae5d" name="sdgf"/>
+  </org.msee.slmtoolbox.modeling.model.lang.eaStar.root:EaModel>
+</xmi:XMI>

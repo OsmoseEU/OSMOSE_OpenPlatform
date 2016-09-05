@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map>
+	<bundle bundleID="1500" class="org.msee.slmtoolbox.modeling.editor.graigrid.Activator" localization="OSGI-INF/l10n/bundle" name="org.msee.slmtoolbox.modeling.editor.graigrid" project="org.msee.slmtoolbox.modeling.editor.graigrid" provider="http://www.msee-ip.eu"/>
+	<bundle bundleID="1501" localization="OSGI-INF/l10n/bundle" name="Parent" project="org.msee.slmtoolbox.modeling.parent"/>
+	<bundle bundleID="1502" localization="plugin" name="org.msee.slmtoolbox.modeling.model.edit" project="org.msee.slmtoolbox.modeling.model.edit" provider="http://www.msee-ip.eu">
+		<library name="."/>
+	</bundle>
+	<bundle bundleID="1503" class="org.msee.slmtoolbox.modeling.service.app.Activator" localization="OSGI-INF/l10n/bundle" name="org.msee.slmtoolbox.modeling.service.app" project="org.msee.slmtoolbox.modeling.service.app" provider="http://www.msee-ip.eu">
+		<library name="."/>
+		<library name="lib/csv.jar"/>
+		<library name="lib/javax.json-1.0.jar"/>
+		<library name="lib/gson-2.2.4.jar"/>
+	</bundle>
+	<bundle bundleID="1504" class="org.eclipse.bpmn2.modeler.runtime.example.Activator" localization="OSGI-INF/l10n/bundle" name="Example Runtime Plugin" project="org.eclipse.bpmn2.modeler.runtime.example"/>
+	<bundle bundleID="1505" class="org.msee.slmtoolbox.modeling.app.Activator" localization="OSGI-INF/l10n/bundle" name="org.msee.slmtoolbox.modeling.app" project="org.msee.slmtoolbox.modeling.app" provider="http://www.msee-ip.eu">
+		<library name="."/>
+	</bundle>
+	<bundle bundleID="1506" class="org.eclipse.bpmn2.modeler.core.Activator" localization="OSGI-INF/l10n/bundle" name="BPMN2 Editor Core" project="org.eclipse.bpmn2.modeler.core" provider="Eclipse.org"/>
+	<bundle bundleID="1507" class="org.msee.slmtoolbox.modeling.editor.Activator" localization="OSGI-INF/l10n/bundle" name="org.msee.slmtoolbox.modeling.editor" project="org.msee.slmtoolbox.modeling.editor" provider="http://www.msee-ip.eu"/>
+	<bundle bundleID="1508" class="org.msee.slmtoolbox.modeling.editor.eaStar.Activator" localization="OSGI-INF/l10n/bundle" name="org.msee.slmtoolbox.modeling.editor.eaStar" project="org.msee.slmtoolbox.modeling.editor.eaStar" provider="http://www.msee-ip.eu"/>
+	<bundle bundleID="1509" localization="OSGI-INF/l10n/bundle" name="Helper" project="org.msee.slmtoolbox.modeling.app.helper"/>
+	<bundle bundleID="1510" class="org.eclipse.bpmn2.modeler.ui.Activator" localization="plugin" name="BPMN2 Editor UI" project="org.eclipse.bpmn2.modeler.ui" provider="Eclipse.org"/>
+	<bundle bundleID="1511" class="org.msee.slmtoolbox.modeling.transformation.Activator" localization="OSGI-INF/l10n/bundle" name="Util" project="org.msee.slmtoolbox.modeling.transformation" provider="http://www.msee-ip.eu"/>
+	<bundle bundleID="1512" class="org.eclipse.bpmn2.modeler.runtime.jboss.jbpm5.Activator" localization="plugin" name="BPMN2 Editor Runtime extensions for JBoss jBPM5" project="org.eclipse.bpmn2.modeler.runtime.jboss.jbpm5" provider="Eclipse.org"/>
+	<bundle bundleID="1513" class="org.eclipse.bpmn2.modeler.wsil.Activator" localization="plugin" name="WSIL Support for BPMN2 Modeler" project="org.eclipse.bpmn2.modeler.wsil" provider="Eclipse.org"/>
+	<bundle bundleID="1514" class="org.jbpm.eclipse.JBPMEclipsePlugin" localization="OSGI-INF/l10n/bundle-src" name="jBPM Eclipse Plug-in" project="org.jbpm.eclipse" provider="JBoss by Red Hat"/>
+	<bundle bundleID="1515" class="org.msee.slmtoolbox.modeling.model.ssm.bsm.presentation.BsmEditorPlugin$Implementation" localization="plugin" name="org.msee.slmtoolbox.modeling.editor.bsm" project="org.msee.slmtoolbox.modeling.editor.bsm" provider="http://www.msee-ip.eu">
+		<library name="."/>
+	</bundle>
+	<bundle bundleID="1516" class="org.msee.slmtoolbox.modeling.model.ssm.tim.presentation.TimEditorPlugin$Implementation" localization="plugin" name="org.msee.slmtoolbox.modeling.editor.tim" project="org.msee.slmtoolbox.modeling.editor.tim" provider="http://www.msee-ip.eu">
+		<library name="."/>
+	</bundle>
+	<bundle bundleID="1517" class="org.msee.slmtoolbox.modeling.service.data.Activator" localization="OSGI-INF/l10n/bundle" name="org.msee.slmtoolbox.modeling.service.data" project="org.msee.slmtoolbox.modeling.service.data" provider="http://www.msee-ip.eu">
+		<library name="."/>
+		<library name="lib/sqlite-jdbc-3.7.2.jar"/>
+	</bundle>
+	<bundle bundleID="1518" class="org.msee.slmtoolbox.modeling.service.util.Activator" localization="OSGI-INF/l10n/bundle" name="Util" project="org.msee.slmtoolbox.modeling.service.util" provider="org.msee.slmtoolbox.modeling.service.util"/>
+	<bundle bundleID="1519" class="com.sap.research.msee.slmtoolbox.uml.Activator" localization="OSGI-INF/l10n/bundle" name="Papyrus UML Integration" project="com.sap.research.msee.slmtoolbox.uml" provider="SAP"/>
+	<bundle bundleID="1520" localization="plugin" name="org.msee.slmtoolbox.modeling.model" project="org.msee.slmtoolbox.modeling.model" provider="http://www.msee-ip.eu">
+		<library name="."/>
+	</bundle>
+</map>

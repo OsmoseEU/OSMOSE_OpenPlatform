@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn2:definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bpmn2="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dcxmi="http://www.omg.org/spec/DD/20100524/DC" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:dixmi="http://www.omg.org/spec/DD/20100524/DI" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:tns="http://www.jboss.org/drools" xmlns:xmi="http://schema.omg.org/spec/XMI" xsi:schemaLocation="http://www.omg.org/spec/BPMN/20100524/MODEL BPMN20.xsd http://www.omg.org/spec/DD/20100524/DC http://www.omg.org/spec/DD/20100524/DC-XMI http://www.omg.org/spec/DD/20100524/DI http://www.omg.org/spec/DD/20100524/DI-XMI http://www.omg.org/spec/BPMN/20100524/DI http://www.omg.org/spec/BPMN/20100524/DI-XMI" id="SNAGAnsweringAndCommunicationProcess" expressionLanguage="http://www.mvel.org/2.0" targetNamespace="http://www.jboss.org/drools" typeLanguage="http://www.java.com/javaTypes">
+  <bpmn2:process id="EaProcessImpl_2b50a4da-ed4b-4533-8697-46a7d567b504" name="SNAGAnsweringAndCommunicationProcess">
+    <bpmn2:laneSet id="laneSet_1" name="laneSet">
+      <bpmn2:lane id="EaITResourceImpl_261f2391-ab53-434f-9e45-4696a8861eaa" name="OsmosisTotemStation">
+        <bpmn2:flowNodeRef>EaAtomicExtendedActivityImpl_eb316422-c7ab-47d9-bfae-7878dbe61621Start</bpmn2:flowNodeRef>
+        <bpmn2:flowNodeRef>EaAtomicExtendedActivityImpl_deabdf4c-473c-4b6a-8a65-31a548668855Start</bpmn2:flowNodeRef>
+        <bpmn2:flowNodeRef>EaAtomicExtendedActivityImpl_eb316422-c7ab-47d9-bfae-7878dbe61621</bpmn2:flowNodeRef>
+        <bpmn2:flowNodeRef>EaAtomicExtendedActivityImpl_deabdf4c-473c-4b6a-8a65-31a548668855</bpmn2:flowNodeRef>
+        <bpmn2:flowNodeRef>EaAtomicExtendedActivityImpl_a614156f-e0c2-4fd3-9e9a-c958a1a93ec2</bpmn2:flowNodeRef>
+      </bpmn2:lane>
+      <bpmn2:lane id="EaHumanResourceImpl_12e1e864-45d0-4770-bf47-7798bf4dfe7c" name="MaintenanceManager">
+        <bpmn2:flowNodeRef>EaAtomicExtendedActivityImpl_047b11b3-ca2a-43b5-8abc-80aff6f2bd8a</bpmn2:flowNodeRef>
+        <bpmn2:flowNodeRef>EaAtomicExtendedActivityImpl_d1642a2b-5408-448a-9d6b-649b2a1f6720</bpmn2:flowNodeRef>
+        <bpmn2:flowNodeRef>EaAtomicExtendedActivityImpl_d1642a2b-5408-448a-9d6b-649b2a1f6720End</bpmn2:flowNodeRef>
+        <bpmn2:flowNodeRef>EaAtomicExtendedActivityImpl_0494deff-678c-493a-881d-a6e86d8e4e78</bpmn2:flowNodeRef>
+        <bpmn2:flowNodeRef>EaOrImpl_1d459768-a114-4696-b5af-f043348e52d4</bpmn2:flowNodeRef>
+      </bpmn2:lane>
+    </bpmn2:laneSet>
+    <bpmn2:startEvent id="EaAtomicExtendedActivityImpl_eb316422-c7ab-47d9-bfae-7878dbe61621Start" name="StartEvent">
+      <bpmn2:outgoing>tns:EaAtomicExtendedActivityImpl_eb316422-c7ab-47d9-bfae-7878dbe61621Sequence_1</bpmn2:outgoing>
+    </bpmn2:startEvent>
+    <bpmn2:sequenceFlow id="EaAtomicExtendedActivityImpl_eb316422-c7ab-47d9-bfae-7878dbe61621Sequence_1" sourceRef="EaAtomicExtendedActivityImpl_eb316422-c7ab-47d9-bfae-7878dbe61621Start" targetRef="EaAtomicExtendedActivityImpl_eb316422-c7ab-47d9-bfae-7878dbe61621"/>
+    <bpmn2:startEvent id="EaAtomicExtendedActivityImpl_deabdf4c-473c-4b6a-8a65-31a548668855Start" name="StartEvent">
+      <bpmn2:outgoing>tns:EaAtomicExtendedActivityImpl_deabdf4c-473c-4b6a-8a65-31a548668855Sequence_1</bpmn2:outgoing>
+    </bpmn2:startEvent>
+    <bpmn2:sequenceFlow id="EaAtomicExtendedActivityImpl_deabdf4c-473c-4b6a-8a65-31a548668855Sequence_1" sourceRef="EaAtomicExtendedActivityImpl_deabdf4c-473c-4b6a-8a65-31a548668855Start" targetRef="EaAtomicExtendedActivityImpl_deabdf4c-473c-4b6a-8a65-31a548668855"/>
+    <bpmn2:serviceTask id="EaAtomicExtendedActivityImpl_eb316422-c7ab-47d9-bfae-7878dbe61621" name="PeriodicEvaluation">
+      <bpmn2:incoming>tns:EaAtomicExtendedActivityImpl_eb316422-c7ab-47d9-bfae-7878dbe61621Sequence_1</bpmn2:incoming>
+      <bpmn2:outgoing>tns:EaOutputInputFlowImpl_af34d3a7-99a9-4599-973c-e1c63a56bc4e_Sequence</bpmn2:outgoing>
+    </bpmn2:serviceTask>
+    <bpmn2:sequenceFlow id="EaOutputInputFlowImpl_af34d3a7-99a9-4599-973c-e1c63a56bc4e_Sequence" name="6" sourceRef="EaAtomicExtendedActivityImpl_eb316422-c7ab-47d9-bfae-7878dbe61621" targetRef="EaAtomicExtendedActivityImpl_0494deff-678c-493a-881d-a6e86d8e4e78"/>
+    <bpmn2:serviceTask id="EaAtomicExtendedActivityImpl_deabdf4c-473c-4b6a-8a65-31a548668855" name="ReceiveNotification">
+      <bpmn2:incoming>tns:EaAtomicExtendedActivityImpl_deabdf4c-473c-4b6a-8a65-31a548668855Sequence_1</bpmn2:incoming>
+      <bpmn2:outgoing>tns:EaOutputInputFlowImpl_545d267b-223e-4b7e-a7f9-20a7a57f4884_Sequence</bpmn2:outgoing>
+    </bpmn2:serviceTask>
+    <bpmn2:sequenceFlow id="EaOutputInputFlowImpl_545d267b-223e-4b7e-a7f9-20a7a57f4884_Sequence" name="5" sourceRef="EaAtomicExtendedActivityImpl_deabdf4c-473c-4b6a-8a65-31a548668855" targetRef="EaAtomicExtendedActivityImpl_0494deff-678c-493a-881d-a6e86d8e4e78"/>
+    <bpmn2:userTask id="EaAtomicExtendedActivityImpl_047b11b3-ca2a-43b5-8abc-80aff6f2bd8a" name="SendToDevelopment">
+      <bpmn2:incoming>tns:EaOutputInputFlowImpl_95299b29-1292-4fa1-a327-02889910a76b_Sequence</bpmn2:incoming>
+      <bpmn2:outgoing>tns:EaOutputInputFlowImpl_02666f2e-386a-464c-bc2e-095cb8c91b54_Sequence</bpmn2:outgoing>
+    </bpmn2:userTask>
+    <bpmn2:sequenceFlow id="EaOutputInputFlowImpl_02666f2e-386a-464c-bc2e-095cb8c91b54_Sequence" name="11" sourceRef="EaAtomicExtendedActivityImpl_047b11b3-ca2a-43b5-8abc-80aff6f2bd8a" targetRef="EaAtomicExtendedActivityImpl_0494deff-678c-493a-881d-a6e86d8e4e78"/>
+    <bpmn2:userTask id="EaAtomicExtendedActivityImpl_d1642a2b-5408-448a-9d6b-649b2a1f6720" name="EndMaintenance">
+      <bpmn2:incoming>tns:EaOutputInputFlowImpl_17dea467-1f80-4c8b-9273-0240836057c7_Sequence</bpmn2:incoming>
+      <bpmn2:outgoing>tns:EaAtomicExtendedActivityImpl_d1642a2b-5408-448a-9d6b-649b2a1f6720Sequence_1</bpmn2:outgoing>
+    </bpmn2:userTask>
+    <bpmn2:sequenceFlow id="EaAtomicExtendedActivityImpl_d1642a2b-5408-448a-9d6b-649b2a1f6720Sequence_1" sourceRef="EaAtomicExtendedActivityImpl_d1642a2b-5408-448a-9d6b-649b2a1f6720" targetRef="EaAtomicExtendedActivityImpl_d1642a2b-5408-448a-9d6b-649b2a1f6720End"/>
+    <bpmn2:endEvent id="EaAtomicExtendedActivityImpl_d1642a2b-5408-448a-9d6b-649b2a1f6720End" name="End1">
+      <bpmn2:incoming>tns:EaAtomicExtendedActivityImpl_d1642a2b-5408-448a-9d6b-649b2a1f6720Sequence_1</bpmn2:incoming>
+    </bpmn2:endEvent>
+    <bpmn2:userTask id="EaAtomicExtendedActivityImpl_0494deff-678c-493a-881d-a6e86d8e4e78" name="EvaluateOpenIssues">
+      <bpmn2:incoming>tns:EaOutputInputFlowImpl_af34d3a7-99a9-4599-973c-e1c63a56bc4e_Sequence</bpmn2:incoming>
+      <bpmn2:incoming>tns:EaOutputInputFlowImpl_545d267b-223e-4b7e-a7f9-20a7a57f4884_Sequence</bpmn2:incoming>
+      <bpmn2:incoming>tns:EaOutputInputFlowImpl_02666f2e-386a-464c-bc2e-095cb8c91b54_Sequence</bpmn2:incoming>
+      <bpmn2:incoming>tns:EaOutputInputFlowImpl_6d31bd22-9c0a-408e-8a85-e88f88a6c11f_Sequence</bpmn2:incoming>
+      <bpmn2:outgoing>tns:EaOutputInputFlowImpl_28e11a63-3364-413f-b182-2f02272e9d23_Sequence</bpmn2:outgoing>
+    </bpmn2:userTask>
+    <bpmn2:sequenceFlow id="EaOutputInputFlowImpl_28e11a63-3364-413f-b182-2f02272e9d23_Sequence" name="7" sourceRef="EaAtomicExtendedActivityImpl_0494deff-678c-493a-881d-a6e86d8e4e78" targetRef="EaOrImpl_1d459768-a114-4696-b5af-f043348e52d4"/>
+    <bpmn2:serviceTask id="EaAtomicExtendedActivityImpl_a614156f-e0c2-4fd3-9e9a-c958a1a93ec2" name="AskMoreFeedback">
+      <bpmn2:incoming>tns:EaOutputInputFlowImpl_50ed02b3-cb5b-4730-ba0e-1d76fd4b5531_Sequence</bpmn2:incoming>
+      <bpmn2:outgoing>tns:EaOutputInputFlowImpl_6d31bd22-9c0a-408e-8a85-e88f88a6c11f_Sequence</bpmn2:outgoing>
+    </bpmn2:serviceTask>
+    <bpmn2:sequenceFlow id="EaOutputInputFlowImpl_6d31bd22-9c0a-408e-8a85-e88f88a6c11f_Sequence" name="10" sourceRef="EaAtomicExtendedActivityImpl_a614156f-e0c2-4fd3-9e9a-c958a1a93ec2" targetRef="EaAtomicExtendedActivityImpl_0494deff-678c-493a-881d-a6e86d8e4e78"/>
+    <bpmn2:exclusiveGateway id="EaOrImpl_1d459768-a114-4696-b5af-f043348e52d4" name="new Or Operator" gatewayDirection="Diverging">
+      <bpmn2:incoming>tns:EaOutputInputFlowImpl_28e11a63-3364-413f-b182-2f02272e9d23_Sequence</bpmn2:incoming>
+      <bpmn2:outgoing>tns:EaOutputInputFlowImpl_50ed02b3-cb5b-4730-ba0e-1d76fd4b5531_Sequence</bpmn2:outgoing>
+      <bpmn2:outgoing>tns:EaOutputInputFlowImpl_95299b29-1292-4fa1-a327-02889910a76b_Sequence</bpmn2:outgoing>
+      <bpmn2:outgoing>tns:EaOutputInputFlowImpl_17dea467-1f80-4c8b-9273-0240836057c7_Sequence</bpmn2:outgoing>
+    </bpmn2:exclusiveGateway>
+    <bpmn2:sequenceFlow id="EaOutputInputFlowImpl_50ed02b3-cb5b-4730-ba0e-1d76fd4b5531_Sequence" name="MoreFeedbackIsRequired" sourceRef="EaOrImpl_1d459768-a114-4696-b5af-f043348e52d4" targetRef="EaAtomicExtendedActivityImpl_a614156f-e0c2-4fd3-9e9a-c958a1a93ec2"/>
+    <bpmn2:sequenceFlow id="EaOutputInputFlowImpl_95299b29-1292-4fa1-a327-02889910a76b_Sequence" name="FeedbackIsSufficient" sourceRef="EaOrImpl_1d459768-a114-4696-b5af-f043348e52d4" targetRef="EaAtomicExtendedActivityImpl_047b11b3-ca2a-43b5-8abc-80aff6f2bd8a"/>
+    <bpmn2:sequenceFlow id="EaOutputInputFlowImpl_17dea467-1f80-4c8b-9273-0240836057c7_Sequence" name="NoMoreIssues" sourceRef="EaOrImpl_1d459768-a114-4696-b5af-f043348e52d4" targetRef="EaAtomicExtendedActivityImpl_d1642a2b-5408-448a-9d6b-649b2a1f6720"/>
+  </bpmn2:process>
+  <bpmn2:collaboration id="collaboration_1" name="collaboration">
+    <bpmn2:participant id="EaProcessImpl_2b50a4da-ed4b-4533-8697-46a7d567b504_Participant" name="SNAGAnsweringAndCommunicationProcess" processRef="EaProcessImpl_2b50a4da-ed4b-4533-8697-46a7d567b504"/>
+  </bpmn2:collaboration>
+  <bpmndi:BPMNDiagram id="BPMNDiagram">
+    <bpmndi:BPMNPlane id="BPMNPlane" bpmnElement="EaProcessImpl_2b50a4da-ed4b-4533-8697-46a7d567b504">
+      <bpmndi:BPMNShape id="BPMNShape_Participant_1" bpmnElement="EaProcessImpl_2b50a4da-ed4b-4533-8697-46a7d567b504_Participant" isHorizontal="true">
+        <dcxmi:Bounds height="400.0" width="1030.0" x="170.0" y="100.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="BPMNShape_Lane_1" bpmnElement="EaITResourceImpl_261f2391-ab53-434f-9e45-4696a8861eaa" isHorizontal="true">
+        <dcxmi:Bounds height="200.0" width="1000.0" x="200.0" y="100.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="BPMNShape_Lane_2" bpmnElement="EaHumanResourceImpl_12e1e864-45d0-4770-bf47-7798bf4dfe7c" isHorizontal="true">
+        <dcxmi:Bounds height="200.0" width="1000.0" x="200.0" y="300.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="startEvent18" bpmnElement="EaAtomicExtendedActivityImpl_eb316422-c7ab-47d9-bfae-7878dbe61621Start">
+        <dcxmi:Bounds height="36.0" width="36.0" x="280.0" y="130.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="startEvent20" bpmnElement="EaAtomicExtendedActivityImpl_deabdf4c-473c-4b6a-8a65-31a548668855Start">
+        <dcxmi:Bounds height="36.0" width="36.0" x="280.0" y="230.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="BPMNShape_EndEvent_16" bpmnElement="EaAtomicExtendedActivityImpl_d1642a2b-5408-448a-9d6b-649b2a1f6720End">
+        <dcxmi:Bounds height="36.0" width="36.0" x="1140.0" y="376.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="BPMNShape_ExclusiveGateway_15" bpmnElement="EaOrImpl_1d459768-a114-4696-b5af-f043348e52d4">
+        <dcxmi:Bounds height="50.0" width="50.0" x="780.0" y="327.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="BPMNShape_ServiceTask_13" bpmnElement="EaAtomicExtendedActivityImpl_eb316422-c7ab-47d9-bfae-7878dbe61621">
+        <dcxmi:Bounds height="50.0" width="121.0" x="390.0" y="123.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="BPMNShape_ServiceTask_14" bpmnElement="EaAtomicExtendedActivityImpl_deabdf4c-473c-4b6a-8a65-31a548668855">
+        <dcxmi:Bounds height="50.0" width="121.0" x="390.0" y="223.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="BPMNShape_BusinessRuleTask_10" bpmnElement="EaAtomicExtendedActivityImpl_047b11b3-ca2a-43b5-8abc-80aff6f2bd8a">
+        <dcxmi:Bounds height="50.0" width="131.0" x="610.0" y="425.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="BPMNShape_BusinessRuleTask_11" bpmnElement="EaAtomicExtendedActivityImpl_d1642a2b-5408-448a-9d6b-649b2a1f6720">
+        <dcxmi:Bounds height="50.0" width="110.0" x="950.0" y="369.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="BPMNShape_BusinessRuleTask_9" bpmnElement="EaAtomicExtendedActivityImpl_0494deff-678c-493a-881d-a6e86d8e4e78">
+        <dcxmi:Bounds height="50.0" width="131.0" x="610.0" y="327.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="BPMNShape_ServiceTask_12" bpmnElement="EaAtomicExtendedActivityImpl_a614156f-e0c2-4fd3-9e9a-c958a1a93ec2">
+        <dcxmi:Bounds height="50.0" width="131.0" x="610.0" y="123.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="BPMNEdge_SequenceFlow_1" bpmnElement="EaOutputInputFlowImpl_545d267b-223e-4b7e-a7f9-20a7a57f4884_Sequence">
+        <dixmi:waypoint xsi:type="dcxmi:Point" x="511.0" y="248.0"/>
+        <dixmi:waypoint xsi:type="dcxmi:Point" x="555.0" y="248.0"/>
+        <dixmi:waypoint xsi:type="dcxmi:Point" x="555.0" y="352.0"/>
+        <dixmi:waypoint xsi:type="dcxmi:Point" x="610.0" y="352.0"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="BPMNEdge_SequenceFlow_2" bpmnElement="EaOutputInputFlowImpl_af34d3a7-99a9-4599-973c-e1c63a56bc4e_Sequence">
+        <dixmi:waypoint xsi:type="dcxmi:Point" x="511.0" y="148.0"/>
+        <dixmi:waypoint xsi:type="dcxmi:Point" x="555.0" y="148.0"/>
+        <dixmi:waypoint xsi:type="dcxmi:Point" x="555.0" y="352.0"/>
+        <dixmi:waypoint xsi:type="dcxmi:Point" x="610.0" y="352.0"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="BPMNEdge_SequenceFlow_3" bpmnElement="EaOutputInputFlowImpl_28e11a63-3364-413f-b182-2f02272e9d23_Sequence">
+        <dixmi:waypoint xsi:type="dcxmi:Point" x="741.0" y="352.0"/>
+        <dixmi:waypoint xsi:type="dcxmi:Point" x="758.0" y="352.0"/>
+        <dixmi:waypoint xsi:type="dcxmi:Point" x="758.0" y="352.0"/>
+        <dixmi:waypoint xsi:type="dcxmi:Point" x="780.0" y="352.0"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="BPMNEdge_SequenceFlow_4" bpmnElement="EaOutputInputFlowImpl_50ed02b3-cb5b-4730-ba0e-1d76fd4b5531_Sequence">
+        <dixmi:waypoint xsi:type="dcxmi:Point" x="805.0" y="327.0"/>
+        <dixmi:waypoint xsi:type="dcxmi:Point" x="805.0" y="148.0"/>
+        <dixmi:waypoint xsi:type="dcxmi:Point" x="741.0" y="148.0"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="BPMNEdge_SequenceFlow_5" bpmnElement="EaOutputInputFlowImpl_95299b29-1292-4fa1-a327-02889910a76b_Sequence">
+        <dixmi:waypoint xsi:type="dcxmi:Point" x="805.0" y="378.0"/>
+        <dixmi:waypoint xsi:type="dcxmi:Point" x="805.0" y="450.0"/>
+        <dixmi:waypoint xsi:type="dcxmi:Point" x="741.0" y="450.0"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="BPMNEdge_SequenceFlow_6" bpmnElement="EaOutputInputFlowImpl_17dea467-1f80-4c8b-9273-0240836057c7_Sequence" sourceElement="BPMNShape_ExclusiveGateway_15" targetElement="BPMNShape_BusinessRuleTask_11">
+        <dixmi:waypoint xsi:type="dcxmi:Point" x="805.0" y="378.0"/>
+        <dixmi:waypoint xsi:type="dcxmi:Point" x="805.0" y="394.0"/>
+        <dixmi:waypoint xsi:type="dcxmi:Point" x="950.0" y="394.0"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="BPMNEdge_SequenceFlow_7" bpmnElement="EaOutputInputFlowImpl_6d31bd22-9c0a-408e-8a85-e88f88a6c11f_Sequence">
+        <dixmi:waypoint xsi:type="dcxmi:Point" x="675.0" y="173.0"/>
+        <dixmi:waypoint xsi:type="dcxmi:Point" x="675.0" y="242.0"/>
+        <dixmi:waypoint xsi:type="dcxmi:Point" x="675.0" y="242.0"/>
+        <dixmi:waypoint xsi:type="dcxmi:Point" x="675.0" y="327.0"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="BPMNEdge_SequenceFlow_8" bpmnElement="EaOutputInputFlowImpl_02666f2e-386a-464c-bc2e-095cb8c91b54_Sequence">
+        <dixmi:waypoint xsi:type="dcxmi:Point" x="675.0" y="425.0"/>
+        <dixmi:waypoint xsi:type="dcxmi:Point" x="675.0" y="404.0"/>
+        <dixmi:waypoint xsi:type="dcxmi:Point" x="675.0" y="404.0"/>
+        <dixmi:waypoint xsi:type="dcxmi:Point" x="675.0" y="377.0"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="BPMNEdge_SequenceFlow_17" bpmnElement="EaAtomicExtendedActivityImpl_d1642a2b-5408-448a-9d6b-649b2a1f6720Sequence_1">
+        <dixmi:waypoint xsi:type="dcxmi:Point" x="1060.0" y="394.0"/>
+        <dixmi:waypoint xsi:type="dcxmi:Point" x="1096.0" y="394.0"/>
+        <dixmi:waypoint xsi:type="dcxmi:Point" x="1096.0" y="394.0"/>
+        <dixmi:waypoint xsi:type="dcxmi:Point" x="1140.0" y="394.0"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="BPMNEdge_SequenceFlow_19" bpmnElement="EaAtomicExtendedActivityImpl_eb316422-c7ab-47d9-bfae-7878dbe61621Sequence_1">
+        <dixmi:waypoint xsi:type="dcxmi:Point" x="316.0" y="148.0"/>
+        <dixmi:waypoint xsi:type="dcxmi:Point" x="349.0" y="148.0"/>
+        <dixmi:waypoint xsi:type="dcxmi:Point" x="349.0" y="148.0"/>
+        <dixmi:waypoint xsi:type="dcxmi:Point" x="390.0" y="148.0"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="BPMNEdge_SequenceFlow_21" bpmnElement="EaAtomicExtendedActivityImpl_deabdf4c-473c-4b6a-8a65-31a548668855Sequence_1">
+        <dixmi:waypoint xsi:type="dcxmi:Point" x="316.0" y="248.0"/>
+        <dixmi:waypoint xsi:type="dcxmi:Point" x="349.0" y="248.0"/>
+        <dixmi:waypoint xsi:type="dcxmi:Point" x="349.0" y="248.0"/>
+        <dixmi:waypoint xsi:type="dcxmi:Point" x="390.0" y="248.0"/>
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn2:definitions>

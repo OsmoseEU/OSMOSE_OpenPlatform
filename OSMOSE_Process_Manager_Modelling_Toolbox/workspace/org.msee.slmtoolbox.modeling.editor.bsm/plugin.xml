@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   
+   <!--no wizard is proposed for BSM model -->
+<!--   <extension point="org.eclipse.ui.newWizards">
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="org.msee.slmtoolbox.modeling.model.ssm.bsm.presentation.BsmModelWizardID"
+            name="%_UI_BsmModelWizard_label"
+            class="org.msee.slmtoolbox.modeling.model.ssm.bsm.presentation.BsmModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/BsmModelFile.gif">
+         <description>%_UI_BsmModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension> -->
+
+   <extension point="org.eclipse.ui.editors">
+      <editor
+            id="org.msee.slmtoolbox.modeling.model.ssm.bsm.presentation.BsmEditorID"
+            name="%_UI_BsmEditor_label"
+            icon="icons/full/obj16/BSM_logo.png"
+            extensions="bsm"
+            class="org.msee.slmtoolbox.modeling.model.ssm.bsm.presentation.BsmEditor"
+            contributorClass="org.msee.slmtoolbox.modeling.model.ssm.bsm.presentation.BsmActionBarContributor">
+      </editor>
+   </extension>
+   <extension
+         point="org.eclipse.ui.views.properties.tabbed.propertyContributor">
+   </extension>
+   <extension
+         point="org.eclipse.ui.views.properties.tabbed.propertySections">
+   </extension>
+   <extension
+         point="org.eclipse.ui.views.properties.tabbed.propertyTabs">
+   </extension>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</plugin>

@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="org.eclipse.papyrus.uml.diagram.source.feature"
+      label="%featureName"
+      version="0.9.2.v201302131112"
+      provider-name="%providerName">
+
+   <copyright url="http://www.eclipse.org/legal/epl-v10.html">
+      Copyright (c) 2012 CEA LIST.
+All rights reserved.   This program and the accompanying materials
+are made available under the terms of the Eclipse Public License
+v1.0
+which accompanies this distribution, and is available at
+http://www.eclipse.org/legal/epl-v10.html
+   </copyright>
+
+   <license url="%licenseURL">
+      %license
+   </license>
+
+   <plugin
+         id="org.eclipse.papyrus.uml.diagram.usecase.source"
+         download-size="0"
+         install-size="0"
+         version="0.9.2.v201302131112"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.papyrus.uml.diagram.common.groups.source"
+         download-size="0"
+         install-size="0"
+         version="0.9.2.v201302131112"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.papyrus.uml.diagram.dnd.source"
+         download-size="0"
+         install-size="0"
+         version="0.9.2.v201302131112"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.papyrus.uml.diagram.wizards.source"
+         download-size="0"
+         install-size="0"
+         version="0.9.2.v201302131112"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.papyrus.uml.diagram.deployment.source"
+         download-size="0"
+         install-size="0"
+         version="0.9.2.v201302131112"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.papyrus.uml.diagram.composite.source"
+         download-size="0"
+         install-size="0"
+         version="0.9.2.v201302131112"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.papyrus.uml.diagram.icons.source"
+         download-size="0"
+         install-size="0"
+         version="0.9.2.v201302131112"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.papyrus.uml.diagram.profile.source"
+         download-size="0"
+         install-size="0"
+         version="0.9.2.v201302131112"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.papyrus.uml.diagram.communication.source"
+         download-size="0"
+         install-size="0"
+         version="0.9.2.v201302131112"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.papyrus.uml.diagram.paletteconfiguration.edit.source"
+         download-size="0"
+         install-size="0"
+         version="0.9.2.v201302131112"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.papyrus.uml.diagram.component.source"
+         download-size="0"
+         install-size="0"
+         version="0.9.2.v201302131112"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.papyrus.uml.diagram.common.source"
+         download-size="0"
+         install-size="0"
+         version="0.9.2.v201302131112"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.papyrus.uml.diagram.sequence.source"
+         download-size="0"
+         install-size="0"
+         version="0.9.2.v201302131112"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.papyrus.uml.diagram.clazz.source"
+         download-size="0"
+         install-size="0"
+         version="0.9.2.v201302131112"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.papyrus.uml.diagram.navigation.source"
+         download-size="0"
+         install-size="0"
+         version="0.9.2.v201302131112"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.papyrus.uml.diagram.paletteconfiguration.source"
+         download-size="0"
+         install-size="0"
+         version="0.9.2.v201302131112"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.papyrus.uml.diagram.package.source"
+         download-size="0"
+         install-size="0"
+         version="0.9.2.v201302131112"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.papyrus.uml.diagram.common.palette.customaction.source"
+         download-size="0"
+         install-size="0"
+         version="0.9.2.v201302131112"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.papyrus.uml.diagram.menu.source"
+         download-size="0"
+         install-size="0"
+         version="0.9.2.v201302131112"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.papyrus.uml.diagram.statemachine.source"
+         download-size="0"
+         install-size="0"
+         version="0.9.2.v201302131112"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.papyrus.uml.diagram.modelexplorer.source"
+         download-size="0"
+         install-size="0"
+         version="0.9.2.v201302131112"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.papyrus.uml.diagram.activity.source"
+         download-size="0"
+         install-size="0"
+         version="0.9.2.v201302131112"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.papyrus.uml.diagram.emftree.source"
+         download-size="0"
+         install-size="0"
+         version="0.9.2.v201302131112"
+         unpack="false"/>
+
+</feature>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:al="http://eclipse.org/graphiti/mm/algorithms" xmlns:org.msee.slmtoolbox.modeling.model.lang.eaStar.root="http://org/msee/slmtoolbox/modeling/model/lang/eaStar.ecore/root" xmlns:pi="http://eclipse.org/graphiti/mm/pictograms" xsi:schemaLocation="http://eclipse.org/graphiti/mm/algorithms http://eclipse.org/graphiti/mm#//algorithms http://eclipse.org/graphiti/mm/pictograms http://eclipse.org/graphiti/mm#//pictograms">
+  <pi:Diagram visible="true" gridUnit="10" diagramTypeId="eaStar" name="SNAGArisingAndManagementProcess" snapToGrid="true" pictogramLinks="/0/@children.0/@link" version="0.9.2">
+    <graphicsAlgorithm xsi:type="al:Rectangle" background="/0/@colors.1" foreground="/0/@colors.0" lineWidth="1" transparency="0.0" width="1000" height="1000"/>
+    <link businessObjects="EaProcessImpl_8a3b3fb2-4374-4289-b7b2-45cb45c499c2"/>
+    <children xsi:type="pi:ContainerShape" visible="true" active="true">
+      <graphicsAlgorithm xsi:type="al:Rectangle" lineWidth="1" transparency="0.0" width="150" height="75" x="480" y="180" style="/0/@styles.0"/>
+      <link businessObjects="EaOrganizationImpl_1b7109f3-b6ba-4cde-b15c-ef0efd17c1b8"/>
+      <children visible="true">
+        <graphicsAlgorithm xsi:type="al:Image" lineWidth="1" transparency="0.0" width="16" height="16" x="5" y="5" id="org.msee.slmtoolbox.modeling.editor.eaStar.Organization" stretchH="false" stretchV="false" proportional="false"/>
+      </children>
+      <children visible="true">
+        <graphicsAlgorithm xsi:type="al:Text" lineWidth="1" filled="false" transparency="0.0" width="-1" height="-1" x="22" y="5" style="/0/@styles.1" verticalAlignment="ALIGNMENT_TOP" value="AW"/>
+      </children>
+    </children>
+    <styles foreground="/0/@colors.2" lineWidth="2" id="STYLE_BLUE">
+      <renderingStyle>
+        <adaptedGradientColoredAreas definedStyleId="STYLE_BLUEGradient" gradientType="0">
+          <adaptedGradientColoredAreas styleAdaption="0">
+            <gradientColor>
+              <start locationType="LOCATION_TYPE_ABSOLUTE_START" locationValue="0">
+                <color red="235" green="240" blue="250"/>
+              </start>
+              <end locationType="LOCATION_TYPE_ABSOLUTE_END" locationValue="0">
+                <color red="235" green="240" blue="250"/>
+              </end>
+            </gradientColor>
+          </adaptedGradientColoredAreas>
+          <adaptedGradientColoredAreas styleAdaption="1">
+            <gradientColor>
+              <start locationType="LOCATION_TYPE_ABSOLUTE_START" locationValue="0">
+                <color red="240" green="245" blue="255"/>
+              </start>
+              <end locationType="LOCATION_TYPE_ABSOLUTE_END" locationValue="0">
+                <color red="240" green="245" blue="255"/>
+              </end>
+            </gradientColor>
+          </adaptedGradientColoredAreas>
+          <adaptedGradientColoredAreas styleAdaption="1">
+            <gradientColor>
+              <start locationType="LOCATION_TYPE_ABSOLUTE_START" locationValue="0">
+                <color red="240" green="245" blue="255"/>
+              </start>
+              <end locationType="LOCATION_TYPE_ABSOLUTE_END" locationValue="0">
+                <color red="240" green="245" blue="255"/>
+              </end>
+            </gradientColor>
+          </adaptedGradientColoredAreas>
+        </adaptedGradientColoredAreas>
+      </renderingStyle>
+    </styles>
+    <styles foreground="/0/@colors.3" id="TEXTORGANIZATION" horizontalAlignment="ALIGNMENT_LEFT" verticalAlignment="ALIGNMENT_TOP"/>
+    <colors red="227" green="238" blue="249"/>
+    <colors red="255" green="255" blue="255"/>
+    <colors red="115" green="120" blue="130"/>
+    <colors/>
+    <fonts name="Arial" size="8"/>
+  </pi:Diagram>
+  <org.msee.slmtoolbox.modeling.model.lang.eaStar.root:EaModel id="EaModelImpl_f4185def-fe29-4fb7-b43d-8aa06ced1e68" name="SNAGArisingAndManagementProcess">
+    <process id="EaProcessImpl_8a3b3fb2-4374-4289-b7b2-45cb45c499c2" name="SNAGArisingAndManagementProcess" code=" " decompositionCode=" "/>
+    <organizations id="EaOrganizationImpl_4a11165b-a30a-460e-8215-17b640167b0d" name="AW"/>
+    <organizations id="EaOrganizationImpl_1b7109f3-b6ba-4cde-b15c-ef0efd17c1b8" name="AW"/>
+  </org.msee.slmtoolbox.modeling.model.lang.eaStar.root:EaModel>
+</xmi:XMI>

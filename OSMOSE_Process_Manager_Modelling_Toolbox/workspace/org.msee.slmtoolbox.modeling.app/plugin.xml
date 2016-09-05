@@ -1,0 +1,449 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+<plugin>
+   <extension-point id="splashExtension" name="Splash Extensions" schema="schema/splashExtension.exsd"/>
+   
+   <!-- application : declare the application -->
+   <extension id="application" point="org.eclipse.core.runtime.applications">
+      <application>
+         <run class="org.msee.slmtoolbox.modeling.app.Application">
+         </run>
+      </application>
+   </extension>
+   
+   <!-- product : define and configure a static product extension -->
+   <extension id="product" point="org.eclipse.core.runtime.products">
+      <product
+            application="org.msee.slmtoolbox.modeling.app.application"
+            name="Osmotic Process Manager">
+         <property
+               name="windowImages"
+               value="icons/MSEE_logo.16.png,icons/MSEE_logo.32.png,icons/MSEE_logo.48.png,icons/MSEE_logo.64.png,icons/MSEE_logo.128.png">
+         </property>
+       <property
+             name="appName"
+             value="MSEE SLMToolbox - Modeling Environment">
+       </property>
+       <property
+             name="startupForegroundColor"
+             value="000000">
+       </property>
+       <property
+             name="startupMessageRect"
+             value="7,287,262,20">
+       </property>
+       <property
+             name="startupProgressRect"
+             value="5,310,266,15">
+       </property>
+       <property
+             name="preferenceCustomization"
+             value="plugin_customization.ini">
+       </property>
+       <property
+             name="aboutImage"
+             value="icons/MSEE_logo.128.png">
+       </property>
+       <property
+             name="aboutText"
+             value="Osmotic Process Manager v1.0 (Based on MSEE SLMToolbox v2.4.4)">
+       </property>
+      </product>
+   </extension>
+   
+  <!--<extension point="org.eclipse.core.resources.moveDeleteHook" id="MoveDeleteHook">
+	<moveDeleteHook class="org.msee.slmtoolbox.app.DeleteFile"/>
+	</extension> -->
+	
+<!-- <extension point="org.eclipse.core.resources.fileModificationValidator">
+  <fileModificationValidator class="org.eclipse.vcm.internal.VCMFileModificationValidator"/>
+ </extension> -->
+    
+    <extension point="org.eclipse.team.core.repository"> 
+    
+ 		<repository class="org.msee.slmtoolbox.modeling.app.RepositoryProviderImpl"
+  			id="org.eclipse.myprovider.myProviderID"> 
+ 		</repository> 
+	</extension> 
+   
+    <!-- activity : filter UI elements from certain plugins -->
+	<extension point="org.eclipse.ui.activities">
+		<activity
+			description="Disable plug-in contributions"
+			id="org.msee.slmtoolbox.app.disableUIElements"
+			name="DisableUIElements">
+		   <enabledWhen>
+		      <with variable="true">
+		         <equals value="false">
+		         </equals>
+		      </with>
+		   </enabledWhen>
+   		</activity>
+   		
+		<activityPatternBinding
+			activityId="org.msee.slmtoolbox.app.disableUIElements"
+			pattern="org\.eclipse\.ui\.run/.*" />
+		<activityPatternBinding
+			activityId="org.msee.slmtoolbox.app.disableUIElements"
+			pattern="org\.eclipse\.search/.*" />
+		<activityPatternBinding
+			activityId="org.msee.slmtoolbox.app.disableUIElements"
+			pattern=".*/org\.eclipse\.jdt\.ui\.wizards.*" />
+		<activityPatternBinding
+			activityId="org.msee.slmtoolbox.app.disableUIElements"
+			pattern=".*/org\.eclipse\.ui\.wizards\.import\.FileSystem.*" />
+		<activityPatternBinding
+			activityId="org.msee.slmtoolbox.app.disableUIElements"
+			pattern=".*/org\.eclipse\.ui\.editors\.wizards.*" />
+		<activityPatternBinding
+			activityId="org.msee.slmtoolbox.app.disableUIElements"
+			pattern=".*/org\.eclipse\.ui\.externaltools\.ExternalToolMenuDelegateToolbar" />
+		<activityPatternBinding 
+			activityId="org.msee.slmtoolbox.app.disableUIElements"
+    		pattern="org.eclipse.team.*" />
+	   	<activityPatternBinding 
+	   		activityId="org.msee.slmtoolbox.app.disableUIElements"
+    		pattern="org.eclipse.rse.*" />
+		<activityPatternBinding 
+			activityId="org.msee.slmtoolbox.app.disableUIElements"
+    		pattern="org.eclipse.compare.*" />
+		<activityPatternBinding 
+			activityId="org.msee.slmtoolbox.app.disableUIElements"
+    		pattern="org.eclipse.ui.project.*" />
+   		<!-- org.eclipse.ui.wizards.new.folder -->
+		<activityPatternBinding 
+			activityId="org.msee.slmtoolbox.app.disableUIElements"
+    		pattern=".*/org\.eclipse\.ui\.window\.quickAccess" />
+		<activityPatternBinding 
+			activityId="org.msee.slmtoolbox.app.disableUIElements"
+    		pattern="org.eclipse.ltk.ui.refactoring.commands.renameResource" />
+		<activityPatternBinding 
+			activityId="org.msee.slmtoolbox.app.disableUIElements"
+    		pattern=".*/org\.eclipse\.ui\.cheatsheets\.actions\.CheatSheetHelpMenuAction" />
+    	<!-- Import / export -->
+    	<activityPatternBinding 
+			activityId="org.msee.slmtoolbox.app.disableUIElements"
+    		pattern=".*/org\.eclipse\.ui\.wizards\.(import|export)\.(Preferences|FileSystem)"/>
+    	<activityPatternBinding 
+			activityId="org.msee.slmtoolbox.app.disableUIElements"
+    		pattern=".*/org\.eclipse\.pde.ui\.(Feature|feature|Plugin|plugin|product)(Import|Export)Wizard"/>
+    	<activityPatternBinding 
+			activityId="org.msee.slmtoolbox.app.disableUIElements"
+    		pattern=".*/org\.eclipse\.pde\.target\.wizard"/> 
+    	<activityPatternBinding 
+			activityId="org.msee.slmtoolbox.app.disableUIElements"
+    		pattern=".*/org\.eclipse\.jdt\.internal\.ui\.(fat|)jarpackager\.JarPackageWizard"/>
+    	<activityPatternBinding 
+			activityId="org.msee.slmtoolbox.app.disableUIElements"
+    		pattern=".*/org\.eclipse\.jdt\.internal\.ui\.javadocexport\.JavadocWizard"/>
+    	<!-- debug -->
+    	<activityPatternBinding 
+			activityId="org.msee.slmtoolbox.app.disableUIElements"
+    		pattern=".*/org\.eclipse\.debug\.internal\.ui\.importexport\.breakpoints\.Wizard(Import|Export)Breakpoints"/>
+    	<activityPatternBinding 
+			activityId="org.msee.slmtoolbox.app.disableUIElements"
+    		pattern=".*/org\.eclipse\.debug\.ui\.(import|export)\.launchconfigurations"/>
+    	<!-- EMF -->
+		<activityPatternBinding 
+			activityId="org.msee.slmtoolbox.app.disableUIElements"
+    		pattern=".*/org\.eclipse\.emf\.facet\.util\.emf\.actions\.OpenModelFromEmfRegistry" />
+    	<!-- ANT -->
+    	<activityPatternBinding 
+			activityId="org.msee.slmtoolbox.app.disableUIElements"
+    		pattern=".*/org\.eclipse\.ant\.ui\.export"/> 
+    	<!-- papyrus-->	
+    	<activityPatternBinding 
+			activityId="org.msee.slmtoolbox.app.disableUIElements"
+    		pattern=".*/org\.eclipse\.papyrus\.export\.diagrams\.wizard"/> 
+    		
+    	<!-- filter BPMN (org.eclipse.bpmn2.editor)-->	
+    	<activityPatternBinding 
+			activityId="org.msee.slmtoolbox.app.disableUIElements"
+    		pattern=".*/org.eclipse.bpmn2.presentation.*" />
+    	<!-- filter xml -->
+    	<activityPatternBinding 
+			activityId="org.msee.slmtoolbox.app.disableUIElements"
+    		pattern=".*/org.eclipse.wst.xml.ui.XMLExampleProjectCreationWizard" /> 
+    	<activityPatternBinding 
+			activityId="org.msee.slmtoolbox.app.disableUIElements"
+    		pattern=".*/org.eclipse.wst.xsd.ui.internal.wizards.*" /> 
+    	<activityPatternBinding 
+			activityId="org.msee.slmtoolbox.app.disableUIElements"
+    		pattern=".*/org.eclipse.wst.xml.ui.*" /> 
+    	<activityPatternBinding 
+			activityId="org.msee.slmtoolbox.app.disableUIElements"
+    		pattern="SearchField" />
+    	<!-- filter UML -->
+    	<activityPatternBinding 
+			activityId="org.msee.slmtoolbox.app.disableUIElements"
+    		pattern="org.eclipse.uml2.*" />
+	</extension>
+   
+	<!-- perspective : define a "MSEE" perspective -->
+	<extension point="org.eclipse.ui.perspectives">
+		<perspective
+			class="org.msee.slmtoolbox.modeling.app.perspectives.MSeEPerspective"
+			icon="icons/MSEE_logo.16.png"
+			id="org.msee.slmtoolbox.modeling.app.perspectives.MSeEPerspective"
+			name="Manufacturing SErvices Ecosystem">
+		</perspective>
+	</extension>
+    
+	<!-- "new" wizard : define a "File > New" wizard for the creation of a BSM project -->
+	<extension point="org.eclipse.ui.newWizards">
+		<!-- category : defines a category -->
+		<category
+			id="org.msee.slmtoolbox.modeling.category.bsm"
+			name="Manufacturing SErvices Ecosystem - OBM">
+		</category>
+		<!-- wizard : define the BSM project wizard -->
+		<wizard
+	        category="org.msee.slmtoolbox.modeling.category.bsm"
+	        class="org.msee.slmtoolbox.modeling.app.wizards.BsmModelingWizard"
+	        finalPerspective="org.msee.slmtoolbox.modeling.app.perspectives.MSeEPerspective"
+	        icon="icons/MSEE_logo.16.png"
+	        id="org.msee.slmtoolbox.modeling.app.wizards.BsmModelingWizard"
+	        name="Create an OBM Service System Modeling project"
+	        preferredPerspectives="org.msee.slmtoolbox.modeling.app.perspectives.MSeEPerspective"
+	        project="true">
+			<description>
+         		Create a new Osmosis Business service Model (OBM) project.
+			</description> 
+		</wizard>
+	</extension>
+	
+		<!-- "new" wizard : define a "File > New" wizard for the creation of a TIM project -->
+	<extension point="org.eclipse.ui.newWizards">
+		<!-- category : defines a category -->
+		<category
+			id="org.msee.slmtoolbox.modeling.category.tim"
+			name="Manufacturing SErvices Ecosystem - OTIM">
+		</category>
+		<!-- wizard : define the TIM project wizard -->
+		<wizard
+	        category="org.msee.slmtoolbox.modeling.category.tim"
+	        class="org.msee.slmtoolbox.modeling.app.wizards.tim.TIMModelingWizard"
+	        finalPerspective="org.msee.slmtoolbox.modeling.app.perspectives.MSeEPerspective"
+	        icon="icons/MSEE_logo.16.png"
+	        id="org.msee.slmtoolbox.modeling.app.wizards.TIMModelingWizard"
+	        name="Create an OTIM Service System Modeling project"
+	        preferredPerspectives="org.msee.slmtoolbox.modeling.app.perspectives.MSeEPerspective"
+	        project="true">
+			<description>
+         		Create a new Osmosis Tecnology Independent Model (OTIM) project.
+			</description> 
+		</wizard>
+		<!-- wizard : define the BPMN from Eastar wizard -->
+		<!--<wizard
+	        category="org.msee.slmtoolbox.modeling.category.tim"
+	        class="org.msee.slmtoolbox.modeling.app.wizards.ea.EaToBpmnWizard"
+	        finalPerspective="org.msee.slmtoolbox.modeling.app.perspectives.MSeEPerspective"
+	        icon="icons/EaToBpmn_logo.16.png"
+	        id="org.msee.slmtoolbox.modeling.app.wizards.EaToBpmngWizard"
+	        name="Create a BPMN diagram from Eastar diagram"
+	        preferredPerspectives="org.msee.slmtoolbox.modeling.app.perspectives.MSeEPerspective"
+	        project="false">
+			<description>
+         		Transform an EA* model to a generic BPMN2 model.
+			</description> 
+		</wizard>-->
+		
+		<!--<wizard
+	        category="org.msee.slmtoolbox.modeling.category.tim"
+	        class="org.msee.slmtoolbox.modeling.app.wizards.ea.EaToOsmosisProcessBpmnWizard"
+	        finalPerspective="org.msee.slmtoolbox.modeling.app.perspectives.MSeEPerspective"
+	        icon="icons/EaToBpmn_logo.16.png"
+	        id="org.msee.slmtoolbox.modeling.app.wizards.EaToOsmosisProcessBpmngWizard"
+	        name="Create a BPMN diagram from Eastar diagram (Osmosis Process)"
+	        preferredPerspectives="org.msee.slmtoolbox.modeling.app.perspectives.MSeEPerspective"
+	        project="false">
+			<description>
+         		Transform an EA* model to an osmosis process BPMN2 model.
+			</description> 
+		</wizard>-->
+		
+		<wizard
+	        category="org.msee.slmtoolbox.modeling.category.tim"
+	        class="org.msee.slmtoolbox.modeling.app.wizards.ea.EaExportBpmnWizard"
+	        finalPerspective="org.msee.slmtoolbox.modeling.app.perspectives.MSeEPerspective"
+	        icon="icons/EaToBpmn_logo.16.png"
+	        id="org.msee.slmtoolbox.modeling.app.wizards.EaToOsmosisProcessBpmngWizard"
+	        name="Export splited BPMN diagram"
+	        preferredPerspectives="org.msee.slmtoolbox.modeling.app.perspectives.MSeEPerspective"
+	        project="false">
+			<description>
+         		Export splited BPMN diagram.
+			</description> 
+		</wizard>
+		
+		<!-- Commented for OSMOSE
+	    <wizard
+	         category="org.msee.slmtoolbox.modeling.category.tim"
+	         class="org.eclipse.papyrus.uml.diagram.wizards.InitModelWizard"
+	         finalPerspective="org.msee.slmtoolbox.modeling.app.perspectives.MSeEPerspective"
+	         icon="icons/papyrus/new_papyrus_model.gif"
+	         id="org.msee.slmtoolbox.modeling.uml.diagram.wizards.createmodel"
+	         name="Papyrus Model">
+	         <description>
+         		Create a Papyrus model.
+			</description> 
+	   </wizard>
+	   -->
+	   
+		<wizard category="org.msee.slmtoolbox.modeling.category.tim"
+			class="org.eclipse.bpmn2.modeler.ui.wizards.BPMN2DiagramWizard" icon="icons/bpmn2_editor_16.png"
+			id="org.msee.slmtoolbox.modeling.bpmn2.modeler.ui.diagram" name="Generic BPMN 2.0 Diagram">
+			<description>
+         		Create a generic BPMN2 process.
+			</description> 
+		</wizard>
+	   
+	</extension>
+	
+	<!-- "new" wizard : define a "File > New" wizard for the creation of a TSM project -->
+	<!--<extension point="org.eclipse.ui.newWizards">-->
+		<!-- category : defines a category -->
+		<!--<category
+			id="org.msee.slmtoolbox.modeling.category.tsm"
+			name="Manufacturing SErvices Ecosystem - OTSM">
+		</category>-->
+		<!-- wizard : define the jBPM project wizard -->
+	    <!--<wizard
+	         category="org.msee.slmtoolbox.modeling.category.tsm"
+	         class="org.jbpm.eclipse.wizard.project.NewJBPMProjectWizard"
+	         id="org.msee.slmtoolbox.modeling.jbpm.eclipse.wizard.project.newproject"
+	         name="Create an OTSM Service System Modeling project (jBPM)"
+	         icon="icons/MSEE_logo.16.png"
+	         project="true">
+	         <description>
+         		Create a new Osmosis Tecnology Specific Model (OTSM) project with jBPM.
+			</description>
+	   </wizard> 
+	</extension>-->
+		
+	<!-- nature : define a "Service System Model" project nature -->
+	
+	<extension
+		point="org.eclipse.core.resources.natures"
+		id="bsmNature"
+		name="NATURE BSM PROJECT">
+		<runtime>
+			<run class="org.msee.slmtoolbox.modeling.app.natures.BsmNature">
+			</run>
+		</runtime>
+	</extension>
+	
+	<extension
+		point="org.eclipse.core.resources.natures"
+		id="timNature"
+		name="NATURE TIM PROJECT">
+		<runtime>
+			<run class="org.msee.slmtoolbox.modeling.app.natures.TimNature">
+			</run>
+		</runtime>
+	</extension>
+	
+	<!-- splashHandler : define a splash handler for custom behaviour during startup -->
+	<extension
+	  point="org.eclipse.ui.splashHandlers">
+		<splashHandler
+		  class="org.msee.slmtoolbox.modeling.app.splashHandlers.ExtensibleSplashHandler"
+		  id="org.msee.slmtoolbox.modeling.app.splashHandlers.extensible">
+		</splashHandler>
+	</extension>
+	
+	<!-- *************************************  for debug ************************************* -->
+	
+	<!-- command : define a command for showing the project ID -->
+	<!--extension point="org.eclipse.ui.commands">
+		<command id="tu.org.msee.slmtoolbox.modeling.app.handler.idbsmhandler" 
+		name="[Debug] Get BSM project id" /> 
+	</extension-->
+	
+	<!-- handler : define a handler for showing the project ID -->
+	<!--extension point="org.eclipse.ui.handlers">
+		<handler commandId="tu.org.msee.slmtoolbox.modeling.app.handler.idbsmhandler" 
+			class="tu.org.msee.slmtoolbox.modeling.app.handler.IdBsmHandler">
+		</handler>
+	</extension-->
+	
+	<!-- menu : define a menu entry for showing the project ID -->
+	<!--extension point="org.eclipse.ui.menus">
+		<menuContribution locationURI="popup:org.eclipse.ui.navigator.ProjectExplorer#PopupMenu?after=additions">
+			<command commandId="tu.org.msee.slmtoolbox.modeling.app.handler.idbsmhandler"
+					id="tu.org.msee.slmtoolbox.modeling.app.handler.idbsmhandler"
+              		icon="icons/MSEE_red.16.png"--> 
+	         <!-- visible when : "resource selected is of IProject type" [and] "only one selected" -->
+	         <!--visibleWhen-->
+	         	<!-- reference : to an exression for menu constraint -->
+	         	<!-- reference definitionId="org.msee.slmtoolbox.modeling.app.expression.onlyOneProjectSelected"/>
+	         </visibleWhen>
+			</command>
+		</menuContribution>
+	</extension-->
+	
+	<!-- definition : define the constraint for only one project selected -->
+	<extension
+	  point="org.eclipse.core.expressions.definitions">
+		<definition
+		  id="org.msee.slmtoolbox.modeling.app.expression.onlyOneProjectSelected">
+			<!-- variable : the context is the list of selected elements in the current view (i.e. : project explorer)-->
+			<with variable="activeMenuSelection">
+				<and>
+					<reference definitionId="org.msee.slmtoolbox.modeling.app.expression.onlyOneSelected"/>
+					<!-- constraint : resource selected is of IProject type -->
+					<iterate
+					  ifEmpty="false">
+						<adapt type="org.eclipse.core.resources.IProject">
+						</adapt>
+					</iterate>
+				</and>
+			</with>
+		</definition>
+	</extension>
+	
+	<!-- definition : define the sub constraint, only one selected -->
+	<extension
+      point="org.eclipse.core.expressions.definitions">
+		<definition
+		  id="org.msee.slmtoolbox.modeling.app.expression.onlyOneSelected">
+		  	<!-- constraint : only one selected -->
+			<count value="1"></count>
+		</definition>
+	</extension>
+	
+	
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            locationURI="menu:org.eclipse.ui.main.menu">
+         <menu
+               id="menu.perspectivesDynamic"
+               label="Perspectives">
+            <dynamic
+                  class="org.msee.slmtoolbox.modeling.app.perspectives.PerspectiveSwitcherMenu"
+                  id="perspectiveSwitcherMenu">
+            </dynamic>
+            <separator
+                  name="perspectives.separator1"
+                  visible="true">
+            </separator>
+            <command
+                  commandId="org.eclipse.ui.window.newWindow"
+                  style="push">
+            </command>
+         </menu>
+      </menuContribution>
+      <menuContribution
+            locationURI="toolbar:org.eclipse.ui.main.toolbar">
+         <toolbar
+               id="toolbar.perspectivesDynamic">
+            <dynamic
+                  class="org.msee.slmtoolbox.modeling.app.perspectives.PerspectiveSwitcherToolbar"
+                  id="perspectiveSwitcherToolbar">
+            </dynamic>
+         </toolbar>
+      </menuContribution>
+   </extension>
+
+</plugin>
