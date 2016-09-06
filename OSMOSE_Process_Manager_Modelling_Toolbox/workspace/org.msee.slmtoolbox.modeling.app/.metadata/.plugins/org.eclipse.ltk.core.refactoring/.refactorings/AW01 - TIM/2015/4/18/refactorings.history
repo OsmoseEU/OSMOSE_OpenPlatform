@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Copy element &apos;AW01.SNAGArisingAndManagementProcess.NoOrgs.bpmn&apos; to &apos;resources&apos;&#x0D;&#x0A;- Original project: &apos;AW01 - TIM&apos;&#x0D;&#x0A;- Destination element: &apos;resources&apos;&#x0D;&#x0A;- Original element: &apos;AW01.SNAGArisingAndManagementProcess.NoOrgs.bpmn&apos;" description="Copy file" element1="Processes/AW01.SNAGArisingAndManagementProcess.NoOrgs.bpmn" files="1" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1430328310681" target="/AW01 - TSM/src/main/resources" units="0" version="1.0"/>
-</session>

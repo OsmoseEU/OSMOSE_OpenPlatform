@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="ASCII"?>
-<org.msee.slmtoolbox.modeling.model.ssm.bsm:BsmModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:org.msee.slmtoolbox.modeling.model.ssm.bsm="http://org/msee/slmtoolbox/modeling/model/ssm/bsm.ecore" id="BsmModelImpl_46e93857-a205-4efc-97c6-b87bbf674776" name="test">
-  <service id="BsmServiceImpl_dd9c8911-5085-4564-887d-8590fb611a47" name="test1"/>
-  <organizations xsi:type="org.msee.slmtoolbox.modeling.model.ssm.bsm:BsmEnterprise" id="BsmEnterpriseImpl_829c7bcd-6f65-4463-8762-782ed212032f" name="Uninova"/>
-</org.msee.slmtoolbox.modeling.model.ssm.bsm:BsmModel>

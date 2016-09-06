@@ -1,2 +1,0 @@
-<?xml version="1.0" encoding="ISO-8859-1"?>
-<bpmn2:Definitions xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:bpmn2="http://www.omg.org/spec/BPMN/20100524/MODEL-XMI" id="Process 1" expressionLanguage="http://www.mvel.org/2.0" targetNamespace="http://www.jboss.org/drools" typeLanguage="http://www.java.com/javaTypes"/>

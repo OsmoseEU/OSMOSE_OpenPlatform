@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="ASCII"?>
-<org.msee.slmtoolbox.modeling.model.ssm.bsm:BsmModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:org.msee.slmtoolbox.modeling.model.ssm.bsm="http://org/msee/slmtoolbox/modeling/model/ssm/bsm.ecore" id="BsmModelImpl_1a9a9a85-e339-4256-aeb0-0ad45359a045" name="myBSM">
-  <service id="BsmServiceImpl_94e7dc50-00a7-4e3f-a46f-04b9ac60560a" name="myServ"/>
-  <organizations xsi:type="org.msee.slmtoolbox.modeling.model.ssm.bsm:BsmEnterprise" id="BsmEnterpriseImpl_22867efa-aa2a-45df-bd9e-89877d3189ca" name="myOrg"/>
-</org.msee.slmtoolbox.modeling.model.ssm.bsm:BsmModel>

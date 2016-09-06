@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Rename resource &apos;org.msee.slmtoolbox.modeling.app/src/org/msee/slmtoolbox/modeling/app/wizards/ea/EaToOsmosisProcessBpmnWizardValidation.java&apos; to &apos;EaToOsmosisProcessBpmnWizardPathBuild.java&apos;" description="Rename resource &apos;EaToOsmosisProcessBpmnWizardValidation.java&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/org/msee/slmtoolbox/modeling/app/wizards/ea/EaToOsmosisProcessBpmnWizardValidation.java" name="EaToOsmosisProcessBpmnWizardPathBuild.java" stamp="1458574775245" updateReferences="true"/>
-</session>

@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<?eclipse version="3.4"?>
-<plugin>
-	<!-- startup : register the plugin, in order to activate it at the startup -->
-	<!--extension
- 	  point="org.eclipse.ui.startup">
-		<startup class="org.msee.slmtoolbox.modeling.editor.OneEditorPartListener"/>
- 	</extension-->
-</plugin>

@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Move &apos;DiagramLink.java&apos; to &apos;Osmose&apos;" description="Move &apos;DiagramLink.java&apos; to &apos;Osmose&apos;" destination="src/org/msee/slmtoolbox/modeling/service/app/lang/eastar/Osmose" element1="src/org/msee/slmtoolbox/modeling/service/app/lang/eastar/Osmose/utils/DiagramLink.java" element2="src/org/msee/slmtoolbox/modeling/service/app/lang/eastar/Osmose/utils/OsmioticRelation.java" flags="7" id="org.eclipse.ltk.core.refactoring.move.resources" resources="2" stamp="1458559447740" updateReferences="true"/>
-</session>

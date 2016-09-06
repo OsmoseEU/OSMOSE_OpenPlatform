@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Delete resource &apos;AW01/Processes/ .SNAGArisingAndManagementProcess.eastar&apos;" deleteContents="false" description="Delete resource &apos;AW01/Processes/ .SNAGArisingAndManagementProcess.eastar&apos;" element1="/AW01/Processes/ .SNAGArisingAndManagementProcess.eastar" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1434472535951"/>
-</session>

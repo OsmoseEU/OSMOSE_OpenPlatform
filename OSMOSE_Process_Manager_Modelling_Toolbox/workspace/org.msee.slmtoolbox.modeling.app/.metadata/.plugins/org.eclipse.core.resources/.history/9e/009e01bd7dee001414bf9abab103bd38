@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="ASCII"?>
-<org.msee.slmtoolbox.modeling.model.ssm.bsm:BsmModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:org.msee.slmtoolbox.modeling.model.ssm.bsm="http://org/msee/slmtoolbox/modeling/model/ssm/bsm.ecore" id="BsmModelImpl_00f24182-a7d0-4441-b362-aa48d303f696" name="VIR-AW-1">
-  <service id="BsmServiceImpl_8a4b563b-7200-4af4-a512-38f52a4c61ec" name="AWService"/>
-  <organizations xsi:type="org.msee.slmtoolbox.modeling.model.ssm.bsm:BsmEnterprise" id="BsmEnterpriseImpl_9b8f4da1-e37e-4d9f-bcd8-8226cfece752" name="AW"/>
-</org.msee.slmtoolbox.modeling.model.ssm.bsm:BsmModel>

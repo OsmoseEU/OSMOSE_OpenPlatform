@@ -1,5 +1,0 @@
-Manifest-Version: 1.0
-Bundle-ManifestVersion: 2
-Bundle-Name: Helper
-Bundle-SymbolicName: org.msee.slmtoolbox.modeling.app.helper; singleton:=true
-Bundle-Version: 3.0.0
