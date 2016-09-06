@@ -1,0 +1,14 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Papyrus UML Integration
+Bundle-SymbolicName: com.sap.research.msee.slmtoolbox.uml;singleton:=true
+Bundle-Version: 0.1.0.qualifier
+Bundle-Activator: com.sap.research.msee.slmtoolbox.uml.Activator
+Bundle-Vendor: SAP
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.eclipse.papyrus.uml.diagram.wizards;bundle-version="0.9.2",
+ org.eclipse.papyrus.infra.core;bundle-version="0.9.2",
+ org.eclipse.papyrus.uml.diagram.common;bundle-version="0.9.2"
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Bundle-ActivationPolicy: lazy

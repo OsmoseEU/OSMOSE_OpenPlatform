@@ -1,0 +1,39 @@
+
+Wed Sep 19 15:54:48 CEST 2012
+================================================================================
+Start of user code 	
+			// template public liveUpdater(editionElement : PropertiesEditionElement, view : View, pec : PropertiesEditionComponent) in widgetControl.mtl module, with the values : horizon editor, GraiGridLevel, GraiGridLevel.
+			//Horizon
+			// TODO ???
+			// template public liveUpdater(editionElement : PropertiesEditionElement, view : View, pec : PropertiesEditionComponent) in widgetControl.mtl module, with the values : periode editor, GraiGridLevel, GraiGridLevel.
+			//Period
+			// TODO ???
+			//End of user code
+Start of user code  for horizon
+			
+			if (Integer.toString(graiGridLevel.getHorizon().getValue()) != null && isAccessible(CoreElementsViewsRepository.GraiGridLevel.Horizon.horizonValue))
+				basePart.setHorizonValue(EEFConverterUtil.convertToString(EcorePackage.Literals.ESTRING, Integer.toString(graiGridLevel.getHorizon().getValue())));
+			
+			if (isAccessible(CoreElementsViewsRepository.GraiGridLevel.Horizon.horizonUnit)){
+				basePart.initHorizonUnit(new GraiGridTimeUnits[] {
+						GraiGridTimeUnits.YEAR,
+						GraiGridTimeUnits.MONTH,
+						GraiGridTimeUnits.WEEK,
+						GraiGridTimeUnits.DAY,
+					}, graiGridLevel.getHorizon().getUnit());
+			}
+			// End of user code
+Start of user code  for period
+			if (Integer.toString(graiGridLevel.getPeriod().getValue()) != null && isAccessible(CoreElementsViewsRepository.GraiGridLevel.Period.periodValue))
+				basePart.setPeriodValue(EEFConverterUtil.convertToString(EcorePackage.Literals.ESTRING, Integer.toString(graiGridLevel.getPeriod().getValue())));
+			
+			if (isAccessible(CoreElementsViewsRepository.GraiGridLevel.Period.periodUnit)){
+				 
+				basePart.initPeriodUnit(new GraiGridTimeUnits[] {
+						GraiGridTimeUnits.YEAR,
+						GraiGridTimeUnits.MONTH,
+						GraiGridTimeUnits.WEEK,
+						GraiGridTimeUnits.DAY,
+					}, graiGridLevel.getPeriod().getUnit());
+			}
+			// End of user code

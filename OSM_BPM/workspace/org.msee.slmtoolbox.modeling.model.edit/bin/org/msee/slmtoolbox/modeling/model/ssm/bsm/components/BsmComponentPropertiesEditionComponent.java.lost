@@ -1,0 +1,30 @@
+
+Tue Jan 29 11:26:42 CET 2013
+================================================================================
+Start of user code
+					@Override
+					public Object[] filter(Viewer viewer, Object parent,
+							Object[] elements) {
+					
+						Object[] out = new Object[bsmComponent.getProduct().getServiceSystem().getProduct().size()];
+						out= bsmComponent.getProduct().getServiceSystem().getProduct().toArray();						
+					
+						return out;
+						
+					}
+					// End of user code
+
+Thu Feb 14 15:52:21 CET 2013
+================================================================================
+Start of user code
+					@Override
+					public Object[] filter(Viewer viewer, Object parent,
+							Object[] elements) {
+					
+						Object[] out = new Object[bsmComponent.getProduct().getServiceSystem().getProduct().size()];
+						out= bsmComponent.getProduct().getServiceSystem().getProduct().toArray();						
+					
+						return out;
+						
+					}
+					// End of user code

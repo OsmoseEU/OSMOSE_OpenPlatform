@@ -1,0 +1,89 @@
+
+Thu May 02 15:37:46 CEST 2013
+================================================================================
+Start of user code  for decision structure BSM
+			// set name
+			String name = (java.lang.String)EEFConverterUtil.createFromString(EcorePackage.Literals.ESTRING, (String)event.getNewValue());
+			ggGraiGrid.setName(name);
+			//data diffuser for name
+			/* Following the change management repository : there is no longer an association between the system and LANG
+			GraiGridDataDiffuser diffuser = new GraiGridDataDiffuser(graiGrid);
+			diffuser.distributeGraiGridName(graiGrid.getId(), name);
+			*/
+			// End of user code
+Start of user code for additional initPart
+			if (ggGraiGrid.getModel() != null && isAccessible(GeneralElementsViewsRepository.GgGraiGrid.Properties.model)) {
+				basePart.setModel(EEFConverterUtil.convertToString(EcorePackage.Literals.ESTRING, ggGraiGrid.getModel().getName()));
+			}
+			// End of user code
+
+Thu May 02 15:46:50 CEST 2013
+================================================================================
+Start of user code  for decision structure BSM
+			// set name
+			String name = (java.lang.String)EEFConverterUtil.createFromString(EcorePackage.Literals.ESTRING, (String)event.getNewValue());
+			ggGraiGrid.setName(name);
+			//data diffuser for name
+			/* Following the change management repository : there is no longer an association between the system and LANG
+			GraiGridDataDiffuser diffuser = new GraiGridDataDiffuser(graiGrid);
+			diffuser.distributeGraiGridName(graiGrid.getId(), name);
+			*/
+			// End of user code
+Start of user code for additional initPart
+			if (ggGraiGrid.getModel() != null && isAccessible(GeneralElementsViewsRepository.GgGraiGrid.Properties.model)) {
+				basePart.setModel(EEFConverterUtil.convertToString(EcorePackage.Literals.ESTRING, ggGraiGrid.getModel().getName()));
+			}
+			// End of user code
+
+Thu May 02 16:14:40 CEST 2013
+================================================================================
+Start of user code  for decision structure BSM
+			// set name
+			String name = (java.lang.String)EEFConverterUtil.createFromString(EcorePackage.Literals.ESTRING, (String)event.getNewValue());
+			ggGraiGrid.setName(name);
+			//data diffuser for name
+			/* Following the change management repository : there is no longer an association between the system and LANG
+			GraiGridDataDiffuser diffuser = new GraiGridDataDiffuser(graiGrid);
+			diffuser.distributeGraiGridName(graiGrid.getId(), name);
+			*/
+			// End of user code
+Start of user code for additional initPart
+			if (ggGraiGrid.getModel() != null && isAccessible(GeneralElementsViewsRepository.GgGraiGrid.Properties.model)) {
+				basePart.setModel(EEFConverterUtil.convertToString(EcorePackage.Literals.ESTRING, ggGraiGrid.getModel().getName()));
+			}
+			// End of user code
+
+Fri May 03 10:07:24 CEST 2013
+================================================================================
+Start of user code  for decision structure BSM
+			// set name
+			String name = (java.lang.String)EEFConverterUtil.createFromString(EcorePackage.Literals.ESTRING, (String)event.getNewValue());
+			ggGraiGrid.setName(name);
+			//data diffuser for name
+			/* Following the change management repository : there is no longer an association between the system and LANG
+			GraiGridDataDiffuser diffuser = new GraiGridDataDiffuser(graiGrid);
+			diffuser.distributeGraiGridName(graiGrid.getId(), name);
+			*/
+			// End of user code
+Start of user code for additional initPart
+			if (ggGraiGrid.getModel() != null && isAccessible(GeneralElementsViewsRepository.GgGraiGrid.Properties.model)) {
+				basePart.setModel(EEFConverterUtil.convertToString(EcorePackage.Literals.ESTRING, ggGraiGrid.getModel().getName()));
+			}
+			// End of user code
+
+Tue Jun 11 11:08:16 CEST 2013
+================================================================================
+Start of user code  for decision structure BSM
+			// set name
+			String name = (java.lang.String)EEFConverterUtil.createFromString(EcorePackage.Literals.ESTRING, (String)event.getNewValue());
+			ggGraiGrid.setName(name);
+			//data diffuser for name
+			/* Following the change management repository : there is no longer an association between the system and LANG
+			GraiGridDataDiffuser diffuser = new GraiGridDataDiffuser(graiGrid);
+			diffuser.distributeGraiGridName(graiGrid.getId(), name);
+			*/
+			// End of user code
+Start of user code for additional businessfilters for organizations
+				// End of user code
+Start of user code for additional businessfilters for functions
+				// End of user code

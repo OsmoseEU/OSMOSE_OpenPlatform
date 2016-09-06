@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="ASCII"?>
+<org.msee.slmtoolbox.modeling.model.ssm.bsm:BsmModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:org.msee.slmtoolbox.modeling.model.ssm.bsm="http://org/msee/slmtoolbox/modeling/model/ssm/bsm.ecore" id="BsmModelImpl_e3228562-7856-4a54-b4b7-8758c9ef5a50" name="Uninova" resources="BsmResourceImpl_f6cc32a0-954f-4578-bc9e-54a0820b1eff BsmResourceImpl_25bfa145-0aa4-4060-bf8f-421e8de52fc4">
+  <service id="BsmServiceImpl_864689af-0269-416e-98b1-62b8f89cdce3" name="Uninova" resources="BsmResourceImpl_f6cc32a0-954f-4578-bc9e-54a0820b1eff BsmResourceImpl_25bfa145-0aa4-4060-bf8f-421e8de52fc4" processes="BsmProcessImpl_e6a55ecd-733f-476a-9c30-7049d3c1ed26"/>
+  <organizations xsi:type="org.msee.slmtoolbox.modeling.model.ssm.bsm:BsmEnterprise" id="BsmEnterpriseImpl_b871b806-8fc8-4fef-ae27-da18a0aa61a1" name="Uninova">
+    <resources id="BsmResourceImpl_f6cc32a0-954f-4578-bc9e-54a0820b1eff" name="Pedro" type="human" service="BsmServiceImpl_864689af-0269-416e-98b1-62b8f89cdce3" bsmModel="BsmModelImpl_e3228562-7856-4a54-b4b7-8758c9ef5a50"/>
+    <resources id="BsmResourceImpl_25bfa145-0aa4-4060-bf8f-421e8de52fc4" service="BsmServiceImpl_864689af-0269-416e-98b1-62b8f89cdce3" bsmModel="BsmModelImpl_e3228562-7856-4a54-b4b7-8758c9ef5a50"/>
+  </organizations>
+  <processes id="BsmProcessImpl_e6a55ecd-733f-476a-9c30-7049d3c1ed26" service="BsmServiceImpl_864689af-0269-416e-98b1-62b8f89cdce3"/>
+</org.msee.slmtoolbox.modeling.model.ssm.bsm:BsmModel>

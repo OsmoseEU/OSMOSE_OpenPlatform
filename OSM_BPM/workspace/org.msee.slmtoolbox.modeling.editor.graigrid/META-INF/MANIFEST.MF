@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: org.msee.slmtoolbox.modeling.editor.graigrid
+Bundle-SymbolicName: org.msee.slmtoolbox.modeling.editor.graigrid;singleton:=true
+Bundle-Version: 3.0.0
+Bundle-Activator: org.msee.slmtoolbox.modeling.editor.graigrid.Activator
+Require-Bundle: org.msee.slmtoolbox.modeling.editor;bundle-version="2.4.3"
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Bundle-Vendor: http://www.msee-ip.eu

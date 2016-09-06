@@ -1,0 +1,16 @@
+
+Tue Jan 29 11:26:45 CET 2013
+================================================================================
+Start of user code
+		BsmAddDecisionToPerformanceIndicatorDialog dialog = new BsmAddDecisionToPerformanceIndicatorDialog(PlatformUI.getWorkbench().getDisplay().getActiveShell(), decision.getLabelProvider(), (org.msee.slmtoolbox.modeling.model.ssm.bsm.BsmPerformanceIndicator) ((ReferencesTableSettings)this.decision.getInput()).getSource());		
+		dialog.open();
+		decision.refresh();	
+		// End of user code
+
+Thu Feb 14 15:52:23 CET 2013
+================================================================================
+Start of user code
+		BsmAddDecisionToPerformanceIndicatorDialog dialog = new BsmAddDecisionToPerformanceIndicatorDialog(PlatformUI.getWorkbench().getDisplay().getActiveShell(), decision.getLabelProvider(), (org.msee.slmtoolbox.modeling.model.ssm.bsm.BsmPerformanceIndicator) ((ReferencesTableSettings)this.decision.getInput()).getSource());		
+		dialog.open();
+		decision.refresh();	
+		// End of user code

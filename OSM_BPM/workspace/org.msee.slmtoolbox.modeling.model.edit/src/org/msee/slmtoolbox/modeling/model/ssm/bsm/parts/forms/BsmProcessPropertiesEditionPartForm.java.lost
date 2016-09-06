@@ -1,0 +1,8 @@
+
+Fri Feb 21 14:40:54 CET 2014
+================================================================================
+Start of user code
+		BsmAddOrganizationToProcessDialog dialog = new BsmAddOrganizationToProcessDialog(PlatformUI.getWorkbench().getDisplay().getActiveShell(), organizations.getLabelProvider(), (BsmProcess) ((ReferencesTableSettings)this.organizations.getInput()).getSource());		
+		dialog.open();
+		organizations.refresh();	
+		// End of user code

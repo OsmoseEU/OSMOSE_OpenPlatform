@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+<plugin>
+	<extension point="org.eclipse.graphiti.ui.diagramTypes">
+		<diagramType
+		  description="This is the diagram type for Extended Actigram Diagram"
+		  id="org.msee.slmtoolbox.modeling.editor.extact.diagram.ExtActDiagramType"
+		  name="Extended Actigram Diagram Type"
+		  type="eaStar">
+		</diagramType>
+		</extension>
+		<extension point="org.eclipse.graphiti.ui.diagramTypeProviders">
+		<diagramTypeProvider
+		  class="org.msee.slmtoolbox.modeling.editor.eaStar.diagram.EaDiagramTypeProvider"
+		  description="Extended Actigram editor"
+		  id="org.msee.slmtoolbox.modeling.editor.eaStar.diagram.EaDiagramTypeProvider"
+		  name="Extended Actigram editor">
+			<diagramType id="org.msee.slmtoolbox.modeling.editor.extact.diagram.ExtActDiagramType">
+			</diagramType>
+			<imageProvider id="org.msee.slmtoolbox.modeling.editor.extact.ExtActImageProvider">
+			</imageProvider>
+		</diagramTypeProvider>
+	</extension>
+	
+	
+	
+	<extension point="org.eclipse.graphiti.ui.imageProviders">
+		<imageProvider
+		  class="org.msee.slmtoolbox.modeling.editor.eaStar.EaImageProvider"
+		  id="org.msee.slmtoolbox.modeling.editor.extact.ExtActImageProvider">
+		</imageProvider>
+	</extension>
+
+
+
+<extension
+         point="org.eclipse.ui.views.properties.tabbed.propertyContributor">
+      <propertyContributor
+            contributorId="eaStar.PropertyContributor"
+            labelProvider="org.msee.slmtoolbox.modeling.editor.properties.GraphitiLabelProvider">
+         <propertyCategory
+               category="default">
+         </propertyCategory>
+      </propertyContributor>
+   </extension>
+   <extension
+         point="org.eclipse.ui.views.properties.tabbed.propertyTabs">
+      <propertyTabs
+            contributorId="eaStar.PropertyContributor">
+         <propertyTab
+               id="Base"
+               label="Base"
+               category="default">
+         </propertyTab>
+      </propertyTabs>
+   </extension>
+   <extension
+         point="org.eclipse.ui.views.properties.tabbed.propertySections">
+      <propertySections
+            contributorId="eaStar.PropertyContributor">
+         <propertySection
+               class="org.msee.slmtoolbox.modeling.editor.properties.GraphitiPropertyEditionSection"
+               filter="org.msee.slmtoolbox.modeling.editor.eaStar.properties.FlowNodeGraphitiPropertyFilter"
+               id="org.msee.slmtoolbox.modeling.model.lang.eaStar.coreElements"
+               tab="Base">
+         </propertySection>
+      </propertySections>
+   </extension>
+   
+   <!-- Link .eaStar files to GraphitiEditor : BEGIN -->
+    <extension
+         point="org.eclipse.ui.editors">
+ 	  <editor
+          class="org.msee.slmtoolbox.modeling.editor.eaStar.diagram.EaGraphitiDiagramEditor"
+          contributorClass="org.eclipse.graphiti.ui.editor.DiagramEditorActionBarContributor"
+          default="true"
+          extensions="eastar"
+          icon="icons/16/eastar.png"
+          id="org.msee.slmtoolbox.modeling.editor.eaStar.EaDiagramEditor"
+          matchingStrategy="org.eclipse.graphiti.ui.editor.DiagramEditorMatchingStrategy"
+          name="Extended Actigram Star Diagram Editor">
+        
+      </editor>
+   </extension>
+   <!-- Link .eaStar files to GraphitiEditor : END -->
+    
+	<!-- To add commands for Graphiti : BEGIN -->
+	<extension point="org.eclipse.ui.newWizards">
+		<!-- defines the wizard -->
+		<!-- not valuable : descriptionImage ="icons/MSEE_logo.64.png"  -->
+	<wizard
+        category="org.msee.slmtoolbox.modeling.category.bsm"
+        class="org.msee.slmtoolbox.modeling.editor.eaStar.wizards.CreateEAStarWizard"
+        finalPerspective="org.msee.slmtoolbox.modeling.app.perspectives.MSeEPerspective"
+        icon="icons/16/eastar.png"
+        id="org.msee.slmtoolbox.modeling.editor.eaStar.wizards.CreateEAStarWizard"
+        name="Create an Extended Actigram Star Diagram"
+        preferredPerspectives="org.msee.slmtoolbox.modeling.app.perspectives.MSeEPerspective"
+        project="false">
+			<description>
+         		Create an Extended Actigram Star (EA*) model.
+			</description>
+		</wizard>
+		
+	<wizard
+	        category="org.msee.slmtoolbox.modeling.category.tim"
+	        class="org.msee.slmtoolbox.modeling.editor.eaStar.wizards.EaToOsmosisProcessBpmnWizard"
+	        finalPerspective="org.msee.slmtoolbox.modeling.app.perspectives.MSeEPerspective"
+	        icon="icons/EaToBpmn_logo.16.png"
+	        id="org.msee.slmtoolbox.modeling.editor.eaStar.wizards.EaToOsmosisProcessBpmngWizard"
+	        name="Create a BPMN diagram from Eastar diagram (Osmosis Process)"
+	        preferredPerspectives="org.msee.slmtoolbox.modeling.app.perspectives.MSeEPerspective"
+	        project="false">
+			<description>
+         		Transform an EA* model to an osmosis process BPMN2 model.
+			</description> 
+		</wizard>
+		
+	</extension>
+	<!-- To add commands for Graphiti : END -->
+</plugin>

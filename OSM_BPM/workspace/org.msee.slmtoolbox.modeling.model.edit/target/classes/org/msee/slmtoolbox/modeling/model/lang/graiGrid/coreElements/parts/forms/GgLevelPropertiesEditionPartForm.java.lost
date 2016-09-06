@@ -1,0 +1,1672 @@
+
+Thu May 02 15:37:49 CEST 2013
+================================================================================
+Start of user code
+	private Composite createDescriptionForDoubleData(FormToolkit widgetFactory, Composite parent,
+			Object editor, String label) {
+		/**
+		 
+		 Section propertiesSection = widgetFactory.createSection(parent, Section.TITLE_BAR | Section.TWISTIE | Section.EXPANDED);
+		propertiesSection.setText(CoreElementsMessages.GgLevelPropertiesEditionPart_PropertiesGroupLabel);
+		GridData propertiesSectionData = new GridData(GridData.FILL_HORIZONTAL);
+		propertiesSectionData.horizontalSpan = 3;
+		propertiesSection.setLayoutData(propertiesSectionData);
+		Composite propertiesGroup = widgetFactory.createComposite(propertiesSection);
+		GridLayout propertiesGroupLayout = new GridLayout();
+		propertiesGroupLayout.numColumns = 3;
+		propertiesGroup.setLayout(propertiesGroupLayout);
+		propertiesSection.setClient(propertiesGroup);
+		 */
+		createDescription(parent, editor, label);
+		Composite compositeValue = widgetFactory.createComposite(parent, parent.getStyle()|SWT.MAX);
+		GridLayout  layout = new GridLayout(4,true);
+		compositeValue.setLayout(layout);
+		return compositeValue;
+	}
+	// End of user code
+Start of user code for Period
+	protected Composite createPeriod(FormToolkit widgetFactory, Composite parent) {
+		Composite compositeValue = createDescriptionForDoubleData(widgetFactory, parent, CoreElementsViewsRepository.GgLevel.Properties.Period.class, "Period :");
+		
+		createPValueText(widgetFactory, compositeValue);
+		createPUnitEMFComboViewer(widgetFactory, compositeValue);
+		
+		FormUtils.createHelpButton(widgetFactory, parent, propertiesEditionComponent.getHelpContent(CoreElementsViewsRepository.GgLevel.Properties.Period.class, CoreElementsViewsRepository.FORM_KIND), null); //$NON-NLS-1$
+		return parent;
+	}
+	
+	protected Composite createPUnitEMFComboViewer(FormToolkit widgetFactory, Composite parent) {
+		pUnit = new EMFComboViewer(parent);
+		pUnit.setContentProvider(new ArrayContentProvider());
+		pUnit.setLabelProvider(new AdapterFactoryLabelProvider(EEFRuntimePlugin.getDefault().getAdapterFactory()));
+		GridData pUnitData = new GridData(GridData.FILL_HORIZONTAL);
+		pUnit.getCombo().setLayoutData(pUnitData);
+		pUnit.addSelectionChangedListener(new ISelectionChangedListener() {
+
+			/**
+			 * {@inheritDoc}
+			 * 
+			 * @see org.eclipse.jface.viewers.ISelectionChangedListener#selectionChanged(org.eclipse.jface.viewers.SelectionChangedEvent)
+			 * 	
+			 */
+			public void selectionChanged(SelectionChangedEvent event) {
+				if (propertiesEditionComponent != null)
+					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(GgLevelPropertiesEditionPartForm.this, CoreElementsViewsRepository.GgLevel.Properties.Period.pUnit, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, getPUnit()));
+			}
+
+		});
+		pUnit.setID(CoreElementsViewsRepository.GgLevel.Properties.Period.pUnit);
+		FormUtils.createHelpButton(widgetFactory, parent, propertiesEditionComponent.getHelpContent(CoreElementsViewsRepository.GgLevel.Properties.Period.pUnit, CoreElementsViewsRepository.FORM_KIND), null); //$NON-NLS-1$
+		return parent;
+	}
+
+	
+	protected Composite createPValueText(FormToolkit widgetFactory, Composite parent) {
+		pValue = widgetFactory.createText(parent, ""); //$NON-NLS-1$
+		pValue.setData(FormToolkit.KEY_DRAW_BORDER, FormToolkit.TEXT_BORDER);
+		widgetFactory.paintBordersFor(parent);
+		GridData pValueData = new GridData(GridData.FILL_HORIZONTAL);
+		pValue.setLayoutData(pValueData);
+		pValue.addFocusListener(new FocusAdapter() {
+			/**
+			 * @see org.eclipse.swt.events.FocusAdapter#focusLost(org.eclipse.swt.events.FocusEvent)
+			 * 
+			 */
+			@Override
+			@SuppressWarnings("synthetic-access")
+			public void focusLost(FocusEvent e) {
+				if (propertiesEditionComponent != null) {
+					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(
+							GgLevelPropertiesEditionPartForm.this,
+							CoreElementsViewsRepository.GgLevel.Properties.Period.pValue,
+							PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, pValue.getText()));
+					propertiesEditionComponent
+							.firePropertiesChanged(new PropertiesEditionEvent(
+									GgLevelPropertiesEditionPartForm.this,
+									CoreElementsViewsRepository.GgLevel.Properties.Period.pValue,
+									PropertiesEditionEvent.FOCUS_CHANGED, PropertiesEditionEvent.FOCUS_LOST,
+									null, pValue.getText()));
+				}
+			}
+
+			/**
+			 * @see org.eclipse.swt.events.FocusAdapter#focusGained(org.eclipse.swt.events.FocusEvent)
+			 */
+			@Override
+			public void focusGained(FocusEvent e) {
+				if (propertiesEditionComponent != null) {
+					propertiesEditionComponent
+							.firePropertiesChanged(new PropertiesEditionEvent(
+									GgLevelPropertiesEditionPartForm.this,
+									null,
+									PropertiesEditionEvent.FOCUS_CHANGED, PropertiesEditionEvent.FOCUS_GAINED,
+									null, null));
+				}
+			}
+		});
+		pValue.addKeyListener(new KeyAdapter() {
+			/**
+			 * @see org.eclipse.swt.events.KeyAdapter#keyPressed(org.eclipse.swt.events.KeyEvent)
+			 * 
+			 */
+			@Override
+			@SuppressWarnings("synthetic-access")
+			public void keyPressed(KeyEvent e) {
+				if (e.character == SWT.CR) {
+					if (propertiesEditionComponent != null)
+						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(GgLevelPropertiesEditionPartForm.this, CoreElementsViewsRepository.GgLevel.Properties.Period.pValue, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, pValue.getText()));
+				}
+			}
+		});
+		EditingUtils.setID(pValue, CoreElementsViewsRepository.GgLevel.Properties.Period.pValue);
+		EditingUtils.setEEFtype(pValue, "eef::Text"); //$NON-NLS-1$
+		FormUtils.createHelpButton(widgetFactory, parent, propertiesEditionComponent.getHelpContent(CoreElementsViewsRepository.GgLevel.Properties.Period.pValue, CoreElementsViewsRepository.FORM_KIND), null); //$NON-NLS-1$
+		return parent;
+	}
+	// End of user code
+Start of user code for ProcessingUnit
+	protected Composite createProcessingUnit(FormToolkit widgetFactory, Composite parent) {
+		Composite compositeValue = createDescriptionForDoubleData(widgetFactory, parent, CoreElementsViewsRepository.GgLevel.Properties.ProcessingUnit.class, "Processing unit :");
+				
+		createPuValueText(widgetFactory, compositeValue);
+		createPuUnitEMFComboViewer(widgetFactory, compositeValue);
+		
+		FormUtils.createHelpButton(widgetFactory, parent, propertiesEditionComponent.getHelpContent(CoreElementsViewsRepository.GgLevel.Properties.ProcessingUnit.class, CoreElementsViewsRepository.FORM_KIND), null); //$NON-NLS-1$
+		return parent;
+	}
+
+	protected Composite createPuUnitEMFComboViewer(FormToolkit widgetFactory, Composite parent) {
+		puUnit = new EMFComboViewer(parent);
+		puUnit.setContentProvider(new ArrayContentProvider());
+		puUnit.setLabelProvider(new AdapterFactoryLabelProvider(EEFRuntimePlugin.getDefault().getAdapterFactory()));
+		GridData puUnitData = new GridData(GridData.FILL_HORIZONTAL);
+		puUnit.getCombo().setLayoutData(puUnitData);
+		puUnit.addSelectionChangedListener(new ISelectionChangedListener() {
+
+			/**
+			 * {@inheritDoc}
+			 * 
+			 * @see org.eclipse.jface.viewers.ISelectionChangedListener#selectionChanged(org.eclipse.jface.viewers.SelectionChangedEvent)
+			 * 	
+			 */
+			public void selectionChanged(SelectionChangedEvent event) {
+				if (propertiesEditionComponent != null)
+					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(GgLevelPropertiesEditionPartForm.this, CoreElementsViewsRepository.GgLevel.Properties.ProcessingUnit.puUnit, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, getPuUnit()));
+			}
+
+		});
+		puUnit.setID(CoreElementsViewsRepository.GgLevel.Properties.ProcessingUnit.puUnit);
+		FormUtils.createHelpButton(widgetFactory, parent, propertiesEditionComponent.getHelpContent(CoreElementsViewsRepository.GgLevel.Properties.ProcessingUnit.puUnit, CoreElementsViewsRepository.FORM_KIND), null); //$NON-NLS-1$
+		return parent;
+	}
+
+	
+	protected Composite createPuValueText(FormToolkit widgetFactory, Composite parent) {
+		puValue = widgetFactory.createText(parent, ""); //$NON-NLS-1$
+		puValue.setData(FormToolkit.KEY_DRAW_BORDER, FormToolkit.TEXT_BORDER);
+		widgetFactory.paintBordersFor(parent);
+		GridData puValueData = new GridData(GridData.FILL_HORIZONTAL);
+		puValue.setLayoutData(puValueData);
+		puValue.addFocusListener(new FocusAdapter() {
+			/**
+			 * @see org.eclipse.swt.events.FocusAdapter#focusLost(org.eclipse.swt.events.FocusEvent)
+			 * 
+			 */
+			@Override
+			@SuppressWarnings("synthetic-access")
+			public void focusLost(FocusEvent e) {
+				if (propertiesEditionComponent != null) {
+					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(
+							GgLevelPropertiesEditionPartForm.this,
+							CoreElementsViewsRepository.GgLevel.Properties.ProcessingUnit.puValue,
+							PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, puValue.getText()));
+					propertiesEditionComponent
+							.firePropertiesChanged(new PropertiesEditionEvent(
+									GgLevelPropertiesEditionPartForm.this,
+									CoreElementsViewsRepository.GgLevel.Properties.ProcessingUnit.puValue,
+									PropertiesEditionEvent.FOCUS_CHANGED, PropertiesEditionEvent.FOCUS_LOST,
+									null, puValue.getText()));
+				}
+			}
+
+			/**
+			 * @see org.eclipse.swt.events.FocusAdapter#focusGained(org.eclipse.swt.events.FocusEvent)
+			 */
+			@Override
+			public void focusGained(FocusEvent e) {
+				if (propertiesEditionComponent != null) {
+					propertiesEditionComponent
+							.firePropertiesChanged(new PropertiesEditionEvent(
+									GgLevelPropertiesEditionPartForm.this,
+									null,
+									PropertiesEditionEvent.FOCUS_CHANGED, PropertiesEditionEvent.FOCUS_GAINED,
+									null, null));
+				}
+			}
+		});
+		puValue.addKeyListener(new KeyAdapter() {
+			/**
+			 * @see org.eclipse.swt.events.KeyAdapter#keyPressed(org.eclipse.swt.events.KeyEvent)
+			 * 
+			 */
+			@Override
+			@SuppressWarnings("synthetic-access")
+			public void keyPressed(KeyEvent e) {
+				if (e.character == SWT.CR) {
+					if (propertiesEditionComponent != null)
+						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(GgLevelPropertiesEditionPartForm.this, CoreElementsViewsRepository.GgLevel.Properties.ProcessingUnit.puValue, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, puValue.getText()));
+				}
+			}
+		});
+		EditingUtils.setID(puValue, CoreElementsViewsRepository.GgLevel.Properties.ProcessingUnit.puValue);
+		EditingUtils.setEEFtype(puValue, "eef::Text"); //$NON-NLS-1$
+		FormUtils.createHelpButton(widgetFactory, parent, propertiesEditionComponent.getHelpContent(CoreElementsViewsRepository.GgLevel.Properties.ProcessingUnit.puValue, CoreElementsViewsRepository.FORM_KIND), null); //$NON-NLS-1$
+		return parent;
+	}
+
+
+	/**
+	 * {@inheritDoc}
+	 * 
+	 * @see org.eclipse.emf.eef.runtime.api.notify.IPropertiesEditionListener#firePropertiesChanged(org.eclipse.emf.eef.runtime.api.notify.IPropertiesEditionEvent)
+	 * 
+	 */
+	public void firePropertiesChanged(IPropertiesEditionEvent event) {
+		// Start of user code for tab synchronization
+		
+		// End of user code
+Start of user code for Horizon
+	protected Composite createHorizon(FormToolkit widgetFactory, Composite parent) {
+		Composite compositeValue = createDescriptionForDoubleData(widgetFactory, parent, CoreElementsViewsRepository.GgLevel.Properties.Horizon.class, "Horizon :");
+		
+		createHValueText(widgetFactory, compositeValue);
+		createHUnitEMFComboViewer(widgetFactory, compositeValue);
+		
+		FormUtils.createHelpButton(widgetFactory, parent, propertiesEditionComponent.getHelpContent(CoreElementsViewsRepository.GgLevel.Properties.Horizon.class, CoreElementsViewsRepository.FORM_KIND), null); //$NON-NLS-1$
+		return parent;
+	}
+	
+	protected Composite createHUnitEMFComboViewer(FormToolkit widgetFactory, Composite parent) {
+		hUnit = new EMFComboViewer(parent);
+		hUnit.setContentProvider(new ArrayContentProvider());
+		hUnit.setLabelProvider(new AdapterFactoryLabelProvider(EEFRuntimePlugin.getDefault().getAdapterFactory()));
+		GridData hUnitData = new GridData(GridData.FILL_HORIZONTAL);
+		hUnit.getCombo().setLayoutData(hUnitData);
+		hUnit.addSelectionChangedListener(new ISelectionChangedListener() {
+
+			/**
+			 * {@inheritDoc}
+			 * 
+			 * @see org.eclipse.jface.viewers.ISelectionChangedListener#selectionChanged(org.eclipse.jface.viewers.SelectionChangedEvent)
+			 * 	
+			 */
+			public void selectionChanged(SelectionChangedEvent event) {
+				if (propertiesEditionComponent != null)
+					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(GgLevelPropertiesEditionPartForm.this, CoreElementsViewsRepository.GgLevel.Properties.Horizon.hUnit, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, getHUnit()));
+			}
+
+		});
+		hUnit.setID(CoreElementsViewsRepository.GgLevel.Properties.Horizon.hUnit);
+		FormUtils.createHelpButton(widgetFactory, parent, propertiesEditionComponent.getHelpContent(CoreElementsViewsRepository.GgLevel.Properties.Horizon.hUnit, CoreElementsViewsRepository.FORM_KIND), null); //$NON-NLS-1$
+		return parent;
+	}
+
+	
+	protected Composite createHValueText(FormToolkit widgetFactory, Composite parent) {
+		hValue = widgetFactory.createText(parent, ""); //$NON-NLS-1$
+		hValue.setData(FormToolkit.KEY_DRAW_BORDER, FormToolkit.TEXT_BORDER);
+		widgetFactory.paintBordersFor(parent);
+		GridData hValueData = new GridData(GridData.FILL_HORIZONTAL);
+		hValue.setLayoutData(hValueData);
+		hValue.addFocusListener(new FocusAdapter() {
+			/**
+			 * @see org.eclipse.swt.events.FocusAdapter#focusLost(org.eclipse.swt.events.FocusEvent)
+			 * 
+			 */
+			@Override
+			@SuppressWarnings("synthetic-access")
+			public void focusLost(FocusEvent e) {
+				if (propertiesEditionComponent != null) {
+					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(
+							GgLevelPropertiesEditionPartForm.this,
+							CoreElementsViewsRepository.GgLevel.Properties.Horizon.hValue,
+							PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, hValue.getText()));
+					propertiesEditionComponent
+							.firePropertiesChanged(new PropertiesEditionEvent(
+									GgLevelPropertiesEditionPartForm.this,
+									CoreElementsViewsRepository.GgLevel.Properties.Horizon.hValue,
+									PropertiesEditionEvent.FOCUS_CHANGED, PropertiesEditionEvent.FOCUS_LOST,
+									null, hValue.getText()));
+				}
+			}
+
+			/**
+			 * @see org.eclipse.swt.events.FocusAdapter#focusGained(org.eclipse.swt.events.FocusEvent)
+			 */
+			@Override
+			public void focusGained(FocusEvent e) {
+				if (propertiesEditionComponent != null) {
+					propertiesEditionComponent
+							.firePropertiesChanged(new PropertiesEditionEvent(
+									GgLevelPropertiesEditionPartForm.this,
+									null,
+									PropertiesEditionEvent.FOCUS_CHANGED, PropertiesEditionEvent.FOCUS_GAINED,
+									null, null));
+				}
+			}
+		});
+		hValue.addKeyListener(new KeyAdapter() {
+			/**
+			 * @see org.eclipse.swt.events.KeyAdapter#keyPressed(org.eclipse.swt.events.KeyEvent)
+			 * 
+			 */
+			@Override
+			@SuppressWarnings("synthetic-access")
+			public void keyPressed(KeyEvent e) {
+				if (e.character == SWT.CR) {
+					if (propertiesEditionComponent != null)
+						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(GgLevelPropertiesEditionPartForm.this, CoreElementsViewsRepository.GgLevel.Properties.Horizon.hValue, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, hValue.getText()));
+				}
+			}
+		});
+		EditingUtils.setID(hValue, CoreElementsViewsRepository.GgLevel.Properties.Horizon.hValue);
+		EditingUtils.setEEFtype(hValue, "eef::Text"); //$NON-NLS-1$
+		FormUtils.createHelpButton(widgetFactory, parent, propertiesEditionComponent.getHelpContent(CoreElementsViewsRepository.GgLevel.Properties.Horizon.hValue, CoreElementsViewsRepository.FORM_KIND), null); //$NON-NLS-1$
+		return parent;
+	}
+	// End of user code
+
+Thu May 02 15:46:53 CEST 2013
+================================================================================
+Start of user code
+	private Composite createDescriptionForDoubleData(FormToolkit widgetFactory, Composite parent,
+			Object editor, String label) {
+		/**
+		 
+		 Section propertiesSection = widgetFactory.createSection(parent, Section.TITLE_BAR | Section.TWISTIE | Section.EXPANDED);
+		propertiesSection.setText(CoreElementsMessages.GgLevelPropertiesEditionPart_PropertiesGroupLabel);
+		GridData propertiesSectionData = new GridData(GridData.FILL_HORIZONTAL);
+		propertiesSectionData.horizontalSpan = 3;
+		propertiesSection.setLayoutData(propertiesSectionData);
+		Composite propertiesGroup = widgetFactory.createComposite(propertiesSection);
+		GridLayout propertiesGroupLayout = new GridLayout();
+		propertiesGroupLayout.numColumns = 3;
+		propertiesGroup.setLayout(propertiesGroupLayout);
+		propertiesSection.setClient(propertiesGroup);
+		 */
+		createDescription(parent, editor, label);
+		Composite compositeValue = widgetFactory.createComposite(parent, parent.getStyle()|SWT.MAX);
+		GridLayout  layout = new GridLayout(4,true);
+		compositeValue.setLayout(layout);
+		return compositeValue;
+	}
+	// End of user code
+Start of user code for Period
+	protected Composite createPeriod(FormToolkit widgetFactory, Composite parent) {
+		Composite compositeValue = createDescriptionForDoubleData(widgetFactory, parent, CoreElementsViewsRepository.GgLevel.Properties.Period.class, "Period :");
+		
+		createPValueText(widgetFactory, compositeValue);
+		createPUnitEMFComboViewer(widgetFactory, compositeValue);
+		
+		FormUtils.createHelpButton(widgetFactory, parent, propertiesEditionComponent.getHelpContent(CoreElementsViewsRepository.GgLevel.Properties.Period.class, CoreElementsViewsRepository.FORM_KIND), null); //$NON-NLS-1$
+		return parent;
+	}
+	
+	protected Composite createPUnitEMFComboViewer(FormToolkit widgetFactory, Composite parent) {
+		pUnit = new EMFComboViewer(parent);
+		pUnit.setContentProvider(new ArrayContentProvider());
+		pUnit.setLabelProvider(new AdapterFactoryLabelProvider(EEFRuntimePlugin.getDefault().getAdapterFactory()));
+		GridData pUnitData = new GridData(GridData.FILL_HORIZONTAL);
+		pUnit.getCombo().setLayoutData(pUnitData);
+		pUnit.addSelectionChangedListener(new ISelectionChangedListener() {
+
+			/**
+			 * {@inheritDoc}
+			 * 
+			 * @see org.eclipse.jface.viewers.ISelectionChangedListener#selectionChanged(org.eclipse.jface.viewers.SelectionChangedEvent)
+			 * 	
+			 */
+			public void selectionChanged(SelectionChangedEvent event) {
+				if (propertiesEditionComponent != null)
+					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(GgLevelPropertiesEditionPartForm.this, CoreElementsViewsRepository.GgLevel.Properties.Period.pUnit, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, getPUnit()));
+			}
+
+		});
+		pUnit.setID(CoreElementsViewsRepository.GgLevel.Properties.Period.pUnit);
+		FormUtils.createHelpButton(widgetFactory, parent, propertiesEditionComponent.getHelpContent(CoreElementsViewsRepository.GgLevel.Properties.Period.pUnit, CoreElementsViewsRepository.FORM_KIND), null); //$NON-NLS-1$
+		return parent;
+	}
+
+	
+	protected Composite createPValueText(FormToolkit widgetFactory, Composite parent) {
+		pValue = widgetFactory.createText(parent, ""); //$NON-NLS-1$
+		pValue.setData(FormToolkit.KEY_DRAW_BORDER, FormToolkit.TEXT_BORDER);
+		widgetFactory.paintBordersFor(parent);
+		GridData pValueData = new GridData(GridData.FILL_HORIZONTAL);
+		pValue.setLayoutData(pValueData);
+		pValue.addFocusListener(new FocusAdapter() {
+			/**
+			 * @see org.eclipse.swt.events.FocusAdapter#focusLost(org.eclipse.swt.events.FocusEvent)
+			 * 
+			 */
+			@Override
+			@SuppressWarnings("synthetic-access")
+			public void focusLost(FocusEvent e) {
+				if (propertiesEditionComponent != null) {
+					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(
+							GgLevelPropertiesEditionPartForm.this,
+							CoreElementsViewsRepository.GgLevel.Properties.Period.pValue,
+							PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, pValue.getText()));
+					propertiesEditionComponent
+							.firePropertiesChanged(new PropertiesEditionEvent(
+									GgLevelPropertiesEditionPartForm.this,
+									CoreElementsViewsRepository.GgLevel.Properties.Period.pValue,
+									PropertiesEditionEvent.FOCUS_CHANGED, PropertiesEditionEvent.FOCUS_LOST,
+									null, pValue.getText()));
+				}
+			}
+
+			/**
+			 * @see org.eclipse.swt.events.FocusAdapter#focusGained(org.eclipse.swt.events.FocusEvent)
+			 */
+			@Override
+			public void focusGained(FocusEvent e) {
+				if (propertiesEditionComponent != null) {
+					propertiesEditionComponent
+							.firePropertiesChanged(new PropertiesEditionEvent(
+									GgLevelPropertiesEditionPartForm.this,
+									null,
+									PropertiesEditionEvent.FOCUS_CHANGED, PropertiesEditionEvent.FOCUS_GAINED,
+									null, null));
+				}
+			}
+		});
+		pValue.addKeyListener(new KeyAdapter() {
+			/**
+			 * @see org.eclipse.swt.events.KeyAdapter#keyPressed(org.eclipse.swt.events.KeyEvent)
+			 * 
+			 */
+			@Override
+			@SuppressWarnings("synthetic-access")
+			public void keyPressed(KeyEvent e) {
+				if (e.character == SWT.CR) {
+					if (propertiesEditionComponent != null)
+						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(GgLevelPropertiesEditionPartForm.this, CoreElementsViewsRepository.GgLevel.Properties.Period.pValue, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, pValue.getText()));
+				}
+			}
+		});
+		EditingUtils.setID(pValue, CoreElementsViewsRepository.GgLevel.Properties.Period.pValue);
+		EditingUtils.setEEFtype(pValue, "eef::Text"); //$NON-NLS-1$
+		FormUtils.createHelpButton(widgetFactory, parent, propertiesEditionComponent.getHelpContent(CoreElementsViewsRepository.GgLevel.Properties.Period.pValue, CoreElementsViewsRepository.FORM_KIND), null); //$NON-NLS-1$
+		return parent;
+	}
+	// End of user code
+Start of user code for ProcessingUnit
+	protected Composite createProcessingUnit(FormToolkit widgetFactory, Composite parent) {
+		Composite compositeValue = createDescriptionForDoubleData(widgetFactory, parent, CoreElementsViewsRepository.GgLevel.Properties.ProcessingUnit.class, "Processing unit :");
+				
+		createPuValueText(widgetFactory, compositeValue);
+		createPuUnitEMFComboViewer(widgetFactory, compositeValue);
+		
+		FormUtils.createHelpButton(widgetFactory, parent, propertiesEditionComponent.getHelpContent(CoreElementsViewsRepository.GgLevel.Properties.ProcessingUnit.class, CoreElementsViewsRepository.FORM_KIND), null); //$NON-NLS-1$
+		return parent;
+	}
+
+	protected Composite createPuUnitEMFComboViewer(FormToolkit widgetFactory, Composite parent) {
+		puUnit = new EMFComboViewer(parent);
+		puUnit.setContentProvider(new ArrayContentProvider());
+		puUnit.setLabelProvider(new AdapterFactoryLabelProvider(EEFRuntimePlugin.getDefault().getAdapterFactory()));
+		GridData puUnitData = new GridData(GridData.FILL_HORIZONTAL);
+		puUnit.getCombo().setLayoutData(puUnitData);
+		puUnit.addSelectionChangedListener(new ISelectionChangedListener() {
+
+			/**
+			 * {@inheritDoc}
+			 * 
+			 * @see org.eclipse.jface.viewers.ISelectionChangedListener#selectionChanged(org.eclipse.jface.viewers.SelectionChangedEvent)
+			 * 	
+			 */
+			public void selectionChanged(SelectionChangedEvent event) {
+				if (propertiesEditionComponent != null)
+					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(GgLevelPropertiesEditionPartForm.this, CoreElementsViewsRepository.GgLevel.Properties.ProcessingUnit.puUnit, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, getPuUnit()));
+			}
+
+		});
+		puUnit.setID(CoreElementsViewsRepository.GgLevel.Properties.ProcessingUnit.puUnit);
+		FormUtils.createHelpButton(widgetFactory, parent, propertiesEditionComponent.getHelpContent(CoreElementsViewsRepository.GgLevel.Properties.ProcessingUnit.puUnit, CoreElementsViewsRepository.FORM_KIND), null); //$NON-NLS-1$
+		return parent;
+	}
+
+	
+	protected Composite createPuValueText(FormToolkit widgetFactory, Composite parent) {
+		puValue = widgetFactory.createText(parent, ""); //$NON-NLS-1$
+		puValue.setData(FormToolkit.KEY_DRAW_BORDER, FormToolkit.TEXT_BORDER);
+		widgetFactory.paintBordersFor(parent);
+		GridData puValueData = new GridData(GridData.FILL_HORIZONTAL);
+		puValue.setLayoutData(puValueData);
+		puValue.addFocusListener(new FocusAdapter() {
+			/**
+			 * @see org.eclipse.swt.events.FocusAdapter#focusLost(org.eclipse.swt.events.FocusEvent)
+			 * 
+			 */
+			@Override
+			@SuppressWarnings("synthetic-access")
+			public void focusLost(FocusEvent e) {
+				if (propertiesEditionComponent != null) {
+					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(
+							GgLevelPropertiesEditionPartForm.this,
+							CoreElementsViewsRepository.GgLevel.Properties.ProcessingUnit.puValue,
+							PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, puValue.getText()));
+					propertiesEditionComponent
+							.firePropertiesChanged(new PropertiesEditionEvent(
+									GgLevelPropertiesEditionPartForm.this,
+									CoreElementsViewsRepository.GgLevel.Properties.ProcessingUnit.puValue,
+									PropertiesEditionEvent.FOCUS_CHANGED, PropertiesEditionEvent.FOCUS_LOST,
+									null, puValue.getText()));
+				}
+			}
+
+			/**
+			 * @see org.eclipse.swt.events.FocusAdapter#focusGained(org.eclipse.swt.events.FocusEvent)
+			 */
+			@Override
+			public void focusGained(FocusEvent e) {
+				if (propertiesEditionComponent != null) {
+					propertiesEditionComponent
+							.firePropertiesChanged(new PropertiesEditionEvent(
+									GgLevelPropertiesEditionPartForm.this,
+									null,
+									PropertiesEditionEvent.FOCUS_CHANGED, PropertiesEditionEvent.FOCUS_GAINED,
+									null, null));
+				}
+			}
+		});
+		puValue.addKeyListener(new KeyAdapter() {
+			/**
+			 * @see org.eclipse.swt.events.KeyAdapter#keyPressed(org.eclipse.swt.events.KeyEvent)
+			 * 
+			 */
+			@Override
+			@SuppressWarnings("synthetic-access")
+			public void keyPressed(KeyEvent e) {
+				if (e.character == SWT.CR) {
+					if (propertiesEditionComponent != null)
+						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(GgLevelPropertiesEditionPartForm.this, CoreElementsViewsRepository.GgLevel.Properties.ProcessingUnit.puValue, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, puValue.getText()));
+				}
+			}
+		});
+		EditingUtils.setID(puValue, CoreElementsViewsRepository.GgLevel.Properties.ProcessingUnit.puValue);
+		EditingUtils.setEEFtype(puValue, "eef::Text"); //$NON-NLS-1$
+		FormUtils.createHelpButton(widgetFactory, parent, propertiesEditionComponent.getHelpContent(CoreElementsViewsRepository.GgLevel.Properties.ProcessingUnit.puValue, CoreElementsViewsRepository.FORM_KIND), null); //$NON-NLS-1$
+		return parent;
+	}
+
+
+	/**
+	 * {@inheritDoc}
+	 * 
+	 * @see org.eclipse.emf.eef.runtime.api.notify.IPropertiesEditionListener#firePropertiesChanged(org.eclipse.emf.eef.runtime.api.notify.IPropertiesEditionEvent)
+	 * 
+	 */
+	public void firePropertiesChanged(IPropertiesEditionEvent event) {
+		// Start of user code for tab synchronization
+		
+		// End of user code
+Start of user code for Horizon
+	protected Composite createHorizon(FormToolkit widgetFactory, Composite parent) {
+		Composite compositeValue = createDescriptionForDoubleData(widgetFactory, parent, CoreElementsViewsRepository.GgLevel.Properties.Horizon.class, "Horizon :");
+		
+		createHValueText(widgetFactory, compositeValue);
+		createHUnitEMFComboViewer(widgetFactory, compositeValue);
+		
+		FormUtils.createHelpButton(widgetFactory, parent, propertiesEditionComponent.getHelpContent(CoreElementsViewsRepository.GgLevel.Properties.Horizon.class, CoreElementsViewsRepository.FORM_KIND), null); //$NON-NLS-1$
+		return parent;
+	}
+	
+	protected Composite createHUnitEMFComboViewer(FormToolkit widgetFactory, Composite parent) {
+		hUnit = new EMFComboViewer(parent);
+		hUnit.setContentProvider(new ArrayContentProvider());
+		hUnit.setLabelProvider(new AdapterFactoryLabelProvider(EEFRuntimePlugin.getDefault().getAdapterFactory()));
+		GridData hUnitData = new GridData(GridData.FILL_HORIZONTAL);
+		hUnit.getCombo().setLayoutData(hUnitData);
+		hUnit.addSelectionChangedListener(new ISelectionChangedListener() {
+
+			/**
+			 * {@inheritDoc}
+			 * 
+			 * @see org.eclipse.jface.viewers.ISelectionChangedListener#selectionChanged(org.eclipse.jface.viewers.SelectionChangedEvent)
+			 * 	
+			 */
+			public void selectionChanged(SelectionChangedEvent event) {
+				if (propertiesEditionComponent != null)
+					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(GgLevelPropertiesEditionPartForm.this, CoreElementsViewsRepository.GgLevel.Properties.Horizon.hUnit, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, getHUnit()));
+			}
+
+		});
+		hUnit.setID(CoreElementsViewsRepository.GgLevel.Properties.Horizon.hUnit);
+		FormUtils.createHelpButton(widgetFactory, parent, propertiesEditionComponent.getHelpContent(CoreElementsViewsRepository.GgLevel.Properties.Horizon.hUnit, CoreElementsViewsRepository.FORM_KIND), null); //$NON-NLS-1$
+		return parent;
+	}
+
+	
+	protected Composite createHValueText(FormToolkit widgetFactory, Composite parent) {
+		hValue = widgetFactory.createText(parent, ""); //$NON-NLS-1$
+		hValue.setData(FormToolkit.KEY_DRAW_BORDER, FormToolkit.TEXT_BORDER);
+		widgetFactory.paintBordersFor(parent);
+		GridData hValueData = new GridData(GridData.FILL_HORIZONTAL);
+		hValue.setLayoutData(hValueData);
+		hValue.addFocusListener(new FocusAdapter() {
+			/**
+			 * @see org.eclipse.swt.events.FocusAdapter#focusLost(org.eclipse.swt.events.FocusEvent)
+			 * 
+			 */
+			@Override
+			@SuppressWarnings("synthetic-access")
+			public void focusLost(FocusEvent e) {
+				if (propertiesEditionComponent != null) {
+					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(
+							GgLevelPropertiesEditionPartForm.this,
+							CoreElementsViewsRepository.GgLevel.Properties.Horizon.hValue,
+							PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, hValue.getText()));
+					propertiesEditionComponent
+							.firePropertiesChanged(new PropertiesEditionEvent(
+									GgLevelPropertiesEditionPartForm.this,
+									CoreElementsViewsRepository.GgLevel.Properties.Horizon.hValue,
+									PropertiesEditionEvent.FOCUS_CHANGED, PropertiesEditionEvent.FOCUS_LOST,
+									null, hValue.getText()));
+				}
+			}
+
+			/**
+			 * @see org.eclipse.swt.events.FocusAdapter#focusGained(org.eclipse.swt.events.FocusEvent)
+			 */
+			@Override
+			public void focusGained(FocusEvent e) {
+				if (propertiesEditionComponent != null) {
+					propertiesEditionComponent
+							.firePropertiesChanged(new PropertiesEditionEvent(
+									GgLevelPropertiesEditionPartForm.this,
+									null,
+									PropertiesEditionEvent.FOCUS_CHANGED, PropertiesEditionEvent.FOCUS_GAINED,
+									null, null));
+				}
+			}
+		});
+		hValue.addKeyListener(new KeyAdapter() {
+			/**
+			 * @see org.eclipse.swt.events.KeyAdapter#keyPressed(org.eclipse.swt.events.KeyEvent)
+			 * 
+			 */
+			@Override
+			@SuppressWarnings("synthetic-access")
+			public void keyPressed(KeyEvent e) {
+				if (e.character == SWT.CR) {
+					if (propertiesEditionComponent != null)
+						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(GgLevelPropertiesEditionPartForm.this, CoreElementsViewsRepository.GgLevel.Properties.Horizon.hValue, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, hValue.getText()));
+				}
+			}
+		});
+		EditingUtils.setID(hValue, CoreElementsViewsRepository.GgLevel.Properties.Horizon.hValue);
+		EditingUtils.setEEFtype(hValue, "eef::Text"); //$NON-NLS-1$
+		FormUtils.createHelpButton(widgetFactory, parent, propertiesEditionComponent.getHelpContent(CoreElementsViewsRepository.GgLevel.Properties.Horizon.hValue, CoreElementsViewsRepository.FORM_KIND), null); //$NON-NLS-1$
+		return parent;
+	}
+	// End of user code
+
+Thu May 02 16:14:43 CEST 2013
+================================================================================
+Start of user code
+	private Composite createDescriptionForDoubleData(FormToolkit widgetFactory, Composite parent,
+			Object editor, String label) {
+		/**
+		 
+		 Section propertiesSection = widgetFactory.createSection(parent, Section.TITLE_BAR | Section.TWISTIE | Section.EXPANDED);
+		propertiesSection.setText(CoreElementsMessages.GgLevelPropertiesEditionPart_PropertiesGroupLabel);
+		GridData propertiesSectionData = new GridData(GridData.FILL_HORIZONTAL);
+		propertiesSectionData.horizontalSpan = 3;
+		propertiesSection.setLayoutData(propertiesSectionData);
+		Composite propertiesGroup = widgetFactory.createComposite(propertiesSection);
+		GridLayout propertiesGroupLayout = new GridLayout();
+		propertiesGroupLayout.numColumns = 3;
+		propertiesGroup.setLayout(propertiesGroupLayout);
+		propertiesSection.setClient(propertiesGroup);
+		 */
+		createDescription(parent, editor, label);
+		Composite compositeValue = widgetFactory.createComposite(parent, parent.getStyle()|SWT.MAX);
+		GridLayout  layout = new GridLayout(4,true);
+		compositeValue.setLayout(layout);
+		return compositeValue;
+	}
+	// End of user code
+Start of user code for Period
+	protected Composite createPeriod(FormToolkit widgetFactory, Composite parent) {
+		Composite compositeValue = createDescriptionForDoubleData(widgetFactory, parent, CoreElementsViewsRepository.GgLevel.Properties.Period.class, "Period :");
+		
+		createPValueText(widgetFactory, compositeValue);
+		createPUnitEMFComboViewer(widgetFactory, compositeValue);
+		
+		FormUtils.createHelpButton(widgetFactory, parent, propertiesEditionComponent.getHelpContent(CoreElementsViewsRepository.GgLevel.Properties.Period.class, CoreElementsViewsRepository.FORM_KIND), null); //$NON-NLS-1$
+		return parent;
+	}
+	
+	protected Composite createPUnitEMFComboViewer(FormToolkit widgetFactory, Composite parent) {
+		pUnit = new EMFComboViewer(parent);
+		pUnit.setContentProvider(new ArrayContentProvider());
+		pUnit.setLabelProvider(new AdapterFactoryLabelProvider(EEFRuntimePlugin.getDefault().getAdapterFactory()));
+		GridData pUnitData = new GridData(GridData.FILL_HORIZONTAL);
+		pUnit.getCombo().setLayoutData(pUnitData);
+		pUnit.addSelectionChangedListener(new ISelectionChangedListener() {
+
+			/**
+			 * {@inheritDoc}
+			 * 
+			 * @see org.eclipse.jface.viewers.ISelectionChangedListener#selectionChanged(org.eclipse.jface.viewers.SelectionChangedEvent)
+			 * 	
+			 */
+			public void selectionChanged(SelectionChangedEvent event) {
+				if (propertiesEditionComponent != null)
+					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(GgLevelPropertiesEditionPartForm.this, CoreElementsViewsRepository.GgLevel.Properties.Period.pUnit, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, getPUnit()));
+			}
+
+		});
+		pUnit.setID(CoreElementsViewsRepository.GgLevel.Properties.Period.pUnit);
+		FormUtils.createHelpButton(widgetFactory, parent, propertiesEditionComponent.getHelpContent(CoreElementsViewsRepository.GgLevel.Properties.Period.pUnit, CoreElementsViewsRepository.FORM_KIND), null); //$NON-NLS-1$
+		return parent;
+	}
+
+	
+	protected Composite createPValueText(FormToolkit widgetFactory, Composite parent) {
+		pValue = widgetFactory.createText(parent, ""); //$NON-NLS-1$
+		pValue.setData(FormToolkit.KEY_DRAW_BORDER, FormToolkit.TEXT_BORDER);
+		widgetFactory.paintBordersFor(parent);
+		GridData pValueData = new GridData(GridData.FILL_HORIZONTAL);
+		pValue.setLayoutData(pValueData);
+		pValue.addFocusListener(new FocusAdapter() {
+			/**
+			 * @see org.eclipse.swt.events.FocusAdapter#focusLost(org.eclipse.swt.events.FocusEvent)
+			 * 
+			 */
+			@Override
+			@SuppressWarnings("synthetic-access")
+			public void focusLost(FocusEvent e) {
+				if (propertiesEditionComponent != null) {
+					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(
+							GgLevelPropertiesEditionPartForm.this,
+							CoreElementsViewsRepository.GgLevel.Properties.Period.pValue,
+							PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, pValue.getText()));
+					propertiesEditionComponent
+							.firePropertiesChanged(new PropertiesEditionEvent(
+									GgLevelPropertiesEditionPartForm.this,
+									CoreElementsViewsRepository.GgLevel.Properties.Period.pValue,
+									PropertiesEditionEvent.FOCUS_CHANGED, PropertiesEditionEvent.FOCUS_LOST,
+									null, pValue.getText()));
+				}
+			}
+
+			/**
+			 * @see org.eclipse.swt.events.FocusAdapter#focusGained(org.eclipse.swt.events.FocusEvent)
+			 */
+			@Override
+			public void focusGained(FocusEvent e) {
+				if (propertiesEditionComponent != null) {
+					propertiesEditionComponent
+							.firePropertiesChanged(new PropertiesEditionEvent(
+									GgLevelPropertiesEditionPartForm.this,
+									null,
+									PropertiesEditionEvent.FOCUS_CHANGED, PropertiesEditionEvent.FOCUS_GAINED,
+									null, null));
+				}
+			}
+		});
+		pValue.addKeyListener(new KeyAdapter() {
+			/**
+			 * @see org.eclipse.swt.events.KeyAdapter#keyPressed(org.eclipse.swt.events.KeyEvent)
+			 * 
+			 */
+			@Override
+			@SuppressWarnings("synthetic-access")
+			public void keyPressed(KeyEvent e) {
+				if (e.character == SWT.CR) {
+					if (propertiesEditionComponent != null)
+						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(GgLevelPropertiesEditionPartForm.this, CoreElementsViewsRepository.GgLevel.Properties.Period.pValue, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, pValue.getText()));
+				}
+			}
+		});
+		EditingUtils.setID(pValue, CoreElementsViewsRepository.GgLevel.Properties.Period.pValue);
+		EditingUtils.setEEFtype(pValue, "eef::Text"); //$NON-NLS-1$
+		FormUtils.createHelpButton(widgetFactory, parent, propertiesEditionComponent.getHelpContent(CoreElementsViewsRepository.GgLevel.Properties.Period.pValue, CoreElementsViewsRepository.FORM_KIND), null); //$NON-NLS-1$
+		return parent;
+	}
+	// End of user code
+Start of user code for ProcessingUnit
+	protected Composite createProcessingUnit(FormToolkit widgetFactory, Composite parent) {
+		Composite compositeValue = createDescriptionForDoubleData(widgetFactory, parent, CoreElementsViewsRepository.GgLevel.Properties.ProcessingUnit.class, "Processing unit :");
+				
+		createPuValueText(widgetFactory, compositeValue);
+		createPuUnitEMFComboViewer(widgetFactory, compositeValue);
+		
+		FormUtils.createHelpButton(widgetFactory, parent, propertiesEditionComponent.getHelpContent(CoreElementsViewsRepository.GgLevel.Properties.ProcessingUnit.class, CoreElementsViewsRepository.FORM_KIND), null); //$NON-NLS-1$
+		return parent;
+	}
+
+	protected Composite createPuUnitEMFComboViewer(FormToolkit widgetFactory, Composite parent) {
+		puUnit = new EMFComboViewer(parent);
+		puUnit.setContentProvider(new ArrayContentProvider());
+		puUnit.setLabelProvider(new AdapterFactoryLabelProvider(EEFRuntimePlugin.getDefault().getAdapterFactory()));
+		GridData puUnitData = new GridData(GridData.FILL_HORIZONTAL);
+		puUnit.getCombo().setLayoutData(puUnitData);
+		puUnit.addSelectionChangedListener(new ISelectionChangedListener() {
+
+			/**
+			 * {@inheritDoc}
+			 * 
+			 * @see org.eclipse.jface.viewers.ISelectionChangedListener#selectionChanged(org.eclipse.jface.viewers.SelectionChangedEvent)
+			 * 	
+			 */
+			public void selectionChanged(SelectionChangedEvent event) {
+				if (propertiesEditionComponent != null)
+					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(GgLevelPropertiesEditionPartForm.this, CoreElementsViewsRepository.GgLevel.Properties.ProcessingUnit.puUnit, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, getPuUnit()));
+			}
+
+		});
+		puUnit.setID(CoreElementsViewsRepository.GgLevel.Properties.ProcessingUnit.puUnit);
+		FormUtils.createHelpButton(widgetFactory, parent, propertiesEditionComponent.getHelpContent(CoreElementsViewsRepository.GgLevel.Properties.ProcessingUnit.puUnit, CoreElementsViewsRepository.FORM_KIND), null); //$NON-NLS-1$
+		return parent;
+	}
+
+	
+	protected Composite createPuValueText(FormToolkit widgetFactory, Composite parent) {
+		puValue = widgetFactory.createText(parent, ""); //$NON-NLS-1$
+		puValue.setData(FormToolkit.KEY_DRAW_BORDER, FormToolkit.TEXT_BORDER);
+		widgetFactory.paintBordersFor(parent);
+		GridData puValueData = new GridData(GridData.FILL_HORIZONTAL);
+		puValue.setLayoutData(puValueData);
+		puValue.addFocusListener(new FocusAdapter() {
+			/**
+			 * @see org.eclipse.swt.events.FocusAdapter#focusLost(org.eclipse.swt.events.FocusEvent)
+			 * 
+			 */
+			@Override
+			@SuppressWarnings("synthetic-access")
+			public void focusLost(FocusEvent e) {
+				if (propertiesEditionComponent != null) {
+					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(
+							GgLevelPropertiesEditionPartForm.this,
+							CoreElementsViewsRepository.GgLevel.Properties.ProcessingUnit.puValue,
+							PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, puValue.getText()));
+					propertiesEditionComponent
+							.firePropertiesChanged(new PropertiesEditionEvent(
+									GgLevelPropertiesEditionPartForm.this,
+									CoreElementsViewsRepository.GgLevel.Properties.ProcessingUnit.puValue,
+									PropertiesEditionEvent.FOCUS_CHANGED, PropertiesEditionEvent.FOCUS_LOST,
+									null, puValue.getText()));
+				}
+			}
+
+			/**
+			 * @see org.eclipse.swt.events.FocusAdapter#focusGained(org.eclipse.swt.events.FocusEvent)
+			 */
+			@Override
+			public void focusGained(FocusEvent e) {
+				if (propertiesEditionComponent != null) {
+					propertiesEditionComponent
+							.firePropertiesChanged(new PropertiesEditionEvent(
+									GgLevelPropertiesEditionPartForm.this,
+									null,
+									PropertiesEditionEvent.FOCUS_CHANGED, PropertiesEditionEvent.FOCUS_GAINED,
+									null, null));
+				}
+			}
+		});
+		puValue.addKeyListener(new KeyAdapter() {
+			/**
+			 * @see org.eclipse.swt.events.KeyAdapter#keyPressed(org.eclipse.swt.events.KeyEvent)
+			 * 
+			 */
+			@Override
+			@SuppressWarnings("synthetic-access")
+			public void keyPressed(KeyEvent e) {
+				if (e.character == SWT.CR) {
+					if (propertiesEditionComponent != null)
+						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(GgLevelPropertiesEditionPartForm.this, CoreElementsViewsRepository.GgLevel.Properties.ProcessingUnit.puValue, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, puValue.getText()));
+				}
+			}
+		});
+		EditingUtils.setID(puValue, CoreElementsViewsRepository.GgLevel.Properties.ProcessingUnit.puValue);
+		EditingUtils.setEEFtype(puValue, "eef::Text"); //$NON-NLS-1$
+		FormUtils.createHelpButton(widgetFactory, parent, propertiesEditionComponent.getHelpContent(CoreElementsViewsRepository.GgLevel.Properties.ProcessingUnit.puValue, CoreElementsViewsRepository.FORM_KIND), null); //$NON-NLS-1$
+		return parent;
+	}
+
+
+	/**
+	 * {@inheritDoc}
+	 * 
+	 * @see org.eclipse.emf.eef.runtime.api.notify.IPropertiesEditionListener#firePropertiesChanged(org.eclipse.emf.eef.runtime.api.notify.IPropertiesEditionEvent)
+	 * 
+	 */
+	public void firePropertiesChanged(IPropertiesEditionEvent event) {
+		// Start of user code for tab synchronization
+		
+		// End of user code
+Start of user code for Horizon
+	protected Composite createHorizon(FormToolkit widgetFactory, Composite parent) {
+		Composite compositeValue = createDescriptionForDoubleData(widgetFactory, parent, CoreElementsViewsRepository.GgLevel.Properties.Horizon.class, "Horizon :");
+		
+		createHValueText(widgetFactory, compositeValue);
+		createHUnitEMFComboViewer(widgetFactory, compositeValue);
+		
+		FormUtils.createHelpButton(widgetFactory, parent, propertiesEditionComponent.getHelpContent(CoreElementsViewsRepository.GgLevel.Properties.Horizon.class, CoreElementsViewsRepository.FORM_KIND), null); //$NON-NLS-1$
+		return parent;
+	}
+	
+	protected Composite createHUnitEMFComboViewer(FormToolkit widgetFactory, Composite parent) {
+		hUnit = new EMFComboViewer(parent);
+		hUnit.setContentProvider(new ArrayContentProvider());
+		hUnit.setLabelProvider(new AdapterFactoryLabelProvider(EEFRuntimePlugin.getDefault().getAdapterFactory()));
+		GridData hUnitData = new GridData(GridData.FILL_HORIZONTAL);
+		hUnit.getCombo().setLayoutData(hUnitData);
+		hUnit.addSelectionChangedListener(new ISelectionChangedListener() {
+
+			/**
+			 * {@inheritDoc}
+			 * 
+			 * @see org.eclipse.jface.viewers.ISelectionChangedListener#selectionChanged(org.eclipse.jface.viewers.SelectionChangedEvent)
+			 * 	
+			 */
+			public void selectionChanged(SelectionChangedEvent event) {
+				if (propertiesEditionComponent != null)
+					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(GgLevelPropertiesEditionPartForm.this, CoreElementsViewsRepository.GgLevel.Properties.Horizon.hUnit, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, getHUnit()));
+			}
+
+		});
+		hUnit.setID(CoreElementsViewsRepository.GgLevel.Properties.Horizon.hUnit);
+		FormUtils.createHelpButton(widgetFactory, parent, propertiesEditionComponent.getHelpContent(CoreElementsViewsRepository.GgLevel.Properties.Horizon.hUnit, CoreElementsViewsRepository.FORM_KIND), null); //$NON-NLS-1$
+		return parent;
+	}
+
+	
+	protected Composite createHValueText(FormToolkit widgetFactory, Composite parent) {
+		hValue = widgetFactory.createText(parent, ""); //$NON-NLS-1$
+		hValue.setData(FormToolkit.KEY_DRAW_BORDER, FormToolkit.TEXT_BORDER);
+		widgetFactory.paintBordersFor(parent);
+		GridData hValueData = new GridData(GridData.FILL_HORIZONTAL);
+		hValue.setLayoutData(hValueData);
+		hValue.addFocusListener(new FocusAdapter() {
+			/**
+			 * @see org.eclipse.swt.events.FocusAdapter#focusLost(org.eclipse.swt.events.FocusEvent)
+			 * 
+			 */
+			@Override
+			@SuppressWarnings("synthetic-access")
+			public void focusLost(FocusEvent e) {
+				if (propertiesEditionComponent != null) {
+					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(
+							GgLevelPropertiesEditionPartForm.this,
+							CoreElementsViewsRepository.GgLevel.Properties.Horizon.hValue,
+							PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, hValue.getText()));
+					propertiesEditionComponent
+							.firePropertiesChanged(new PropertiesEditionEvent(
+									GgLevelPropertiesEditionPartForm.this,
+									CoreElementsViewsRepository.GgLevel.Properties.Horizon.hValue,
+									PropertiesEditionEvent.FOCUS_CHANGED, PropertiesEditionEvent.FOCUS_LOST,
+									null, hValue.getText()));
+				}
+			}
+
+			/**
+			 * @see org.eclipse.swt.events.FocusAdapter#focusGained(org.eclipse.swt.events.FocusEvent)
+			 */
+			@Override
+			public void focusGained(FocusEvent e) {
+				if (propertiesEditionComponent != null) {
+					propertiesEditionComponent
+							.firePropertiesChanged(new PropertiesEditionEvent(
+									GgLevelPropertiesEditionPartForm.this,
+									null,
+									PropertiesEditionEvent.FOCUS_CHANGED, PropertiesEditionEvent.FOCUS_GAINED,
+									null, null));
+				}
+			}
+		});
+		hValue.addKeyListener(new KeyAdapter() {
+			/**
+			 * @see org.eclipse.swt.events.KeyAdapter#keyPressed(org.eclipse.swt.events.KeyEvent)
+			 * 
+			 */
+			@Override
+			@SuppressWarnings("synthetic-access")
+			public void keyPressed(KeyEvent e) {
+				if (e.character == SWT.CR) {
+					if (propertiesEditionComponent != null)
+						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(GgLevelPropertiesEditionPartForm.this, CoreElementsViewsRepository.GgLevel.Properties.Horizon.hValue, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, hValue.getText()));
+				}
+			}
+		});
+		EditingUtils.setID(hValue, CoreElementsViewsRepository.GgLevel.Properties.Horizon.hValue);
+		EditingUtils.setEEFtype(hValue, "eef::Text"); //$NON-NLS-1$
+		FormUtils.createHelpButton(widgetFactory, parent, propertiesEditionComponent.getHelpContent(CoreElementsViewsRepository.GgLevel.Properties.Horizon.hValue, CoreElementsViewsRepository.FORM_KIND), null); //$NON-NLS-1$
+		return parent;
+	}
+	// End of user code
+
+Fri May 03 10:07:27 CEST 2013
+================================================================================
+Start of user code
+	private Composite createDescriptionForDoubleData(FormToolkit widgetFactory, Composite parent,
+			Object editor, String label) {
+		/**
+		 
+		 Section propertiesSection = widgetFactory.createSection(parent, Section.TITLE_BAR | Section.TWISTIE | Section.EXPANDED);
+		propertiesSection.setText(CoreElementsMessages.GgLevelPropertiesEditionPart_PropertiesGroupLabel);
+		GridData propertiesSectionData = new GridData(GridData.FILL_HORIZONTAL);
+		propertiesSectionData.horizontalSpan = 3;
+		propertiesSection.setLayoutData(propertiesSectionData);
+		Composite propertiesGroup = widgetFactory.createComposite(propertiesSection);
+		GridLayout propertiesGroupLayout = new GridLayout();
+		propertiesGroupLayout.numColumns = 3;
+		propertiesGroup.setLayout(propertiesGroupLayout);
+		propertiesSection.setClient(propertiesGroup);
+		 */
+		createDescription(parent, editor, label);
+		Composite compositeValue = widgetFactory.createComposite(parent, parent.getStyle()|SWT.MAX);
+		GridLayout  layout = new GridLayout(4,true);
+		compositeValue.setLayout(layout);
+		return compositeValue;
+	}
+	// End of user code
+Start of user code for Period
+	protected Composite createPeriod(FormToolkit widgetFactory, Composite parent) {
+		Composite compositeValue = createDescriptionForDoubleData(widgetFactory, parent, CoreElementsViewsRepository.GgLevel.Properties.Period.class, "Period :");
+		
+		createPValueText(widgetFactory, compositeValue);
+		createPUnitEMFComboViewer(widgetFactory, compositeValue);
+		
+		FormUtils.createHelpButton(widgetFactory, parent, propertiesEditionComponent.getHelpContent(CoreElementsViewsRepository.GgLevel.Properties.Period.class, CoreElementsViewsRepository.FORM_KIND), null); //$NON-NLS-1$
+		return parent;
+	}
+	
+	protected Composite createPUnitEMFComboViewer(FormToolkit widgetFactory, Composite parent) {
+		pUnit = new EMFComboViewer(parent);
+		pUnit.setContentProvider(new ArrayContentProvider());
+		pUnit.setLabelProvider(new AdapterFactoryLabelProvider(EEFRuntimePlugin.getDefault().getAdapterFactory()));
+		GridData pUnitData = new GridData(GridData.FILL_HORIZONTAL);
+		pUnit.getCombo().setLayoutData(pUnitData);
+		pUnit.addSelectionChangedListener(new ISelectionChangedListener() {
+
+			/**
+			 * {@inheritDoc}
+			 * 
+			 * @see org.eclipse.jface.viewers.ISelectionChangedListener#selectionChanged(org.eclipse.jface.viewers.SelectionChangedEvent)
+			 * 	
+			 */
+			public void selectionChanged(SelectionChangedEvent event) {
+				if (propertiesEditionComponent != null)
+					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(GgLevelPropertiesEditionPartForm.this, CoreElementsViewsRepository.GgLevel.Properties.Period.pUnit, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, getPUnit()));
+			}
+
+		});
+		pUnit.setID(CoreElementsViewsRepository.GgLevel.Properties.Period.pUnit);
+		FormUtils.createHelpButton(widgetFactory, parent, propertiesEditionComponent.getHelpContent(CoreElementsViewsRepository.GgLevel.Properties.Period.pUnit, CoreElementsViewsRepository.FORM_KIND), null); //$NON-NLS-1$
+		return parent;
+	}
+
+	
+	protected Composite createPValueText(FormToolkit widgetFactory, Composite parent) {
+		pValue = widgetFactory.createText(parent, ""); //$NON-NLS-1$
+		pValue.setData(FormToolkit.KEY_DRAW_BORDER, FormToolkit.TEXT_BORDER);
+		widgetFactory.paintBordersFor(parent);
+		GridData pValueData = new GridData(GridData.FILL_HORIZONTAL);
+		pValue.setLayoutData(pValueData);
+		pValue.addFocusListener(new FocusAdapter() {
+			/**
+			 * @see org.eclipse.swt.events.FocusAdapter#focusLost(org.eclipse.swt.events.FocusEvent)
+			 * 
+			 */
+			@Override
+			@SuppressWarnings("synthetic-access")
+			public void focusLost(FocusEvent e) {
+				if (propertiesEditionComponent != null) {
+					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(
+							GgLevelPropertiesEditionPartForm.this,
+							CoreElementsViewsRepository.GgLevel.Properties.Period.pValue,
+							PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, pValue.getText()));
+					propertiesEditionComponent
+							.firePropertiesChanged(new PropertiesEditionEvent(
+									GgLevelPropertiesEditionPartForm.this,
+									CoreElementsViewsRepository.GgLevel.Properties.Period.pValue,
+									PropertiesEditionEvent.FOCUS_CHANGED, PropertiesEditionEvent.FOCUS_LOST,
+									null, pValue.getText()));
+				}
+			}
+
+			/**
+			 * @see org.eclipse.swt.events.FocusAdapter#focusGained(org.eclipse.swt.events.FocusEvent)
+			 */
+			@Override
+			public void focusGained(FocusEvent e) {
+				if (propertiesEditionComponent != null) {
+					propertiesEditionComponent
+							.firePropertiesChanged(new PropertiesEditionEvent(
+									GgLevelPropertiesEditionPartForm.this,
+									null,
+									PropertiesEditionEvent.FOCUS_CHANGED, PropertiesEditionEvent.FOCUS_GAINED,
+									null, null));
+				}
+			}
+		});
+		pValue.addKeyListener(new KeyAdapter() {
+			/**
+			 * @see org.eclipse.swt.events.KeyAdapter#keyPressed(org.eclipse.swt.events.KeyEvent)
+			 * 
+			 */
+			@Override
+			@SuppressWarnings("synthetic-access")
+			public void keyPressed(KeyEvent e) {
+				if (e.character == SWT.CR) {
+					if (propertiesEditionComponent != null)
+						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(GgLevelPropertiesEditionPartForm.this, CoreElementsViewsRepository.GgLevel.Properties.Period.pValue, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, pValue.getText()));
+				}
+			}
+		});
+		EditingUtils.setID(pValue, CoreElementsViewsRepository.GgLevel.Properties.Period.pValue);
+		EditingUtils.setEEFtype(pValue, "eef::Text"); //$NON-NLS-1$
+		FormUtils.createHelpButton(widgetFactory, parent, propertiesEditionComponent.getHelpContent(CoreElementsViewsRepository.GgLevel.Properties.Period.pValue, CoreElementsViewsRepository.FORM_KIND), null); //$NON-NLS-1$
+		return parent;
+	}
+	// End of user code
+Start of user code for ProcessingUnit
+	protected Composite createProcessingUnit(FormToolkit widgetFactory, Composite parent) {
+		Composite compositeValue = createDescriptionForDoubleData(widgetFactory, parent, CoreElementsViewsRepository.GgLevel.Properties.ProcessingUnit.class, "Processing unit :");
+				
+		createPuValueText(widgetFactory, compositeValue);
+		createPuUnitEMFComboViewer(widgetFactory, compositeValue);
+		
+		FormUtils.createHelpButton(widgetFactory, parent, propertiesEditionComponent.getHelpContent(CoreElementsViewsRepository.GgLevel.Properties.ProcessingUnit.class, CoreElementsViewsRepository.FORM_KIND), null); //$NON-NLS-1$
+		return parent;
+	}
+
+	protected Composite createPuUnitEMFComboViewer(FormToolkit widgetFactory, Composite parent) {
+		puUnit = new EMFComboViewer(parent);
+		puUnit.setContentProvider(new ArrayContentProvider());
+		puUnit.setLabelProvider(new AdapterFactoryLabelProvider(EEFRuntimePlugin.getDefault().getAdapterFactory()));
+		GridData puUnitData = new GridData(GridData.FILL_HORIZONTAL);
+		puUnit.getCombo().setLayoutData(puUnitData);
+		puUnit.addSelectionChangedListener(new ISelectionChangedListener() {
+
+			/**
+			 * {@inheritDoc}
+			 * 
+			 * @see org.eclipse.jface.viewers.ISelectionChangedListener#selectionChanged(org.eclipse.jface.viewers.SelectionChangedEvent)
+			 * 	
+			 */
+			public void selectionChanged(SelectionChangedEvent event) {
+				if (propertiesEditionComponent != null)
+					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(GgLevelPropertiesEditionPartForm.this, CoreElementsViewsRepository.GgLevel.Properties.ProcessingUnit.puUnit, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, getPuUnit()));
+			}
+
+		});
+		puUnit.setID(CoreElementsViewsRepository.GgLevel.Properties.ProcessingUnit.puUnit);
+		FormUtils.createHelpButton(widgetFactory, parent, propertiesEditionComponent.getHelpContent(CoreElementsViewsRepository.GgLevel.Properties.ProcessingUnit.puUnit, CoreElementsViewsRepository.FORM_KIND), null); //$NON-NLS-1$
+		return parent;
+	}
+
+	
+	protected Composite createPuValueText(FormToolkit widgetFactory, Composite parent) {
+		puValue = widgetFactory.createText(parent, ""); //$NON-NLS-1$
+		puValue.setData(FormToolkit.KEY_DRAW_BORDER, FormToolkit.TEXT_BORDER);
+		widgetFactory.paintBordersFor(parent);
+		GridData puValueData = new GridData(GridData.FILL_HORIZONTAL);
+		puValue.setLayoutData(puValueData);
+		puValue.addFocusListener(new FocusAdapter() {
+			/**
+			 * @see org.eclipse.swt.events.FocusAdapter#focusLost(org.eclipse.swt.events.FocusEvent)
+			 * 
+			 */
+			@Override
+			@SuppressWarnings("synthetic-access")
+			public void focusLost(FocusEvent e) {
+				if (propertiesEditionComponent != null) {
+					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(
+							GgLevelPropertiesEditionPartForm.this,
+							CoreElementsViewsRepository.GgLevel.Properties.ProcessingUnit.puValue,
+							PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, puValue.getText()));
+					propertiesEditionComponent
+							.firePropertiesChanged(new PropertiesEditionEvent(
+									GgLevelPropertiesEditionPartForm.this,
+									CoreElementsViewsRepository.GgLevel.Properties.ProcessingUnit.puValue,
+									PropertiesEditionEvent.FOCUS_CHANGED, PropertiesEditionEvent.FOCUS_LOST,
+									null, puValue.getText()));
+				}
+			}
+
+			/**
+			 * @see org.eclipse.swt.events.FocusAdapter#focusGained(org.eclipse.swt.events.FocusEvent)
+			 */
+			@Override
+			public void focusGained(FocusEvent e) {
+				if (propertiesEditionComponent != null) {
+					propertiesEditionComponent
+							.firePropertiesChanged(new PropertiesEditionEvent(
+									GgLevelPropertiesEditionPartForm.this,
+									null,
+									PropertiesEditionEvent.FOCUS_CHANGED, PropertiesEditionEvent.FOCUS_GAINED,
+									null, null));
+				}
+			}
+		});
+		puValue.addKeyListener(new KeyAdapter() {
+			/**
+			 * @see org.eclipse.swt.events.KeyAdapter#keyPressed(org.eclipse.swt.events.KeyEvent)
+			 * 
+			 */
+			@Override
+			@SuppressWarnings("synthetic-access")
+			public void keyPressed(KeyEvent e) {
+				if (e.character == SWT.CR) {
+					if (propertiesEditionComponent != null)
+						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(GgLevelPropertiesEditionPartForm.this, CoreElementsViewsRepository.GgLevel.Properties.ProcessingUnit.puValue, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, puValue.getText()));
+				}
+			}
+		});
+		EditingUtils.setID(puValue, CoreElementsViewsRepository.GgLevel.Properties.ProcessingUnit.puValue);
+		EditingUtils.setEEFtype(puValue, "eef::Text"); //$NON-NLS-1$
+		FormUtils.createHelpButton(widgetFactory, parent, propertiesEditionComponent.getHelpContent(CoreElementsViewsRepository.GgLevel.Properties.ProcessingUnit.puValue, CoreElementsViewsRepository.FORM_KIND), null); //$NON-NLS-1$
+		return parent;
+	}
+
+
+	/**
+	 * {@inheritDoc}
+	 * 
+	 * @see org.eclipse.emf.eef.runtime.api.notify.IPropertiesEditionListener#firePropertiesChanged(org.eclipse.emf.eef.runtime.api.notify.IPropertiesEditionEvent)
+	 * 
+	 */
+	public void firePropertiesChanged(IPropertiesEditionEvent event) {
+		// Start of user code for tab synchronization
+		
+		// End of user code
+Start of user code for Horizon
+	protected Composite createHorizon(FormToolkit widgetFactory, Composite parent) {
+		Composite compositeValue = createDescriptionForDoubleData(widgetFactory, parent, CoreElementsViewsRepository.GgLevel.Properties.Horizon.class, "Horizon :");
+		
+		createHValueText(widgetFactory, compositeValue);
+		createHUnitEMFComboViewer(widgetFactory, compositeValue);
+		
+		FormUtils.createHelpButton(widgetFactory, parent, propertiesEditionComponent.getHelpContent(CoreElementsViewsRepository.GgLevel.Properties.Horizon.class, CoreElementsViewsRepository.FORM_KIND), null); //$NON-NLS-1$
+		return parent;
+	}
+	
+	protected Composite createHUnitEMFComboViewer(FormToolkit widgetFactory, Composite parent) {
+		hUnit = new EMFComboViewer(parent);
+		hUnit.setContentProvider(new ArrayContentProvider());
+		hUnit.setLabelProvider(new AdapterFactoryLabelProvider(EEFRuntimePlugin.getDefault().getAdapterFactory()));
+		GridData hUnitData = new GridData(GridData.FILL_HORIZONTAL);
+		hUnit.getCombo().setLayoutData(hUnitData);
+		hUnit.addSelectionChangedListener(new ISelectionChangedListener() {
+
+			/**
+			 * {@inheritDoc}
+			 * 
+			 * @see org.eclipse.jface.viewers.ISelectionChangedListener#selectionChanged(org.eclipse.jface.viewers.SelectionChangedEvent)
+			 * 	
+			 */
+			public void selectionChanged(SelectionChangedEvent event) {
+				if (propertiesEditionComponent != null)
+					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(GgLevelPropertiesEditionPartForm.this, CoreElementsViewsRepository.GgLevel.Properties.Horizon.hUnit, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, getHUnit()));
+			}
+
+		});
+		hUnit.setID(CoreElementsViewsRepository.GgLevel.Properties.Horizon.hUnit);
+		FormUtils.createHelpButton(widgetFactory, parent, propertiesEditionComponent.getHelpContent(CoreElementsViewsRepository.GgLevel.Properties.Horizon.hUnit, CoreElementsViewsRepository.FORM_KIND), null); //$NON-NLS-1$
+		return parent;
+	}
+
+	
+	protected Composite createHValueText(FormToolkit widgetFactory, Composite parent) {
+		hValue = widgetFactory.createText(parent, ""); //$NON-NLS-1$
+		hValue.setData(FormToolkit.KEY_DRAW_BORDER, FormToolkit.TEXT_BORDER);
+		widgetFactory.paintBordersFor(parent);
+		GridData hValueData = new GridData(GridData.FILL_HORIZONTAL);
+		hValue.setLayoutData(hValueData);
+		hValue.addFocusListener(new FocusAdapter() {
+			/**
+			 * @see org.eclipse.swt.events.FocusAdapter#focusLost(org.eclipse.swt.events.FocusEvent)
+			 * 
+			 */
+			@Override
+			@SuppressWarnings("synthetic-access")
+			public void focusLost(FocusEvent e) {
+				if (propertiesEditionComponent != null) {
+					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(
+							GgLevelPropertiesEditionPartForm.this,
+							CoreElementsViewsRepository.GgLevel.Properties.Horizon.hValue,
+							PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, hValue.getText()));
+					propertiesEditionComponent
+							.firePropertiesChanged(new PropertiesEditionEvent(
+									GgLevelPropertiesEditionPartForm.this,
+									CoreElementsViewsRepository.GgLevel.Properties.Horizon.hValue,
+									PropertiesEditionEvent.FOCUS_CHANGED, PropertiesEditionEvent.FOCUS_LOST,
+									null, hValue.getText()));
+				}
+			}
+
+			/**
+			 * @see org.eclipse.swt.events.FocusAdapter#focusGained(org.eclipse.swt.events.FocusEvent)
+			 */
+			@Override
+			public void focusGained(FocusEvent e) {
+				if (propertiesEditionComponent != null) {
+					propertiesEditionComponent
+							.firePropertiesChanged(new PropertiesEditionEvent(
+									GgLevelPropertiesEditionPartForm.this,
+									null,
+									PropertiesEditionEvent.FOCUS_CHANGED, PropertiesEditionEvent.FOCUS_GAINED,
+									null, null));
+				}
+			}
+		});
+		hValue.addKeyListener(new KeyAdapter() {
+			/**
+			 * @see org.eclipse.swt.events.KeyAdapter#keyPressed(org.eclipse.swt.events.KeyEvent)
+			 * 
+			 */
+			@Override
+			@SuppressWarnings("synthetic-access")
+			public void keyPressed(KeyEvent e) {
+				if (e.character == SWT.CR) {
+					if (propertiesEditionComponent != null)
+						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(GgLevelPropertiesEditionPartForm.this, CoreElementsViewsRepository.GgLevel.Properties.Horizon.hValue, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, hValue.getText()));
+				}
+			}
+		});
+		EditingUtils.setID(hValue, CoreElementsViewsRepository.GgLevel.Properties.Horizon.hValue);
+		EditingUtils.setEEFtype(hValue, "eef::Text"); //$NON-NLS-1$
+		FormUtils.createHelpButton(widgetFactory, parent, propertiesEditionComponent.getHelpContent(CoreElementsViewsRepository.GgLevel.Properties.Horizon.hValue, CoreElementsViewsRepository.FORM_KIND), null); //$NON-NLS-1$
+		return parent;
+	}
+	// End of user code
+
+Tue Jun 11 11:08:19 CEST 2013
+================================================================================
+Start of user code
+	private Composite createDescriptionForDoubleData(FormToolkit widgetFactory, Composite parent,
+			Object editor, String label) {
+		createDescription(parent, editor, label);
+		Composite compositeValue = widgetFactory.createComposite(parent, parent.getStyle()|SWT.MAX);
+		GridLayout  layout = new GridLayout(4,true);
+		compositeValue.setLayout(layout);
+		return compositeValue;
+	}
+	// End of user code
+Start of user code for Period
+	protected Composite createPeriod(FormToolkit widgetFactory, Composite parent) {
+		Composite compositeValue = createDescriptionForDoubleData(widgetFactory, parent, CoreElementsViewsRepository.GgLevel.Properties.Period.class, "Period :");
+		
+		createPValueText(widgetFactory, compositeValue);
+		createPUnitEMFComboViewer(widgetFactory, compositeValue);
+		
+		FormUtils.createHelpButton(widgetFactory, parent, propertiesEditionComponent.getHelpContent(CoreElementsViewsRepository.GgLevel.Properties.Period.class, CoreElementsViewsRepository.FORM_KIND), null); //$NON-NLS-1$
+		return parent;
+	}
+	
+	protected Composite createPUnitEMFComboViewer(FormToolkit widgetFactory, Composite parent) {
+		pUnit = new EMFComboViewer(parent);
+		pUnit.setContentProvider(new ArrayContentProvider());
+		pUnit.setLabelProvider(new AdapterFactoryLabelProvider(EEFRuntimePlugin.getDefault().getAdapterFactory()));
+		GridData pUnitData = new GridData(GridData.FILL_HORIZONTAL);
+		pUnit.getCombo().setLayoutData(pUnitData);
+		pUnit.addSelectionChangedListener(new ISelectionChangedListener() {
+
+			/**
+			 * {@inheritDoc}
+			 * 
+			 * @see org.eclipse.jface.viewers.ISelectionChangedListener#selectionChanged(org.eclipse.jface.viewers.SelectionChangedEvent)
+			 * 	
+			 */
+			public void selectionChanged(SelectionChangedEvent event) {
+				if (propertiesEditionComponent != null)
+					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(GgLevelPropertiesEditionPartForm.this, CoreElementsViewsRepository.GgLevel.Properties.Period.pUnit, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, getPUnit()));
+			}
+
+		});
+		pUnit.setID(CoreElementsViewsRepository.GgLevel.Properties.Period.pUnit);
+		FormUtils.createHelpButton(widgetFactory, parent, propertiesEditionComponent.getHelpContent(CoreElementsViewsRepository.GgLevel.Properties.Period.pUnit, CoreElementsViewsRepository.FORM_KIND), null); //$NON-NLS-1$
+		return parent;
+	}
+
+	
+	protected Composite createPValueText(FormToolkit widgetFactory, Composite parent) {
+		pValue = widgetFactory.createText(parent, ""); //$NON-NLS-1$
+		pValue.setData(FormToolkit.KEY_DRAW_BORDER, FormToolkit.TEXT_BORDER);
+		widgetFactory.paintBordersFor(parent);
+		GridData pValueData = new GridData(GridData.FILL_HORIZONTAL);
+		pValue.setLayoutData(pValueData);
+		pValue.addFocusListener(new FocusAdapter() {
+			/**
+			 * @see org.eclipse.swt.events.FocusAdapter#focusLost(org.eclipse.swt.events.FocusEvent)
+			 * 
+			 */
+			@Override
+			@SuppressWarnings("synthetic-access")
+			public void focusLost(FocusEvent e) {
+				if (propertiesEditionComponent != null) {
+					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(
+							GgLevelPropertiesEditionPartForm.this,
+							CoreElementsViewsRepository.GgLevel.Properties.Period.pValue,
+							PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, pValue.getText()));
+					propertiesEditionComponent
+							.firePropertiesChanged(new PropertiesEditionEvent(
+									GgLevelPropertiesEditionPartForm.this,
+									CoreElementsViewsRepository.GgLevel.Properties.Period.pValue,
+									PropertiesEditionEvent.FOCUS_CHANGED, PropertiesEditionEvent.FOCUS_LOST,
+									null, pValue.getText()));
+				}
+			}
+
+			/**
+			 * @see org.eclipse.swt.events.FocusAdapter#focusGained(org.eclipse.swt.events.FocusEvent)
+			 */
+			@Override
+			public void focusGained(FocusEvent e) {
+				if (propertiesEditionComponent != null) {
+					propertiesEditionComponent
+							.firePropertiesChanged(new PropertiesEditionEvent(
+									GgLevelPropertiesEditionPartForm.this,
+									null,
+									PropertiesEditionEvent.FOCUS_CHANGED, PropertiesEditionEvent.FOCUS_GAINED,
+									null, null));
+				}
+			}
+		});
+		pValue.addKeyListener(new KeyAdapter() {
+			/**
+			 * @see org.eclipse.swt.events.KeyAdapter#keyPressed(org.eclipse.swt.events.KeyEvent)
+			 * 
+			 */
+			@Override
+			@SuppressWarnings("synthetic-access")
+			public void keyPressed(KeyEvent e) {
+				if (e.character == SWT.CR) {
+					if (propertiesEditionComponent != null)
+						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(GgLevelPropertiesEditionPartForm.this, CoreElementsViewsRepository.GgLevel.Properties.Period.pValue, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, pValue.getText()));
+				}
+			}
+		});
+		EditingUtils.setID(pValue, CoreElementsViewsRepository.GgLevel.Properties.Period.pValue);
+		EditingUtils.setEEFtype(pValue, "eef::Text"); //$NON-NLS-1$
+		FormUtils.createHelpButton(widgetFactory, parent, propertiesEditionComponent.getHelpContent(CoreElementsViewsRepository.GgLevel.Properties.Period.pValue, CoreElementsViewsRepository.FORM_KIND), null); //$NON-NLS-1$
+		return parent;
+	}
+	// End of user code
+Start of user code for ProcessingUnit
+	protected Composite createProcessingUnit(FormToolkit widgetFactory, Composite parent) {
+		Composite compositeValue = createDescriptionForDoubleData(widgetFactory, parent, CoreElementsViewsRepository.GgLevel.Properties.ProcessingUnit.class, "Processing unit :");
+				
+		createPuValueText(widgetFactory, compositeValue);
+		createPuUnitEMFComboViewer(widgetFactory, compositeValue);
+		
+		FormUtils.createHelpButton(widgetFactory, parent, propertiesEditionComponent.getHelpContent(CoreElementsViewsRepository.GgLevel.Properties.ProcessingUnit.class, CoreElementsViewsRepository.FORM_KIND), null); //$NON-NLS-1$
+		return parent;
+	}
+
+	protected Composite createPuUnitEMFComboViewer(FormToolkit widgetFactory, Composite parent) {
+		puUnit = new EMFComboViewer(parent);
+		puUnit.setContentProvider(new ArrayContentProvider());
+		puUnit.setLabelProvider(new AdapterFactoryLabelProvider(EEFRuntimePlugin.getDefault().getAdapterFactory()));
+		GridData puUnitData = new GridData(GridData.FILL_HORIZONTAL);
+		puUnit.getCombo().setLayoutData(puUnitData);
+		puUnit.addSelectionChangedListener(new ISelectionChangedListener() {
+
+			/**
+			 * {@inheritDoc}
+			 * 
+			 * @see org.eclipse.jface.viewers.ISelectionChangedListener#selectionChanged(org.eclipse.jface.viewers.SelectionChangedEvent)
+			 * 	
+			 */
+			public void selectionChanged(SelectionChangedEvent event) {
+				if (propertiesEditionComponent != null)
+					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(GgLevelPropertiesEditionPartForm.this, CoreElementsViewsRepository.GgLevel.Properties.ProcessingUnit.puUnit, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, getPuUnit()));
+			}
+
+		});
+		puUnit.setID(CoreElementsViewsRepository.GgLevel.Properties.ProcessingUnit.puUnit);
+		FormUtils.createHelpButton(widgetFactory, parent, propertiesEditionComponent.getHelpContent(CoreElementsViewsRepository.GgLevel.Properties.ProcessingUnit.puUnit, CoreElementsViewsRepository.FORM_KIND), null); //$NON-NLS-1$
+		return parent;
+	}
+
+	
+	protected Composite createPuValueText(FormToolkit widgetFactory, Composite parent) {
+		puValue = widgetFactory.createText(parent, ""); //$NON-NLS-1$
+		puValue.setData(FormToolkit.KEY_DRAW_BORDER, FormToolkit.TEXT_BORDER);
+		widgetFactory.paintBordersFor(parent);
+		GridData puValueData = new GridData(GridData.FILL_HORIZONTAL);
+		puValue.setLayoutData(puValueData);
+		puValue.addFocusListener(new FocusAdapter() {
+			/**
+			 * @see org.eclipse.swt.events.FocusAdapter#focusLost(org.eclipse.swt.events.FocusEvent)
+			 * 
+			 */
+			@Override
+			@SuppressWarnings("synthetic-access")
+			public void focusLost(FocusEvent e) {
+				if (propertiesEditionComponent != null) {
+					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(
+							GgLevelPropertiesEditionPartForm.this,
+							CoreElementsViewsRepository.GgLevel.Properties.ProcessingUnit.puValue,
+							PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, puValue.getText()));
+					propertiesEditionComponent
+							.firePropertiesChanged(new PropertiesEditionEvent(
+									GgLevelPropertiesEditionPartForm.this,
+									CoreElementsViewsRepository.GgLevel.Properties.ProcessingUnit.puValue,
+									PropertiesEditionEvent.FOCUS_CHANGED, PropertiesEditionEvent.FOCUS_LOST,
+									null, puValue.getText()));
+				}
+			}
+
+			/**
+			 * @see org.eclipse.swt.events.FocusAdapter#focusGained(org.eclipse.swt.events.FocusEvent)
+			 */
+			@Override
+			public void focusGained(FocusEvent e) {
+				if (propertiesEditionComponent != null) {
+					propertiesEditionComponent
+							.firePropertiesChanged(new PropertiesEditionEvent(
+									GgLevelPropertiesEditionPartForm.this,
+									null,
+									PropertiesEditionEvent.FOCUS_CHANGED, PropertiesEditionEvent.FOCUS_GAINED,
+									null, null));
+				}
+			}
+		});
+		puValue.addKeyListener(new KeyAdapter() {
+			/**
+			 * @see org.eclipse.swt.events.KeyAdapter#keyPressed(org.eclipse.swt.events.KeyEvent)
+			 * 
+			 */
+			@Override
+			@SuppressWarnings("synthetic-access")
+			public void keyPressed(KeyEvent e) {
+				if (e.character == SWT.CR) {
+					if (propertiesEditionComponent != null)
+						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(GgLevelPropertiesEditionPartForm.this, CoreElementsViewsRepository.GgLevel.Properties.ProcessingUnit.puValue, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, puValue.getText()));
+				}
+			}
+		});
+		EditingUtils.setID(puValue, CoreElementsViewsRepository.GgLevel.Properties.ProcessingUnit.puValue);
+		EditingUtils.setEEFtype(puValue, "eef::Text"); //$NON-NLS-1$
+		FormUtils.createHelpButton(widgetFactory, parent, propertiesEditionComponent.getHelpContent(CoreElementsViewsRepository.GgLevel.Properties.ProcessingUnit.puValue, CoreElementsViewsRepository.FORM_KIND), null); //$NON-NLS-1$
+		return parent;
+	}
+
+
+	/**
+	 * {@inheritDoc}
+	 * 
+	 * @see org.eclipse.emf.eef.runtime.api.notify.IPropertiesEditionListener#firePropertiesChanged(org.eclipse.emf.eef.runtime.api.notify.IPropertiesEditionEvent)
+	 * 
+	 */
+	public void firePropertiesChanged(IPropertiesEditionEvent event) {
+		// Start of user code for tab synchronization
+		
+		// End of user code
+Start of user code for Horizon
+	protected Composite createHorizon(FormToolkit widgetFactory, Composite parent) {
+		Composite compositeValue = createDescriptionForDoubleData(widgetFactory, parent, CoreElementsViewsRepository.GgLevel.Properties.Horizon.class, "Horizon :");
+		
+		createHValueText(widgetFactory, compositeValue);
+		createHUnitEMFComboViewer(widgetFactory, compositeValue);
+		
+		FormUtils.createHelpButton(widgetFactory, parent, propertiesEditionComponent.getHelpContent(CoreElementsViewsRepository.GgLevel.Properties.Horizon.class, CoreElementsViewsRepository.FORM_KIND), null); //$NON-NLS-1$
+		return parent;
+	}
+	
+	protected Composite createHUnitEMFComboViewer(FormToolkit widgetFactory, Composite parent) {
+		hUnit = new EMFComboViewer(parent);
+		hUnit.setContentProvider(new ArrayContentProvider());
+		hUnit.setLabelProvider(new AdapterFactoryLabelProvider(EEFRuntimePlugin.getDefault().getAdapterFactory()));
+		GridData hUnitData = new GridData(GridData.FILL_HORIZONTAL);
+		hUnit.getCombo().setLayoutData(hUnitData);
+		hUnit.addSelectionChangedListener(new ISelectionChangedListener() {
+
+			/**
+			 * {@inheritDoc}
+			 * 
+			 * @see org.eclipse.jface.viewers.ISelectionChangedListener#selectionChanged(org.eclipse.jface.viewers.SelectionChangedEvent)
+			 * 	
+			 */
+			public void selectionChanged(SelectionChangedEvent event) {
+				if (propertiesEditionComponent != null)
+					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(GgLevelPropertiesEditionPartForm.this, CoreElementsViewsRepository.GgLevel.Properties.Horizon.hUnit, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, getHUnit()));
+			}
+
+		});
+		hUnit.setID(CoreElementsViewsRepository.GgLevel.Properties.Horizon.hUnit);
+		FormUtils.createHelpButton(widgetFactory, parent, propertiesEditionComponent.getHelpContent(CoreElementsViewsRepository.GgLevel.Properties.Horizon.hUnit, CoreElementsViewsRepository.FORM_KIND), null); //$NON-NLS-1$
+		return parent;
+	}
+
+	
+	protected Composite createHValueText(FormToolkit widgetFactory, Composite parent) {
+		hValue = widgetFactory.createText(parent, ""); //$NON-NLS-1$
+		hValue.setData(FormToolkit.KEY_DRAW_BORDER, FormToolkit.TEXT_BORDER);
+		widgetFactory.paintBordersFor(parent);
+		GridData hValueData = new GridData(GridData.FILL_HORIZONTAL);
+		hValue.setLayoutData(hValueData);
+		hValue.addFocusListener(new FocusAdapter() {
+			/**
+			 * @see org.eclipse.swt.events.FocusAdapter#focusLost(org.eclipse.swt.events.FocusEvent)
+			 * 
+			 */
+			@Override
+			@SuppressWarnings("synthetic-access")
+			public void focusLost(FocusEvent e) {
+				if (propertiesEditionComponent != null) {
+					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(
+							GgLevelPropertiesEditionPartForm.this,
+							CoreElementsViewsRepository.GgLevel.Properties.Horizon.hValue,
+							PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, hValue.getText()));
+					propertiesEditionComponent
+							.firePropertiesChanged(new PropertiesEditionEvent(
+									GgLevelPropertiesEditionPartForm.this,
+									CoreElementsViewsRepository.GgLevel.Properties.Horizon.hValue,
+									PropertiesEditionEvent.FOCUS_CHANGED, PropertiesEditionEvent.FOCUS_LOST,
+									null, hValue.getText()));
+				}
+			}
+
+			/**
+			 * @see org.eclipse.swt.events.FocusAdapter#focusGained(org.eclipse.swt.events.FocusEvent)
+			 */
+			@Override
+			public void focusGained(FocusEvent e) {
+				if (propertiesEditionComponent != null) {
+					propertiesEditionComponent
+							.firePropertiesChanged(new PropertiesEditionEvent(
+									GgLevelPropertiesEditionPartForm.this,
+									null,
+									PropertiesEditionEvent.FOCUS_CHANGED, PropertiesEditionEvent.FOCUS_GAINED,
+									null, null));
+				}
+			}
+		});
+		hValue.addKeyListener(new KeyAdapter() {
+			/**
+			 * @see org.eclipse.swt.events.KeyAdapter#keyPressed(org.eclipse.swt.events.KeyEvent)
+			 * 
+			 */
+			@Override
+			@SuppressWarnings("synthetic-access")
+			public void keyPressed(KeyEvent e) {
+				if (e.character == SWT.CR) {
+					if (propertiesEditionComponent != null)
+						propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(GgLevelPropertiesEditionPartForm.this, CoreElementsViewsRepository.GgLevel.Properties.Horizon.hValue, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, hValue.getText()));
+				}
+			}
+		});
+		EditingUtils.setID(hValue, CoreElementsViewsRepository.GgLevel.Properties.Horizon.hValue);
+		EditingUtils.setEEFtype(hValue, "eef::Text"); //$NON-NLS-1$
+		FormUtils.createHelpButton(widgetFactory, parent, propertiesEditionComponent.getHelpContent(CoreElementsViewsRepository.GgLevel.Properties.Horizon.hValue, CoreElementsViewsRepository.FORM_KIND), null); //$NON-NLS-1$
+		return parent;
+	}
+	// End of user code

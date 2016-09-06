@@ -1,0 +1,24 @@
+
+Fri Feb 21 14:40:54 CET 2014
+================================================================================
+Start of user code
+		BsmAddProcessToResourceDialog dialog = new BsmAddProcessToResourceDialog(PlatformUI.getWorkbench().getDisplay().getActiveShell(), processes.getLabelProvider(), (BsmResource) ((ReferencesTableSettings)this.processes.getInput()).getSource());		
+		dialog.open();
+		processes.refresh();	
+		// End of user code
+
+Fri Jul 18 14:25:11 CEST 2014
+================================================================================
+Start of user code
+		BsmAddProcessToResourceDialog dialog = new BsmAddProcessToResourceDialog(PlatformUI.getWorkbench().getDisplay().getActiveShell(), processes.getLabelProvider(), (BsmResource) ((ReferencesTableSettings)this.processes.getInput()).getSource());		
+		dialog.open();
+		processes.refresh();	
+		// End of user code
+
+Mon Jul 21 10:01:08 CEST 2014
+================================================================================
+Start of user code
+		BsmAddProcessToResourceDialog dialog = new BsmAddProcessToResourceDialog(PlatformUI.getWorkbench().getDisplay().getActiveShell(), processes.getLabelProvider(), (BsmResource) ((ReferencesTableSettings)this.processes.getInput()).getSource());		
+		dialog.open();
+		processes.refresh();	
+		// End of user code

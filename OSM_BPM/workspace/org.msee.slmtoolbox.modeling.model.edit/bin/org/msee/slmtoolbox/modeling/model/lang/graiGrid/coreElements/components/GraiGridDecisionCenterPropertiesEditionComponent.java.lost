@@ -1,0 +1,22 @@
+
+Thu Sep 20 17:16:53 CEST 2012
+================================================================================
+Start of user code  for decision update BSM
+			// set name
+			String name = (java.lang.String)EEFConverterUtil.createFromString(EcorePackage.Literals.ESTRING, (String)event.getNewValue());
+			graiGridDecisionCenter.setName(name);
+			//data diffuser for name
+			GraiGridDataDiffuser diffuser = new GraiGridDataDiffuser(graiGridDecisionCenter);
+			diffuser.distributeDecisionCenterName(graiGridDecisionCenter.getId(), name);
+			// End of user code
+
+Fri Sep 21 17:08:07 CEST 2012
+================================================================================
+Start of user code  for decision update BSM
+			// set name
+			String name = (java.lang.String)EEFConverterUtil.createFromString(EcorePackage.Literals.ESTRING, (String)event.getNewValue());
+			graiGridDecisionCenter.setName(name);
+			//data diffuser for name
+			GraiGridDataDiffuser diffuser = new GraiGridDataDiffuser(graiGridDecisionCenter);
+			diffuser.distributeDecisionCenterName(graiGridDecisionCenter.getId(), name);
+			// End of user code

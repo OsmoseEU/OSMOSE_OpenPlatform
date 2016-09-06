@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:tns="http://www.jboss.org/drools" xsi:schemaLocation="http://www.omg.org/spec/BPMN/20100524/MODEL BPMN20.xsd http://www.omg.org/spec/DD/20100524/DC http://www.omg.org/spec/DD/20100524/DC-XMI http://www.omg.org/spec/DD/20100524/DI http://www.omg.org/spec/DD/20100524/DI-XMI http://www.omg.org/spec/BPMN/20100524/DI http://www.omg.org/spec/BPMN/20100524/DI-XMI" id="Definition" expressionLanguage="http://www.mvel.org/2.0" targetNamespace="http://www.jboss.org/drools" typeLanguage="http://www.java.com/javaTypes">
+  <process id="com.sample.bpmn" tns:packageName="defaultPackage" name="Sample Process" isExecutable="true" processType="Private">
+    <startEvent id="_1" name="Start">
+      <outgoing>tns:SequenceFlow_1</outgoing>
+    </startEvent>
+    <scriptTask id="ScriptTask_1" name="Script Task 1">
+      <incoming>tns:SequenceFlow_1</incoming>
+      <outgoing>tns:SequenceFlow_2</outgoing>
+      <script>System.out.println('HelloWorld');</script>
+    </scriptTask>
+    <endEvent id="EndEvent_1" name="End">
+      <incoming>tns:SequenceFlow_2</incoming>
+    </endEvent>
+    <sequenceFlow id="SequenceFlow_1" name="Sequence Flow 1" sourceRef="_1" targetRef="ScriptTask_1"/>
+    <sequenceFlow id="SequenceFlow_2" name="Sequence Flow 2" sourceRef="ScriptTask_1" targetRef="EndEvent_1"/>
+  </process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_Process_1" bpmnElement="com.sample.bpmn">
+      <bpmndi:BPMNShape id="BPMNShape_StartEvent_1" bpmnElement="_1">
+        <dc:Bounds height="36.0" width="36.0" x="45.0" y="45.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="BPMNShape_ScriptTask_1" bpmnElement="ScriptTask_1">
+        <dc:Bounds height="50.0" width="110.0" x="160.0" y="38.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="BPMNShape_EndEvent_1" bpmnElement="EndEvent_1">
+        <dc:Bounds height="36.0" width="36.0" x="362.0" y="32.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="BPMNEdge_SequenceFlow_1" bpmnElement="SequenceFlow_1" sourceElement="BPMNShape_StartEvent_1" targetElement="BPMNShape_ScriptTask_1">
+        <di:waypoint xsi:type="dc:Point" x="81.0" y="63.0"/>
+        <di:waypoint xsi:type="dc:Point" x="116.0" y="63.0"/>
+        <di:waypoint xsi:type="dc:Point" x="116.0" y="63.0"/>
+        <di:waypoint xsi:type="dc:Point" x="160.0" y="63.0"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="BPMNEdge_SequenceFlow_2" bpmnElement="SequenceFlow_2" sourceElement="BPMNShape_ScriptTask_1" targetElement="BPMNShape_EndEvent_1">
+        <di:waypoint xsi:type="dc:Point" x="270.0" y="63.0"/>
+        <di:waypoint xsi:type="dc:Point" x="311.0" y="63.0"/>
+        <di:waypoint xsi:type="dc:Point" x="311.0" y="50.0"/>
+        <di:waypoint xsi:type="dc:Point" x="362.0" y="50.0"/>
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</definitions>

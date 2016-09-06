@@ -1,0 +1,12 @@
+
+Thu Sep 20 09:48:30 CEST 2012
+================================================================================
+Start of user code  for horizon
+				basePart.initFlowRole(
+						new EAStarFlowRole[] {
+								EAStarFlowRole.CONTROL,
+								EAStarFlowRole.OUTPUT_INPUT,
+								EAStarFlowRole.SUPPORT,
+						}
+						, eAStarFlow.getFlowRole());
+				// End of user code

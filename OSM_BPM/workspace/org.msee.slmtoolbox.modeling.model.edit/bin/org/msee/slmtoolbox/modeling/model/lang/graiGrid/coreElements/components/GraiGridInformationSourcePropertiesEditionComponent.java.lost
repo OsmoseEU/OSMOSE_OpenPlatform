@@ -1,0 +1,11 @@
+
+Wed Sep 19 15:54:48 CEST 2012
+================================================================================
+Start of user code  for horizon
+				basePart.initInformationSourceType(
+						new GraiGridInformationSourceType[] {
+							GraiGridInformationSourceType.EXTERNAL,
+							GraiGridInformationSourceType.INTERNAL,
+						}
+						, graiGridInformationSource.getInformationSourceType());
+				// End of user code

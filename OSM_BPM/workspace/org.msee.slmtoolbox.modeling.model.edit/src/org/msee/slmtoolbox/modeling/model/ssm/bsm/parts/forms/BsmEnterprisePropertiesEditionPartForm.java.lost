@@ -1,0 +1,8 @@
+
+Fri Feb 21 14:40:55 CET 2014
+================================================================================
+Start of user code
+		BsmAddVeParticipationToEnterpriseDialog dialog = new BsmAddVeParticipationToEnterpriseDialog(PlatformUI.getWorkbench().getDisplay().getActiveShell(), veParticipations.getLabelProvider(), (BsmEnterprise) ((ReferencesTableSettings)this.veParticipations.getInput()).getSource());		
+		dialog.open();
+		veParticipations.refresh();	
+		// End of user code

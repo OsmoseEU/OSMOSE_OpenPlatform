@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="ASCII"?>
+<org.msee.slmtoolbox.modeling.model.ssm.bsm:BsmModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:org.msee.slmtoolbox.modeling.model.ssm.bsm="http://org/msee/slmtoolbox/modeling/model/ssm/bsm.ecore" id="BsmModelImpl_22ca5925-574f-4880-a89c-8e87cd7a367b" name="Test">
+  <service id="BsmServiceImpl_c07713fe-9bce-46af-9cca-ea50230818db" name="uninovaService" processes="BsmProcessImpl_cfb8e333-5d59-48b5-96f8-00b2662423f0"/>
+  <organizations xsi:type="org.msee.slmtoolbox.modeling.model.ssm.bsm:BsmEnterprise" id="BsmEnterpriseImpl_92bf21b2-53a9-46b6-b965-7a332882951e" name="uninova"/>
+  <processes id="BsmProcessImpl_cfb8e333-5d59-48b5-96f8-00b2662423f0" name="TEste" service="BsmServiceImpl_c07713fe-9bce-46af-9cca-ea50230818db"/>
+</org.msee.slmtoolbox.modeling.model.ssm.bsm:BsmModel>

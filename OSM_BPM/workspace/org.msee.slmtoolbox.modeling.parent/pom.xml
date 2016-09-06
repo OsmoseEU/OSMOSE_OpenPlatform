@@ -1,0 +1,91 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>org.msee.slmtoolbox.modeling</groupId>
+	<artifactId>org.msee.slmtoolbox.modeling.parent</artifactId>
+	<version>2.4.3-SNAPSHOT</version>
+	<packaging>pom</packaging>
+
+	<properties>
+		<tycho-version>0.16.0</tycho-version>
+		<externallibdir>c:/temp</externallibdir>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>org.hibernate</artifactId>
+			<version>4.1.1</version>
+			<scope>system</scope>
+			<!-- <type>bundle</type>  -->
+			<systemPath>${externallibdir}/org.hibernate_4.1.1.201210222237.jar</systemPath>
+		</dependency>
+		<dependency>
+			<groupId>org.dom4j</groupId>
+			<artifactId>org.dom4j</artifactId>
+			<version>1.6.1</version>
+			<scope>system</scope>
+			<!--  <type>bundle</type>  -->
+			<systemPath>${externallibdir}/org.dom4j_1.6.1.201210222237.jar</systemPath>
+		</dependency>
+		<dependency>
+			<groupId>com.mysql.jdbc</groupId>
+			<artifactId>com.mysql.jdbc</artifactId>
+			<version>5.1.11</version>
+			<scope>system</scope>
+			<!--  <type>bundle</type>  -->
+			<systemPath>${externallibdir}/com.mysql.jdbc_5.1.11.201210222237.jar</systemPath>
+		</dependency>
+	</dependencies>
+	
+	<repositories>
+		<!-- configure p2 repository to resolve against -->
+		<repository>
+			<id>juno</id>
+			<layout>p2</layout>
+			<url>http://download.eclipse.org/releases/juno/</url>
+		</repository>
+		<repository>
+			<id>teneo</id>
+			<layout>p2</layout>
+			<url>http://download.eclipse.org/modeling/emf/teneo/updates/2.0.0/interim/</url>
+		</repository>
+	</repositories>
+	
+	<build>
+		<plugins>
+			<plugin>
+				<!-- enable tycho build extension -->
+				 <groupId>org.eclipse.tycho</groupId>
+<!--  				<groupId>org.sonatype.tycho</groupId> -->
+				<artifactId>tycho-maven-plugin</artifactId>
+				<version>${tycho-version}</version>
+				<extensions>true</extensions>
+			</plugin>
+			<plugin>
+				<groupId>org.eclipse.tycho</groupId>
+				<artifactId>target-platform-configuration</artifactId>
+				<version>${tycho-version}</version>
+				<configuration>
+					<pomDependencies>consider</pomDependencies>
+				</configuration>
+			</plugin>
+			
+			<!-- 
+			<plugin>
+				<groupId>org.sonatype.tycho</groupId>
+				<artifactId>tycho-p2-director-plugin</artifactId>
+				<version>${tycho-version}</version>
+				<executions>
+					<execution>
+						<id>materialize-products</id>
+						<goals>
+							<goal>materialize-products</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			 -->
+		</plugins>
+	</build>
+</project>

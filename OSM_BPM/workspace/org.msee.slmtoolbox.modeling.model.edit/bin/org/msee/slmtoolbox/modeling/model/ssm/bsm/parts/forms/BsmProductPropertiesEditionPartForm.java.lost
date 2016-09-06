@@ -1,0 +1,16 @@
+
+Tue Jan 29 11:26:45 CET 2013
+================================================================================
+Start of user code
+		BsmAddFunctionalityToProductDialog dialog = new BsmAddFunctionalityToProductDialog(PlatformUI.getWorkbench().getDisplay().getActiveShell(), functionality.getLabelProvider(), (org.msee.slmtoolbox.modeling.model.ssm.bsm.BsmProduct) ((ReferencesTableSettings)this.functionality.getInput()).getSource());		
+		dialog.open();
+		functionality.refresh();
+		// End of user code
+
+Thu Feb 14 15:52:23 CET 2013
+================================================================================
+Start of user code
+		BsmAddFunctionalityToProductDialog dialog = new BsmAddFunctionalityToProductDialog(PlatformUI.getWorkbench().getDisplay().getActiveShell(), functionality.getLabelProvider(), (org.msee.slmtoolbox.modeling.model.ssm.bsm.BsmProduct) ((ReferencesTableSettings)this.functionality.getInput()).getSource());		
+		dialog.open();
+		functionality.refresh();
+		// End of user code

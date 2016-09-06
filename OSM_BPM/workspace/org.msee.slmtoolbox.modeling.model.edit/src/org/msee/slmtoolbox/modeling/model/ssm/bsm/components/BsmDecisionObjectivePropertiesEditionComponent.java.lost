@@ -1,0 +1,15 @@
+
+Fri Feb 21 14:40:51 CET 2014
+================================================================================
+Start of user code
+					@Override
+					public Object[] filter(Viewer viewer, Object parent,
+							Object[] elements) {
+					
+						Object[] out = new Object[bsmDecisionObjective.getDecision().getBsmModel().getDecisions().size()];
+						out= bsmDecisionObjective.getDecision().getBsmModel().getDecisions().toArray();						
+					
+						return out;
+						
+					}
+					// End of user code

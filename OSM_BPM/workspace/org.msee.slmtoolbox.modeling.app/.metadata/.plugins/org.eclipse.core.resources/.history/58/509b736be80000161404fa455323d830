@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:al="http://eclipse.org/graphiti/mm/algorithms" xmlns:org.msee.slmtoolbox.modeling.model.lang.eaStar.root="http://org/msee/slmtoolbox/modeling/model/lang/eaStar.ecore/root" xmlns:org.msee.slmtoolbox.modeling.model.lang.eaStar.root.coreElements="http://org/msee/slmtoolbox/modeling/model/lang/eaStar.ecore/coreElements" xmlns:org.msee.slmtoolbox.modeling.model.lang.eaStar.root.generalElements="http://org/msee/slmtoolbox/modeling/model/lang/eaStar.ecore/generalElements" xmlns:pi="http://eclipse.org/graphiti/mm/pictograms" xmlns:st="http://eclipse.org/graphiti/mm/algorithms/styles" xsi:schemaLocation="http://eclipse.org/graphiti/mm/algorithms http://eclipse.org/graphiti/mm#//algorithms http://eclipse.org/graphiti/mm/pictograms http://eclipse.org/graphiti/mm#//pictograms http://eclipse.org/graphiti/mm/algorithms/styles http://eclipse.org/graphiti/mm#//algorithms/styles">
+  <pi:Diagram visible="true" gridUnit="10" diagramTypeId="eaStar" name="SPLIT" snapToGrid="true" version="0.9.2">
+    <graphicsAlgorithm xmi:type="al:Rectangle" background="/0/@colors.1" foreground="/0/@colors.0" lineWidth="1" transparency="0.0" width="1000" height="1000"/>
+    <link xmi:type="pi:PictogramLink" businessObjects="EaProcessImpl_ceb14744-19d0-42d5-a76f-a3d3fdb502a4"/>
+    <colors xmi:type="st:Color" red="227" green="238" blue="249"/>
+    <colors xmi:type="st:Color" red="255" green="255" blue="255"/>
+  </pi:Diagram>
+  <org.msee.slmtoolbox.modeling.model.lang.eaStar.root:EaModel id="EaModelImpl_676220fa-c4be-4fb0-9ace-1525f620d9f5" name="SPLIT">
+    <process xmi:type="org.msee.slmtoolbox.modeling.model.lang.eaStar.root.generalElements:EaProcess" id="EaProcessImpl_ceb14744-19d0-42d5-a76f-a3d3fdb502a4" name="SPLIT" code="Split" decompositionCode="Split"/>
+    <organizations xmi:type="org.msee.slmtoolbox.modeling.model.lang.eaStar.root.coreElements:EaOrganization" id="EaOrganizationImpl_4d44a4d0-bb57-409c-8ecf-a6be579c512c" name="Uninova"/>
+  </org.msee.slmtoolbox.modeling.model.lang.eaStar.root:EaModel>
+</xmi:XMI>

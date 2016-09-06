@@ -1,0 +1,106 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+ 	<modelVersion>4.0.0</modelVersion>
+	<groupId>org.msee.slmtoolbox.modeling.app</groupId>
+	<artifactId>feature</artifactId>
+	<version>2.4.3</version>
+	<name>NAN - MSEE</name>
+	<packaging>pom</packaging>
+  
+	<properties>
+		<tycho-version>0.15.0</tycho-version>
+	</properties>
+	
+	<repositories>
+		<repository>
+			<id>Juno</id>
+			<layout>p2</layout>
+			<url>http://download.eclipse.org/releases/juno</url>
+		</repository>
+		<repository>
+			<id>Graphiti</id>
+			<layout>p2</layout>
+			<url>http://download.eclipse.org/releases/juno</url>
+		</repository>
+		<repository>
+			<id>CDO</id>
+			<layout>p2</layout>
+			<url>http://download.eclipse.org/modeling/emf/cdo/drops/R20120612-1449/</url>
+		</repository>
+		<repository>
+			<id>EEF</id>
+			<layout>p2</layout>
+			<url>http://download.eclipse.org/modeling/emft/eef/updates/releases</url>
+		</repository>
+		<repository>
+			<id>Teneo</id>
+			<layout>p2</layout>
+			<url>http://download.eclipse.org/modeling/emf/teneo/updates/2.0.0/interim/</url>
+		</repository>
+		<repository>
+			<id>Teneo Dependencies</id>
+			<layout>p2</layout>
+			<url>http://www.elver.org/eclipse/2.0.0/update</url>
+		</repository>
+	</repositories>
+	
+	<build>
+		 <sourceDirectory>${basedir}/src</sourceDirectory>
+		<plugins>
+			<plugin>
+				<groupId>org.eclipse.tycho</groupId>
+				<artifactId>tycho-maven-plugin</artifactId>
+				<version>${tycho-version}</version>
+				<extensions>true</extensions>
+			</plugin>
+			
+			<plugin>
+				<groupId>org.eclipse.tycho</groupId>
+				<artifactId>target-platform-configuration</artifactId>
+				<version>${tycho-version}</version>
+				<configuration>
+					<environments>
+						<!-- environment>
+							<os>linux</os>
+							<ws>gtk</ws>
+							<arch>x86</arch>
+						</environment>
+						<environment>
+							<os>linux</os>
+							<ws>gtk</ws>
+							<arch>x86_64</arch>
+						</environment-->
+						<environment>
+							<os>win32</os>
+							<ws>win32</ws>
+							<arch>x86</arch>
+						</environment>
+						<!--environment>
+							<os>win32</os>
+							<ws>win32</ws>
+							<arch>x86_64</arch>
+						</environment>
+						<environment>
+							<os>macosx</os>
+							<ws>cocoa</ws>
+							<arch>x86_64</arch>
+						</environment-->
+					</environments>
+				</configuration>
+			</plugin>
+			
+			<plugin>
+        <groupId>org.eclipse.tycho</groupId>
+        <artifactId>tycho-source-plugin</artifactId>
+        <version>${tycho-version}</version>
+        <executions>
+          <execution>
+            <id>plugin-source</id>
+            <goals>
+              <goal>plugin-source</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+		</plugins>
+	</build>
+</project>

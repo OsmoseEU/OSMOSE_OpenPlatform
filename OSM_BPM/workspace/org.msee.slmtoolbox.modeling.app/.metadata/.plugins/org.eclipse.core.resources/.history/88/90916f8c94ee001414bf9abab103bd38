@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn2:definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bpmn2="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dcxmi="http://www.omg.org/spec/DD/20100524/DC" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:dixmi="http://www.omg.org/spec/DD/20100524/DI" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:tns="http://www.jboss.org/drools" xmlns:xmi="http://schema.omg.org/spec/XMI" xsi:schemaLocation="http://www.omg.org/spec/BPMN/20100524/MODEL BPMN20.xsd http://www.omg.org/spec/DD/20100524/DC http://www.omg.org/spec/DD/20100524/DC-XMI http://www.omg.org/spec/DD/20100524/DI http://www.omg.org/spec/DD/20100524/DI-XMI http://www.omg.org/spec/BPMN/20100524/DI http://www.omg.org/spec/BPMN/20100524/DI-XMI" id="SNAGArisingAndManagementProcess" expressionLanguage="http://www.mvel.org/2.0" targetNamespace="http://www.jboss.org/drools" typeLanguage="http://www.java.com/javaTypes">
+  <bpmn2:message id="Message_1" name="FeedbackMessage"/>
+  <bpmn2:interface id="Interface_3" name="Interface 3">
+    <bpmn2:operation id="Operation_1" implementationRef="SendFeedback" name="SendFeedback">
+      <bpmn2:outMessageRef>Message_1</bpmn2:outMessageRef>
+    </bpmn2:operation>
+  </bpmn2:interface>
+  <bpmn2:process id="EaProcessImpl_8deb7f3f-b5e3-4ebe-8c74-dd00f7928610" name="SNAGArisingAndManagementProcess">
+    <bpmn2:laneSet id="laneSet_1" name="laneSet">
+      <bpmn2:lane id="EaITResourceImpl_c3750545-a9bd-4dfb-ace9-c06a5e9a55d0" name="OsmosisTotemStation">
+        <bpmn2:flowNodeRef>ReceiveTask_2</bpmn2:flowNodeRef>
+        <bpmn2:flowNodeRef>ServiceTask_1</bpmn2:flowNodeRef>
+        <bpmn2:flowNodeRef>EaAtomicExtendedActivityImpl_e1b69603-7636-4bba-9261-70e2144f6197End</bpmn2:flowNodeRef>
+      </bpmn2:lane>
+      <bpmn2:lane id="EaITResourceImpl_d454348b-62e8-4665-b20b-0c338e7a7d3a" name="Simulator">
+        <bpmn2:flowNodeRef>EaAtomicExtendedActivityImpl_9325d484-3146-49be-bd31-15b5709c0b89</bpmn2:flowNodeRef>
+        <bpmn2:flowNodeRef>EaAtomicExtendedActivityImpl_9325d484-3146-49be-bd31-15b5709c0b89Start</bpmn2:flowNodeRef>
+        <bpmn2:flowNodeRef>EaOrImpl_7242a4af-2541-4f7f-9f71-bb37d1169da5</bpmn2:flowNodeRef>
+      </bpmn2:lane>
+      <bpmn2:lane id="EaHumanResourceImpl_a030b86d-9d79-4f80-96a9-a95802ba925d" name="Instructor&amp;Student">
+        <bpmn2:flowNodeRef>EaAtomicExtendedActivityImpl_3a9be065-0728-479b-9b68-c59be9927315</bpmn2:flowNodeRef>
+        <bpmn2:flowNodeRef>EaAtomicExtendedActivityImpl_8e87008e-d606-4845-bbf4-929f91b63254</bpmn2:flowNodeRef>
+        <bpmn2:flowNodeRef>SendTask_3</bpmn2:flowNodeRef>
+      </bpmn2:lane>
+    </bpmn2:laneSet>
+    <bpmn2:serviceTask id="EaAtomicExtendedActivityImpl_9325d484-3146-49be-bd31-15b5709c0b89" name="SimulateFlight">
+      <bpmn2:incoming>tns:EaAtomicExtendedActivityImpl_9325d484-3146-49be-bd31-15b5709c0b89Sequence_1</bpmn2:incoming>
+      <bpmn2:incoming>tns:SequenceFlow_8</bpmn2:incoming>
+      <bpmn2:outgoing>tns:EaOutputInputFlowImpl_fa749445-da13-48e8-9255-7cd2fa285065_Sequence</bpmn2:outgoing>
+    </bpmn2:serviceTask>
+    <bpmn2:sequenceFlow id="EaOutputInputFlowImpl_fa749445-da13-48e8-9255-7cd2fa285065_Sequence" name="3" sourceRef="EaAtomicExtendedActivityImpl_9325d484-3146-49be-bd31-15b5709c0b89" targetRef="EaOrImpl_7242a4af-2541-4f7f-9f71-bb37d1169da5"/>
+    <bpmn2:startEvent id="EaAtomicExtendedActivityImpl_9325d484-3146-49be-bd31-15b5709c0b89Start" name="StartEvent">
+      <bpmn2:outgoing>tns:EaAtomicExtendedActivityImpl_9325d484-3146-49be-bd31-15b5709c0b89Sequence_1</bpmn2:outgoing>
+    </bpmn2:startEvent>
+    <bpmn2:sequenceFlow id="EaAtomicExtendedActivityImpl_9325d484-3146-49be-bd31-15b5709c0b89Sequence_1" sourceRef="EaAtomicExtendedActivityImpl_9325d484-3146-49be-bd31-15b5709c0b89Start" targetRef="EaAtomicExtendedActivityImpl_9325d484-3146-49be-bd31-15b5709c0b89"/>
+    <bpmn2:userTask id="EaAtomicExtendedActivityImpl_3a9be065-0728-479b-9b68-c59be9927315" name="CollectSNAGInformation">
+      <bpmn2:incoming>tns:EaOutputInputFlowImpl_b156fc69-9163-4d78-a337-2bcb0a77f152_Sequence</bpmn2:incoming>
+      <bpmn2:outgoing>tns:SequenceFlow_8</bpmn2:outgoing>
+    </bpmn2:userTask>
+    <bpmn2:exclusiveGateway id="EaOrImpl_7242a4af-2541-4f7f-9f71-bb37d1169da5" name="new Or Operator" gatewayDirection="Diverging">
+      <bpmn2:incoming>tns:EaOutputInputFlowImpl_fa749445-da13-48e8-9255-7cd2fa285065_Sequence</bpmn2:incoming>
+      <bpmn2:outgoing>tns:EaOutputInputFlowImpl_b156fc69-9163-4d78-a337-2bcb0a77f152_Sequence</bpmn2:outgoing>
+      <bpmn2:outgoing>tns:EaOutputInputFlowImpl_5930646b-c7ce-4122-babc-a806da0f14b2_Sequence</bpmn2:outgoing>
+    </bpmn2:exclusiveGateway>
+    <bpmn2:sequenceFlow id="EaOutputInputFlowImpl_b156fc69-9163-4d78-a337-2bcb0a77f152_Sequence" name="4.SNAGRaised" sourceRef="EaOrImpl_7242a4af-2541-4f7f-9f71-bb37d1169da5" targetRef="EaAtomicExtendedActivityImpl_3a9be065-0728-479b-9b68-c59be9927315"/>
+    <bpmn2:sequenceFlow id="EaOutputInputFlowImpl_5930646b-c7ce-4122-babc-a806da0f14b2_Sequence" name="5.SimulationEnded" sourceRef="EaOrImpl_7242a4af-2541-4f7f-9f71-bb37d1169da5" targetRef="EaAtomicExtendedActivityImpl_8e87008e-d606-4845-bbf4-929f91b63254"/>
+    <bpmn2:userTask id="EaAtomicExtendedActivityImpl_8e87008e-d606-4845-bbf4-929f91b63254" name="CompleteSNAGsInformation">
+      <bpmn2:incoming>tns:EaOutputInputFlowImpl_5930646b-c7ce-4122-babc-a806da0f14b2_Sequence</bpmn2:incoming>
+      <bpmn2:outgoing>tns:SequenceFlow_10</bpmn2:outgoing>
+    </bpmn2:userTask>
+    <bpmn2:sequenceFlow id="SequenceFlow_8" sourceRef="EaAtomicExtendedActivityImpl_3a9be065-0728-479b-9b68-c59be9927315" targetRef="EaAtomicExtendedActivityImpl_9325d484-3146-49be-bd31-15b5709c0b89"/>
+    <bpmn2:receiveTask id="ReceiveTask_2" name="ReceiveFeedback" messageRef="Message_1">
+      <bpmn2:incoming>tns:SequenceFlow_11</bpmn2:incoming>
+      <bpmn2:outgoing>tns:SequenceFlow_6</bpmn2:outgoing>
+    </bpmn2:receiveTask>
+    <bpmn2:sequenceFlow id="SequenceFlow_6" sourceRef="ReceiveTask_2" targetRef="ServiceTask_1"/>
+    <bpmn2:serviceTask id="ServiceTask_1" name="StoreInformation">
+      <bpmn2:incoming>tns:SequenceFlow_6</bpmn2:incoming>
+      <bpmn2:outgoing>tns:SequenceFlow_7</bpmn2:outgoing>
+    </bpmn2:serviceTask>
+    <bpmn2:sequenceFlow id="SequenceFlow_7" sourceRef="ServiceTask_1" targetRef="EaAtomicExtendedActivityImpl_e1b69603-7636-4bba-9261-70e2144f6197End"/>
+    <bpmn2:endEvent id="EaAtomicExtendedActivityImpl_e1b69603-7636-4bba-9261-70e2144f6197End" name="EndEvent">
+      <bpmn2:incoming>tns:SequenceFlow_7</bpmn2:incoming>
+    </bpmn2:endEvent>
+    <bpmn2:sendTask id="SendTask_3" name="SendFeedback">
+      <bpmn2:incoming>tns:SequenceFlow_10</bpmn2:incoming>
+      <bpmn2:outgoing>tns:SequenceFlow_11</bpmn2:outgoing>
+    </bpmn2:sendTask>
+    <bpmn2:sequenceFlow id="SequenceFlow_10" sourceRef="EaAtomicExtendedActivityImpl_8e87008e-d606-4845-bbf4-929f91b63254" targetRef="SendTask_3"/>
+    <bpmn2:sequenceFlow id="SequenceFlow_11" sourceRef="SendTask_3" targetRef="ReceiveTask_2"/>
+  </bpmn2:process>
+  <bpmn2:collaboration id="collaboration_1" name="collaboration">
+    <bpmn2:participant id="EaProcessImpl_8deb7f3f-b5e3-4ebe-8c74-dd00f7928610_Participant" name="SNAGArisingAndManagementProcess" processRef="EaProcessImpl_8deb7f3f-b5e3-4ebe-8c74-dd00f7928610"/>
+  </bpmn2:collaboration>
+  <bpmndi:BPMNDiagram id="BPMNDiagram">
+    <bpmndi:BPMNPlane id="BPMNPlane" bpmnElement="EaProcessImpl_8deb7f3f-b5e3-4ebe-8c74-dd00f7928610">
+      <bpmndi:BPMNShape id="BPMNShape_Participant_1" bpmnElement="EaProcessImpl_8deb7f3f-b5e3-4ebe-8c74-dd00f7928610_Participant" isHorizontal="true">
+        <dcxmi:Bounds height="600.0" width="1030.0" x="170.0" y="100.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="BPMNShape_Lane_1" bpmnElement="EaITResourceImpl_c3750545-a9bd-4dfb-ace9-c06a5e9a55d0" isHorizontal="true">
+        <dcxmi:Bounds height="200.0" width="1000.0" x="200.0" y="100.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="BPMNShape_Lane_2" bpmnElement="EaITResourceImpl_d454348b-62e8-4665-b20b-0c338e7a7d3a" isHorizontal="true">
+        <dcxmi:Bounds height="200.0" width="1000.0" x="200.0" y="300.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="BPMNShape_Lane_3" bpmnElement="EaHumanResourceImpl_a030b86d-9d79-4f80-96a9-a95802ba925d" isHorizontal="true">
+        <dcxmi:Bounds height="200.0" width="1000.0" x="200.0" y="500.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="BPMNShape_EndEvent_13" bpmnElement="EaAtomicExtendedActivityImpl_e1b69603-7636-4bba-9261-70e2144f6197End">
+        <dcxmi:Bounds height="36.0" width="36.0" x="290.0" y="183.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="startEvent11" bpmnElement="EaAtomicExtendedActivityImpl_9325d484-3146-49be-bd31-15b5709c0b89Start">
+        <dcxmi:Bounds height="36.0" width="36.0" x="290.0" y="337.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="BPMNShape_ExclusiveGateway_10" bpmnElement="EaOrImpl_7242a4af-2541-4f7f-9f71-bb37d1169da5">
+        <dcxmi:Bounds height="50.0" width="50.0" x="520.0" y="420.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="BPMNShape_ServiceTask_8" bpmnElement="EaAtomicExtendedActivityImpl_9325d484-3146-49be-bd31-15b5709c0b89">
+        <dcxmi:Bounds height="50.0" width="110.0" x="520.0" y="330.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="BPMNShape_BusinessRuleTask_7" bpmnElement="EaAtomicExtendedActivityImpl_3a9be065-0728-479b-9b68-c59be9927315">
+        <dcxmi:Bounds height="50.0" width="110.0" x="640.0" y="520.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="BPMNShape_BusinessRuleTask_6" bpmnElement="EaAtomicExtendedActivityImpl_8e87008e-d606-4845-bbf4-929f91b63254">
+        <dcxmi:Bounds height="50.0" width="110.0" x="810.0" y="610.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="BPMNShape_ReceiveTask_2" bpmnElement="ReceiveTask_2">
+        <dcxmi:Bounds height="50.0" width="110.0" x="980.0" y="176.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="BPMNShape_ServiceTask_1" bpmnElement="ServiceTask_1">
+        <dcxmi:Bounds height="50.0" width="110.0" x="646.0" y="176.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="BPMNShape_SendTask_3" bpmnElement="SendTask_3">
+        <dcxmi:Bounds height="50.0" width="110.0" x="980.0" y="610.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="BPMNEdge_SequenceFlow_1" bpmnElement="EaOutputInputFlowImpl_fa749445-da13-48e8-9255-7cd2fa285065_Sequence">
+        <dixmi:waypoint xsi:type="dcxmi:Point" x="575.0" y="380.0"/>
+        <dixmi:waypoint xsi:type="dcxmi:Point" x="575.0" y="398.0"/>
+        <dixmi:waypoint xsi:type="dcxmi:Point" x="545.0" y="398.0"/>
+        <dixmi:waypoint xsi:type="dcxmi:Point" x="545.0" y="420.0"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="BPMNEdge_SequenceFlow_2" bpmnElement="EaOutputInputFlowImpl_b156fc69-9163-4d78-a337-2bcb0a77f152_Sequence">
+        <dixmi:waypoint xsi:type="dcxmi:Point" x="545.0" y="471.0"/>
+        <dixmi:waypoint xsi:type="dcxmi:Point" x="545.0" y="545.0"/>
+        <dixmi:waypoint xsi:type="dcxmi:Point" x="640.0" y="545.0"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="BPMNEdge_SequenceFlow_3" bpmnElement="EaOutputInputFlowImpl_5930646b-c7ce-4122-babc-a806da0f14b2_Sequence">
+        <dixmi:waypoint xsi:type="dcxmi:Point" x="545.0" y="471.0"/>
+        <dixmi:waypoint xsi:type="dcxmi:Point" x="545.0" y="635.0"/>
+        <dixmi:waypoint xsi:type="dcxmi:Point" x="810.0" y="635.0"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="BPMNEdge_SequenceFlow_12" bpmnElement="EaAtomicExtendedActivityImpl_9325d484-3146-49be-bd31-15b5709c0b89Sequence_1">
+        <dixmi:waypoint xsi:type="dcxmi:Point" x="326.0" y="355.0"/>
+        <dixmi:waypoint xsi:type="dcxmi:Point" x="413.0" y="355.0"/>
+        <dixmi:waypoint xsi:type="dcxmi:Point" x="413.0" y="355.0"/>
+        <dixmi:waypoint xsi:type="dcxmi:Point" x="520.0" y="355.0"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="BPMNEdge_SequenceFlow_11" bpmnElement="SequenceFlow_6" sourceElement="BPMNShape_ReceiveTask_2" targetElement="BPMNShape_ServiceTask_1">
+        <dixmi:waypoint xsi:type="dcxmi:Point" x="980.0" y="201.0"/>
+        <dixmi:waypoint xsi:type="dcxmi:Point" x="880.0" y="201.0"/>
+        <dixmi:waypoint xsi:type="dcxmi:Point" x="880.0" y="201.0"/>
+        <dixmi:waypoint xsi:type="dcxmi:Point" x="756.0" y="201.0"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="BPMNEdge_SequenceFlow_13" bpmnElement="SequenceFlow_7" sourceElement="BPMNShape_ServiceTask_1" targetElement="BPMNShape_EndEvent_13">
+        <dixmi:waypoint xsi:type="dcxmi:Point" x="646.0" y="201.0"/>
+        <dixmi:waypoint xsi:type="dcxmi:Point" x="502.0" y="201.0"/>
+        <dixmi:waypoint xsi:type="dcxmi:Point" x="502.0" y="201.0"/>
+        <dixmi:waypoint xsi:type="dcxmi:Point" x="326.0" y="201.0"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="BPMNEdge_SequenceFlow_15" bpmnElement="SequenceFlow_8" sourceElement="BPMNShape_BusinessRuleTask_7" targetElement="BPMNShape_ServiceTask_8">
+        <dixmi:waypoint xsi:type="dcxmi:Point" x="695.0" y="520.0"/>
+        <dixmi:waypoint xsi:type="dcxmi:Point" x="695.0" y="355.0"/>
+        <dixmi:waypoint xsi:type="dcxmi:Point" x="630.0" y="355.0"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="BPMNEdge_SequenceFlow_17" bpmnElement="SequenceFlow_10" sourceElement="BPMNShape_BusinessRuleTask_6" targetElement="BPMNShape_SendTask_3">
+        <dixmi:waypoint xsi:type="dcxmi:Point" x="920.0" y="635.0"/>
+        <dixmi:waypoint xsi:type="dcxmi:Point" x="947.0" y="635.0"/>
+        <dixmi:waypoint xsi:type="dcxmi:Point" x="947.0" y="635.0"/>
+        <dixmi:waypoint xsi:type="dcxmi:Point" x="980.0" y="635.0"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="BPMNEdge_SequenceFlow_18" bpmnElement="SequenceFlow_11" sourceElement="BPMNShape_SendTask_3" targetElement="BPMNShape_ReceiveTask_2">
+        <dixmi:waypoint xsi:type="dcxmi:Point" x="1035.0" y="610.0"/>
+        <dixmi:waypoint xsi:type="dcxmi:Point" x="1035.0" y="438.0"/>
+        <dixmi:waypoint xsi:type="dcxmi:Point" x="1035.0" y="438.0"/>
+        <dixmi:waypoint xsi:type="dcxmi:Point" x="1035.0" y="226.0"/>
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn2:definitions>

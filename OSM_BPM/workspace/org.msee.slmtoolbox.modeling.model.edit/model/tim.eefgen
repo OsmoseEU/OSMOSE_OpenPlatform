@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="ASCII"?>
+<eef-gen:EEFGenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:eef-gen="http://www.eclipse.org/emf/eef/generation/1.0.0" genDirectory="/org.msee.slmtoolbox.modeling.model.edit/src">
+  <editionContexts basePackage="org.msee.slmtoolbox.modeling.model.ssm" descriptorsGenericPropertiesViews="true">
+    <PropertiesEditionContext href="tim.components#_7jrdgJ4AEeKTusIEMoeD6A"/>
+  </editionContexts>
+  <editionContexts basePackage="org.msee.slmtoolbox.modeling.model.ssm.tim" descriptorsGenericPropertiesViews="true">
+    <PropertiesEditionContext href="tim.components#_7jrdhp4AEeKTusIEMoeD6A"/>
+  </editionContexts>
+  <editionContexts basePackage="org.msee.slmtoolbox.modeling.model.ssm.tim" descriptorsGenericPropertiesViews="true">
+    <PropertiesEditionContext href="tim.components#_7jrdpp4AEeKTusIEMoeD6A"/>
+  </editionContexts>
+  <editionContexts basePackage="org.msee.slmtoolbox.modeling.model.ssm.tim" descriptorsGenericPropertiesViews="true">
+    <PropertiesEditionContext href="tim.components#_7jrdtp4AEeKTusIEMoeD6A"/>
+  </editionContexts>
+  <editionContexts basePackage="org.msee.slmtoolbox.modeling.model.ssm.tim" descriptorsGenericPropertiesViews="true">
+    <PropertiesEditionContext href="tim.components#_7jrd3J4AEeKTusIEMoeD6A"/>
+  </editionContexts>
+  <viewsRepositories basePackage="org.msee.slmtoolbox.modeling.model.ssm.tim" swtViews="true" formViews="true">
+    <viewsRepository href="tim.components#_7jrd_Z4AEeKTusIEMoeD6A"/>
+  </viewsRepositories>
+  <viewsRepositories basePackage="org.msee.slmtoolbox.modeling.model.ssm.tim.ITRelatedPart" swtViews="true" formViews="true">
+    <viewsRepository href="tim.components#_7jreBJ4AEeKTusIEMoeD6A"/>
+  </viewsRepositories>
+  <viewsRepositories basePackage="org.msee.slmtoolbox.modeling.model.ssm.tim.CommonConcepts" swtViews="true" formViews="true">
+    <viewsRepository href="tim.components#_7jreL54AEeKTusIEMoeD6A"/>
+  </viewsRepositories>
+  <viewsRepositories basePackage="org.msee.slmtoolbox.modeling.model.ssm.tim.HumanRelatedPart" swtViews="true" formViews="true">
+    <viewsRepository href="tim.components#_7jreUZ4AEeKTusIEMoeD6A"/>
+  </viewsRepositories>
+  <viewsRepositories basePackage="org.msee.slmtoolbox.modeling.model.ssm.tim.PhysicalMeanRelatedPart" swtViews="true" formViews="true">
+    <viewsRepository href="tim.components#_7jsErJ4AEeKTusIEMoeD6A"/>
+  </viewsRepositories>
+</eef-gen:EEFGenModel>

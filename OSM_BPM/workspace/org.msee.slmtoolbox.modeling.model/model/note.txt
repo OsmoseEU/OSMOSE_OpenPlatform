@@ -1,0 +1,83 @@
+25/06/2012 - Hadrien Boyé
+-------------------------
+- model.ssm.bsm.core : delete relation : decision-->service
+- model.ssm.bsm.core : delete relation : service-->decision
+- model.ssm.bsm.core : add relation : resource--(eaResource)-->extendedActigramStar.resource
+- model.ssm.bsm.core : add relation : organization--(eaOrganization)-->extendedActigramStar.organization--
+- model.ssm.bsm.core : add relation : process--(eaProcess)-->extendedActigramStar.process
+- *.ecorediag : rename diagrams
+- model.ssm.bsm.grai.ecorediag : Mapping - Grai - BSM Core : add packages "bsm.core" and "bsm.grai"
+- model.ssm.bsm.extendedActigramStar.ecorediag : Mapping - EAStar - BSM Core : add packages "bsm.core" and "bsm.extendedActigramStar"
+
+26/06/2012 - Hassan Bazoun
+--------------------------
+- model.ssm.tim.core : delete relation: decision --> service
+- model.ssm.tim.core : delete attribute : human.type
+- model.ssm.tim.core : delete attribute : enterpriseApplication.type
+- model.ssm.tim.core : delete attribute : physicalMean.type
+- model.ssm.tim.core : add attribute : organizationUnit.function
+- model.ssm.tim.core : add relation : organizationUnit--(member)-->human
+- model.ssm.tim.core : add relation : organizationUnit--(organization)-->organization
+- model.ssm.tim.core : modify relation : organizationUnit(0...)*-->(1...*)resource
+- model.ssm.tim.core : modify relation : organizationUnit(0...)*-->(1...*)process
+- model.ssm.tim.core : modify relation : service("parentService")-->("subService")service
+
+27/06/2012 - Hadrien Boyé :
+---------------------------
+- model.ssm.bsm.core : rename relation : "product.function" to "product.functionality"
+- model.ssm.bsm.core : add attribute : "product.function"
+- model.ssm.bsm.core : add attribute : "service.description"
+- model.ssm.bsm.core : add relation : decision-->process
+- model.ssm.bsm.core : add relation : process-->decision
+- model.ssm : add : ServiceSystemModel-->ServiceSystemTim
+- model.ssm.tim.core : add : ServiceSystemTim-->ServiceSystemModel
+- model.ssm.tim.core : add attribute : "physicalMean.type"
+- model.ssm.tim.core : add attribute : "enterpriseApplication.type"
+- model.ssm.tim.core : add attribute : "enterpriseApplication.functionality"
+- model.ssm.tim.core : add class : ServiceSystemTim
+- model.ssm.tim.core : add class : AbstractTimObject
+- model.ssm.tim.core : add inheritence to : AbstractTimObject
+- model.ssm.tim.core.diagram : show packages on the "Diagram TIM Core"
+
+28/06/2012 - Hadrien Boyé :
+---------------------------
+- model.ssm.bsm.core.diagram : fix : product.function is an attribute, not a reference
+- model.ssm.bsm.core : fix : decision.process(lowerbound : 0 ; upperbound : -1)
+- model.ssm.bsm.core : fix : process.decision(lowerbound : 0 ; upperbound : -1)
+- model.ssm.tim.core : change reference of "organization.organizationUnit" to "containement=true"
+- model.ssm.tim.core : add composition relations "ServiceSystemTim" classes with major TIM classes (service, process, resource, information, organization)
+
+
+29/06/2012 - Hassan Bazoun : 
+----------------------------
+-model.ssm.bsm.extendedActigramStar.ecore: delete class Organization
+-model.ssm.bsm.extendedActigramStar.ecore: add class IT
+-model.ssm.bsm.extendedActigramStar.ecore: add attribute : "resource.role"
+-model.ssm.bsm.extendedActigramStar.ecore: add attribute : "human.salary"
+-model.ssm.bsm.extendedActigramStar.ecore: add attribute : "human.profile"
+-model.ssm.bsm.extendedActigramStar.ecore: add attribute : "material.function"
+-model.ssm.bsm.extendedActigramStar.ecore: add attribute : "material.cost"
+-model.ssm.bsm.extendedActigramStar.ecore: add class ProcessConnector
+-model.ssm.bsm.extendedActigramStar.ecore: delete attribute : "connector.isModeled"
+-model.ssm.bsm.extendedActigramStar.ecore: add attribute : "ExternalConnector.isModeled"
+-model.ssm.bsm.extendedActigramStar.ecore: delete EEnum literal: "ActivityType.leaf"
+-model.ssm.bsm.extendedActigramStar.ecore: add EEnum literal: "ActivityType".atomic
+-model.ssm.bsm.extendedActigramStar.ecorediag: Mapping - EAStar - BSM Core: delete Organization
+
+
+02/07/2012 - Hadrien Boyé :
+---------------------------
+- model.ssm : delete relation "bsm" --> model.ssm.bsm.core.serviceSystemBsm
+- model.ssm : delete relation "tim" --> model.ssm.bsm.core.serviceSystemTim
+- model.ssm.bsm.core : delete relation : "organization" --> model.ssm.bsm.grai.enterprise
+- model.ssm.bsm.core : delete relation : "decisionStructure" --> model.ssm.bsm.grai.graiGrid
+- model.ssm.bsm.core : delete relation : "decision" --> model.ssm.bsm.grai.decisionCenter
+- model.ssm.bsm.core : delete relation : "organization" --> model.ssm.bsm.grai.eaOrganization
+- model.ssm.bsm.core : delete relation : "process" --> model.ssm.bsm.grai.eaProcess
+- model.ssm.bsm.core : delete relation : "resource" --> model.ssm.bsm.grai.eaResource
+
+
+03/07/2012 - Hadrien Boyé :
+---------------------------
+- bsm : refonte
+- tim : refonte

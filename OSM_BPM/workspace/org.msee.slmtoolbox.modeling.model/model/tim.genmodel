@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.msee.slmtoolbox.modeling.model/src" editorDirectory="/org.msee.slmtoolbox.modeling.editor.tim/src"
+    modelPluginID="org.msee.slmtoolbox.modeling.model" modelName="Tim" importerID="org.eclipse.emf.importer.ecore"
+    featureDelegation="Dynamic" complianceLevel="7.0" copyrightFields="false" providerRootExtendsClass=""
+    editorPluginID="org.msee.slmtoolbox.modeling.editor.tim" language="" runtimePlatform="RCP">
+  <foreignModel>tim.ecore</foreignModel>
+  <genPackages prefix="Tim" basePackage="org.msee.slmtoolbox.modeling.model.ssm" disposableProviderFactory="true"
+      ecorePackage="tim.ecore#/">
+    <genClasses image="false" ecoreClass="tim.ecore#//iTimNamedElement">
+      <genOperations ecoreOperation="tim.ecore#//iTimNamedElement/getId"/>
+      <genOperations ecoreOperation="tim.ecore#//iTimNamedElement/getName"/>
+      <genOperations ecoreOperation="tim.ecore#//iTimNamedElement/setId">
+        <genParameters ecoreParameter="tim.ecore#//iTimNamedElement/setId/id"/>
+      </genOperations>
+      <genOperations ecoreOperation="tim.ecore#//iTimNamedElement/setName">
+        <genParameters ecoreParameter="tim.ecore#//iTimNamedElement/setName/name"/>
+      </genOperations>
+      <genOperations ecoreOperation="tim.ecore#//iTimNamedElement/toString"/>
+    </genClasses>
+    <genClasses ecoreClass="tim.ecore#//TimModel">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tim.ecore#//TimModel/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tim.ecore#//TimModel/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference tim.ecore#//TimModel/services"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference tim.ecore#//TimModel/processes"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference tim.ecore#//TimModel/informations"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference tim.ecore#//TimModel/organizations"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference tim.ecore#//TimModel/resources"/>
+    </genClasses>
+    <nestedGenPackages prefix="CommonConcepts" basePackage="org.msee.slmtoolbox.modeling.model.ssm.tim"
+        disposableProviderFactory="true" ecorePackage="tim.ecore#//CommonConcepts">
+      <genClasses ecoreClass="tim.ecore#//CommonConcepts/TimService">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tim.ecore#//CommonConcepts/TimService/id"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tim.ecore#//CommonConcepts/TimService/name"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tim.ecore#//CommonConcepts/TimService/description"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tim.ecore#//CommonConcepts/TimService/objective"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tim.ecore#//CommonConcepts/TimService/constraint"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tim.ecore#//CommonConcepts/TimService/access"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tim.ecore#//CommonConcepts/TimService/consumption"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tim.ecore#//CommonConcepts/TimService/automationLevel"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tim.ecore#//CommonConcepts/TimService/domain"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tim.ecore#//CommonConcepts/TimService/nature"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference tim.ecore#//CommonConcepts/TimService/subServices"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference tim.ecore#//CommonConcepts/TimService/mainService"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference tim.ecore#//CommonConcepts/TimService/processes"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference tim.ecore#//CommonConcepts/TimService/resources"/>
+        <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference tim.ecore#//CommonConcepts/TimService/model"/>
+      </genClasses>
+      <genClasses ecoreClass="tim.ecore#//CommonConcepts/TimProcess">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tim.ecore#//CommonConcepts/TimProcess/id"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tim.ecore#//CommonConcepts/TimProcess/name"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tim.ecore#//CommonConcepts/TimProcess/objective"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tim.ecore#//CommonConcepts/TimProcess/trigger"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tim.ecore#//CommonConcepts/TimProcess/result"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tim.ecore#//CommonConcepts/TimProcess/constraint"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tim.ecore#//CommonConcepts/TimProcess/workFlow"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference tim.ecore#//CommonConcepts/TimProcess/subprocesses"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference tim.ecore#//CommonConcepts/TimProcess/mainProcess"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference tim.ecore#//CommonConcepts/TimProcess/services"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference tim.ecore#//CommonConcepts/TimProcess/resources"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference tim.ecore#//CommonConcepts/TimProcess/responsibleOrganizationUnit"/>
+        <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference tim.ecore#//CommonConcepts/TimProcess/model"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference tim.ecore#//CommonConcepts/TimProcess/organizations"/>
+      </genClasses>
+      <genClasses ecoreClass="tim.ecore#//CommonConcepts/TimResource">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tim.ecore#//CommonConcepts/TimResource/id"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tim.ecore#//CommonConcepts/TimResource/name"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tim.ecore#//CommonConcepts/TimResource/function"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tim.ecore#//CommonConcepts/TimResource/type"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference tim.ecore#//CommonConcepts/TimResource/processes"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference tim.ecore#//CommonConcepts/TimResource/model"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference tim.ecore#//CommonConcepts/TimResource/organizationUnit"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference tim.ecore#//CommonConcepts/TimResource/services"/>
+      </genClasses>
+    </nestedGenPackages>
+    <nestedGenPackages prefix="PhysicalMeanRelatedPart" basePackage="org.msee.slmtoolbox.modeling.model.ssm.tim"
+        disposableProviderFactory="true" ecorePackage="tim.ecore#//PhysicalMeanRelatedPart">
+      <genClasses ecoreClass="tim.ecore#//PhysicalMeanRelatedPart/TimPhysicalMeanResource">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tim.ecore#//PhysicalMeanRelatedPart/TimPhysicalMeanResource/capability"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tim.ecore#//PhysicalMeanRelatedPart/TimPhysicalMeanResource/constraint"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tim.ecore#//PhysicalMeanRelatedPart/TimPhysicalMeanResource/operationMode"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tim.ecore#//PhysicalMeanRelatedPart/TimPhysicalMeanResource/technicalCharacteristics"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tim.ecore#//PhysicalMeanRelatedPart/TimPhysicalMeanResource/expectedPerformance"/>
+      </genClasses>
+    </nestedGenPackages>
+    <nestedGenPackages prefix="ITRelatedPart" basePackage="org.msee.slmtoolbox.modeling.model.ssm.tim"
+        disposableProviderFactory="true" ecorePackage="tim.ecore#//ITRelatedPart">
+      <genClasses ecoreClass="tim.ecore#//ITRelatedPart/TimEnterpriseApplicationResource">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tim.ecore#//ITRelatedPart/TimEnterpriseApplicationResource/description"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tim.ecore#//ITRelatedPart/TimEnterpriseApplicationResource/functionality"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tim.ecore#//ITRelatedPart/TimEnterpriseApplicationResource/characteristics"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference tim.ecore#//ITRelatedPart/TimEnterpriseApplicationResource/informations"/>
+      </genClasses>
+      <genClasses ecoreClass="tim.ecore#//ITRelatedPart/TimInformationSet">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tim.ecore#//ITRelatedPart/TimInformationSet/id"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tim.ecore#//ITRelatedPart/TimInformationSet/name"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference tim.ecore#//ITRelatedPart/TimInformationSet/entrepriseApplications"/>
+        <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference tim.ecore#//ITRelatedPart/TimInformationSet/model"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference tim.ecore#//ITRelatedPart/TimInformationSet/entities"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference tim.ecore#//ITRelatedPart/TimInformationSet/relationships"/>
+      </genClasses>
+      <genClasses ecoreClass="tim.ecore#//ITRelatedPart/TimInformationEntity">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tim.ecore#//ITRelatedPart/TimInformationEntity/id"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tim.ecore#//ITRelatedPart/TimInformationEntity/name"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference tim.ecore#//ITRelatedPart/TimInformationEntity/outRelations"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference tim.ecore#//ITRelatedPart/TimInformationEntity/inRelations"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference tim.ecore#//ITRelatedPart/TimInformationEntity/attributes"/>
+        <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference tim.ecore#//ITRelatedPart/TimInformationEntity/information"/>
+      </genClasses>
+      <genClasses ecoreClass="tim.ecore#//ITRelatedPart/TimInformationRelationship">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tim.ecore#//ITRelatedPart/TimInformationRelationship/id"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tim.ecore#//ITRelatedPart/TimInformationRelationship/name"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tim.ecore#//ITRelatedPart/TimInformationRelationship/type"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference tim.ecore#//ITRelatedPart/TimInformationRelationship/sourceEntity"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference tim.ecore#//ITRelatedPart/TimInformationRelationship/targetEntity"/>
+        <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference tim.ecore#//ITRelatedPart/TimInformationRelationship/information"/>
+      </genClasses>
+      <genClasses ecoreClass="tim.ecore#//ITRelatedPart/TimInformationAttribute">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tim.ecore#//ITRelatedPart/TimInformationAttribute/id"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tim.ecore#//ITRelatedPart/TimInformationAttribute/name"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tim.ecore#//ITRelatedPart/TimInformationAttribute/type"/>
+        <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference tim.ecore#//ITRelatedPart/TimInformationAttribute/informationEntity"/>
+      </genClasses>
+    </nestedGenPackages>
+    <nestedGenPackages prefix="HumanRelatedPart" basePackage="org.msee.slmtoolbox.modeling.model.ssm.tim"
+        disposableProviderFactory="true" ecorePackage="tim.ecore#//HumanRelatedPart">
+      <genClasses ecoreClass="tim.ecore#//HumanRelatedPart/TimHumanResource">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tim.ecore#//HumanRelatedPart/TimHumanResource/capability"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tim.ecore#//HumanRelatedPart/TimHumanResource/constraint"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tim.ecore#//HumanRelatedPart/TimHumanResource/skills"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tim.ecore#//HumanRelatedPart/TimHumanResource/educationLevel"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tim.ecore#//HumanRelatedPart/TimHumanResource/quantity"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tim.ecore#//HumanRelatedPart/TimHumanResource/expectedPerformance"/>
+      </genClasses>
+      <genClasses ecoreClass="tim.ecore#//HumanRelatedPart/TimOrganization">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tim.ecore#//HumanRelatedPart/TimOrganization/id"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tim.ecore#//HumanRelatedPart/TimOrganization/name"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tim.ecore#//HumanRelatedPart/TimOrganization/type"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tim.ecore#//HumanRelatedPart/TimOrganization/description"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tim.ecore#//HumanRelatedPart/TimOrganization/responsibility"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tim.ecore#//HumanRelatedPart/TimOrganization/authorization"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference tim.ecore#//HumanRelatedPart/TimOrganization/organizationUnits"/>
+        <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference tim.ecore#//HumanRelatedPart/TimOrganization/model"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference tim.ecore#//HumanRelatedPart/TimOrganization/processes"/>
+      </genClasses>
+      <genClasses ecoreClass="tim.ecore#//HumanRelatedPart/TimOrganizationUnit">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tim.ecore#//HumanRelatedPart/TimOrganizationUnit/id"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tim.ecore#//HumanRelatedPart/TimOrganizationUnit/name"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tim.ecore#//HumanRelatedPart/TimOrganizationUnit/function"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tim.ecore#//HumanRelatedPart/TimOrganizationUnit/responsibility"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tim.ecore#//HumanRelatedPart/TimOrganizationUnit/authorization"/>
+        <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference tim.ecore#//HumanRelatedPart/TimOrganizationUnit/organization"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference tim.ecore#//HumanRelatedPart/TimOrganizationUnit/resources"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference tim.ecore#//HumanRelatedPart/TimOrganizationUnit/processes"/>
+      </genClasses>
+    </nestedGenPackages>
+  </genPackages>
+</genmodel:GenModel>

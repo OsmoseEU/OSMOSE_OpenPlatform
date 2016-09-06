@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+	 <!--
+	 no wizard is proposed for TIM model 
+  <extension point="org.eclipse.ui.newWizards">
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="org.msee.slmtoolbox.modeling.model.ssm.tim.presentation.TimModelWizardID"
+            name="%_UI_TimModelWizard_label"
+            class="org.msee.slmtoolbox.modeling.model.ssm.tim.presentation.TimModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/TimModelFile.gif">
+         <description>%_UI_TimModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+   
+   -->
+
+   <extension point="org.eclipse.ui.editors">
+      <editor
+            id="org.msee.slmtoolbox.modeling.model.ssm.tim.presentation.TimEditorID"
+            name="%_UI_TimEditor_label"
+            icon="icons/full/obj16/TIM_logo.png"
+            extensions="tim"
+            class="org.msee.slmtoolbox.modeling.model.ssm.tim.presentation.TimEditor"
+            contributorClass="org.msee.slmtoolbox.modeling.model.ssm.tim.presentation.TimActionBarContributor">
+      </editor>
+   </extension>
+
+  <!-- <extension point="org.eclipse.ui.newWizards">
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="org.msee.slmtoolbox.modeling.model.ssm.tim.CommonConcepts.presentation.CommonConceptsModelWizardID"
+            name="%_UI_CommonConceptsModelWizard_label"
+            class="org.msee.slmtoolbox.modeling.model.ssm.tim.CommonConcepts.presentation.CommonConceptsModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/CommonConceptsModelFile.gif">
+         <description>%_UI_CommonConceptsModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension> -->
+<!--
+   <extension point="org.eclipse.ui.editors">
+      <editor
+            id="org.msee.slmtoolbox.modeling.model.ssm.tim.CommonConcepts.presentation.CommonConceptsEditorID"
+            name="%_UI_CommonConceptsEditor_label"
+            icon="icons/full/obj16/CommonConceptsModelFile.gif"
+            extensions="commonconcepts"
+            class="org.msee.slmtoolbox.modeling.model.ssm.tim.CommonConcepts.presentation.CommonConceptsEditor"
+            contributorClass="org.msee.slmtoolbox.modeling.model.ssm.tim.CommonConcepts.presentation.CommonConceptsActionBarContributor">
+      </editor>
+   </extension>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="org.msee.slmtoolbox.modeling.model.ssm.tim.PhysicalMeanRelatedPart.presentation.PhysicalMeanRelatedPartModelWizardID"
+            name="%_UI_PhysicalMeanRelatedPartModelWizard_label"
+            class="org.msee.slmtoolbox.modeling.model.ssm.tim.PhysicalMeanRelatedPart.presentation.PhysicalMeanRelatedPartModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/PhysicalMeanRelatedPartModelFile.gif">
+         <description>%_UI_PhysicalMeanRelatedPartModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <editor
+            id="org.msee.slmtoolbox.modeling.model.ssm.tim.PhysicalMeanRelatedPart.presentation.PhysicalMeanRelatedPartEditorID"
+            name="%_UI_PhysicalMeanRelatedPartEditor_label"
+            icon="icons/full/obj16/PhysicalMeanRelatedPartModelFile.gif"
+            extensions="physicalmeanrelatedpart"
+            class="org.msee.slmtoolbox.modeling.model.ssm.tim.PhysicalMeanRelatedPart.presentation.PhysicalMeanRelatedPartEditor"
+            contributorClass="org.msee.slmtoolbox.modeling.model.ssm.tim.PhysicalMeanRelatedPart.presentation.PhysicalMeanRelatedPartActionBarContributor">
+      </editor>
+   </extension>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="org.msee.slmtoolbox.modeling.model.ssm.tim.ITRelatedPart.presentation.ITRelatedPartModelWizardID"
+            name="%_UI_ITRelatedPartModelWizard_label"
+            class="org.msee.slmtoolbox.modeling.model.ssm.tim.ITRelatedPart.presentation.ITRelatedPartModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/ITRelatedPartModelFile.gif">
+         <description>%_UI_ITRelatedPartModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <editor
+            id="org.msee.slmtoolbox.modeling.model.ssm.tim.ITRelatedPart.presentation.ITRelatedPartEditorID"
+            name="%_UI_ITRelatedPartEditor_label"
+            icon="icons/full/obj16/ITRelatedPartModelFile.gif"
+            extensions="itrelatedpart"
+            class="org.msee.slmtoolbox.modeling.model.ssm.tim.ITRelatedPart.presentation.ITRelatedPartEditor"
+            contributorClass="org.msee.slmtoolbox.modeling.model.ssm.tim.ITRelatedPart.presentation.ITRelatedPartActionBarContributor">
+      </editor>
+   </extension>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="org.msee.slmtoolbox.modeling.model.ssm.tim.HumanRelatedPart.presentation.HumanRelatedPartModelWizardID"
+            name="%_UI_HumanRelatedPartModelWizard_label"
+            class="org.msee.slmtoolbox.modeling.model.ssm.tim.HumanRelatedPart.presentation.HumanRelatedPartModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/HumanRelatedPartModelFile.gif">
+         <description>%_UI_HumanRelatedPartModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <editor
+            id="org.msee.slmtoolbox.modeling.model.ssm.tim.HumanRelatedPart.presentation.HumanRelatedPartEditorID"
+            name="%_UI_HumanRelatedPartEditor_label"
+            icon="icons/full/obj16/HumanRelatedPartModelFile.gif"
+            extensions="humanrelatedpart"
+            class="org.msee.slmtoolbox.modeling.model.ssm.tim.HumanRelatedPart.presentation.HumanRelatedPartEditor"
+            contributorClass="org.msee.slmtoolbox.modeling.model.ssm.tim.HumanRelatedPart.presentation.HumanRelatedPartActionBarContributor">
+      </editor>
+   </extension>
+   
+   <extension
+         point="org.eclipse.ui.views.properties.tabbed.propertyContributor">
+   </extension>
+   <extension
+         point="org.eclipse.ui.views.properties.tabbed.propertySections">
+   </extension>
+   <extension
+         point="org.eclipse.ui.views.properties.tabbed.propertyTabs">
+   </extension>
+-->
+</plugin>

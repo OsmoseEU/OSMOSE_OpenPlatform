@@ -1,0 +1,16 @@
+
+Tue Jan 29 11:26:45 CET 2013
+================================================================================
+Start of user code
+		BsmAddServiceToResourceDialog dialog = new BsmAddServiceToResourceDialog(PlatformUI.getWorkbench().getDisplay().getActiveShell(), service.getLabelProvider(), (org.msee.slmtoolbox.modeling.model.ssm.bsm.BsmResource) ((ReferencesTableSettings)this.service.getInput()).getSource());		
+		dialog.open();
+		service.refresh();
+		// End of user code
+
+Thu Feb 14 15:52:23 CET 2013
+================================================================================
+Start of user code
+		BsmAddServiceToResourceDialog dialog = new BsmAddServiceToResourceDialog(PlatformUI.getWorkbench().getDisplay().getActiveShell(), service.getLabelProvider(), (org.msee.slmtoolbox.modeling.model.ssm.bsm.BsmResource) ((ReferencesTableSettings)this.service.getInput()).getSource());		
+		dialog.open();
+		service.refresh();
+		// End of user code

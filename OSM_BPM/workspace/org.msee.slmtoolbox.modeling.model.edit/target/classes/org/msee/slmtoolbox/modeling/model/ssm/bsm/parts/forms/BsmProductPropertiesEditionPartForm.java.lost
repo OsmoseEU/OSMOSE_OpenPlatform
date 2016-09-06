@@ -1,0 +1,8 @@
+
+Fri Feb 21 14:40:54 CET 2014
+================================================================================
+Start of user code
+		BsmAddFunctionalityToProductDialog dialog = new BsmAddFunctionalityToProductDialog(PlatformUI.getWorkbench().getDisplay().getActiveShell(), functionalities.getLabelProvider(), (BsmProduct) ((ReferencesTableSettings)this.functionalities.getInput()).getSource());		
+		dialog.open();
+		functionalities.refresh();	
+		// End of user code

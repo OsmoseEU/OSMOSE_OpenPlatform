@@ -1,0 +1,11 @@
+
+Thu Sep 20 09:48:31 CEST 2012
+================================================================================
+Start of user code  for horizon
+				basePart.initActivityType(
+						new EAStarActivityType[] {
+							EAStarActivityType.ATOMIC,
+							EAStarActivityType.STRUCTURAL,
+						}
+						, eAStarExtendedActivity.getActivityType());
+				// End of user code

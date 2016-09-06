@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="UTF-8"?>
+  
+  <bpmn2:definitions xmlns:dcxmi="http://www.omg.org/spec/DD/20100524/DC-XMI" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:bpmn2="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dixmi="http://www.omg.org/spec/DD/20100524/DI-XMI" xmlns:bpmndixmi="http://www.omg.org/spec/BPMN/20100524/DI-XMI" xmlns:xmi="http://schema.omg.org/spec/XMI" xmlns:bpmn2xmi="http://www.omg.org/spec/BPMN/20100524/MODEL-XMI" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:tns="http://www.jboss.org/drools" xsi:schemaLocation="http://www.omg.org/spec/BPMN/20100524/MODEL BPMN20.xsd" id="test111" expressionLanguage="http://www.mvel.org/2.0" name="Virtualization" targetNamespace="http://www.jboss.org/drools" typeLanguage="http://www.java.com/javaTypes">
+<bpmn2:process id="osmoseProcess" name="Osmose Process">
+<bpmn2:laneSet id="OsmoseLaneSet" name="OsmoseWorldLaneSet">
+<bpmn2:lane id="Membrane" name="Membrane">
+<bpmn2:flowNodeRef>doNothing</bpmn2:flowNodeRef>
+<bpmn2:flowNodeRef>waitingForEvent</bpmn2:flowNodeRef>
+<bpmn2:flowNodeRef>membraneEndEvent2</bpmn2:flowNodeRef>
+<bpmn2:flowNodeRef>membraneEndEvent1</bpmn2:flowNodeRef>
+<bpmn2:flowNodeRef>checking</bpmn2:flowNodeRef>
+<bpmn2:flowNodeRef>coisoStart</bpmn2:flowNodeRef>
+<bpmn2:flowNodeRef>startInternalProcess</bpmn2:flowNodeRef>
+<bpmn2:flowNodeRef>decisionPoint</bpmn2:flowNodeRef>
+</bpmn2:lane>
+<bpmn2:lane id="Virtualization" name="Virtualization">
+<bpmn2:flowNodeRef>SimulationEndEvent</bpmn2:flowNodeRef>
+<bpmn2:flowNodeRef>TaskToEnd</bpmn2:flowNodeRef>
+</bpmn2:lane>
+</bpmn2:laneSet>
+<bpmn2:task id="doNothing" name="Do nothing">
+<bpmn2:incoming>DecisionToNothing</bpmn2:incoming>
+<bpmn2:outgoing>fromNothingToEnd</bpmn2:outgoing>
+</bpmn2:task>
+<bpmn2:task id="TaskToEnd" name="Virtualization tasks">
+<bpmn2:incoming>DecisionToReactOsmiotic</bpmn2:incoming>
+<bpmn2:outgoing>fromSimulationToEnd</bpmn2:outgoing>
+</bpmn2:task>
+<bpmn2:task id="waitingForEvent" name="Waiting for an event">
+<bpmn2:incoming>coisoSequence_1</bpmn2:incoming>
+<bpmn2:outgoing>waitingForReceive</bpmn2:outgoing>
+</bpmn2:task>
+<bpmn2:endEvent id="membraneEndEvent2" name="EndEvent">
+<bpmn2:incoming>fromInternalToEnd</bpmn2:incoming>
+</bpmn2:endEvent>
+<bpmn2:endEvent id="membraneEndEvent1" name="EndEvent">
+<bpmn2:incoming>fromNothingToEnd</bpmn2:incoming>
+</bpmn2:endEvent>
+<bpmn2:startEvent id="coisoStart" name="StartEvent">
+<bpmn2:outgoing>coisoSequence_1</bpmn2:outgoing>
+</bpmn2:startEvent>
+<bpmn2:task id="checking" name="Check Osmose Event Type">
+<bpmn2:incoming>waitingForReceive</bpmn2:incoming>
+<bpmn2:outgoing>CheckingToDecision</bpmn2:outgoing>
+</bpmn2:task>
+<bpmn2:task id="startInternalProcess" name="Start Internal Process">
+<bpmn2:incoming>DecisionToInternalProcess</bpmn2:incoming>
+<bpmn2:outgoing>fromInternalToEnd</bpmn2:outgoing>
+</bpmn2:task>
+<bpmn2:endEvent id="SimulationEndEvent" name="EndEvent">
+<bpmn2:incoming>fromSimulationToEnd</bpmn2:incoming>
+</bpmn2:endEvent>
+<bpmn2:exclusiveGateway id="decisionPoint" name="Decision point" gatewayDirection="Diverging">
+<bpmn2:incoming>CheckingToDecision</bpmn2:incoming>
+<bpmn2:outgoing>DecisionToNothing</bpmn2:outgoing>
+<bpmn2:outgoing>DecisionToInternalProcess</bpmn2:outgoing>
+<bpmn2:outgoing>DecisionToReactOsmiotic</bpmn2:outgoing>
+</bpmn2:exclusiveGateway>
+<bpmn2:sequenceFlow id="waitingForReceive" sourceRef="waitingForEvent" targetRef="checking"/>
+<bpmn2:sequenceFlow id="DecisionToNothing" sourceRef="decisionPoint" targetRef="doNothing"/>
+<bpmn2:sequenceFlow id="coisoSequence_1" sourceRef="coisoStart" targetRef="waitingForEvent"/>
+<bpmn2:sequenceFlow id="fromInternalToEnd" sourceRef="startInternalProcess" targetRef="membraneEndEvent2"/>
+<bpmn2:sequenceFlow id="fromSimulationToEnd" sourceRef="TaskToEnd" targetRef="SimulationEndEvent"/>
+<bpmn2:sequenceFlow id="DecisionToInternalProcess" sourceRef="decisionPoint" targetRef="startInternalProcess"/>
+<bpmn2:sequenceFlow id="DecisionToReactOsmiotic" sourceRef="decisionPoint" targetRef="TaskToEnd"/>
+<bpmn2:sequenceFlow id="fromNothingToEnd" sourceRef="doNothing" targetRef="membraneEndEvent1"/>
+<bpmn2:sequenceFlow id="CheckingToDecision" sourceRef="checking" targetRef="decisionPoint"/>
+</bpmn2:process>
+<bpmn2:process id="virtuaWorldProcess" name="Virtual World Process">
+<bpmn2:laneSet id="VirtualWorldLaneSet" name="VirtualWorldLaneSet">
+<bpmn2:lane id="EaITResourceImpl_e9aef902-82d2-4020-9ebf-06c1a9d8b2cf_Virtual" name="monitor system">
+<bpmn2:flowNodeRef>EaAtomicExtendedActivityImpl_55136866-92f7-464f-8cc8-d41d8decf5d2</bpmn2:flowNodeRef>
+<bpmn2:flowNodeRef>EaAtomicExtendedActivityImpl_55136866-92f7-464f-8cc8-d41d8decf5d2_Start</bpmn2:flowNodeRef>
+</bpmn2:lane>
+</bpmn2:laneSet>
+<bpmn2:serviceTask id="EaAtomicExtendedActivityImpl_55136866-92f7-464f-8cc8-d41d8decf5d2" name="rrrr">
+<bpmn2:incoming>EaAtomicExtendedActivityImpl_55136866-92f7-464f-8cc8-d41d8decf5d2_SequenceFlow</bpmn2:incoming>
+<bpmn2:outgoing>EaAtomicExtendedActivityImpl_55136866-92f7-464f-8cc8-d41d8decf5d2Sequence_1</bpmn2:outgoing>
+</bpmn2:serviceTask>
+<bpmn2:endEvent id="EaAtomicExtendedActivityImpl_55136866-92f7-464f-8cc8-d41d8decf5d2End" name="EndEvent">
+<bpmn2:incoming>EaAtomicExtendedActivityImpl_55136866-92f7-464f-8cc8-d41d8decf5d2Sequence_1</bpmn2:incoming>
+</bpmn2:endEvent>
+<bpmn2:startEvent id="EaAtomicExtendedActivityImpl_55136866-92f7-464f-8cc8-d41d8decf5d2_Start" name="rrrr_StartEvent">
+<bpmn2:outgoing>EaAtomicExtendedActivityImpl_55136866-92f7-464f-8cc8-d41d8decf5d2_SequenceFlow</bpmn2:outgoing>
+</bpmn2:startEvent>
+<bpmn2:sequenceFlow id="EaAtomicExtendedActivityImpl_55136866-92f7-464f-8cc8-d41d8decf5d2Sequence_1" sourceRef="EaAtomicExtendedActivityImpl_55136866-92f7-464f-8cc8-d41d8decf5d2" targetRef="EaAtomicExtendedActivityImpl_55136866-92f7-464f-8cc8-d41d8decf5d2End"/>
+<bpmn2:sequenceFlow id="EaAtomicExtendedActivityImpl_55136866-92f7-464f-8cc8-d41d8decf5d2_SequenceFlow" name="rrrr_SequenceFlow" sourceRef="EaAtomicExtendedActivityImpl_55136866-92f7-464f-8cc8-d41d8decf5d2_Start" targetRef="EaAtomicExtendedActivityImpl_55136866-92f7-464f-8cc8-d41d8decf5d2"/>
+</bpmn2:process>
+<bpmn2:process id="EaProcessImpl_d93869a8-ea0d-4a68-a3ee-0ec5cd0d8ce9" name="test111">
+<bpmn2:laneSet id="RealWorldLaneSet" name="RealWorldLaneSet">
+<bpmn2:lane id="EaHumanResourceImpl_c8c0f491-3da6-42dd-a596-af050fc91101_Real" name="worker">
+<bpmn2:flowNodeRef>EaAtomicExtendedActivityImpl_a36270b5-7928-435b-a5ba-05793f91e0d9</bpmn2:flowNodeRef>
+<bpmn2:flowNodeRef>EaAtomicExtendedActivityImpl_a36270b5-7928-435b-a5ba-05793f91e0d9_End</bpmn2:flowNodeRef>
+</bpmn2:lane>
+</bpmn2:laneSet>
+<bpmn2:dataObject id="EaMaterialResourceImpl_2f67a3b1-51b8-4a3d-9e8a-f6579b355173" name="tool"/>
+<bpmn2:userTask id="EaAtomicExtendedActivityImpl_a36270b5-7928-435b-a5ba-05793f91e0d9" name="test11111">
+<bpmn2:incoming>EaAtomicExtendedActivityImpl_a36270b5-7928-435b-a5ba-05793f91e0d9Sequence_1</bpmn2:incoming>
+<bpmn2:outgoing>EaAtomicExtendedActivityImpl_a36270b5-7928-435b-a5ba-05793f91e0d9_SequenceFlow</bpmn2:outgoing>
+</bpmn2:userTask>
+<bpmn2:startEvent id="EaAtomicExtendedActivityImpl_a36270b5-7928-435b-a5ba-05793f91e0d9Start" name="StartEvent">
+<bpmn2:outgoing>EaAtomicExtendedActivityImpl_a36270b5-7928-435b-a5ba-05793f91e0d9Sequence_1</bpmn2:outgoing>
+</bpmn2:startEvent>
+<bpmn2:endEvent id="EaAtomicExtendedActivityImpl_a36270b5-7928-435b-a5ba-05793f91e0d9_End" name="test11111_EndEvent">
+<bpmn2:incoming>EaAtomicExtendedActivityImpl_a36270b5-7928-435b-a5ba-05793f91e0d9_SequenceFlow</bpmn2:incoming>
+</bpmn2:endEvent>
+<bpmn2:sequenceFlow id="EaAtomicExtendedActivityImpl_a36270b5-7928-435b-a5ba-05793f91e0d9Sequence_1" sourceRef="EaAtomicExtendedActivityImpl_a36270b5-7928-435b-a5ba-05793f91e0d9Start" targetRef="EaAtomicExtendedActivityImpl_a36270b5-7928-435b-a5ba-05793f91e0d9"/>
+<bpmn2:sequenceFlow id="EaAtomicExtendedActivityImpl_a36270b5-7928-435b-a5ba-05793f91e0d9_SequenceFlow" name="test11111_SequenceFlow" sourceRef="EaAtomicExtendedActivityImpl_a36270b5-7928-435b-a5ba-05793f91e0d9" targetRef="EaAtomicExtendedActivityImpl_a36270b5-7928-435b-a5ba-05793f91e0d9_End"/>
+<bpmn2:association id="EaAtomicExtendedActivityImpl_a36270b5-7928-435b-a5ba-05793f91e0d9Association_1" sourceRef="EaMaterialResourceImpl_2f67a3b1-51b8-4a3d-9e8a-f6579b355173" targetRef="EaAtomicExtendedActivityImpl_a36270b5-7928-435b-a5ba-05793f91e0d9"/>
+<bpmn2:association id="EaAtomicExtendedActivityImpl_55136866-92f7-464f-8cc8-d41d8decf5d2Association_1" sourceRef="EaMaterialResourceImpl_2f67a3b1-51b8-4a3d-9e8a-f6579b355173" targetRef="EaAtomicExtendedActivityImpl_55136866-92f7-464f-8cc8-d41d8decf5d2"/>
+</bpmn2:process>
+<bpmn2:process id="EaInternalConnectorImpl_06a3abb0-5b89-4b7f-8793-cdf26a277584" name="new Internal Connector"/>
+<bpmn2:process id="EaInternalConnectorImpl_068007b2-407c-43bc-bdfb-57c93ef2bb81" name="new Internal Connector"/>
+<bpmn2:collaboration id="collaboration_1" name="collaboration">
+<bpmn2:participant id="EaInternalConnectorImpl_06a3abb0-5b89-4b7f-8793-cdf26a277584_Participant" name="new Internal Connector" processRef="EaInternalConnectorImpl_06a3abb0-5b89-4b7f-8793-cdf26a277584"/>
+<bpmn2:participant id="EaInternalConnectorImpl_068007b2-407c-43bc-bdfb-57c93ef2bb81_Participant" name="new Internal Connector" processRef="EaInternalConnectorImpl_06a3abb0-5b89-4b7f-8793-cdf26a277584"/>
+<bpmn2:participant id="osmoseProcess_Participant" name="Osmose Platform" processRef="osmoseProcess"/>
+<bpmn2:participant id="EaProcessImpl_d93869a8-ea0d-4a68-a3ee-0ec5cd0d8ce9_Participant" name="Real World" processRef="EaProcessImpl_d93869a8-ea0d-4a68-a3ee-0ec5cd0d8ce9"/>
+<bpmn2:participant id="virtuaWorldProcess_Participant" name="Virtual World" processRef="virtuaWorldProcess"/>
+<bpmn2:messageFlow id="EaOutputInputFlowImpl_70fdd749-6000-4c06-8478-59f299947dd022222" name=" 22222" sourceRef="EaInternalConnectorImpl_06a3abb0-5b89-4b7f-8793-cdf26a277584_Participant" targetRef="EaAtomicExtendedActivityImpl_a36270b5-7928-435b-a5ba-05793f91e0d9"/>
+<bpmn2:messageFlow id="EaOutputInputFlowImpl_c0416940-1600-45ca-af30-dfa84d2e7e7c" name=" " sourceRef="EaAtomicExtendedActivityImpl_55136866-92f7-464f-8cc8-d41d8decf5d2" targetRef="EaInternalConnectorImpl_068007b2-407c-43bc-bdfb-57c93ef2bb81_Participant"/>
+<bpmn2:messageFlow id="EaOutputInputFlowImpl_a80dbff5-025b-4432-9e95-dd07e01c8b87_ChangeWorld1" name="EaOutputInputFlowImpl_a80dbff5-025b-4432-9e95-dd07e01c8b87_ChangeWorld1" sourceRef="EaAtomicExtendedActivityImpl_a36270b5-7928-435b-a5ba-05793f91e0d9" targetRef="waitingForEvent"/>
+<bpmn2:messageFlow id="EaOutputInputFlowImpl_a80dbff5-025b-4432-9e95-dd07e01c8b87_ChangeWorld2" name="EaOutputInputFlowImpl_a80dbff5-025b-4432-9e95-dd07e01c8b87_ChangeWorld2" sourceRef="TaskToEnd" targetRef="EaAtomicExtendedActivityImpl_55136866-92f7-464f-8cc8-d41d8decf5d2"/>
+</bpmn2:collaboration>
+<bpmndi:BPMNDiagram id="BPMNDiagram">
+<bpmndi:BPMNPlane id="BPMNPlane" bpmnElement="osmoseProcessvirtuaWorldProcessEaProcessImpl_d93869a8-ea0d-4a68-a3ee-0ec5cd0d8ce9EaInternalConnectorImpl_06a3abb0-5b89-4b7f-8793-cdf26a277584EaInternalConnectorImpl_068007b2-407c-43bc-bdfb-57c93ef2bb81">
+<bpmndi:BPMNShape isHorizontal="true" id="BPMNShape_Participant_1" bpmnElement="EaInternalConnectorImpl_06a3abb0-5b89-4b7f-8793-cdf26a277584_Participant">
+<dc:Bounds height="200" width="1030.0" x="170" y="400"/>
+</bpmndi:BPMNShape>
+<bpmndi:BPMNEdge id="BPMNEdge_messageFlows_1" bpmnElement="EaOutputInputFlowImpl_70fdd749-6000-4c06-8478-59f299947dd022222" sourceElement="EaInternalConnectorImpl_06a3abb0-5b89-4b7f-8793-cdf26a277584_Participant" targetElement="EaAtomicExtendedActivityImpl_a36270b5-7928-435b-a5ba-05793f91e0d9">
+<di:waypoint xsi:type="dc:Point" x="170" y="400"/>
+<di:waypoint xsi:type="dc:Point" x="12.0" y="12.0"/>
+</bpmndi:BPMNEdge>
+<bpmndi:BPMNShape isHorizontal="true" id="BPMNShape_Participant_2" bpmnElement="EaInternalConnectorImpl_068007b2-407c-43bc-bdfb-57c93ef2bb81_Participant">
+<dc:Bounds height="200" width="1030.0" x="170" y="700"/>
+</bpmndi:BPMNShape>
+<bpmndi:BPMNEdge id="BPMNEdge_messageFlows_2" bpmnElement="EaOutputInputFlowImpl_c0416940-1600-45ca-af30-dfa84d2e7e7c" sourceElement="EaAtomicExtendedActivityImpl_55136866-92f7-464f-8cc8-d41d8decf5d2" targetElement="EaInternalConnectorImpl_068007b2-407c-43bc-bdfb-57c93ef2bb81_Participant">
+<di:waypoint xsi:type="dc:Point" x="12.0" y="12.0"/>
+<di:waypoint xsi:type="dc:Point" x="170" y="700"/>
+</bpmndi:BPMNEdge>
+<bpmndi:BPMNShape isHorizontal="true" id="BPMNShape_Participant_3" bpmnElement="osmoseProcess_Participant">
+<dc:Bounds height="200" width="1030.0" x="170" y="1000"/>
+</bpmndi:BPMNShape>
+<bpmndi:BPMNShape isHorizontal="true" id="BPMNShape_Participant_4" bpmnElement="EaProcessImpl_d93869a8-ea0d-4a68-a3ee-0ec5cd0d8ce9_Participant">
+<dc:Bounds height="200" width="1030.0" x="170" y="100"/>
+</bpmndi:BPMNShape>
+<bpmndi:BPMNShape isHorizontal="true" id="BPMNShape_Participant_5" bpmnElement="virtuaWorldProcess_Participant">
+<dc:Bounds height="200" width="1030.0" x="170" y="1600"/>
+</bpmndi:BPMNShape>
+<bpmndi:BPMNShape id="BPMNShape_Lane_Membrane" bpmnElement="Membrane" isHorizontal="true">
+<dc:Bounds height="200" width="1000.0" x="200" y="100"/>
+</bpmndi:BPMNShape>
+<bpmndi:BPMNShape id="BPMNShape_Task_3" bpmnElement="doNothing">
+<dc:Bounds height="50.0" width="110.0" x="300" y="175"/>
+</bpmndi:BPMNShape>
+<bpmndi:BPMNShape id="BPMNShape_Task_5" bpmnElement="waitingForEvent">
+<dc:Bounds height="50.0" width="110.0" x="400" y="175"/>
+</bpmndi:BPMNShape>
+<bpmndi:BPMNShape id="BPMNShape_Task_12" bpmnElement="checking">
+<dc:Bounds height="50.0" width="110.0" x="750" y="175"/>
+</bpmndi:BPMNShape>
+<bpmndi:BPMNShape id="BPMNShape_Task_13" bpmnElement="startInternalProcess">
+<dc:Bounds height="50.0" width="110.0" x="800" y="175"/>
+</bpmndi:BPMNShape>
+<bpmndi:BPMNShape id="startEvent11" bpmnElement="coisoStart">
+<dc:Bounds height="36.0" width="36.0" x="700" y="175"/>
+</bpmndi:BPMNShape>
+<bpmndi:BPMNShape id="BPMNShape_EndEvent_membraneEndEvent2" bpmnElement="membraneEndEvent2">
+<dc:Bounds height="36.0" width="36.0" x="550" y="175"/>
+</bpmndi:BPMNShape>
+<bpmndi:BPMNShape id="BPMNShape_EndEvent_membraneEndEvent1" bpmnElement="membraneEndEvent1">
+<dc:Bounds height="36.0" width="36.0" x="600" y="175"/>
+</bpmndi:BPMNShape>
+<bpmndi:BPMNShape id="BPMNShape_Lane_Virtualization" bpmnElement="Virtualization" isHorizontal="true">
+<dc:Bounds height="200" width="1000.0" x="200" y="300"/>
+</bpmndi:BPMNShape>
+<bpmndi:BPMNShape id="BPMNShape_Task_4" bpmnElement="TaskToEnd">
+<dc:Bounds height="50.0" width="110.0" x="350" y="375"/>
+</bpmndi:BPMNShape>
+<bpmndi:BPMNShape id="BPMNShape_EndEvent_SimulationEndEvent" bpmnElement="SimulationEndEvent">
+<dc:Bounds height="36.0" width="36.0" x="900" y="375"/>
+</bpmndi:BPMNShape>
+<bpmndi:BPMNEdge id="BPMNEdge_SequenceFlow_waitingForReceive" bpmnElement="waitingForReceive" sourceElement="waitingForEvent" targetElement="checking">
+<di:waypoint xsi:type="dc:Point" x="12" y="12"/>
+<di:waypoint xsi:type="dc:Point" x="12" y="12"/>
+</bpmndi:BPMNEdge>
+<bpmndi:BPMNEdge id="BPMNEdge_SequenceFlow_DecisionToNothing" bpmnElement="DecisionToNothing" sourceElement="decisionPoint" targetElement="doNothing">
+<di:waypoint xsi:type="dc:Point" x="12" y="12"/>
+<di:waypoint xsi:type="dc:Point" x="12" y="12"/>
+</bpmndi:BPMNEdge>
+<bpmndi:BPMNEdge id="BPMNEdge_SequenceFlow_coisoSequence_1" bpmnElement="coisoSequence_1" sourceElement="coisoStart" targetElement="waitingForEvent">
+<di:waypoint xsi:type="dc:Point" x="12" y="12"/>
+<di:waypoint xsi:type="dc:Point" x="12" y="12"/>
+</bpmndi:BPMNEdge>
+<bpmndi:BPMNEdge id="BPMNEdge_SequenceFlow_fromInternalToEnd" bpmnElement="fromInternalToEnd" sourceElement="startInternalProcess" targetElement="membraneEndEvent2">
+<di:waypoint xsi:type="dc:Point" x="12" y="12"/>
+<di:waypoint xsi:type="dc:Point" x="12" y="12"/>
+</bpmndi:BPMNEdge>
+<bpmndi:BPMNEdge id="BPMNEdge_SequenceFlow_fromSimulationToEnd" bpmnElement="fromSimulationToEnd" sourceElement="TaskToEnd" targetElement="SimulationEndEvent">
+<di:waypoint xsi:type="dc:Point" x="12" y="12"/>
+<di:waypoint xsi:type="dc:Point" x="12" y="12"/>
+</bpmndi:BPMNEdge>
+<bpmndi:BPMNEdge id="BPMNEdge_SequenceFlow_DecisionToInternalProcess" bpmnElement="DecisionToInternalProcess" sourceElement="decisionPoint" targetElement="startInternalProcess">
+<di:waypoint xsi:type="dc:Point" x="12" y="12"/>
+<di:waypoint xsi:type="dc:Point" x="12" y="12"/>
+</bpmndi:BPMNEdge>
+<bpmndi:BPMNEdge id="BPMNEdge_SequenceFlow_DecisionToReactOsmiotic" bpmnElement="DecisionToReactOsmiotic" sourceElement="decisionPoint" targetElement="TaskToEnd">
+<di:waypoint xsi:type="dc:Point" x="12" y="12"/>
+<di:waypoint xsi:type="dc:Point" x="12" y="12"/>
+</bpmndi:BPMNEdge>
+<bpmndi:BPMNEdge id="BPMNEdge_SequenceFlow_fromNothingToEnd" bpmnElement="fromNothingToEnd" sourceElement="doNothing" targetElement="membraneEndEvent1">
+<di:waypoint xsi:type="dc:Point" x="12" y="12"/>
+<di:waypoint xsi:type="dc:Point" x="12" y="12"/>
+</bpmndi:BPMNEdge>
+<bpmndi:BPMNEdge id="BPMNEdge_SequenceFlow_CheckingToDecision" bpmnElement="CheckingToDecision" sourceElement="checking" targetElement="decisionPoint">
+<di:waypoint xsi:type="dc:Point" x="12" y="12"/>
+<di:waypoint xsi:type="dc:Point" x="12" y="12"/>
+</bpmndi:BPMNEdge>
+<bpmndi:BPMNShape id="BPMNShape_ExclusiveGateway_19" bpmnElement="decisionPoint">
+<dc:Bounds height="50.0" width="110.0" x="1100" y="175"/>
+</bpmndi:BPMNShape>
+<bpmndi:BPMNShape id="BPMNShape_Lane_EaITResourceImpl_e9aef902-82d2-4020-9ebf-06c1a9d8b2cf_Virtual" bpmnElement="EaITResourceImpl_e9aef902-82d2-4020-9ebf-06c1a9d8b2cf_Virtual" isHorizontal="true">
+<dc:Bounds height="200" width="1000.0" x="200" y="100"/>
+</bpmndi:BPMNShape>
+<bpmndi:BPMNShape id="BPMNShape_ServiceTask_2" bpmnElement="EaAtomicExtendedActivityImpl_55136866-92f7-464f-8cc8-d41d8decf5d2">
+<dc:Bounds height="50.0" width="110.0" x="250" y="175"/>
+</bpmndi:BPMNShape>
+<bpmndi:BPMNShape id="startEvent5" bpmnElement="EaAtomicExtendedActivityImpl_55136866-92f7-464f-8cc8-d41d8decf5d2_Start">
+<dc:Bounds height="36.0" width="36.0" x="400" y="175"/>
+</bpmndi:BPMNShape>
+<bpmndi:BPMNShape id="BPMNShape_EndEvent_EaAtomicExtendedActivityImpl_55136866-92f7-464f-8cc8-d41d8decf5d2End" bpmnElement="EaAtomicExtendedActivityImpl_55136866-92f7-464f-8cc8-d41d8decf5d2End">
+<dc:Bounds height="36.0" width="36.0" x="300" y="175"/>
+</bpmndi:BPMNShape>
+<bpmndi:BPMNEdge id="BPMNEdge_SequenceFlow_EaAtomicExtendedActivityImpl_55136866-92f7-464f-8cc8-d41d8decf5d2Sequence_1" bpmnElement="EaAtomicExtendedActivityImpl_55136866-92f7-464f-8cc8-d41d8decf5d2Sequence_1" sourceElement="EaAtomicExtendedActivityImpl_55136866-92f7-464f-8cc8-d41d8decf5d2" targetElement="EaAtomicExtendedActivityImpl_55136866-92f7-464f-8cc8-d41d8decf5d2End">
+<di:waypoint xsi:type="dc:Point" x="12" y="12"/>
+<di:waypoint xsi:type="dc:Point" x="12" y="12"/>
+</bpmndi:BPMNEdge>
+<bpmndi:BPMNEdge id="BPMNEdge_SequenceFlow_EaAtomicExtendedActivityImpl_55136866-92f7-464f-8cc8-d41d8decf5d2_SequenceFlow" bpmnElement="EaAtomicExtendedActivityImpl_55136866-92f7-464f-8cc8-d41d8decf5d2_SequenceFlow" sourceElement="EaAtomicExtendedActivityImpl_55136866-92f7-464f-8cc8-d41d8decf5d2_Start" targetElement="EaAtomicExtendedActivityImpl_55136866-92f7-464f-8cc8-d41d8decf5d2">
+<di:waypoint xsi:type="dc:Point" x="12" y="12"/>
+<di:waypoint xsi:type="dc:Point" x="12" y="12"/>
+</bpmndi:BPMNEdge>
+<bpmndi:BPMNShape id="BPMNShape_Lane_EaHumanResourceImpl_c8c0f491-3da6-42dd-a596-af050fc91101_Real" bpmnElement="EaHumanResourceImpl_c8c0f491-3da6-42dd-a596-af050fc91101_Real" isHorizontal="true">
+<dc:Bounds height="200" width="1000.0" x="200" y="100"/>
+</bpmndi:BPMNShape>
+<bpmndi:BPMNShape id="BPMNShape_BusinessRuleTask_2" bpmnElement="EaAtomicExtendedActivityImpl_a36270b5-7928-435b-a5ba-05793f91e0d9">
+<dc:Bounds height="50.0" width="110.0" x="250" y="175"/>
+</bpmndi:BPMNShape>
+<bpmndi:BPMNShape id="startEvent4" bpmnElement="EaAtomicExtendedActivityImpl_a36270b5-7928-435b-a5ba-05793f91e0d9Start">
+<dc:Bounds height="36.0" width="36.0" x="350" y="175"/>
+</bpmndi:BPMNShape>
+<bpmndi:BPMNShape id="BPMNShape_EndEvent_EaAtomicExtendedActivityImpl_a36270b5-7928-435b-a5ba-05793f91e0d9_End" bpmnElement="EaAtomicExtendedActivityImpl_a36270b5-7928-435b-a5ba-05793f91e0d9_End">
+<dc:Bounds height="36.0" width="36.0" x="400" y="175"/>
+</bpmndi:BPMNShape>
+<bpmndi:BPMNShape id="BPMNShape_DataObject_1" bpmnElement="EaMaterialResourceImpl_2f67a3b1-51b8-4a3d-9e8a-f6579b355173">
+<dc:Bounds height="65.0" width="36.0" x="200" y="175"/>
+</bpmndi:BPMNShape>
+<bpmndi:BPMNEdge id="BPMNEdge_SequenceFlow_EaAtomicExtendedActivityImpl_a36270b5-7928-435b-a5ba-05793f91e0d9Sequence_1" bpmnElement="EaAtomicExtendedActivityImpl_a36270b5-7928-435b-a5ba-05793f91e0d9Sequence_1" sourceElement="EaAtomicExtendedActivityImpl_a36270b5-7928-435b-a5ba-05793f91e0d9Start" targetElement="EaAtomicExtendedActivityImpl_a36270b5-7928-435b-a5ba-05793f91e0d9">
+<di:waypoint xsi:type="dc:Point" x="12" y="12"/>
+<di:waypoint xsi:type="dc:Point" x="12" y="12"/>
+</bpmndi:BPMNEdge>
+<bpmndi:BPMNEdge id="BPMNEdge_SequenceFlow_EaAtomicExtendedActivityImpl_a36270b5-7928-435b-a5ba-05793f91e0d9_SequenceFlow" bpmnElement="EaAtomicExtendedActivityImpl_a36270b5-7928-435b-a5ba-05793f91e0d9_SequenceFlow" sourceElement="EaAtomicExtendedActivityImpl_a36270b5-7928-435b-a5ba-05793f91e0d9" targetElement="EaAtomicExtendedActivityImpl_a36270b5-7928-435b-a5ba-05793f91e0d9_End">
+<di:waypoint xsi:type="dc:Point" x="12" y="12"/>
+<di:waypoint xsi:type="dc:Point" x="12" y="12"/>
+</bpmndi:BPMNEdge>
+<bpmndi:BPMNEdge id="BPMNEdge_Association_1" bpmnElement="EaAtomicExtendedActivityImpl_a36270b5-7928-435b-a5ba-05793f91e0d9Association_1" sourceElement="EaMaterialResourceImpl_2f67a3b1-51b8-4a3d-9e8a-f6579b355173" targetElement="EaAtomicExtendedActivityImpl_a36270b5-7928-435b-a5ba-05793f91e0d9">
+<di:waypoint xsi:type="dc:Point" x="12" y="12"/>
+<di:waypoint xsi:type="dc:Point" x="12" y="12"/>
+</bpmndi:BPMNEdge>
+<bpmndi:BPMNEdge id="BPMNEdge_Association_2" bpmnElement="EaAtomicExtendedActivityImpl_55136866-92f7-464f-8cc8-d41d8decf5d2Association_1" sourceElement="EaMaterialResourceImpl_2f67a3b1-51b8-4a3d-9e8a-f6579b355173" targetElement="EaAtomicExtendedActivityImpl_55136866-92f7-464f-8cc8-d41d8decf5d2">
+<di:waypoint xsi:type="dc:Point" x="12" y="12"/>
+<di:waypoint xsi:type="dc:Point" x="12" y="12"/>
+</bpmndi:BPMNEdge>
+</bpmndi:BPMNPlane>
+</bpmndi:BPMNDiagram>
+</bpmn2:definitions>
+  
+  
+    
+  

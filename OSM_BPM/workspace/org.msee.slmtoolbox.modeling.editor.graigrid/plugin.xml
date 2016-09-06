@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+<plugin>
+	<!-- command : define a command for showing the project ID -->
+	<!--<extension point="org.eclipse.ui.commands">
+		<command id="tu.org.msee.slmtoolbox.modeling.editor.graigrid.PiHandler" 
+		name="[Debug] Test add KPI" /> 
+	</extension>-->
+	
+	<!-- handler : define a handler for showing the project ID -->
+	<!--<extension point="org.eclipse.ui.handlers">
+		<handler commandId="tu.org.msee.slmtoolbox.modeling.editor.graigrid.PiHandler" 
+			class="tu.org.msee.slmtoolbox.modeling.editor.graigrid.PiHandler">
+		</handler>
+	</extension>-->
+	
+	<!-- menu : define a menu entry for showing the project ID -->
+	<extension point="org.eclipse.ui.menus">
+		<!--<menuContribution locationURI="popup:org.eclipse.ui.navigator.ProjectExplorer#PopupMenu?after=additions">
+			<command commandId="tu.org.msee.slmtoolbox.modeling.editor.graigrid.PiHandler"
+					id="tu.org.msee.slmtoolbox.modeling.editor.graigrid.PiHandler"
+              		icon="icons/MSEE_red.16.png"> -->
+	         <!-- visible when : "resource selected is of IProject type" [and] "only one selected" -->
+	         <!--visibleWhen -->
+	         	<!-- reference : to an exression for menu constraint -->
+	         	<!-- reference definitionId="org.msee.slmtoolbox.modeling.app.expression.onlyOneProjectSelected"/>
+	         </visibleWhen-->
+			<!--</command>
+		</menuContribution>-->
+	</extension>
+	
+	<!-- For Graphiti : BEGIN -->
+	<extension point="org.eclipse.graphiti.ui.diagramTypes">
+		<diagramType description="This is the diagram type for GRAI grid"
+			id="org.msee.slmtoolbox.modeling.editor.graigrid.diagram.GraiGridDiagramType" name="GRAI grid diagram Type"
+			type="graiGrid">
+		</diagramType>
+	</extension>
+
+	<extension point="org.eclipse.graphiti.ui.diagramTypeProviders">
+		<diagramTypeProvider
+			class="org.msee.slmtoolbox.modeling.editor.graigrid.diagram.GgDiagramTypeProvider"
+			description="This is my editor for Grai grid"
+			id="org.msee.slmtoolbox.modeling.editor.graigrid.diagram.GgDiagramTypeProvider" name="Grai grid editor">
+			<diagramType
+				id="org.msee.slmtoolbox.modeling.editor.graigrid.diagram.GraiGridDiagramType">
+			</diagramType>
+		<imageProvider
+			id="org.msee.slmtoolbox.modeling.editor.graigrid.GraiGridImageProvider">
+ 		</imageProvider>
+		</diagramTypeProvider>
+	</extension>
+	<!-- For Graphiti : END -->
+  
+	<!-- To add an imageProvider to Graphiti : BEGIN -->
+	<extension point="org.eclipse.graphiti.ui.imageProviders">
+		<imageProvider class="org.msee.slmtoolbox.modeling.editor.graigrid.GraiGridImageProvider"
+			id="org.msee.slmtoolbox.modeling.editor.graigrid.GraiGridImageProvider">
+		</imageProvider>
+	</extension>	
+	<!-- To add an imageProvider to Graphiti : END -->
+
+	<!-- To add a PropertyContributor extension to Graphiti : BEGIN -->
+	<extension
+         point="org.eclipse.ui.views.properties.tabbed.propertyContributor">
+      <propertyContributor
+            contributorId="graiGrid.PropertyContributor"
+            labelProvider="org.msee.slmtoolbox.modeling.editor.properties.GraphitiLabelProvider">
+         <propertyCategory
+               category="default">
+         </propertyCategory>
+      </propertyContributor>
+   </extension>
+   <extension
+         point="org.eclipse.ui.views.properties.tabbed.propertyTabs">
+      <propertyTabs
+            contributorId="graiGrid.PropertyContributor">
+         <propertyTab
+               id="Base"
+               label="Base"
+               category="default">
+         </propertyTab>
+      </propertyTabs>
+   </extension>
+   <extension
+         point="org.eclipse.ui.views.properties.tabbed.propertySections">
+      <propertySections
+            contributorId="graiGrid.PropertyContributor">
+         <propertySection
+               class="org.msee.slmtoolbox.modeling.editor.properties.GraphitiPropertyEditionSection"
+               filter="org.msee.slmtoolbox.modeling.editor.graigrid.properties.GgGraphitiPropertyFilter"
+               id="org.msee.slmtoolbox.modeling.model.lang.graiGrid.section"
+               tab="Base">
+         </propertySection>
+      </propertySections>
+   </extension>
+   
+	<!-- To add a PropertyContributor extension to Graphiti : END -->
+    
+   <!-- Link .graigrid files to GraphitiEditor : BEGIN -->
+    <extension
+         point="org.eclipse.ui.editors">
+ 	  <editor
+          class="org.msee.slmtoolbox.modeling.editor.graigrid.diagram.GgGraphitiDiagramEditor"
+          contributorClass="org.eclipse.graphiti.ui.editor.DiagramEditorActionBarContributor"
+          default="true"
+          extensions="graigrid"
+          icon="icons/16/gridgrai.png"
+          id="org.msee.slmtoolbox.modeling.editor.graigrid.DiagramEditor"
+          matchingStrategy="org.eclipse.graphiti.ui.editor.DiagramEditorMatchingStrategy"
+          name="Grai Grid Diagram Editor">
+      </editor>
+   </extension>
+   <!-- Link .grai files to GraphitiEditor : END -->
+ 
+	<!-- To add commands for Graphiti : BEGIN -->
+	<extension point="org.eclipse.ui.newWizards"> 
+		<!-- defines the wizard -->
+		<!-- not valuable : descriptionImage ="icons/MSEE_logo.64.png"  -->
+		<wizard
+	        category="org.msee.slmtoolbox.modeling.category.bsm"
+	        class="org.msee.slmtoolbox.modeling.editor.graigrid.wizards.CreateGraiGridWizard"
+	        finalPerspective="org.msee.slmtoolbox.modeling.app.perspectives.MSeEPerspective"
+	        icon="icons/16/gridgrai.png"
+	        id="org.msee.slmtoolbox.modeling.editor.graigrid.wizards.CreateGraiGridWizard"
+	        name="Create a GRAI grid"
+	        preferredPerspectives="org.msee.slmtoolbox.modeling.app.perspectives.MSeEPerspective"
+	        project="false">
+			<description>
+         		Create a GRAI grid.
+			</description>
+		</wizard>
+	</extension>
+	
+	<!--Add commands
+	<extension point="org.eclipse.ui.commands">
+		<command id="org.msee.slmtoolbox.modeling.editor.graigrid.commands.createDiagramHandler" 
+		name="Create a Grai Grid" /> 
+	</extension> -->
+	<!--Add handlers 
+	<extension point="org.eclipse.ui.handlers">
+		<handler commandId="org.msee.slmtoolbox.modeling.editor.graigrid.commands.createDiagramHandler" 
+			class="org.msee.slmtoolbox.modeling.editor.graigrid.handlers.CreateDiagramHandler">
+		</handler>
+	</extension>-->
+	<!--Add menus 
+	<extension point="org.eclipse.ui.menus">
+		<menuContribution locationURI="popup:org.eclipse.ui.navigator.ProjectExplorer#PopupMenu?after=additions">
+			<command commandId="org.msee.slmtoolbox.modeling.editor.graigrid.commands.createDiagramHandler"
+					id="org.msee.slmtoolbox.modeling.editor.graigrid.menus.createDiagramHandler"
+              		icon="icons/16/gridgrai.png"> 
+			</command>
+		</menuContribution>
+	</extension>-->
+	<!-- To add commands for Graphiti : END -->
+	
+</plugin>

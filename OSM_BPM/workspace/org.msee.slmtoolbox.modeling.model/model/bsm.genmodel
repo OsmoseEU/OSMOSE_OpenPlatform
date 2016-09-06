@@ -1,0 +1,515 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.msee.slmtoolbox.modeling.model/src" editorDirectory="/org.msee.slmtoolbox.modeling.editor.bsm/src"
+    modelPluginID="org.msee.slmtoolbox.modeling.model" modelName="Bsm" importerID="org.eclipse.emf.importer.ecore"
+    featureDelegation="Dynamic" complianceLevel="7.0" copyrightFields="false" editorPluginID="org.msee.slmtoolbox.modeling.editor.bsm">
+  <foreignModel>bsm.ecore</foreignModel>
+  <genPackages prefix="Bsm" basePackage="org.msee.slmtoolbox.modeling.model.ssm" disposableProviderFactory="true"
+      contentTypeIdentifier="" ecorePackage="bsm.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="bsm.ecore#//BsmGender">
+      <genEnumLiterals ecoreEnumLiteral="bsm.ecore#//BsmGender/female"/>
+      <genEnumLiterals ecoreEnumLiteral="bsm.ecore#//BsmGender/male"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="bsm.ecore#//BsmResourceType">
+      <genEnumLiterals ecoreEnumLiteral="bsm.ecore#//BsmResourceType/physicalMean"/>
+      <genEnumLiterals ecoreEnumLiteral="bsm.ecore#//BsmResourceType/IT"/>
+      <genEnumLiterals ecoreEnumLiteral="bsm.ecore#//BsmResourceType/human"/>
+      <genEnumLiterals ecoreEnumLiteral="bsm.ecore#//BsmResourceType/undefined"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="bsm.ecore#//BsmPIType">
+      <genEnumLiterals ecoreEnumLiteral="bsm.ecore#//BsmPIType/customerOriented"/>
+      <genEnumLiterals ecoreEnumLiteral="bsm.ecore#//BsmPIType/providerOriented"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="bsm.ecore#//BsmDecisionType">
+      <genEnumLiterals ecoreEnumLiteral="bsm.ecore#//BsmDecisionType/periodic"/>
+      <genEnumLiterals ecoreEnumLiteral="bsm.ecore#//BsmDecisionType/eventBased"/>
+    </genEnums>
+    <genClasses image="false" ecoreClass="bsm.ecore#//IBsmNamedElement">
+      <genOperations ecoreOperation="bsm.ecore#//IBsmNamedElement/getId"/>
+      <genOperations ecoreOperation="bsm.ecore#//IBsmNamedElement/getName"/>
+      <genOperations ecoreOperation="bsm.ecore#//IBsmNamedElement/setId">
+        <genParameters ecoreParameter="bsm.ecore#//IBsmNamedElement/setId/id"/>
+      </genOperations>
+      <genOperations ecoreOperation="bsm.ecore#//IBsmNamedElement/setName">
+        <genParameters ecoreParameter="bsm.ecore#//IBsmNamedElement/setName/name"/>
+      </genOperations>
+      <genOperations ecoreOperation="bsm.ecore#//IBsmNamedElement/toString"/>
+    </genClasses>
+    <genClasses ecoreClass="bsm.ecore#//BsmModel">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bsm.ecore#//BsmModel/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bsm.ecore#//BsmModel/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference bsm.ecore#//BsmModel/service"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference bsm.ecore#//BsmModel/organizations"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference bsm.ecore#//BsmModel/partners"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference bsm.ecore#//BsmModel/stakeholders"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference bsm.ecore#//BsmModel/values"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference bsm.ecore#//BsmModel/products"/>
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference bsm.ecore#//BsmModel/functionalities"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference bsm.ecore#//BsmModel/customers"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference bsm.ecore#//BsmModel/processes"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference bsm.ecore#//BsmModel/decisions"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference bsm.ecore#//BsmModel/decisionStructures"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference bsm.ecore#//BsmModel/resources"/>
+    </genClasses>
+    <genClasses ecoreClass="bsm.ecore#//BsmService">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bsm.ecore#//BsmService/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bsm.ecore#//BsmService/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bsm.ecore#//BsmService/description"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bsm.ecore#//BsmService/constraint"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bsm.ecore#//BsmService/objective"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bsm.ecore#//BsmService/domain"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bsm.ecore#//BsmService/nature"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference bsm.ecore#//BsmService/products"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference bsm.ecore#//BsmService/functionalities"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference bsm.ecore#//BsmService/resources"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference bsm.ecore#//BsmService/processes"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference bsm.ecore#//BsmService/customers"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference bsm.ecore#//BsmService/values"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference bsm.ecore#//BsmService/stakeholders"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference bsm.ecore#//BsmService/partners"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference bsm.ecore#//BsmService/bsmModel"/>
+    </genClasses>
+    <genClasses ecoreClass="bsm.ecore#//BsmCustomer">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bsm.ecore#//BsmCustomer/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bsm.ecore#//BsmCustomer/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bsm.ecore#//BsmCustomer/categories"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bsm.ecore#//BsmCustomer/levelOfEducation"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bsm.ecore#//BsmCustomer/gender"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bsm.ecore#//BsmCustomer/age"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bsm.ecore#//BsmCustomer/annualRevenueRange"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bsm.ecore#//BsmCustomer/requirement"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bsm.ecore#//BsmCustomer/constraint"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bsm.ecore#//BsmCustomer/targetedUsageFreq"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference bsm.ecore#//BsmCustomer/service"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference bsm.ecore#//BsmCustomer/bsmModel"/>
+    </genClasses>
+    <genClasses ecoreClass="bsm.ecore#//BsmStakeholder">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bsm.ecore#//BsmStakeholder/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bsm.ecore#//BsmStakeholder/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bsm.ecore#//BsmStakeholder/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bsm.ecore#//BsmStakeholder/concern"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bsm.ecore#//BsmStakeholder/constraint"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bsm.ecore#//BsmStakeholder/role"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference bsm.ecore#//BsmStakeholder/service"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference bsm.ecore#//BsmStakeholder/bsmModel"/>
+    </genClasses>
+    <genClasses ecoreClass="bsm.ecore#//BsmPartner">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bsm.ecore#//BsmPartner/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bsm.ecore#//BsmPartner/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bsm.ecore#//BsmPartner/category"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bsm.ecore#//BsmPartner/competence"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bsm.ecore#//BsmPartner/concern"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bsm.ecore#//BsmPartner/constraint"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bsm.ecore#//BsmPartner/contribution"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference bsm.ecore#//BsmPartner/service"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference bsm.ecore#//BsmPartner/bsmModel"/>
+    </genClasses>
+    <genClasses ecoreClass="bsm.ecore#//BsmProduct">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bsm.ecore#//BsmProduct/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bsm.ecore#//BsmProduct/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bsm.ecore#//BsmProduct/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bsm.ecore#//BsmProduct/function"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bsm.ecore#//BsmProduct/techCharacteristics"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference bsm.ecore#//BsmProduct/service"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference bsm.ecore#//BsmProduct/functionalities"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference bsm.ecore#//BsmProduct/components"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference bsm.ecore#//BsmProduct/bsmModel"/>
+    </genClasses>
+    <genClasses ecoreClass="bsm.ecore#//BsmComponent">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bsm.ecore#//BsmComponent/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bsm.ecore#//BsmComponent/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bsm.ecore#//BsmComponent/cost"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference bsm.ecore#//BsmComponent/product"/>
+    </genClasses>
+    <genClasses ecoreClass="bsm.ecore#//BsmFunctionality">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bsm.ecore#//BsmFunctionality/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bsm.ecore#//BsmFunctionality/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bsm.ecore#//BsmFunctionality/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bsm.ecore#//BsmFunctionality/description"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference bsm.ecore#//BsmFunctionality/service"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference bsm.ecore#//BsmFunctionality/product"/>
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference bsm.ecore#//BsmFunctionality/subFunctions"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference bsm.ecore#//BsmFunctionality/mainFunction"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference bsm.ecore#//BsmFunctionality/bsmModel"/>
+    </genClasses>
+    <genClasses ecoreClass="bsm.ecore#//BsmResource">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bsm.ecore#//BsmResource/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bsm.ecore#//BsmResource/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bsm.ecore#//BsmResource/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bsm.ecore#//BsmResource/role"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bsm.ecore#//BsmResource/capability"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bsm.ecore#//BsmResource/constraint"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference bsm.ecore#//BsmResource/service"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference bsm.ecore#//BsmResource/processes"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference bsm.ecore#//BsmResource/organization"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference bsm.ecore#//BsmResource/bsmModel"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference bsm.ecore#//BsmResource/eaResources"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference bsm.ecore#//BsmResource/mseService"/>
+    </genClasses>
+    <genClasses ecoreClass="bsm.ecore#//BsmProcess">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bsm.ecore#//BsmProcess/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bsm.ecore#//BsmProcess/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bsm.ecore#//BsmProcess/objective"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bsm.ecore#//BsmProcess/trigger"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bsm.ecore#//BsmProcess/result"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bsm.ecore#//BsmProcess/constraint"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference bsm.ecore#//BsmProcess/subProcess"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference bsm.ecore#//BsmProcess/mainProcess"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference bsm.ecore#//BsmProcess/service"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference bsm.ecore#//BsmProcess/resources"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference bsm.ecore#//BsmProcess/organizations"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference bsm.ecore#//BsmProcess/bsmModel"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference bsm.ecore#//BsmProcess/eaProcess"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference bsm.ecore#//BsmProcess/mseService"/>
+    </genClasses>
+    <genClasses ecoreClass="bsm.ecore#//BsmDecision">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bsm.ecore#//BsmDecision/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bsm.ecore#//BsmDecision/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bsm.ecore#//BsmDecision/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bsm.ecore#//BsmDecision/horizon"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bsm.ecore#//BsmDecision/period"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bsm.ecore#//BsmDecision/constraint"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bsm.ecore#//BsmDecision/objective"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bsm.ecore#//BsmDecision/variable"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bsm.ecore#//BsmDecision/event"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference bsm.ecore#//BsmDecision/decisionStructure"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference bsm.ecore#//BsmDecision/organization"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference bsm.ecore#//BsmDecision/bsmModel"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference bsm.ecore#//BsmDecision/ggDecisionCenters"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference bsm.ecore#//BsmDecision/variables"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference bsm.ecore#//BsmDecision/performanceIndicators"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference bsm.ecore#//BsmDecision/objectives"/>
+    </genClasses>
+    <genClasses ecoreClass="bsm.ecore#//BsmDecisionStructure">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bsm.ecore#//BsmDecisionStructure/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bsm.ecore#//BsmDecisionStructure/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference bsm.ecore#//BsmDecisionStructure/decisions"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference bsm.ecore#//BsmDecisionStructure/organizations"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference bsm.ecore#//BsmDecisionStructure/bsmModel"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference bsm.ecore#//BsmDecisionStructure/ggGraiGrids"/>
+    </genClasses>
+    <genClasses ecoreClass="bsm.ecore#//BsmOrganization">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bsm.ecore#//BsmOrganization/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bsm.ecore#//BsmOrganization/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bsm.ecore#//BsmOrganization/description"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference bsm.ecore#//BsmOrganization/processes"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference bsm.ecore#//BsmOrganization/decisions"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference bsm.ecore#//BsmOrganization/bsmModel"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference bsm.ecore#//BsmOrganization/decisionStructures"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference bsm.ecore#//BsmOrganization/ggOrganizations"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference bsm.ecore#//BsmOrganization/eaOrganizations"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference bsm.ecore#//BsmOrganization/mseService"/>
+    </genClasses>
+    <genClasses ecoreClass="bsm.ecore#//BsmEnterprise">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bsm.ecore#//BsmEnterprise/type"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference bsm.ecore#//BsmEnterprise/resources"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference bsm.ecore#//BsmEnterprise/veParticipations"/>
+    </genClasses>
+    <genClasses ecoreClass="bsm.ecore#//BsmVirtualEnterprise">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bsm.ecore#//BsmVirtualEnterprise/type"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference bsm.ecore#//BsmVirtualEnterprise/veParticipations"/>
+    </genClasses>
+    <genClasses ecoreClass="bsm.ecore#//BsmVEParticipation">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bsm.ecore#//BsmVEParticipation/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bsm.ecore#//BsmVEParticipation/name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference bsm.ecore#//BsmVEParticipation/enterprise"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference bsm.ecore#//BsmVEParticipation/virtualEnterprise"/>
+    </genClasses>
+    <genClasses ecoreClass="bsm.ecore#//BsmValue">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bsm.ecore#//BsmValue/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bsm.ecore#//BsmValue/name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference bsm.ecore#//BsmValue/service"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bsm.ecore#//BsmValue/description"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference bsm.ecore#//BsmValue/bsmModel"/>
+    </genClasses>
+    <genClasses ecoreClass="bsm.ecore#//BsmPerformanceIndicator">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bsm.ecore#//BsmPerformanceIndicator/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bsm.ecore#//BsmPerformanceIndicator/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bsm.ecore#//BsmPerformanceIndicator/description"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bsm.ecore#//BsmPerformanceIndicator/unit"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bsm.ecore#//BsmPerformanceIndicator/formula"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bsm.ecore#//BsmPerformanceIndicator/requiredInfo"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bsm.ecore#//BsmPerformanceIndicator/requiredProcessing"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference bsm.ecore#//BsmPerformanceIndicator/decision"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference bsm.ecore#//BsmPerformanceIndicator/variables"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference bsm.ecore#//BsmPerformanceIndicator/objectives"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bsm.ecore#//BsmPerformanceIndicator/category1"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bsm.ecore#//BsmPerformanceIndicator/category2"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bsm.ecore#//BsmPerformanceIndicator/category3"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bsm.ecore#//BsmPerformanceIndicator/dimension"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference bsm.ecore#//BsmPerformanceIndicator/fields"/>
+    </genClasses>
+    <genClasses ecoreClass="bsm.ecore#//BsmPiField">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bsm.ecore#//BsmPiField/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bsm.ecore#//BsmPiField/name"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference bsm.ecore#//BsmPiField/performanceIndicators"/>
+    </genClasses>
+    <genClasses ecoreClass="bsm.ecore#//BsmDecisionVariable">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bsm.ecore#//BsmDecisionVariable/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bsm.ecore#//BsmDecisionVariable/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bsm.ecore#//BsmDecisionVariable/description"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference bsm.ecore#//BsmDecisionVariable/decision"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference bsm.ecore#//BsmDecisionVariable/performanceIndicators"/>
+    </genClasses>
+    <genClasses ecoreClass="bsm.ecore#//BsmDecisionObjective">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bsm.ecore#//BsmDecisionObjective/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bsm.ecore#//BsmDecisionObjective/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bsm.ecore#//BsmDecisionObjective/description"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference bsm.ecore#//BsmDecisionObjective/decision"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference bsm.ecore#//BsmDecisionObjective/performanceIndicators"/>
+    </genClasses>
+    <genClasses ecoreClass="bsm.ecore#//BsmMseService">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bsm.ecore#//BsmMseService/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bsm.ecore#//BsmMseService/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bsm.ecore#//BsmMseService/description"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bsm.ecore#//BsmMseService/owner"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bsm.ecore#//BsmMseService/createDate"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bsm.ecore#//BsmMseService/publishedDate"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bsm.ecore#//BsmMseService/published"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bsm.ecore#//BsmMseService/userId"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference bsm.ecore#//BsmMseService/process"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference bsm.ecore#//BsmMseService/organization"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference bsm.ecore#//BsmMseService/resource"/>
+    </genClasses>
+  </genPackages>
+  <genPackages prefix="EaStar" basePackage="org.msee.slmtoolbox.modeling.model.lang"
+      disposableProviderFactory="true" ecorePackage="eaStar.ecore#/">
+    <nestedGenPackages prefix="Root" basePackage="org.msee.slmtoolbox.modeling.model.lang.eaStar"
+        disposableProviderFactory="true" ecorePackage="eaStar.ecore#//root">
+      <genClasses ecoreClass="eaStar.ecore#//root/EaModel">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference eaStar.ecore#//root/EaModel/process"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference eaStar.ecore#//root/EaModel/organizations"/>
+      </genClasses>
+    </nestedGenPackages>
+    <nestedGenPackages prefix="GeneralElements" basePackage="org.msee.slmtoolbox.modeling.model.lang.eaStar"
+        disposableProviderFactory="true" ecorePackage="eaStar.ecore#//generalElements">
+      <genClasses image="false" ecoreClass="eaStar.ecore#//generalElements/EaBaseElement">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eaStar.ecore#//generalElements/EaBaseElement/id"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eaStar.ecore#//generalElements/EaBaseElement/name"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eaStar.ecore#//generalElements/EaBaseElement/code"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eaStar.ecore#//generalElements/EaBaseElement/description"/>
+      </genClasses>
+      <genClasses ecoreClass="eaStar.ecore#//generalElements/EaProcess">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference eaStar.ecore#//generalElements/EaProcess/flowElements"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference eaStar.ecore#//generalElements/EaProcess/canBe"/>
+        <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference eaStar.ecore#//generalElements/EaProcess/model"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eaStar.ecore#//generalElements/EaProcess/decompositionCode"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="eaStar.ecore#//generalElements/EaFlowElement">
+        <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference eaStar.ecore#//generalElements/EaFlowElement/process"/>
+      </genClasses>
+    </nestedGenPackages>
+    <nestedGenPackages prefix="CoreElements" basePackage="org.msee.slmtoolbox.modeling.model.lang.eaStar"
+        disposableProviderFactory="true" ecorePackage="eaStar.ecore#//coreElements">
+      <genEnums typeSafeEnumCompatible="false" ecoreEnum="eaStar.ecore#//coreElements/EaResourceRole">
+        <genEnumLiterals ecoreEnumLiteral="eaStar.ecore#//coreElements/EaResourceRole/responsibleFor"/>
+        <genEnumLiterals ecoreEnumLiteral="eaStar.ecore#//coreElements/EaResourceRole/participatesIn"/>
+      </genEnums>
+      <genClasses ecoreClass="eaStar.ecore#//coreElements/EaFlow">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eaStar.ecore#//coreElements/EaFlow/isTrigger"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eaStar.ecore#//coreElements/EaFlow/triggerInfo"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference eaStar.ecore#//coreElements/EaFlow/source"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference eaStar.ecore#//coreElements/EaFlow/target"/>
+      </genClasses>
+      <genClasses ecoreClass="eaStar.ecore#//coreElements/EaFlowNode">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference eaStar.ecore#//coreElements/EaFlowNode/organization"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference eaStar.ecore#//coreElements/EaFlowNode/inFlows"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference eaStar.ecore#//coreElements/EaFlowNode/outFlows"/>
+      </genClasses>
+      <genClasses ecoreClass="eaStar.ecore#//coreElements/EaLogicalOperator"/>
+      <genClasses ecoreClass="eaStar.ecore#//coreElements/EaConnector"/>
+      <genClasses image="false" ecoreClass="eaStar.ecore#//coreElements/EaExtendedActivity">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eaStar.ecore#//coreElements/EaExtendedActivity/mission"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eaStar.ecore#//coreElements/EaExtendedActivity/functionalRules"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eaStar.ecore#//coreElements/EaExtendedActivity/minCost"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eaStar.ecore#//coreElements/EaExtendedActivity/maxCost"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eaStar.ecore#//coreElements/EaExtendedActivity/averageCost"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eaStar.ecore#//coreElements/EaExtendedActivity/minTimeDelay"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eaStar.ecore#//coreElements/EaExtendedActivity/maxTimeDelay"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eaStar.ecore#//coreElements/EaExtendedActivity/averageTimeDelay"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eaStar.ecore#//coreElements/EaExtendedActivity/isStarting"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eaStar.ecore#//coreElements/EaExtendedActivity/isEnding"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eaStar.ecore#//coreElements/EaExtendedActivity/decompositionCode"/>
+        <genOperations ecoreOperation="eaStar.ecore#//coreElements/EaExtendedActivity/toString"/>
+      </genClasses>
+      <genClasses ecoreClass="eaStar.ecore#//coreElements/EaResource">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eaStar.ecore#//coreElements/EaResource/unitaryCost"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eaStar.ecore#//coreElements/EaResource/location"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eaStar.ecore#//coreElements/EaResource/capabilities"/>
+      </genClasses>
+      <genClasses ecoreClass="eaStar.ecore#//coreElements/EaITResource">
+        <genOperations ecoreOperation="eaStar.ecore#//coreElements/EaITResource/toString"/>
+      </genClasses>
+      <genClasses ecoreClass="eaStar.ecore#//coreElements/EaHumanResource">
+        <genOperations ecoreOperation="eaStar.ecore#//coreElements/EaHumanResource/toString"/>
+      </genClasses>
+      <genClasses ecoreClass="eaStar.ecore#//coreElements/EaMaterialResource">
+        <genOperations ecoreOperation="eaStar.ecore#//coreElements/EaMaterialResource/toString"/>
+      </genClasses>
+      <genClasses ecoreClass="eaStar.ecore#//coreElements/EaOr">
+        <genOperations ecoreOperation="eaStar.ecore#//coreElements/EaOr/toString"/>
+      </genClasses>
+      <genClasses ecoreClass="eaStar.ecore#//coreElements/EaAnd">
+        <genOperations ecoreOperation="eaStar.ecore#//coreElements/EaAnd/toString"/>
+      </genClasses>
+      <genClasses ecoreClass="eaStar.ecore#//coreElements/EaDivergingAnd"/>
+      <genClasses ecoreClass="eaStar.ecore#//coreElements/EaDivergingOr"/>
+      <genClasses ecoreClass="eaStar.ecore#//coreElements/EaConvergingAnd"/>
+      <genClasses ecoreClass="eaStar.ecore#//coreElements/EaConvergingOr"/>
+      <genClasses ecoreClass="eaStar.ecore#//coreElements/EaInternalConnector">
+        <genOperations ecoreOperation="eaStar.ecore#//coreElements/EaInternalConnector/toString"/>
+      </genClasses>
+      <genClasses ecoreClass="eaStar.ecore#//coreElements/EaExternalConnector">
+        <genOperations ecoreOperation="eaStar.ecore#//coreElements/EaExternalConnector/toString"/>
+      </genClasses>
+      <genClasses ecoreClass="eaStar.ecore#//coreElements/EaProcessConnector">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference eaStar.ecore#//coreElements/EaProcessConnector/processRef"/>
+        <genOperations ecoreOperation="eaStar.ecore#//coreElements/EaProcessConnector/toString"/>
+      </genClasses>
+      <genClasses ecoreClass="eaStar.ecore#//coreElements/EaOutputInputFlow">
+        <genOperations ecoreOperation="eaStar.ecore#//coreElements/EaOutputInputFlow/toString"/>
+      </genClasses>
+      <genClasses ecoreClass="eaStar.ecore#//coreElements/EaSupportFlow">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eaStar.ecore#//coreElements/EaSupportFlow/resourceRole"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eaStar.ecore#//coreElements/EaSupportFlow/responsibility"/>
+        <genOperations ecoreOperation="eaStar.ecore#//coreElements/EaSupportFlow/toString"/>
+      </genClasses>
+      <genClasses ecoreClass="eaStar.ecore#//coreElements/EaControlFlow">
+        <genOperations ecoreOperation="eaStar.ecore#//coreElements/EaControlFlow/toString"/>
+      </genClasses>
+      <genClasses ecoreClass="eaStar.ecore#//coreElements/EaOrganization">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference eaStar.ecore#//coreElements/EaOrganization/flowNode"/>
+        <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference eaStar.ecore#//coreElements/EaOrganization/model"/>
+      </genClasses>
+      <genClasses ecoreClass="eaStar.ecore#//coreElements/EaAtomicExtendedActivity"/>
+      <genClasses ecoreClass="eaStar.ecore#//coreElements/EaStructuralExtendedActivity">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference eaStar.ecore#//coreElements/EaStructuralExtendedActivity/isA"/>
+      </genClasses>
+    </nestedGenPackages>
+  </genPackages>
+  <genPackages prefix="GraiGrid" basePackage="org.msee.slmtoolbox.modeling.model.lang"
+      disposableProviderFactory="true" ecorePackage="graiGrid.ecore#/">
+    <nestedGenPackages prefix="Root" basePackage="org.msee.slmtoolbox.modeling.model.lang.graiGrid"
+        disposableProviderFactory="true" ecorePackage="graiGrid.ecore#//root">
+      <genClasses ecoreClass="graiGrid.ecore#//root/GgModel">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference graiGrid.ecore#//root/GgModel/graiGrids"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference graiGrid.ecore#//root/GgModel/organizations"/>
+      </genClasses>
+    </nestedGenPackages>
+    <nestedGenPackages prefix="GeneralElements" basePackage="org.msee.slmtoolbox.modeling.model.lang.graiGrid"
+        disposableProviderFactory="true" ecorePackage="graiGrid.ecore#//generalElements">
+      <genClasses image="false" ecoreClass="graiGrid.ecore#//generalElements/GgBaseElement">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute graiGrid.ecore#//generalElements/GgBaseElement/id"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute graiGrid.ecore#//generalElements/GgBaseElement/name"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute graiGrid.ecore#//generalElements/GgBaseElement/code"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute graiGrid.ecore#//generalElements/GgBaseElement/description"/>
+      </genClasses>
+      <genClasses ecoreClass="graiGrid.ecore#//generalElements/GgGraiGrid">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference graiGrid.ecore#//generalElements/GgGraiGrid/levels"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference graiGrid.ecore#//generalElements/GgGraiGrid/flows"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference graiGrid.ecore#//generalElements/GgGraiGrid/nodes"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference graiGrid.ecore#//generalElements/GgGraiGrid/functions"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference graiGrid.ecore#//generalElements/GgGraiGrid/informationSources"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference graiGrid.ecore#//generalElements/GgGraiGrid/organizations"/>
+        <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference graiGrid.ecore#//generalElements/GgGraiGrid/model"/>
+        <genOperations ecoreOperation="graiGrid.ecore#//generalElements/GgGraiGrid/toString"/>
+      </genClasses>
+      <genClasses ecoreClass="graiGrid.ecore#//generalElements/GgOrganization">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference graiGrid.ecore#//generalElements/GgOrganization/functions"/>
+        <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference graiGrid.ecore#//generalElements/GgOrganization/model"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference graiGrid.ecore#//generalElements/GgOrganization/graiGrid"/>
+        <genOperations ecoreOperation="graiGrid.ecore#//generalElements/GgOrganization/toString"/>
+      </genClasses>
+    </nestedGenPackages>
+    <nestedGenPackages prefix="CoreElements" basePackage="org.msee.slmtoolbox.modeling.model.lang.graiGrid"
+        disposableProviderFactory="true" ecorePackage="graiGrid.ecore#//coreElements">
+      <genEnums typeSafeEnumCompatible="false" ecoreEnum="graiGrid.ecore#//coreElements/GgTimeUnits">
+        <genEnumLiterals ecoreEnumLiteral="graiGrid.ecore#//coreElements/GgTimeUnits/YEAR"/>
+        <genEnumLiterals ecoreEnumLiteral="graiGrid.ecore#//coreElements/GgTimeUnits/MONTH"/>
+        <genEnumLiterals ecoreEnumLiteral="graiGrid.ecore#//coreElements/GgTimeUnits/WEEK"/>
+        <genEnumLiterals ecoreEnumLiteral="graiGrid.ecore#//coreElements/GgTimeUnits/DAY"/>
+      </genEnums>
+      <genClasses ecoreClass="graiGrid.ecore#//coreElements/GgFunction">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference graiGrid.ecore#//coreElements/GgFunction/graiGrid"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference graiGrid.ecore#//coreElements/GgFunction/decisionCenters"/>
+        <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference graiGrid.ecore#//coreElements/GgFunction/organization"/>
+        <genOperations ecoreOperation="graiGrid.ecore#//coreElements/GgFunction/toString"/>
+      </genClasses>
+      <genClasses ecoreClass="graiGrid.ecore#//coreElements/GgLevel">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference graiGrid.ecore#//coreElements/GgLevel/nodes"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference graiGrid.ecore#//coreElements/GgLevel/horizon"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference graiGrid.ecore#//coreElements/GgLevel/period"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference graiGrid.ecore#//coreElements/GgLevel/processingUnit"/>
+        <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference graiGrid.ecore#//coreElements/GgLevel/graiGrid"/>
+        <genOperations ecoreOperation="graiGrid.ecore#//coreElements/GgLevel/toString"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="graiGrid.ecore#//coreElements/GgFlow">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference graiGrid.ecore#//coreElements/GgFlow/source"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference graiGrid.ecore#//coreElements/GgFlow/target"/>
+        <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference graiGrid.ecore#//coreElements/GgFlow/graiGrid"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="graiGrid.ecore#//coreElements/GgNode">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference graiGrid.ecore#//coreElements/GgNode/level"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference graiGrid.ecore#//coreElements/GgNode/outFlows"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference graiGrid.ecore#//coreElements/GgNode/inFlows"/>
+        <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference graiGrid.ecore#//coreElements/GgNode/graiGrid"/>
+      </genClasses>
+      <genClasses ecoreClass="graiGrid.ecore#//coreElements/GgDecisionFrame">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute graiGrid.ecore#//coreElements/GgDecisionFrame/decisionVariable"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute graiGrid.ecore#//coreElements/GgDecisionFrame/objective"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute graiGrid.ecore#//coreElements/GgDecisionFrame/constraint"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute graiGrid.ecore#//coreElements/GgDecisionFrame/criteria"/>
+        <genOperations ecoreOperation="graiGrid.ecore#//coreElements/GgDecisionFrame/toString"/>
+      </genClasses>
+      <genClasses ecoreClass="graiGrid.ecore#//coreElements/GgInformationFlow">
+        <genOperations ecoreOperation="graiGrid.ecore#//coreElements/GgInformationFlow/toString"/>
+      </genClasses>
+      <genClasses ecoreClass="graiGrid.ecore#//coreElements/GgCollaborativeDecision">
+        <genOperations ecoreOperation="graiGrid.ecore#//coreElements/GgCollaborativeDecision/toString"/>
+      </genClasses>
+      <genClasses ecoreClass="graiGrid.ecore#//coreElements/GgDecisionCenter">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference graiGrid.ecore#//coreElements/GgDecisionCenter/function"/>
+        <genOperations ecoreOperation="graiGrid.ecore#//coreElements/GgDecisionCenter/toString"/>
+      </genClasses>
+      <genClasses ecoreClass="graiGrid.ecore#//coreElements/GgTimeValue">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute graiGrid.ecore#//coreElements/GgTimeValue/unit"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute graiGrid.ecore#//coreElements/GgTimeValue/value"/>
+        <genOperations ecoreOperation="graiGrid.ecore#//coreElements/GgTimeValue/toString"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="graiGrid.ecore#//coreElements/GgInformationSource">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference graiGrid.ecore#//coreElements/GgInformationSource/informationCenters"/>
+        <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference graiGrid.ecore#//coreElements/GgInformationSource/graiGrid"/>
+        <genOperations ecoreOperation="graiGrid.ecore#//coreElements/GgInformationSource/toString"/>
+      </genClasses>
+      <genClasses ecoreClass="graiGrid.ecore#//coreElements/GgExternalInformationSource"/>
+      <genClasses ecoreClass="graiGrid.ecore#//coreElements/GgInternalInformationSource"/>
+      <genClasses ecoreClass="graiGrid.ecore#//coreElements/GgInformationCenter">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference graiGrid.ecore#//coreElements/GgInformationCenter/informationSource"/>
+        <genOperations ecoreOperation="graiGrid.ecore#//coreElements/GgInformationCenter/toString"/>
+      </genClasses>
+    </nestedGenPackages>
+  </genPackages>
+</genmodel:GenModel>

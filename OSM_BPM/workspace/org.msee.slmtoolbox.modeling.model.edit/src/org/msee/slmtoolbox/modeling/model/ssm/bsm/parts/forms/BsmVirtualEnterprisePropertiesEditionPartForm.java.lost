@@ -1,0 +1,8 @@
+
+Fri Feb 21 14:40:55 CET 2014
+================================================================================
+Start of user code
+		BsmAddDecisionToOrganizationDialog dialog = new BsmAddDecisionToOrganizationDialog(PlatformUI.getWorkbench().getDisplay().getActiveShell(), decisions.getLabelProvider(), (BsmOrganization) ((ReferencesTableSettings)this.decisions.getInput()).getSource());		
+		dialog.open();
+		decisions.refresh();	
+		// End of user code

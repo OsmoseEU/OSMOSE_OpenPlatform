@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="ASCII"?>
+<eef-gen:EEFGenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:eef-gen="http://www.eclipse.org/emf/eef/generation/1.0.0" genDirectory="/org.msee.slmtoolbox.modeling.model.edit/src">
+  <editionContexts basePackage="org.msee.slmtoolbox.modeling.model.ssm" descriptorsGenericPropertiesViews="true">
+    <PropertiesEditionContext href="bsm.components#_07VvoBCsEeSn3rG_dF5hDw"/>
+  </editionContexts>
+  <editionContexts basePackage="org.msee.slmtoolbox.modeling.model.lang.eaStar" descriptorsGenericPropertiesViews="true">
+    <PropertiesEditionContext href="bsm.components#_07YzLhCsEeSn3rG_dF5hDw"/>
+  </editionContexts>
+  <editionContexts basePackage="org.msee.slmtoolbox.modeling.model.lang.eaStar" descriptorsGenericPropertiesViews="true">
+    <PropertiesEditionContext href="bsm.components#_07YzNRCsEeSn3rG_dF5hDw"/>
+  </editionContexts>
+  <editionContexts basePackage="org.msee.slmtoolbox.modeling.model.lang.eaStar" descriptorsGenericPropertiesViews="true">
+    <PropertiesEditionContext href="bsm.components#_07YzPxCsEeSn3rG_dF5hDw"/>
+  </editionContexts>
+  <editionContexts basePackage="org.msee.slmtoolbox.modeling.model.lang.graiGrid" descriptorsGenericPropertiesViews="true">
+    <PropertiesEditionContext href="bsm.components#_07aBURCsEeSn3rG_dF5hDw"/>
+  </editionContexts>
+  <editionContexts basePackage="org.msee.slmtoolbox.modeling.model.lang.graiGrid" descriptorsGenericPropertiesViews="true">
+    <PropertiesEditionContext href="bsm.components#_07aBWBCsEeSn3rG_dF5hDw"/>
+  </editionContexts>
+  <editionContexts basePackage="org.msee.slmtoolbox.modeling.model.lang.graiGrid" descriptorsGenericPropertiesViews="true">
+    <PropertiesEditionContext href="bsm.components#_07aBaRCsEeSn3rG_dF5hDw"/>
+  </editionContexts>
+  <viewsRepositories basePackage="org.msee.slmtoolbox.modeling.model.lang.eaStar.coreElements" swtViews="true" formViews="true">
+    <viewsRepository href="bsm.components#_07aoZRCsEeSn3rG_dF5hDw"/>
+  </viewsRepositories>
+  <viewsRepositories basePackage="org.msee.slmtoolbox.modeling.model.lang.graiGrid.root" swtViews="true" formViews="true">
+    <viewsRepository href="bsm.components#_07cdXhCsEeSn3rG_dF5hDw"/>
+  </viewsRepositories>
+  <viewsRepositories basePackage="org.msee.slmtoolbox.modeling.model.ssm.bsm" swtViews="true" formViews="true">
+    <viewsRepository href="bsm.components#_07cdZhCsEeSn3rG_dF5hDw"/>
+  </viewsRepositories>
+  <viewsRepositories basePackage="org.msee.slmtoolbox.modeling.model.lang.graiGrid.generalElements" swtViews="true" formViews="true">
+    <viewsRepository href="bsm.components#_07drvBCsEeSn3rG_dF5hDw"/>
+  </viewsRepositories>
+  <viewsRepositories basePackage="org.msee.slmtoolbox.modeling.model.lang.eaStar.generalElements" swtViews="true" formViews="true">
+    <viewsRepository href="bsm.components#_07drzxCsEeSn3rG_dF5hDw"/>
+  </viewsRepositories>
+  <viewsRepositories basePackage="org.msee.slmtoolbox.modeling.model.lang.graiGrid.coreElements" swtViews="true" formViews="true">
+    <viewsRepository href="bsm.components#_07eSihCsEeSn3rG_dF5hDw"/>
+  </viewsRepositories>
+  <viewsRepositories basePackage="org.msee.slmtoolbox.modeling.model.lang.eaStar.root" swtViews="true" formViews="true">
+    <viewsRepository href="bsm.components#_07e5lRCsEeSn3rG_dF5hDw"/>
+  </viewsRepositories>
+</eef-gen:EEFGenModel>

@@ -1,0 +1,78 @@
+
+Thu Sep 20 09:48:28 CEST 2012
+================================================================================
+Start of user code  for horizon
+				basePart.initType(
+						new BsmRecourceType [] {
+								BsmRecourceType.HUMAN,
+								BsmRecourceType.IT,
+								BsmRecourceType.PHYSICAL_MEAN,
+								BsmRecourceType.UNDEFINED,
+						}
+						, bsmResource.getType());
+				// End of user code
+
+Wed Sep 26 14:47:21 CEST 2012
+================================================================================
+Start of user code  for horizon
+				basePart.initType(
+						new BsmRecourceType [] {
+								BsmRecourceType.HUMAN,
+								BsmRecourceType.IT,
+								BsmRecourceType.PHYSICAL_MEAN,
+								BsmRecourceType.UNDEFINED,
+						}
+						, bsmResource.getType());
+				// End of user code
+
+Tue Jan 29 11:26:42 CET 2013
+================================================================================
+Start of user code
+					@Override
+					public Object[] filter(Viewer viewer, Object parent,
+							Object[] elements) {
+					
+						Object[] out = new Object[bsmResource.getOrganization().getServiceSystemBsm().getOrganization().size()];
+						out= bsmResource.getOrganization().getServiceSystemBsm().getOrganization().toArray();						
+					
+						return out;
+						
+					}
+					// End of user code
+Start of user code  for horizon
+				basePart.initType(
+						new BsmRecourceType [] {
+								BsmRecourceType.HUMAN,
+								BsmRecourceType.IT,
+								BsmRecourceType.PHYSICAL_MEAN,
+								BsmRecourceType.UNDEFINED,
+						}
+						, bsmResource.getType());
+				// End of user code
+
+Thu Feb 14 15:52:21 CET 2013
+================================================================================
+Start of user code
+					@Override
+					public Object[] filter(Viewer viewer, Object parent,
+							Object[] elements) {
+					
+						Object[] out = new Object[bsmResource.getOrganization().getServiceSystemBsm().getOrganization().size()];
+						out= bsmResource.getOrganization().getServiceSystemBsm().getOrganization().toArray();						
+					
+						return out;
+						
+					}
+					// End of user code
+Start of user code  for horizon
+				basePart.initType(
+						new BsmRecourceType [] {
+								BsmRecourceType.HUMAN,
+								BsmRecourceType.IT,
+								BsmRecourceType.PHYSICAL_MEAN,
+								BsmRecourceType.UNDEFINED,
+						}
+						, bsmResource.getType());
+				// End of user code
+Start of user code for additional businessfilters for service
+				// End of user code

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;AW01 - TIM/Processes/Copy of AW01.SNAGArisingAndManagementProcess.NoOrgs.Improved.bpmn&apos; to &apos;AW01.SNAGArisingAndManagementProcess.NoOrgs.Improved.bpmn&apos;" description="Rename resource &apos;Copy of AW01.SNAGArisingAndManagementProcess.NoOrgs.Improved.bpmn&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="Processes/Copy of AW01.SNAGArisingAndManagementProcess.NoOrgs.Improved.bpmn" name="AW01.SNAGArisingAndManagementProcess.NoOrgs.Improved.bpmn" stamp="1431962792978" updateReferences="true"/>
+</session>

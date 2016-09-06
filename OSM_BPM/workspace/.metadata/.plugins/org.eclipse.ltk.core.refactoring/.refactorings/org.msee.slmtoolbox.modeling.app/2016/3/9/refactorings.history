@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring accessors="true" comment="Delete 4 elements from project &apos;org.msee.slmtoolbox.modeling.app&apos;&#x0D;&#x0A;- Original project: &apos;org.msee.slmtoolbox.modeling.app&apos;&#x0D;&#x0A;- Original elements:&#x0D;&#x0A;     AW01&#x0D;&#x0A;     AW01 - TIM&#x0D;&#x0A;     AW02&#x0D;&#x0A;     AW02 - TIM" description="Delete elements" element1="AW01" element2="AW02" element3="AW01 - TIM" element4="AW02 - TIM" elements="0" flags="589830" id="org.eclipse.jdt.ui.delete" resources="4" stamp="1457005343939" subPackages="false" version="1.0"/>
+</session>

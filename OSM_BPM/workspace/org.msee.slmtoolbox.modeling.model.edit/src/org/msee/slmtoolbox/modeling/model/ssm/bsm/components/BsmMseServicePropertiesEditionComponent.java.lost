@@ -1,0 +1,36 @@
+
+Fri Feb 21 14:40:51 CET 2014
+================================================================================
+Start of user code
+					@Override
+					public Object[] filter(Viewer viewer, Object parent,
+							Object[] elements) {
+						EList<BsmOrganization> organizations = bsmMseService.getProcess().getBsmModel().getOrganizations();
+						List<BsmOrganization> returnlist = new ArrayList<BsmOrganization>();
+						for (BsmOrganization organization : organizations) {
+							if (!organization.getMseService().contains(bsmMseService)) {
+								returnlist.add(organization);
+							}
+						}
+						return returnlist.toArray();
+						
+					}
+					// End of user code
+
+Mon Jul 21 10:00:50 CEST 2014
+================================================================================
+Start of user code
+					@Override
+					public Object[] filter(Viewer viewer, Object parent,
+							Object[] elements) {
+						EList<BsmOrganization> organizations = bsmMseService.getProcess().getBsmModel().getOrganizations();
+						List<BsmOrganization> returnlist = new ArrayList<BsmOrganization>();
+						for (BsmOrganization organization : organizations) {
+							if (!organization.getMseService().contains(bsmMseService)) {
+								returnlist.add(organization);
+							}
+						}
+						return returnlist.toArray();
+						
+					}
+					// End of user code

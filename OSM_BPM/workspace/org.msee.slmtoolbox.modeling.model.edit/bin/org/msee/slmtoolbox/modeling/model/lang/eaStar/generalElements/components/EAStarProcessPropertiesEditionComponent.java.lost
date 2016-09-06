@@ -1,0 +1,22 @@
+
+Thu Sep 20 17:16:49 CEST 2012
+================================================================================
+Start of user code  for process update BSM
+			// set name
+			String name = (java.lang.String)EEFConverterUtil.createFromString(EcorePackage.Literals.ESTRING, (String)event.getNewValue());
+			eAStarProcess.setName(name);
+			//data diffuser for name
+			EaStarDataDiffuser diffuser = new EaStarDataDiffuser(eAStarProcess);
+			diffuser.distributeProcessName(eAStarProcess.getId(), name);
+			// End of user code
+
+Fri Sep 21 17:08:05 CEST 2012
+================================================================================
+Start of user code  for process update BSM
+			// set name
+			String name = (java.lang.String)EEFConverterUtil.createFromString(EcorePackage.Literals.ESTRING, (String)event.getNewValue());
+			eAStarProcess.setName(name);
+			//data diffuser for name
+			EaStarDataDiffuser diffuser = new EaStarDataDiffuser(eAStarProcess);
+			diffuser.distributeProcessName(eAStarProcess.getId(), name);
+			// End of user code

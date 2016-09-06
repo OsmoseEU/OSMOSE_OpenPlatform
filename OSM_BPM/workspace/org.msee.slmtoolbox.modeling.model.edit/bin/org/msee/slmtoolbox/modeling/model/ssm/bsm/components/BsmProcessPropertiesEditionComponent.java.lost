@@ -1,0 +1,111 @@
+
+Wed Sep 26 14:47:21 CEST 2012
+================================================================================
+Start of user code  for process update EA*
+			String name = (java.lang.String) EEFConverterUtil
+					.createFromString(EcorePackage.Literals.ESTRING,
+							(String) event.getNewValue());
+			bsmProcess.setName(name);
+			EAStarProcess attachedProcess = bsmProcess.getEaProcess();
+			if(null!= attachedProcess) {
+				attachedProcess.setName(name);
+				if (null != attachedProcess.getCanBe())
+					attachedProcess.getCanBe().setName(name);
+			}
+			// End of user code
+
+Tue Jan 29 11:26:41 CET 2013
+================================================================================
+Start of user code
+					@Override
+					public Object[] filter(Viewer viewer, Object parent,
+							Object[] elements) {
+						List<EAStarProcess> listSource = new ArrayList<EAStarProcess>();
+						List<EObject> listAvailableResource = new ArrayList<EObject>();
+						if(null != bsmProcess) {
+							listAvailableResource.addAll(bsmProcess.getServiceSystem().getProcess());
+							for (int i = 0; i < listAvailableResource.size();i++){{
+								if(null != ((BsmProcess)listAvailableResource.get(i)).getEaProcess())
+							listSource.add(((BsmProcess)listAvailableResource.get(i)).getEaProcess());
+								}
+							}
+						}
+						Object[] out = new Object[listSource.size()];
+						out= listSource.toArray();												
+						return out;					
+					}
+					// End of user code
+Start of user code for additional businessfilters for serviceSystem
+				// End of user code
+Start of user code for additional businessfilters for
+				// mainProcess
+				basePart.addBusinessFilterToMainProcess(new ViewerFilter() {
+
+					@Override
+					public boolean select(Viewer arg0, Object parentElement,
+							Object element) {
+						System.out.println(parentElement.toString());
+						return false;
+					}
+				});
+				// End of user code
+Start of user code  for process update EA*
+			String name = (java.lang.String) EEFConverterUtil
+					.createFromString(EcorePackage.Literals.ESTRING,
+							(String) event.getNewValue());
+			bsmProcess.setName(name);
+			EAStarProcess attachedProcess = bsmProcess.getEaProcess();
+			if(null!= attachedProcess) {
+				attachedProcess.setName(name);
+				if (null != attachedProcess.getCanBe())
+					attachedProcess.getCanBe().setName(name);
+			}
+			// End of user code
+
+Thu Feb 14 15:52:21 CET 2013
+================================================================================
+Start of user code
+					@Override
+					public Object[] filter(Viewer viewer, Object parent,
+							Object[] elements) {
+						List<EAStarProcess> listSource = new ArrayList<EAStarProcess>();
+						List<EObject> listAvailableResource = new ArrayList<EObject>();
+						if(null != bsmProcess) {
+							listAvailableResource.addAll(bsmProcess.getServiceSystem().getProcess());
+							for (int i = 0; i < listAvailableResource.size();i++){{
+								if(null != ((BsmProcess)listAvailableResource.get(i)).getEaProcess())
+							listSource.add(((BsmProcess)listAvailableResource.get(i)).getEaProcess());
+								}
+							}
+						}
+						Object[] out = new Object[listSource.size()];
+						out= listSource.toArray();												
+						return out;					
+					}
+					// End of user code
+Start of user code for additional businessfilters for
+				// mainProcess
+				basePart.addBusinessFilterToMainProcess(new ViewerFilter() {
+
+					@Override
+					public boolean select(Viewer arg0, Object parentElement,
+							Object element) {
+						System.out.println(parentElement.toString());
+						return false;
+					}
+				});
+				// End of user code
+Start of user code  for process update EA*
+			String name = (java.lang.String) EEFConverterUtil
+					.createFromString(EcorePackage.Literals.ESTRING,
+							(String) event.getNewValue());
+			bsmProcess.setName(name);
+			EAStarProcess attachedProcess = bsmProcess.getEaProcess();
+			if(null!= attachedProcess) {
+				attachedProcess.setName(name);
+				if (null != attachedProcess.getCanBe())
+					attachedProcess.getCanBe().setName(name);
+			}
+			// End of user code
+Start of user code for additional businessfilters for service
+				// End of user code

@@ -1,0 +1,15 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Util
+Bundle-SymbolicName: org.msee.slmtoolbox.modeling.service.util
+Bundle-Version: 3.0.0
+Bundle-Activator: org.msee.slmtoolbox.modeling.service.util.Activator
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.apache.log4j;visibility:=reexport,
+ org.eclipse.emf.ecore
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Export-Package: org.msee.slmtoolbox.modeling.service.util,
+ org.msee.slmtoolbox.modeling.service.util.log
+Bundle-Vendor: org.msee.slmtoolbox.modeling.service.util

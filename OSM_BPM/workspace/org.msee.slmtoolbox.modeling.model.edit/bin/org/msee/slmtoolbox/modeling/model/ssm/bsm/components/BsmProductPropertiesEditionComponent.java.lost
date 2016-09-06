@@ -1,0 +1,15 @@
+
+Tue Jan 29 11:26:40 CET 2013
+================================================================================
+Start of user code for additional businessfilters for serviceSystem
+				// End of user code
+
+Thu Feb 14 15:52:21 CET 2013
+================================================================================
+Start of user code for additional initPart
+			if (bsmProduct.getServiceSystem() != null && isAccessible(BsmViewsRepository.BsmProduct.Properties.serviceSystem)) {
+				basePart.setServiceSystem(EEFConverterUtil.convertToString(EcorePackage.Literals.ESTRING, bsmProduct.getServiceSystem().getName()));
+			}
+			// End of user code
+Start of user code for additional businessfilters for service
+				// End of user code

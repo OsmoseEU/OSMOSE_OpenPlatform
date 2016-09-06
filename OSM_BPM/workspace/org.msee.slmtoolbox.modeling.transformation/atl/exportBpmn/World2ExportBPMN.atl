@@ -1,0 +1,269 @@
+module World2ExportBPMN;
+-- @path BPMN=/org.msee.slmtoolbox.modeling.model/model/BPMN20.ecore
+-- @path BPMNExp=/org.msee.slmtoolbox.modeling.model/model/BPMN20.ecore
+
+create OUT: BPMN from IN: BPMN;
+
+helper def: getDefinitions: BPMN!Definitions = BPMN!Definitions.allInstances() -> collect (e | e).first();
+helper def: getOsmoseProcess: String = thisModule.getDefinitions.name.toString();
+
+helper def: isReal: Boolean = if (thisModule.getOsmoseProcess = 'Actuation' or thisModule.getOsmoseProcess = 'Augmentation')
+	then true
+	else false
+	endif;
+
+helper def: isDigital: Boolean = if (thisModule.getOsmoseProcess = 'Digitalization' or thisModule.getOsmoseProcess = 'Enrichment')
+	then true
+	else false
+	endif;
+
+helper def: isVirtual: Boolean = if (thisModule.getOsmoseProcess = 'Virtualization' or thisModule.getOsmoseProcess = 'Simulation') 
+	then true
+	else false
+	endif;
+
+helper def: isEndingWorldProcess(proc: BPMN!Process): Boolean = if ((proc.id = 'reaWorldProcess' and thisModule.isReal) or 
+	(proc.id = 'virtuaWorldProcess' and thisModule.isVirtual) or (proc.id = 'digitaWorldProcess' and thisModule.isDigital))
+	then  true
+	else false
+	endif;
+
+rule Bpmn2Bpmn {
+	from 
+		s: BPMN!Definitions
+	to
+		a: BPMN!Definitions (
+			id <- s.id,
+			name <- s.name,
+			targetNamespace <- s.targetNamespace,
+			typeLanguage <- s.typeLanguage,
+			rootElements <- s.rootElements,
+			expressionLanguage <- s.expressionLanguage
+		)
+	do {	}
+}
+
+rule ProcessToProcess {
+	from
+		s: BPMN!Process(thisModule.isEndingWorldProcess(s))
+	to
+		a: BPMN!Process(
+			id <- s.id,
+			name <- s.name,
+			laneSets <- s.laneSets,
+			flowElements <- s.flowElements,
+			definitionalCollaborationRef <- s.definitionalCollaborationRef
+		)
+	do {	}
+}
+
+rule StartEventToStartEvent {
+	from 
+		s: BPMN!StartEvent
+	to
+		a: BPMN!StartEvent (
+			id <- s.id,
+			name <- s.name,
+			outgoing <- s.outgoing
+		)
+	do {	}
+}
+
+rule EndEventToEndEvent {
+	from 
+		s: BPMN!EndEvent
+	to
+		a: BPMN!EndEvent (
+			id <- s.id,
+			name <- s.name,
+			incoming <- s.incoming
+		)
+	do {	}
+}
+
+rule UserTaskToUserTask extends TaskToTask {
+	from 
+		s: BPMN!UserTask
+	to
+		a: BPMN!UserTask (
+			id <- s.id,
+			name <- s.name,
+			incoming <- s.incoming,
+			outgoing <- s.outgoing
+		)
+	do {	}
+}
+
+rule ManualTaskToManualTask extends TaskToTask {
+	from 
+		s: BPMN!ManualTask
+	to
+		a: BPMN!ManualTask (
+			id <- s.id,
+			name <- s.name,
+			incoming <- s.incoming,
+			outgoing <- s.outgoing
+		)
+	do {	}
+}
+
+rule ScriptTaskToScriptTask extends TaskToTask {
+	from 
+		s: BPMN!ScriptTask
+	to
+		a: BPMN!ScriptTask (
+			id <- s.id,
+			name <- s.name,
+			incoming <- s.incoming,
+			outgoing <- s.outgoing
+		)
+	do {	}
+}
+
+rule BusinessRuleTaskToBusinessRuleTask extends TaskToTask {
+	from 
+		s: BPMN!BusinessRuleTask
+	to
+		a: BPMN!BusinessRuleTask (
+			id <- s.id,
+			name <- s.name,
+			incoming <- s.incoming,
+			outgoing <- s.outgoing
+		)
+	do {	}
+}
+
+rule ServiceTaskToServiceTask extends TaskToTask {
+	from 
+		s: BPMN!ServiceTask
+	to
+		a: BPMN!ServiceTask (
+			id <- s.id,
+			name <- s.name,
+			incoming <- s.incoming,
+			outgoing <- s.outgoing
+		)
+	do {	}
+}
+
+rule SendTaskToSendTask extends TaskToTask {
+	from 
+		s: BPMN!SendTask
+	to
+		a: BPMN!SendTask (
+			id <- s.id,
+			name <- s.name,
+			incoming <- s.incoming,
+			outgoing <- s.outgoing
+		)
+	do {	}
+}
+
+rule ReceiveTaskToReceiveTask extends TaskToTask {
+	from 
+		s: BPMN!ReceiveTask
+	to
+		a: BPMN!ReceiveTask (
+			id <- s.id,
+			name <- s.name,
+			incoming <- s.incoming,
+			outgoing <- s.outgoing
+		)
+	do {	}
+}
+
+rule TaskToTask {
+	from 
+		s: BPMN!Task
+	to
+		a: BPMN!Task (
+			id <- s.id,
+			name <- s.name,
+			incoming <- s.incoming,
+			outgoing <- s.outgoing
+		)
+	do {	}
+}
+
+rule SequenceFlowToSequenceFlow {
+	from 
+		s: BPMN!SequenceFlow
+	to
+		a: BPMN!SequenceFlow (
+			id <- s.id,
+			name <- s.name,
+			sourceRef <- s.sourceRef,
+			targetRef <- s.targetRef
+		)
+	do {	}
+}
+
+rule ExclusiveGatewayToExclusiveGateway {
+	from
+		s: BPMN!ExclusiveGateway
+	to
+		a: BPMN!ExclusiveGateway (
+			id <- s.id,
+			name <- s.name,
+			gatewayDirection <- s.gatewayDirection,
+			incoming <- s.incoming,
+			outgoing <- s.outgoing
+		)
+	do {	}
+}
+
+rule InclusiveGatewayToInclusiveGateway {
+	from
+		s: BPMN!InclusiveGateway
+	to
+		a: BPMN!InclusiveGateway (
+			id <- s.id,
+			name <- s.name,
+			gatewayDirection <- s.gatewayDirection,
+			incoming <- s.incoming,
+			outgoing <- s.outgoing
+		)
+	do {	}
+}
+
+rule ParallelGatewayToParallelGateway {
+	from
+		s: BPMN!ParallelGateway
+	to
+		a: BPMN!ParallelGateway (
+			id <- s.id,
+			name <- s.name,
+			gatewayDirection <- s.gatewayDirection,
+			incoming <- s.incoming,
+			outgoing <- s.outgoing
+		)
+	do {	}
+}
+
+rule EventBasedGatewayToEventBasedGateway {
+	from
+		s: BPMN!EventBasedGateway
+	to
+		a: BPMN!EventBasedGateway (
+			id <- s.id,
+			name <- s.name,
+			gatewayDirection <- s.gatewayDirection,
+			incoming <- s.incoming,
+			outgoing <- s.outgoing
+		)
+	do {	}
+}
+
+rule ComplexGatewayToComplexGateway {
+	from
+		s: BPMN!ComplexGateway
+	to
+		a: BPMN!ComplexGateway (
+			id <- s.id,
+			name <- s.name,
+			gatewayDirection <- s.gatewayDirection,
+			incoming <- s.incoming,
+			outgoing <- s.outgoing
+		)
+	do {	}
+}

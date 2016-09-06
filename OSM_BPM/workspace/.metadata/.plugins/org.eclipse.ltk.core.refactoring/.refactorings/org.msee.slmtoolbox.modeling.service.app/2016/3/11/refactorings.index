@@ -1,0 +1,7 @@
+1457974015196	Rename resource 'OsmoseObject.java'
+1457974033201	Rename resource 'DiagramLink'
+1458050717482	Encapsulate field 'targetId'
+1458050745404	Encapsulate field 'sourceId'
+1458050759432	Encapsulate field 'targetName'
+1458050786726	Encapsulate field 'sourceName'
+1458050794340	Encapsulate field 'osmioticProcess'

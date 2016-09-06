@@ -1,0 +1,16 @@
+
+Tue Jan 29 11:26:45 CET 2013
+================================================================================
+Start of user code
+		BsmAddDecisionToProcessDialog dialog = new BsmAddDecisionToProcessDialog(PlatformUI.getWorkbench().getDisplay().getActiveShell(), decision.getLabelProvider(), (org.msee.slmtoolbox.modeling.model.ssm.bsm.BsmProcess) ((ReferencesTableSettings)this.decision.getInput()).getSource());		
+		dialog.open();
+		decision.refresh();	
+		// End of user code
+
+Thu Feb 14 15:52:23 CET 2013
+================================================================================
+Start of user code
+		BsmAddDecisionToProcessDialog dialog = new BsmAddDecisionToProcessDialog(PlatformUI.getWorkbench().getDisplay().getActiveShell(), decision.getLabelProvider(), (org.msee.slmtoolbox.modeling.model.ssm.bsm.BsmProcess) ((ReferencesTableSettings)this.decision.getInput()).getSource());		
+		dialog.open();
+		decision.refresh();	
+		// End of user code

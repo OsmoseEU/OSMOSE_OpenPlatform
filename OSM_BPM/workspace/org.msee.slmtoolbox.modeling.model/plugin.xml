@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+ <copyright>
+ </copyright>
+
+ $Id$
+-->
+
+<plugin>
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <package
+            uri="http://org/msee/slmtoolbox/modeling/model/ssm/bsm.ecore"
+            class="org.msee.slmtoolbox.modeling.model.ssm.bsm.BsmPackage"
+            genModel="model/eastar.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <package
+            uri="http://org/msee/slmtoolbox/modeling/model/lang/eaStar.ecore/root"
+            class="org.msee.slmtoolbox.modeling.model.lang.eaStar.root.RootPackage"
+            genModel="model/eastar.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <package
+            uri="http://org/msee/slmtoolbox/modeling/model/lang/eaStar.ecore/generalElements"
+            class="org.msee.slmtoolbox.modeling.model.lang.eaStar.generalElements.GeneralElementsPackage"
+            genModel="model/eastar.genmodel"/>
+   </extension>
+   
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <package
+            uri="http://org/msee/slmtoolbox/modeling/model/lang/eaStar.ecore/coreElements"
+            class="org.msee.slmtoolbox.modeling.model.lang.eaStar.coreElements.CoreElementsPackage"
+            genModel="model/eastar.genmodel"/>
+   </extension>
+ 
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <package
+            uri="http://org/msee/slmtoolbox/modeling/model/lang/graiGrid.ecore/2.0/root"
+            class="org.msee.slmtoolbox.modeling.model.lang.graiGrid.root.RootPackage"
+            genModel="model/eastar.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <package
+            uri="http://org/msee/slmtoolbox/modeling/model/lang/graiGrid.ecore/2.0/generalElements"
+            class="org.msee.slmtoolbox.modeling.model.lang.graiGrid.generalElements.GeneralElementsPackage"
+            genModel="model/eastar.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <package
+            uri="http://org/msee/slmtoolbox/modeling/model/lang/graiGrid.ecore/2.0/coreElements"
+            class="org.msee.slmtoolbox.modeling.model.lang.graiGrid.coreElements.CoreElementsPackage"
+            genModel="model/eastar.genmodel"/>
+   </extension>
+
+
+
+
+</plugin>

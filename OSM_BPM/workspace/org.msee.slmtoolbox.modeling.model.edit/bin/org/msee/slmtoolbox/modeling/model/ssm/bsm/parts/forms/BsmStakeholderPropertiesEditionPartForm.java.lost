@@ -1,0 +1,16 @@
+
+Tue Jan 29 11:26:44 CET 2013
+================================================================================
+Start of user code
+		BsmAddServiceToStackeholderDialog dialog = new BsmAddServiceToStackeholderDialog(PlatformUI.getWorkbench().getDisplay().getActiveShell(), service.getLabelProvider(), (org.msee.slmtoolbox.modeling.model.ssm.bsm.BsmStakeholder) ((ReferencesTableSettings)this.service.getInput()).getSource());		
+		dialog.open();
+		service.refresh();
+		// End of user code
+
+Thu Feb 14 15:52:23 CET 2013
+================================================================================
+Start of user code
+		BsmAddServiceToStackeholderDialog dialog = new BsmAddServiceToStackeholderDialog(PlatformUI.getWorkbench().getDisplay().getActiveShell(), service.getLabelProvider(), (org.msee.slmtoolbox.modeling.model.ssm.bsm.BsmStakeholder) ((ReferencesTableSettings)this.service.getInput()).getSource());		
+		dialog.open();
+		service.refresh();
+		// End of user code

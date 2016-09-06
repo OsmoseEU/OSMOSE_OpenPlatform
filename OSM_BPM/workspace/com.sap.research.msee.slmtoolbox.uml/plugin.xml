@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.perspectives">
+      <perspective
+            name="SLM Perspective"
+            class="com.sap.research.msee.slmtoolbox.uml.Perspective"
+            id="com.sap.research.msee.slmtoolbox.application.perspective">
+      </perspective>
+   </extension>
+<extension
+         point="org.eclipse.ui.newWizards">
+      <wizard
+            category="org.msee.slmtoolbox.modeling.category.tim"
+            class="com.sap.research.msee.slmtoolbox.uml.wizards.SlmActivityDiagramWizard"
+            icon="platform:/plugin/org.eclipse.papyrus.uml.diagram.wizards/icons/papyrus/new_papyrus_model.gif"
+            id="com.sap.research.msee.slmtoolbox.uml.wizards.activity"
+            name="SLM Activity Diagram">
+         <description>
+            This wizard creates a SLM Activity diagram.
+         </description>
+      </wizard>
+      <wizard
+            category="org.msee.slmtoolbox.modeling.category.tim"
+            class="com.sap.research.msee.slmtoolbox.uml.wizards.SlmClassDiagramWizard"
+            icon="platform:/plugin/org.eclipse.papyrus.uml.diagram.wizards/icons/papyrus/new_papyrus_model.gif"
+            id="com.sap.research.msee.slmtoolbox.uml.wizards.class"
+            name="SLM Class Diagram">
+         <description>
+            This wizard creates a SLM Class diagram.
+         </description>
+      </wizard>
+      <wizard
+            category="org.msee.slmtoolbox.modeling.category.tim"
+            class="com.sap.research.msee.slmtoolbox.uml.wizards.SlmStateDiagramWizard"
+            icon="platform:/plugin/org.eclipse.papyrus.uml.diagram.wizards/icons/papyrus/new_papyrus_model.gif"
+            id="com.sap.research.msee.slmtoolbox.uml.wizards.state"
+            name="SLM State Diagram">
+         <description>
+            This wizard creates a SLM State diagram.
+         </description>
+      </wizard>
+      <wizard
+            category="org.msee.slmtoolbox.modeling.category.tim"
+            class="com.sap.research.msee.slmtoolbox.uml.wizards.SlmSequenceDiagramWizard"
+            icon="platform:/plugin/org.eclipse.papyrus.uml.diagram.wizards/icons/papyrus/new_papyrus_model.gif"
+            id="com.sap.research.msee.slmtoolbox.uml.wizards.sequence"
+            name="SLM Sequence Diagram">
+         <description>
+            This wizard creates a SLM Sequence diagram.
+         </description>
+      </wizard>
+   </extension>
+   <extension point="org.eclipse.ui.navigator.navigatorContent">
+      <commonWizard
+            type="new" 
+            wizardId="com.sap.research.msee.slmtoolbox.uml.wizards.activity">
+         <enablement>
+         </enablement>
+      </commonWizard>
+      <commonWizard
+            type="new" 
+            wizardId="com.sap.research.msee.slmtoolbox.uml.wizards.class">
+         <enablement>
+         </enablement>
+      </commonWizard>
+      <commonWizard
+            type="new" 
+            wizardId="com.sap.research.msee.slmtoolbox.uml.wizards.state">
+         <enablement>
+         </enablement>
+      </commonWizard>
+      <commonWizard
+            type="new" 
+            wizardId="com.sap.research.msee.slmtoolbox.uml.wizards.sequence">
+         <enablement>
+         </enablement>
+      </commonWizard>
+   </extension>
+</plugin>

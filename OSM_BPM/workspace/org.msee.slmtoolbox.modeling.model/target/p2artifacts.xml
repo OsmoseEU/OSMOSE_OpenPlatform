@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<?artifactRepository version='3.0'?>
+<artifacts size='1'>
+  <artifact classifier='osgi.bundle' id='org.msee.slmtoolbox.modeling.model' version='3.0.201402111200'>
+    <properties size='5'>
+      <property name='artifact.size' value='390444'/>
+      <property name='download.size' value='390444'/>
+      <property name='maven-groupId' value='org.msee.slmtoolbox.modeling'/>
+      <property name='maven-artifactId' value='org.msee.slmtoolbox.modeling.model'/>
+      <property name='maven-version' value='3.0-SNAPSHOT'/>
+    </properties>
+  </artifact>
+</artifacts>

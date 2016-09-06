@@ -1,0 +1,178 @@
+-- @path BSM=/org.msee.slmtoolbox.modeling.model/model/bsm.ecore
+-- @path EA=/org.msee.slmtoolbox.modeling.model/model/eaStar.ecore
+-- @path TIM=/org.msee.slmtoolbox.modeling.model/model/tim.ecore
+
+module BSM2TIM;
+create OUT: TIM from IN: BSM; 
+
+-- created TimService
+helper def: service: TIM!TimService = OclUndefined;
+-- set of created TimProcesses
+helper def: processes: Set(TIM!TimProcess) = OclUndefined;
+-- get processes references for a resource
+helper def: getProcessesForResource(id: String): TIM!TimProcess =
+   thisModule.service.processes -> any(e | e.id.toString().endsWith(id));
+-- get processes references for the organizationUnit
+helper def: getProcessForOrganizationUnit(id: String): TIM!TimProcess =
+	thisModule.service.processes -> any(e | e.id.toString().endsWith(id));
+-- create huamn resources 	
+helper def: createHumanResources( bsmResources : Set(BSM!BsmResource)): Set(TIM!TimResource) =
+	bsmResources -> select (e | e.type.toString().endsWith('man')) -> collect (e | thisModule.BsmResource2TimHumanResource(e)); 
+-- create Physical resources	
+helper def: createPhysicalResources( bsmResources : Set(BSM!BsmResource)): Set(TIM!TimResource) =
+	bsmResources -> select (e | e.type.toString().endsWith('Mean')) -> collect (e | thisModule.BsmResource2TimPysicalMeanResource(e)); 
+-- create EnterpriseApplication resources
+helper def: createEnterpriseApplicationResources( bsmResources : Set(BSM!BsmResource)): Set(TIM!TimResource) =
+	bsmResources -> select (e | e.type.toString().endsWith('T')) -> collect (e | thisModule.BsmResource2TimEnterpriseApplicationResource(e)); 
+-- add service reference to a process
+helper def: addService(process: TIM!TimProcess): TIM!TimProcess =  
+	process.services.append(thisModule.service);
+
+-- transform BsmModel to TimModel
+rule bsmModel2TimModel{	
+	
+	from
+		a: BSM!BsmModel
+	to
+		b: TIM!TimModel (
+			id <- a.id,
+			name <- a.name,
+			services <- thisModule.BsmService2TimService(a.service),
+			processes <- a.processes -> collect(e| thisModule.BsmProcess2TimProcess(e)),
+			organizations <- a.organizations -> select(e | e.oclIsTypeOf(BSM!BsmEnterprise)) -> collect(e | thisModule.BsmEnterprise2TimOrganization(e)).
+			append(a.organizations -> select(e | e.oclIsTypeOf(BSM!BsmVirtualEnterprise)) -> collect(e | thisModule.BsmVirtualEnterprise2TimOrganization(e)))
+		)
+	do{
+
+	}
+}
+
+-- transform BsmService to TimService
+lazy rule BsmService2TimService{
+	from 
+	 a: BSM!BsmService
+	to
+	 b: TIM!TimService(
+	 id <- a.id,
+	 name <- a.name,
+	 description <- a.description,
+	 constraint <- a.constraint,
+	 objective <- a.objective,
+	 domain <- a.domain,
+	 nature <- a.nature
+	 )
+	 do{
+	thisModule.service <-b;
+	 }
+}
+
+-- transform BsmProcess to TimProcess
+lazy rule BsmProcess2TimProcess{
+	from 
+	 a: BSM!BsmProcess
+	to
+	 b: TIM!TimProcess(
+	 id <- a.id,
+	 name <- a.name,
+	 objective <- a.objective,
+	 trigger <- a.trigger,
+	 result <- a.result,
+	 constraint <- a.constraint
+	 )
+	 do{
+     b.services <- b.services.prepend(thisModule.service);
+	 }
+	 
+}
+
+-- transform BsmResource to TimPysicalMeanResource
+lazy rule BsmResource2TimPysicalMeanResource{
+	from 
+	a: BSM!BsmResource (a.type.toString().endsWith('Mean'))
+	to
+	b: TIM!TimPhysicalMeanResource(
+	 id <- a.id,
+	 name <- a.name,
+	 type <- a.type.toString()
+	 )
+	 do{
+     b.services <- b.services.prepend(thisModule.service);
+     b.processes <- a.processes -> collect(e | thisModule.getProcessesForResource(e.id));
+	 }
+}
+
+-- transform BsmResource to TimHumanResource
+lazy rule BsmResource2TimHumanResource{
+	from 
+	a: BSM!BsmResource (a.type.toString().endsWith('man'))
+	to
+	b: TIM!TimHumanResource(
+	 id <- a.id,
+	 name <- a.name,
+	 type <- a.type.toString()
+	 )
+	 do{
+     b.services <- b.services.prepend(thisModule.service);
+     b.processes <- a.processes -> collect(e | thisModule.getProcessesForResource(e.id));
+	 }
+}
+
+-- transform BsmResource to TimEnterpriseApplicationResource
+lazy rule BsmResource2TimEnterpriseApplicationResource{
+	from 
+	a: BSM!BsmResource (a.type.toString().endsWith('T'))
+	to
+	b: TIM!TimEnterpriseApplicationResource(
+	 id <- a.id,
+	 name <- a.name,
+	 type <- a.type.toString()
+	 )
+	 do{
+     b.services <- b.services.prepend(thisModule.service);
+     b.processes <- a.processes -> collect(e | thisModule.getProcessesForResource(e.id));
+	 }
+}
+
+-- transform BsmEnterprise to TimOrganization and TimOrganizationUnit
+lazy rule BsmEnterprise2TimOrganization{
+	from 
+	a: BSM!BsmEnterprise
+	to
+	b: TIM!TimOrganization(
+		id <- a.id,
+		name <- a.name,
+		description <- a.description,
+		organizationUnits <- c
+	),
+	c: TIM!TimOrganizationUnit(
+		id <- a.id + 'organizationUnit',
+		name <- a.name + 'organizationUnit',
+		resources <- thisModule.createHumanResources(a.resources).append(thisModule.createPhysicalResources(a.resources))
+		.append(thisModule.createEnterpriseApplicationResources(a.resources))
+	)
+	do{		
+		c.processes <- a.processes -> collect(e | thisModule.getProcessForOrganizationUnit(e.id));
+		let s: String = '' in c.name.toString().println(); 
+		let s: String = '' in c.processes.first().toString().println(); 
+	
+	}
+	
+}
+
+-- transform BsmVirtualEnterprise to TimOrganization and TimOrganizationUnit
+lazy rule BsmVirtualEnterprise2TimOrganization{
+	from 
+	a: BSM!BsmVirtualEnterprise
+	to
+	b: TIM!TimOrganization(
+		id <- a.id,
+		name <- a.name,
+		description <- a.description,
+		organizationUnits <- c
+	),
+	c: TIM!TimOrganizationUnit(
+		id <- a.id + 'organizationUnit',
+		name <- a.name + 'organizationUnit'
+	)
+	
+}

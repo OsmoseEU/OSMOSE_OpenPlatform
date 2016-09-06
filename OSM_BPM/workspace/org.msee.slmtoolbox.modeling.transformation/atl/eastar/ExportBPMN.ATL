@@ -1,0 +1,70 @@
+-- @path BPMN=/org.msee.slmtoolbox.modeling.model/model/BPMN20.ecore
+-- @path BPMNExp=/org.msee.slmtoolbox.modeling.model/model/BPMN20.ecore
+
+module ExportBPMN;
+create OUT: BPMNExp from IN: BPMN;
+
+helper def: definitions: BPMN!Definitions = OclUndefined;
+helper def: bpmnProcess: Set(BPMNExp!Process) = OclUndefined;
+helper def: bpmnDefaultLanes: Set(String) = OclUndefined;
+helper def: bpmnOrgLanes: Set(BPMN!Lane) = OclUndefined;
+helper def: laneSet: Set(BPMNExp!LaneSet) = OclUndefined;
+helper def: bpmnFlowElements: Sequence(BPMNExp!FlowElement) = OclUndefined;
+helper def: orgChildLaneSet: Set(BPMN!LaneSet) = OclUndefined;
+
+--helper def: getNamedLaneSet(laneSet: String): BPMN!LaneSet = thisModule.laneSet -> select(e | e.id = laneSet); 
+
+--helper def: getOrgLaneSet(laneSet: String): BPMN!LaneSet = thisModule.orgChildLaneSet -> select(e | e.id = laneSet)->first(); 
+
+--helper def: getNamedLane(lane: String): BPMN!Lane = thisModule.bpmnDefaultLanes -> select(e | e.id = lane); 
+
+entrypoint rule init() {
+	to
+		b1: BPMNExp!LaneSet(
+			name <- 'laneSet1111111',
+			id <- 'laneSet_1'
+		),
+		b2: BPMNExp!LaneSet(
+			name <- 'laneSet',
+			id <- 'laneSet_2'
+		),
+		c1: BPMNExp!Process(
+			name <- 'RealWorld',
+			id <- 'processRealWorld'
+		),
+		c2: BPMNExp!Process(
+			name <- 'DigitalWorld',
+			id <- 'processDigitalWorld'
+		),
+		c3: BPMNExp!Process(
+			name <- 'OsmioticProcess',
+			id <- 'processOsmioticProcess'
+		)
+	do {
+		c1.laneSets <- b1; 
+		c2.laneSets <- b2; 
+		thisModule.laneSet <- b1;
+		thisModule.laneSet <- b2;
+		thisModule.bpmnFlowElements <- c1.flowElements;
+	}
+}
+	
+-- transform an ExtendedActigram element to a Definition element
+rule ExtendedActigramToDefinition {
+	from
+		s: BPMN!Definitions
+	to
+		a: BPMNExp!Definitions (
+			id <- s.name,
+			targetNamespace <- 'http://www.jboss.org/drools',
+			expressionLanguage <- 'http://www.mvel.org/2.0',
+			typeLanguage <- 'http://www.java.com/javaTypes',
+			rootElements <- s.rootElements
+			)
+	do {
+		let s: String =
+				''
+			in
+				'definition'.println(); 
+	}
+}

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<item value="false" key="generateActivator"/>
+	<item value="3.5 or greater" key="targetName"/>
+	<item value="false" key="uiPlugin"/>
+	<item value="false" key="apiAnalysis"/>
+	<item value="false" key="rcpPlugin"/>
+	<item value="false" key="osgiProject"/>
+	<section name="newExtensionPointWizard">
+	</section>
+	<section name="dependenciesView">
+	</section>
+	<section name="pde_compiler_errorwarnings_block">
+		<item value="true" key="0"/>
+		<item value="false" key="1"/>
+		<item value="false" key="2"/>
+		<item value="false" key="3"/>
+		<item value="false" key="4"/>
+	</section>
+	<section name="org.eclipse.pde.ui.PLUGIN_STATUS_DIALOG">
+		<item value="416" key="DIALOG_WIDTH"/>
+		<item value="1|Segoe UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI" key="DIALOG_FONT_NAME"/>
+		<item value="390" key="DIALOG_HEIGHT"/>
+		<item value="208" key="DIALOG_Y_ORIGIN"/>
+		<item value="225" key="DIALOG_X_ORIGIN"/>
+	</section>
+	<section name="JavaAttributeWizard">
+	</section>
+	<section name="pde-form-editor">
+		<item value="plugin-context" key="org.eclipse.pde.ui.manifestEditor"/>
+	</section>
+	<section name="org.eclipse.pde.ui.dialogs.PluginSelectionDialog">
+		<item value="true" key="ShowStatusLine"/>
+		<item value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#x0D;&#x0A;&lt;History/&gt;" key="History"/>
+		<section name="DialogBoundsSettings">
+			<item value="600" key="DIALOG_WIDTH"/>
+			<item value="1|Segoe UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI" key="DIALOG_FONT_NAME"/>
+			<item value="500" key="DIALOG_HEIGHT"/>
+			<item value="59" key="DIALOG_Y_ORIGIN"/>
+			<item value="360" key="DIALOG_X_ORIGIN"/>
+		</section>
+	</section>
+	<section name="ProductExportWizard">
+		<item value="C:\ToolboxExport" key="destination0"/>
+		<item value="false" key="syncProduct"/>
+		<item value="C:\ToolboxExport" key="destination1"/>
+		<item value="true" key="allowBinaryCycles"/>
+		<item value="Generate source bundles" key="exportSourceFormat"/>
+		<item value="/org.msee.slmtoolbox.modeling.app/org.msee.slmtoolbox.modeling.app.product" key="productConfig1"/>
+		<item value="Osmosis Processes Toolbox" key="productRoot"/>
+		<item value="/org.msee.slmtoolbox.modeling.app/org.msee.slmtoolbox.modeling.app.product" key="productConfig0"/>
+		<item value="false" key="exportSource"/>
+		<item value="true" key="exportDirectory"/>
+		<item value="true" key="p2metadata"/>
+	</section>
+	<section name="quick_assist_proposal_size">
+	</section>
+</section>

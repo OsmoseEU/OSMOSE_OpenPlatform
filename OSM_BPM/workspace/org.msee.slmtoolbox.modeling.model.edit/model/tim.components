@@ -1,0 +1,700 @@
+<?xml version="1.0" encoding="ASCII"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:eef-components="http://www.eclipse.org/emf/eef/components/1.0.0" xmlns:eef-views="http://www.eclipse.org/emf/eef/views/1.0.0">
+  <eef-components:PropertiesEditionContext xmi:id="_7jrdgJ4AEeKTusIEMoeD6A" documentation="Edition Context for tim GenPackage">
+    <categories xmi:id="_7jrdgZ4AEeKTusIEMoeD6A" name="tim">
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_7jrdgp4AEeKTusIEMoeD6A" name="TimModel" views="_7jrd_54AEeKTusIEMoeD6A">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_7jrdhJ4AEeKTusIEMoeD6A" name="name" views="_7jreAp4AEeKTusIEMoeD6A">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.msee.slmtoolbox.modeling.model/model/tim.ecore#//TimModel/name"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_7jrdhZ4AEeKTusIEMoeD6A" name="resources" views="_7jreA54AEeKTusIEMoeD6A">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.msee.slmtoolbox.modeling.model/model/tim.ecore#//TimModel/resources"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="platform:/resource/org.msee.slmtoolbox.modeling.model/model/tim.ecore#//TimModel"/>
+      </bindings>
+    </categories>
+    <model href="platform:/resource/org.msee.slmtoolbox.modeling.model/model/tim.genmodel#//tim"/>
+  </eef-components:PropertiesEditionContext>
+  <eef-components:PropertiesEditionContext xmi:id="_7jrdhp4AEeKTusIEMoeD6A" documentation="Edition Context for CommonConcepts GenPackage">
+    <categories xmi:id="_7jrdh54AEeKTusIEMoeD6A" name="CommonConcepts">
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_7jrdiJ4AEeKTusIEMoeD6A" name="TimService" views="_7jreMZ4AEeKTusIEMoeD6A">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_7jrdip4AEeKTusIEMoeD6A" name="name" views="_7jreNJ4AEeKTusIEMoeD6A">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.msee.slmtoolbox.modeling.model/model/tim.ecore#//CommonConcepts/TimService/name"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_7jrdi54AEeKTusIEMoeD6A" name="description" views="_7jreNZ4AEeKTusIEMoeD6A">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.msee.slmtoolbox.modeling.model/model/tim.ecore#//CommonConcepts/TimService/description"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_7jrdjJ4AEeKTusIEMoeD6A" name="objective" views="_7jreNp4AEeKTusIEMoeD6A">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.msee.slmtoolbox.modeling.model/model/tim.ecore#//CommonConcepts/TimService/objective"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_7jrdjZ4AEeKTusIEMoeD6A" name="constraint" views="_7jreN54AEeKTusIEMoeD6A">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.msee.slmtoolbox.modeling.model/model/tim.ecore#//CommonConcepts/TimService/constraint"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_7jrdjp4AEeKTusIEMoeD6A" name="access" views="_7jreOJ4AEeKTusIEMoeD6A">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.msee.slmtoolbox.modeling.model/model/tim.ecore#//CommonConcepts/TimService/access"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_7jrdj54AEeKTusIEMoeD6A" name="consumption" views="_7jreOZ4AEeKTusIEMoeD6A">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.msee.slmtoolbox.modeling.model/model/tim.ecore#//CommonConcepts/TimService/consumption"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_7jrdkJ4AEeKTusIEMoeD6A" name="automationLevel" views="_7jreOp4AEeKTusIEMoeD6A">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.msee.slmtoolbox.modeling.model/model/tim.ecore#//CommonConcepts/TimService/automationLevel"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_7jrdkZ4AEeKTusIEMoeD6A" name="domain" views="_7jreO54AEeKTusIEMoeD6A">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.msee.slmtoolbox.modeling.model/model/tim.ecore#//CommonConcepts/TimService/domain"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_7jrdkp4AEeKTusIEMoeD6A" name="nature" views="_7jrePJ4AEeKTusIEMoeD6A">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.msee.slmtoolbox.modeling.model/model/tim.ecore#//CommonConcepts/TimService/nature"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_7jrdk54AEeKTusIEMoeD6A" name="subServices" views="_7jrePZ4AEeKTusIEMoeD6A">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.msee.slmtoolbox.modeling.model/model/tim.ecore#//CommonConcepts/TimService/subServices"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_7jrdlJ4AEeKTusIEMoeD6A" name="mainService" views="_7jrePp4AEeKTusIEMoeD6A">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.msee.slmtoolbox.modeling.model/model/tim.ecore#//CommonConcepts/TimService/mainService"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_7jrdlZ4AEeKTusIEMoeD6A" name="processes" views="_7jreP54AEeKTusIEMoeD6A">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.msee.slmtoolbox.modeling.model/model/tim.ecore#//CommonConcepts/TimService/processes"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_7jrdlp4AEeKTusIEMoeD6A" name="resources" views="_7jreQJ4AEeKTusIEMoeD6A">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.msee.slmtoolbox.modeling.model/model/tim.ecore#//CommonConcepts/TimService/resources"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_7jrdl54AEeKTusIEMoeD6A" name="model" views="_7jreQZ4AEeKTusIEMoeD6A">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.msee.slmtoolbox.modeling.model/model/tim.ecore#//CommonConcepts/TimService/model"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="platform:/resource/org.msee.slmtoolbox.modeling.model/model/tim.ecore#//CommonConcepts/TimService"/>
+      </bindings>
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_7jrdmJ4AEeKTusIEMoeD6A" name="TimProcess" views="_7jreQp4AEeKTusIEMoeD6A">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_7jrdmp4AEeKTusIEMoeD6A" name="name" views="_7jreRZ4AEeKTusIEMoeD6A">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.msee.slmtoolbox.modeling.model/model/tim.ecore#//CommonConcepts/TimProcess/name"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_7jrdm54AEeKTusIEMoeD6A" name="objective" views="_7jreRp4AEeKTusIEMoeD6A">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.msee.slmtoolbox.modeling.model/model/tim.ecore#//CommonConcepts/TimProcess/objective"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_7jrdnJ4AEeKTusIEMoeD6A" name="trigger" views="_7jreR54AEeKTusIEMoeD6A">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.msee.slmtoolbox.modeling.model/model/tim.ecore#//CommonConcepts/TimProcess/trigger"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_7jrdnZ4AEeKTusIEMoeD6A" name="result" views="_7jreSJ4AEeKTusIEMoeD6A">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.msee.slmtoolbox.modeling.model/model/tim.ecore#//CommonConcepts/TimProcess/result"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_7jrdnp4AEeKTusIEMoeD6A" name="constraint" views="_7jreSZ4AEeKTusIEMoeD6A">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.msee.slmtoolbox.modeling.model/model/tim.ecore#//CommonConcepts/TimProcess/constraint"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_7jrdn54AEeKTusIEMoeD6A" name="workFlow" views="_7jreSp4AEeKTusIEMoeD6A">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.msee.slmtoolbox.modeling.model/model/tim.ecore#//CommonConcepts/TimProcess/workFlow"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_7jrdoJ4AEeKTusIEMoeD6A" name="subprocesses" views="_7jreS54AEeKTusIEMoeD6A">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.msee.slmtoolbox.modeling.model/model/tim.ecore#//CommonConcepts/TimProcess/subprocesses"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_7jrdoZ4AEeKTusIEMoeD6A" name="mainProcess" views="_7jreTJ4AEeKTusIEMoeD6A">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.msee.slmtoolbox.modeling.model/model/tim.ecore#//CommonConcepts/TimProcess/mainProcess"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_7jrdop4AEeKTusIEMoeD6A" name="services" views="_7jreTZ4AEeKTusIEMoeD6A">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.msee.slmtoolbox.modeling.model/model/tim.ecore#//CommonConcepts/TimProcess/services"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_7jrdo54AEeKTusIEMoeD6A" name="resources" views="_7jreTp4AEeKTusIEMoeD6A">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.msee.slmtoolbox.modeling.model/model/tim.ecore#//CommonConcepts/TimProcess/resources"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_7jrdpJ4AEeKTusIEMoeD6A" name="responsibleOrganizationUnit" views="_7jreT54AEeKTusIEMoeD6A">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.msee.slmtoolbox.modeling.model/model/tim.ecore#//CommonConcepts/TimProcess/responsibleOrganizationUnit"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_7jrdpZ4AEeKTusIEMoeD6A" name="model" views="_7jreUJ4AEeKTusIEMoeD6A">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.msee.slmtoolbox.modeling.model/model/tim.ecore#//CommonConcepts/TimProcess/model"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="platform:/resource/org.msee.slmtoolbox.modeling.model/model/tim.ecore#//CommonConcepts/TimProcess"/>
+      </bindings>
+    </categories>
+    <model href="platform:/resource/org.msee.slmtoolbox.modeling.model/model/tim.genmodel#//tim/CommonConcepts"/>
+  </eef-components:PropertiesEditionContext>
+  <eef-components:PropertiesEditionContext xmi:id="_7jrdpp4AEeKTusIEMoeD6A" documentation="Edition Context for PhysicalMeanRelatedPart GenPackage">
+    <categories xmi:id="_7jrdp54AEeKTusIEMoeD6A" name="PhysicalMeanRelatedPart">
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_7jrdqJ4AEeKTusIEMoeD6A" name="TimPhysicalMeanResource" views="_7jsErp4AEeKTusIEMoeD6A">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_7jrdqp4AEeKTusIEMoeD6A" name="name" views="_7jsEsZ4AEeKTusIEMoeD6A">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.msee.slmtoolbox.modeling.model/model/tim.ecore#//CommonConcepts/TimResource/name"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_7jrdq54AEeKTusIEMoeD6A" name="function" views="_7jsEsp4AEeKTusIEMoeD6A">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.msee.slmtoolbox.modeling.model/model/tim.ecore#//CommonConcepts/TimResource/function"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_7jrdrJ4AEeKTusIEMoeD6A" name="type" views="_7jsEs54AEeKTusIEMoeD6A">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.msee.slmtoolbox.modeling.model/model/tim.ecore#//CommonConcepts/TimResource/type"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_7jrdrZ4AEeKTusIEMoeD6A" name="processes" views="_7jsEtJ4AEeKTusIEMoeD6A">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.msee.slmtoolbox.modeling.model/model/tim.ecore#//CommonConcepts/TimResource/processes"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_7jrdrp4AEeKTusIEMoeD6A" name="model" views="_7jsEtZ4AEeKTusIEMoeD6A">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.msee.slmtoolbox.modeling.model/model/tim.ecore#//CommonConcepts/TimResource/model"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_7jrdr54AEeKTusIEMoeD6A" name="organizationUnit" views="_7jsEtp4AEeKTusIEMoeD6A">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.msee.slmtoolbox.modeling.model/model/tim.ecore#//CommonConcepts/TimResource/organizationUnit"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_7jrdsJ4AEeKTusIEMoeD6A" name="services" views="_7jsEt54AEeKTusIEMoeD6A">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.msee.slmtoolbox.modeling.model/model/tim.ecore#//CommonConcepts/TimResource/services"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_7jrdsZ4AEeKTusIEMoeD6A" name="capability" views="_7jsEuJ4AEeKTusIEMoeD6A">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.msee.slmtoolbox.modeling.model/model/tim.ecore#//PhysicalMeanRelatedPart/TimPhysicalMeanResource/capability"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_7jrdsp4AEeKTusIEMoeD6A" name="constraint" views="_7jsEuZ4AEeKTusIEMoeD6A">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.msee.slmtoolbox.modeling.model/model/tim.ecore#//PhysicalMeanRelatedPart/TimPhysicalMeanResource/constraint"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_7jrds54AEeKTusIEMoeD6A" name="operationMode" views="_7jsEup4AEeKTusIEMoeD6A">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.msee.slmtoolbox.modeling.model/model/tim.ecore#//PhysicalMeanRelatedPart/TimPhysicalMeanResource/operationMode"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_7jrdtJ4AEeKTusIEMoeD6A" name="technicalCharacteristics" views="_7jsEu54AEeKTusIEMoeD6A">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.msee.slmtoolbox.modeling.model/model/tim.ecore#//PhysicalMeanRelatedPart/TimPhysicalMeanResource/technicalCharacteristics"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_7jrdtZ4AEeKTusIEMoeD6A" name="expectedPerformance" views="_7jsEvJ4AEeKTusIEMoeD6A">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.msee.slmtoolbox.modeling.model/model/tim.ecore#//PhysicalMeanRelatedPart/TimPhysicalMeanResource/expectedPerformance"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="platform:/resource/org.msee.slmtoolbox.modeling.model/model/tim.ecore#//PhysicalMeanRelatedPart/TimPhysicalMeanResource"/>
+      </bindings>
+    </categories>
+    <model href="platform:/resource/org.msee.slmtoolbox.modeling.model/model/tim.genmodel#//tim/PhysicalMeanRelatedPart"/>
+  </eef-components:PropertiesEditionContext>
+  <eef-components:PropertiesEditionContext xmi:id="_7jrdtp4AEeKTusIEMoeD6A" documentation="Edition Context for ITRelatedPart GenPackage">
+    <categories xmi:id="_7jrdt54AEeKTusIEMoeD6A" name="ITRelatedPart">
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_7jrduJ4AEeKTusIEMoeD6A" name="TimEnterpriseApplicationResource" views="_7jreBp4AEeKTusIEMoeD6A">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_7jrdup4AEeKTusIEMoeD6A" name="name" views="_7jreCZ4AEeKTusIEMoeD6A">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.msee.slmtoolbox.modeling.model/model/tim.ecore#//CommonConcepts/TimResource/name"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_7jrdu54AEeKTusIEMoeD6A" name="function" views="_7jreCp4AEeKTusIEMoeD6A">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.msee.slmtoolbox.modeling.model/model/tim.ecore#//CommonConcepts/TimResource/function"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_7jrdvJ4AEeKTusIEMoeD6A" name="type" views="_7jreC54AEeKTusIEMoeD6A">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.msee.slmtoolbox.modeling.model/model/tim.ecore#//CommonConcepts/TimResource/type"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_7jrdvZ4AEeKTusIEMoeD6A" name="processes" views="_7jreDJ4AEeKTusIEMoeD6A">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.msee.slmtoolbox.modeling.model/model/tim.ecore#//CommonConcepts/TimResource/processes"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_7jrdvp4AEeKTusIEMoeD6A" name="model" views="_7jreDZ4AEeKTusIEMoeD6A">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.msee.slmtoolbox.modeling.model/model/tim.ecore#//CommonConcepts/TimResource/model"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_7jrdv54AEeKTusIEMoeD6A" name="organizationUnit" views="_7jreDp4AEeKTusIEMoeD6A">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.msee.slmtoolbox.modeling.model/model/tim.ecore#//CommonConcepts/TimResource/organizationUnit"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_7jrdwJ4AEeKTusIEMoeD6A" name="services" views="_7jreD54AEeKTusIEMoeD6A">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.msee.slmtoolbox.modeling.model/model/tim.ecore#//CommonConcepts/TimResource/services"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_7jrdwZ4AEeKTusIEMoeD6A" name="description" views="_7jreEJ4AEeKTusIEMoeD6A">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.msee.slmtoolbox.modeling.model/model/tim.ecore#//ITRelatedPart/TimEnterpriseApplicationResource/description"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_7jrdwp4AEeKTusIEMoeD6A" name="functionality" views="_7jreEZ4AEeKTusIEMoeD6A">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.msee.slmtoolbox.modeling.model/model/tim.ecore#//ITRelatedPart/TimEnterpriseApplicationResource/functionality"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_7jrdw54AEeKTusIEMoeD6A" name="characteristics" views="_7jreEp4AEeKTusIEMoeD6A">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.msee.slmtoolbox.modeling.model/model/tim.ecore#//ITRelatedPart/TimEnterpriseApplicationResource/characteristics"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_7jrdxJ4AEeKTusIEMoeD6A" name="informations" views="_7jreE54AEeKTusIEMoeD6A">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.msee.slmtoolbox.modeling.model/model/tim.ecore#//ITRelatedPart/TimEnterpriseApplicationResource/informations"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="platform:/resource/org.msee.slmtoolbox.modeling.model/model/tim.ecore#//ITRelatedPart/TimEnterpriseApplicationResource"/>
+      </bindings>
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_7jrdxZ4AEeKTusIEMoeD6A" name="TimInformationSet" views="_7jreFJ4AEeKTusIEMoeD6A">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_7jrdx54AEeKTusIEMoeD6A" name="name" views="_7jreF54AEeKTusIEMoeD6A">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.msee.slmtoolbox.modeling.model/model/tim.ecore#//ITRelatedPart/TimInformationSet/name"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_7jrdyJ4AEeKTusIEMoeD6A" name="entrepriseApplications" views="_7jreGJ4AEeKTusIEMoeD6A">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.msee.slmtoolbox.modeling.model/model/tim.ecore#//ITRelatedPart/TimInformationSet/entrepriseApplications"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_7jrdyZ4AEeKTusIEMoeD6A" name="model" views="_7jreGZ4AEeKTusIEMoeD6A">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.msee.slmtoolbox.modeling.model/model/tim.ecore#//ITRelatedPart/TimInformationSet/model"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="platform:/resource/org.msee.slmtoolbox.modeling.model/model/tim.ecore#//ITRelatedPart/TimInformationSet"/>
+      </bindings>
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_7jrdyp4AEeKTusIEMoeD6A" name="TimInformationEntity" views="_7jreGp4AEeKTusIEMoeD6A">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_7jrdzJ4AEeKTusIEMoeD6A" name="name" views="_7jreHZ4AEeKTusIEMoeD6A">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.msee.slmtoolbox.modeling.model/model/tim.ecore#//ITRelatedPart/TimInformationEntity/name"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_7jrdzZ4AEeKTusIEMoeD6A" name="outRelations" views="_7jreHp4AEeKTusIEMoeD6A">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.msee.slmtoolbox.modeling.model/model/tim.ecore#//ITRelatedPart/TimInformationEntity/outRelations"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_7jrdzp4AEeKTusIEMoeD6A" name="inRelations" views="_7jreH54AEeKTusIEMoeD6A">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.msee.slmtoolbox.modeling.model/model/tim.ecore#//ITRelatedPart/TimInformationEntity/inRelations"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_7jrdz54AEeKTusIEMoeD6A" name="information" views="_7jreIJ4AEeKTusIEMoeD6A">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.msee.slmtoolbox.modeling.model/model/tim.ecore#//ITRelatedPart/TimInformationEntity/information"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="platform:/resource/org.msee.slmtoolbox.modeling.model/model/tim.ecore#//ITRelatedPart/TimInformationEntity"/>
+      </bindings>
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_7jrd0J4AEeKTusIEMoeD6A" name="TimInformationRelationship" views="_7jreIZ4AEeKTusIEMoeD6A">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_7jrd0p4AEeKTusIEMoeD6A" name="name" views="_7jreJJ4AEeKTusIEMoeD6A">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.msee.slmtoolbox.modeling.model/model/tim.ecore#//ITRelatedPart/TimInformationRelationship/name"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_7jrd054AEeKTusIEMoeD6A" name="type" views="_7jreJZ4AEeKTusIEMoeD6A">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.msee.slmtoolbox.modeling.model/model/tim.ecore#//ITRelatedPart/TimInformationRelationship/type"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_7jrd1J4AEeKTusIEMoeD6A" name="sourceEntity" views="_7jreJp4AEeKTusIEMoeD6A">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.msee.slmtoolbox.modeling.model/model/tim.ecore#//ITRelatedPart/TimInformationRelationship/sourceEntity"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_7jrd1Z4AEeKTusIEMoeD6A" name="targetEntity" views="_7jreJ54AEeKTusIEMoeD6A">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.msee.slmtoolbox.modeling.model/model/tim.ecore#//ITRelatedPart/TimInformationRelationship/targetEntity"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_7jrd1p4AEeKTusIEMoeD6A" name="information" views="_7jreKJ4AEeKTusIEMoeD6A">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.msee.slmtoolbox.modeling.model/model/tim.ecore#//ITRelatedPart/TimInformationRelationship/information"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="platform:/resource/org.msee.slmtoolbox.modeling.model/model/tim.ecore#//ITRelatedPart/TimInformationRelationship"/>
+      </bindings>
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_7jrd154AEeKTusIEMoeD6A" name="TimInformationAttribute" views="_7jreKZ4AEeKTusIEMoeD6A">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_7jrd2Z4AEeKTusIEMoeD6A" name="name" views="_7jreLJ4AEeKTusIEMoeD6A">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.msee.slmtoolbox.modeling.model/model/tim.ecore#//ITRelatedPart/TimInformationAttribute/name"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_7jrd2p4AEeKTusIEMoeD6A" name="type" views="_7jreLZ4AEeKTusIEMoeD6A">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.msee.slmtoolbox.modeling.model/model/tim.ecore#//ITRelatedPart/TimInformationAttribute/type"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_7jrd254AEeKTusIEMoeD6A" name="informationEntity" views="_7jreLp4AEeKTusIEMoeD6A">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.msee.slmtoolbox.modeling.model/model/tim.ecore#//ITRelatedPart/TimInformationAttribute/informationEntity"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="platform:/resource/org.msee.slmtoolbox.modeling.model/model/tim.ecore#//ITRelatedPart/TimInformationAttribute"/>
+      </bindings>
+    </categories>
+    <model href="platform:/resource/org.msee.slmtoolbox.modeling.model/model/tim.genmodel#//tim/ITRelatedPart"/>
+  </eef-components:PropertiesEditionContext>
+  <eef-components:PropertiesEditionContext xmi:id="_7jrd3J4AEeKTusIEMoeD6A" documentation="Edition Context for HumanRelatedPart GenPackage">
+    <categories xmi:id="_7jrd3Z4AEeKTusIEMoeD6A" name="HumanRelatedPart">
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_7jrd3p4AEeKTusIEMoeD6A" name="TimHumanResource" views="_7jreU54AEeKTusIEMoeD6A">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_7jrd4J4AEeKTusIEMoeD6A" name="name" views="_7jreVp4AEeKTusIEMoeD6A">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.msee.slmtoolbox.modeling.model/model/tim.ecore#//CommonConcepts/TimResource/name"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_7jrd4Z4AEeKTusIEMoeD6A" name="function" views="_7jreV54AEeKTusIEMoeD6A">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.msee.slmtoolbox.modeling.model/model/tim.ecore#//CommonConcepts/TimResource/function"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_7jrd4p4AEeKTusIEMoeD6A" name="type" views="_7jreWJ4AEeKTusIEMoeD6A">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.msee.slmtoolbox.modeling.model/model/tim.ecore#//CommonConcepts/TimResource/type"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_7jrd454AEeKTusIEMoeD6A" name="processes" views="_7jsEkJ4AEeKTusIEMoeD6A">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.msee.slmtoolbox.modeling.model/model/tim.ecore#//CommonConcepts/TimResource/processes"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_7jrd5J4AEeKTusIEMoeD6A" name="model" views="_7jsEkZ4AEeKTusIEMoeD6A">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.msee.slmtoolbox.modeling.model/model/tim.ecore#//CommonConcepts/TimResource/model"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_7jrd5Z4AEeKTusIEMoeD6A" name="organizationUnit" views="_7jsEkp4AEeKTusIEMoeD6A">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.msee.slmtoolbox.modeling.model/model/tim.ecore#//CommonConcepts/TimResource/organizationUnit"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_7jrd5p4AEeKTusIEMoeD6A" name="services" views="_7jsEk54AEeKTusIEMoeD6A">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.msee.slmtoolbox.modeling.model/model/tim.ecore#//CommonConcepts/TimResource/services"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_7jrd554AEeKTusIEMoeD6A" name="capability" views="_7jsElJ4AEeKTusIEMoeD6A">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.msee.slmtoolbox.modeling.model/model/tim.ecore#//HumanRelatedPart/TimHumanResource/capability"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_7jrd6J4AEeKTusIEMoeD6A" name="constraint" views="_7jsElZ4AEeKTusIEMoeD6A">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.msee.slmtoolbox.modeling.model/model/tim.ecore#//HumanRelatedPart/TimHumanResource/constraint"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_7jrd6Z4AEeKTusIEMoeD6A" name="skills" views="_7jsElp4AEeKTusIEMoeD6A">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.msee.slmtoolbox.modeling.model/model/tim.ecore#//HumanRelatedPart/TimHumanResource/skills"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_7jrd6p4AEeKTusIEMoeD6A" name="educationLevel" views="_7jsEl54AEeKTusIEMoeD6A">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.msee.slmtoolbox.modeling.model/model/tim.ecore#//HumanRelatedPart/TimHumanResource/educationLevel"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_7jrd654AEeKTusIEMoeD6A" name="quantity" views="_7jsEmJ4AEeKTusIEMoeD6A">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.msee.slmtoolbox.modeling.model/model/tim.ecore#//HumanRelatedPart/TimHumanResource/quantity"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_7jrd7J4AEeKTusIEMoeD6A" name="expectedPerformance" views="_7jsEmZ4AEeKTusIEMoeD6A">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.msee.slmtoolbox.modeling.model/model/tim.ecore#//HumanRelatedPart/TimHumanResource/expectedPerformance"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="platform:/resource/org.msee.slmtoolbox.modeling.model/model/tim.ecore#//HumanRelatedPart/TimHumanResource"/>
+      </bindings>
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_7jrd7Z4AEeKTusIEMoeD6A" name="TimOrganization" views="_7jsEmp4AEeKTusIEMoeD6A">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_7jrd754AEeKTusIEMoeD6A" name="name" views="_7jsEnZ4AEeKTusIEMoeD6A">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.msee.slmtoolbox.modeling.model/model/tim.ecore#//HumanRelatedPart/TimOrganization/name"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_7jrd8J4AEeKTusIEMoeD6A" name="type" views="_7jsEnp4AEeKTusIEMoeD6A">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.msee.slmtoolbox.modeling.model/model/tim.ecore#//HumanRelatedPart/TimOrganization/type"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_7jrd8Z4AEeKTusIEMoeD6A" name="description" views="_7jsEn54AEeKTusIEMoeD6A">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.msee.slmtoolbox.modeling.model/model/tim.ecore#//HumanRelatedPart/TimOrganization/description"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_7jrd8p4AEeKTusIEMoeD6A" name="responsibility" views="_7jsEoJ4AEeKTusIEMoeD6A">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.msee.slmtoolbox.modeling.model/model/tim.ecore#//HumanRelatedPart/TimOrganization/responsibility"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_7jrd854AEeKTusIEMoeD6A" name="authorization" views="_7jsEoZ4AEeKTusIEMoeD6A">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.msee.slmtoolbox.modeling.model/model/tim.ecore#//HumanRelatedPart/TimOrganization/authorization"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_7jrd9J4AEeKTusIEMoeD6A" name="model" views="_7jsEop4AEeKTusIEMoeD6A">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.msee.slmtoolbox.modeling.model/model/tim.ecore#//HumanRelatedPart/TimOrganization/model"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="platform:/resource/org.msee.slmtoolbox.modeling.model/model/tim.ecore#//HumanRelatedPart/TimOrganization"/>
+      </bindings>
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_7jrd9Z4AEeKTusIEMoeD6A" name="TimOrganizationUnit" views="_7jsEo54AEeKTusIEMoeD6A">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_7jrd954AEeKTusIEMoeD6A" name="name" views="_7jsEpp4AEeKTusIEMoeD6A">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.msee.slmtoolbox.modeling.model/model/tim.ecore#//HumanRelatedPart/TimOrganizationUnit/name"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_7jrd-J4AEeKTusIEMoeD6A" name="function" views="_7jsEp54AEeKTusIEMoeD6A">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.msee.slmtoolbox.modeling.model/model/tim.ecore#//HumanRelatedPart/TimOrganizationUnit/function"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_7jrd-Z4AEeKTusIEMoeD6A" name="responsibility" views="_7jsEqJ4AEeKTusIEMoeD6A">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.msee.slmtoolbox.modeling.model/model/tim.ecore#//HumanRelatedPart/TimOrganizationUnit/responsibility"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_7jrd-p4AEeKTusIEMoeD6A" name="authorization" views="_7jsEqZ4AEeKTusIEMoeD6A">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/org.msee.slmtoolbox.modeling.model/model/tim.ecore#//HumanRelatedPart/TimOrganizationUnit/authorization"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_7jrd-54AEeKTusIEMoeD6A" name="organization" views="_7jsEqp4AEeKTusIEMoeD6A">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.msee.slmtoolbox.modeling.model/model/tim.ecore#//HumanRelatedPart/TimOrganizationUnit/organization"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_7jrd_J4AEeKTusIEMoeD6A" name="processes" views="_7jsEq54AEeKTusIEMoeD6A">
+          <model xsi:type="ecore:EReference" href="platform:/resource/org.msee.slmtoolbox.modeling.model/model/tim.ecore#//HumanRelatedPart/TimOrganizationUnit/processes"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="platform:/resource/org.msee.slmtoolbox.modeling.model/model/tim.ecore#//HumanRelatedPart/TimOrganizationUnit"/>
+      </bindings>
+    </categories>
+    <model href="platform:/resource/org.msee.slmtoolbox.modeling.model/model/tim.genmodel#//tim/HumanRelatedPart"/>
+  </eef-components:PropertiesEditionContext>
+  <eef-views:ViewsRepository xmi:id="_7jrd_Z4AEeKTusIEMoeD6A" documentation="Views repository for tim GenPackage" name="tim">
+    <RepositoryKind>SWT</RepositoryKind>
+    <RepositoryKind>Form</RepositoryKind>
+    <categories xmi:id="_7jrd_p4AEeKTusIEMoeD6A" name="tim">
+      <views xmi:id="_7jrd_54AEeKTusIEMoeD6A" name="TimModel">
+        <elements xsi:type="eef-views:Container" xmi:id="_7jreAJ4AEeKTusIEMoeD6A" name="properties">
+          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_7jreAp4AEeKTusIEMoeD6A" name="name">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_7jreA54AEeKTusIEMoeD6A" name="resources">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.8"/>
+          </elements>
+        </elements>
+      </views>
+    </categories>
+  </eef-views:ViewsRepository>
+  <eef-views:ViewsRepository xmi:id="_7jreBJ4AEeKTusIEMoeD6A" documentation="Views repository for ITRelatedPart GenPackage" name="ITRelatedPart">
+    <RepositoryKind>SWT</RepositoryKind>
+    <RepositoryKind>Form</RepositoryKind>
+    <categories xmi:id="_7jreBZ4AEeKTusIEMoeD6A" name="ITRelatedPart">
+      <views xmi:id="_7jreBp4AEeKTusIEMoeD6A" name="TimEnterpriseApplicationResource">
+        <elements xsi:type="eef-views:Container" xmi:id="_7jreB54AEeKTusIEMoeD6A" name="properties">
+          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_7jreCZ4AEeKTusIEMoeD6A" name="name">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_7jreCp4AEeKTusIEMoeD6A" name="function">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_7jreC54AEeKTusIEMoeD6A" name="type">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_7jreDJ4AEeKTusIEMoeD6A" name="processes">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.8"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_7jreDZ4AEeKTusIEMoeD6A" name="model" readOnly="true">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_7jreDp4AEeKTusIEMoeD6A" name="organizationUnit">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_7jreD54AEeKTusIEMoeD6A" name="services">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.8"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_7jreEJ4AEeKTusIEMoeD6A" name="description">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_7jreEZ4AEeKTusIEMoeD6A" name="functionality">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_7jreEp4AEeKTusIEMoeD6A" name="characteristics">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_7jreE54AEeKTusIEMoeD6A" name="informations">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.8"/>
+          </elements>
+        </elements>
+      </views>
+      <views xmi:id="_7jreFJ4AEeKTusIEMoeD6A" name="TimInformationSet">
+        <elements xsi:type="eef-views:Container" xmi:id="_7jreFZ4AEeKTusIEMoeD6A" name="properties">
+          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_7jreF54AEeKTusIEMoeD6A" name="name">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_7jreGJ4AEeKTusIEMoeD6A" name="entrepriseApplications">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.8"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_7jreGZ4AEeKTusIEMoeD6A" name="model" readOnly="true">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+        </elements>
+      </views>
+      <views xmi:id="_7jreGp4AEeKTusIEMoeD6A" name="TimInformationEntity">
+        <elements xsi:type="eef-views:Container" xmi:id="_7jreG54AEeKTusIEMoeD6A" name="properties">
+          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_7jreHZ4AEeKTusIEMoeD6A" name="name">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_7jreHp4AEeKTusIEMoeD6A" name="outRelations">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.8"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_7jreH54AEeKTusIEMoeD6A" name="inRelations">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.8"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_7jreIJ4AEeKTusIEMoeD6A" name="information">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+        </elements>
+      </views>
+      <views xmi:id="_7jreIZ4AEeKTusIEMoeD6A" name="TimInformationRelationship">
+        <elements xsi:type="eef-views:Container" xmi:id="_7jreIp4AEeKTusIEMoeD6A" name="properties">
+          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_7jreJJ4AEeKTusIEMoeD6A" name="name">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_7jreJZ4AEeKTusIEMoeD6A" name="type">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_7jreJp4AEeKTusIEMoeD6A" name="sourceEntity">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_7jreJ54AEeKTusIEMoeD6A" name="targetEntity">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_7jreKJ4AEeKTusIEMoeD6A" name="information">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+        </elements>
+      </views>
+      <views xmi:id="_7jreKZ4AEeKTusIEMoeD6A" name="TimInformationAttribute">
+        <elements xsi:type="eef-views:Container" xmi:id="_7jreKp4AEeKTusIEMoeD6A" name="properties">
+          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_7jreLJ4AEeKTusIEMoeD6A" name="name">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_7jreLZ4AEeKTusIEMoeD6A" name="type">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_7jreLp4AEeKTusIEMoeD6A" name="informationEntity">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+        </elements>
+      </views>
+    </categories>
+  </eef-views:ViewsRepository>
+  <eef-views:ViewsRepository xmi:id="_7jreL54AEeKTusIEMoeD6A" documentation="Views repository for CommonConcepts GenPackage" name="CommonConcepts">
+    <RepositoryKind>SWT</RepositoryKind>
+    <RepositoryKind>Form</RepositoryKind>
+    <categories xmi:id="_7jreMJ4AEeKTusIEMoeD6A" name="CommonConcepts">
+      <views xmi:id="_7jreMZ4AEeKTusIEMoeD6A" name="TimService">
+        <elements xsi:type="eef-views:Container" xmi:id="_7jreMp4AEeKTusIEMoeD6A" name="properties">
+          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_7jreNJ4AEeKTusIEMoeD6A" name="name">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_7jreNZ4AEeKTusIEMoeD6A" name="description">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_7jreNp4AEeKTusIEMoeD6A" name="objective">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_7jreN54AEeKTusIEMoeD6A" name="constraint">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_7jreOJ4AEeKTusIEMoeD6A" name="access">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_7jreOZ4AEeKTusIEMoeD6A" name="consumption">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_7jreOp4AEeKTusIEMoeD6A" name="automationLevel">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_7jreO54AEeKTusIEMoeD6A" name="domain">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_7jrePJ4AEeKTusIEMoeD6A" name="nature">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_7jrePZ4AEeKTusIEMoeD6A" name="subServices">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.8"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_7jrePp4AEeKTusIEMoeD6A" name="mainService">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_7jreP54AEeKTusIEMoeD6A" name="processes">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.8"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_7jreQJ4AEeKTusIEMoeD6A" name="resources">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.8"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_7jreQZ4AEeKTusIEMoeD6A" name="model" readOnly="true">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+        </elements>
+      </views>
+      <views xmi:id="_7jreQp4AEeKTusIEMoeD6A" name="TimProcess">
+        <elements xsi:type="eef-views:Container" xmi:id="_7jreQ54AEeKTusIEMoeD6A" name="properties">
+          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_7jreRZ4AEeKTusIEMoeD6A" name="name">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_7jreRp4AEeKTusIEMoeD6A" name="objective">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_7jreR54AEeKTusIEMoeD6A" name="trigger">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_7jreSJ4AEeKTusIEMoeD6A" name="result">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_7jreSZ4AEeKTusIEMoeD6A" name="constraint">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_7jreSp4AEeKTusIEMoeD6A" name="workFlow">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_7jreS54AEeKTusIEMoeD6A" name="subprocesses">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.8"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_7jreTJ4AEeKTusIEMoeD6A" name="mainProcess">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_7jreTZ4AEeKTusIEMoeD6A" name="services">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.8"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_7jreTp4AEeKTusIEMoeD6A" name="resources">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.8"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_7jreT54AEeKTusIEMoeD6A" name="responsibleOrganizationUnit">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_7jreUJ4AEeKTusIEMoeD6A" name="model" readOnly="true">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+        </elements>
+      </views>
+    </categories>
+  </eef-views:ViewsRepository>
+  <eef-views:ViewsRepository xmi:id="_7jreUZ4AEeKTusIEMoeD6A" documentation="Views repository for HumanRelatedPart GenPackage" name="HumanRelatedPart">
+    <RepositoryKind>SWT</RepositoryKind>
+    <RepositoryKind>Form</RepositoryKind>
+    <categories xmi:id="_7jreUp4AEeKTusIEMoeD6A" name="HumanRelatedPart">
+      <views xmi:id="_7jreU54AEeKTusIEMoeD6A" name="TimHumanResource">
+        <elements xsi:type="eef-views:Container" xmi:id="_7jreVJ4AEeKTusIEMoeD6A" name="properties">
+          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_7jreVp4AEeKTusIEMoeD6A" name="name">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_7jreV54AEeKTusIEMoeD6A" name="function">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_7jreWJ4AEeKTusIEMoeD6A" name="type">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_7jsEkJ4AEeKTusIEMoeD6A" name="processes">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.8"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_7jsEkZ4AEeKTusIEMoeD6A" name="model" readOnly="true">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_7jsEkp4AEeKTusIEMoeD6A" name="organizationUnit">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_7jsEk54AEeKTusIEMoeD6A" name="services">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.8"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_7jsElJ4AEeKTusIEMoeD6A" name="capability">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_7jsElZ4AEeKTusIEMoeD6A" name="constraint">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_7jsElp4AEeKTusIEMoeD6A" name="skills">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_7jsEl54AEeKTusIEMoeD6A" name="educationLevel">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_7jsEmJ4AEeKTusIEMoeD6A" name="quantity">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_7jsEmZ4AEeKTusIEMoeD6A" name="expectedPerformance">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+        </elements>
+      </views>
+      <views xmi:id="_7jsEmp4AEeKTusIEMoeD6A" name="TimOrganization">
+        <elements xsi:type="eef-views:Container" xmi:id="_7jsEm54AEeKTusIEMoeD6A" name="properties">
+          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_7jsEnZ4AEeKTusIEMoeD6A" name="name">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_7jsEnp4AEeKTusIEMoeD6A" name="type">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_7jsEn54AEeKTusIEMoeD6A" name="description">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_7jsEoJ4AEeKTusIEMoeD6A" name="responsibility">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_7jsEoZ4AEeKTusIEMoeD6A" name="authorization">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_7jsEop4AEeKTusIEMoeD6A" name="model" readOnly="true">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+        </elements>
+      </views>
+      <views xmi:id="_7jsEo54AEeKTusIEMoeD6A" name="TimOrganizationUnit">
+        <elements xsi:type="eef-views:Container" xmi:id="_7jsEpJ4AEeKTusIEMoeD6A" name="properties">
+          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_7jsEpp4AEeKTusIEMoeD6A" name="name">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_7jsEp54AEeKTusIEMoeD6A" name="function">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_7jsEqJ4AEeKTusIEMoeD6A" name="responsibility">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_7jsEqZ4AEeKTusIEMoeD6A" name="authorization">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_7jsEqp4AEeKTusIEMoeD6A" name="organization">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_7jsEq54AEeKTusIEMoeD6A" name="processes">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.8"/>
+          </elements>
+        </elements>
+      </views>
+    </categories>
+  </eef-views:ViewsRepository>
+  <eef-views:ViewsRepository xmi:id="_7jsErJ4AEeKTusIEMoeD6A" documentation="Views repository for PhysicalMeanRelatedPart GenPackage" name="PhysicalMeanRelatedPart">
+    <RepositoryKind>SWT</RepositoryKind>
+    <RepositoryKind>Form</RepositoryKind>
+    <categories xmi:id="_7jsErZ4AEeKTusIEMoeD6A" name="PhysicalMeanRelatedPart">
+      <views xmi:id="_7jsErp4AEeKTusIEMoeD6A" name="TimPhysicalMeanResource">
+        <elements xsi:type="eef-views:Container" xmi:id="_7jsEr54AEeKTusIEMoeD6A" name="properties">
+          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_7jsEsZ4AEeKTusIEMoeD6A" name="name">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_7jsEsp4AEeKTusIEMoeD6A" name="function">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_7jsEs54AEeKTusIEMoeD6A" name="type">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_7jsEtJ4AEeKTusIEMoeD6A" name="processes">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.8"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_7jsEtZ4AEeKTusIEMoeD6A" name="model" readOnly="true">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_7jsEtp4AEeKTusIEMoeD6A" name="organizationUnit">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_7jsEt54AEeKTusIEMoeD6A" name="services">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.8"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_7jsEuJ4AEeKTusIEMoeD6A" name="capability">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_7jsEuZ4AEeKTusIEMoeD6A" name="constraint">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_7jsEup4AEeKTusIEMoeD6A" name="operationMode">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_7jsEu54AEeKTusIEMoeD6A" name="technicalCharacteristics">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_7jsEvJ4AEeKTusIEMoeD6A" name="expectedPerformance">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+        </elements>
+      </views>
+    </categories>
+  </eef-views:ViewsRepository>
+</xmi:XMI>

@@ -1,0 +1,21 @@
+
+Tue Jan 29 11:26:47 CET 2013
+================================================================================
+Start of user code for resource update bsm
+			String name = (java.lang.String)EEFConverterUtil.createFromString(EcorePackage.Literals.ESTRING, (String)event.getNewValue());
+			//data diffuser for name
+			diffuser.distributeResoureName(eAStarIT.getId(), name);
+			eAStarIT.setName(name);
+			// End of user code
+Start of user code for resource update ea*
+			double unitaryCost = EEFConverterUtil.createDoubleFromString(EcorePackage.Literals.EDOUBLE, (String)event.getNewValue());
+			//data diffuser for location
+			diffuser.distributeResoureUnitaryCost(eAStarIT.getId(), unitaryCost);
+			eAStarIT.setUnitaryCost(unitaryCost);
+			// End of user code
+Start of user code  for resource update  ea*
+			String capabilities = (java.lang.String)EEFConverterUtil.createFromString(EcorePackage.Literals.ESTRING, (String)event.getNewValue());
+			//data diffuser for capabilities
+			diffuser.distributeResoureCapabilities(eAStarIT.getId(), capabilities);
+			eAStarIT.setCapabilities(capabilities);
+			// End of user code

@@ -1,0 +1,8 @@
+
+Fri Feb 21 14:40:55 CET 2014
+================================================================================
+Start of user code
+		BsmAddObjectiveToPIDialog dialog = new BsmAddObjectiveToPIDialog(PlatformUI.getWorkbench().getDisplay().getActiveShell(), objectives.getLabelProvider(), (BsmPerformanceIndicator) ((ReferencesTableSettings)this.objectives.getInput()).getSource());		
+		dialog.open();
+		objectives.refresh();	
+		// End of user code

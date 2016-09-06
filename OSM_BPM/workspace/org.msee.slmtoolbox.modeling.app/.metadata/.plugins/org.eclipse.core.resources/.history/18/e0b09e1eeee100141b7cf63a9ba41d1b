@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+  
+  <bpmn2:definitions xmlns:dcxmi="http://www.omg.org/spec/DD/20100524/DC-XMI" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:bpmn2="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dixmi="http://www.omg.org/spec/DD/20100524/DI-XMI" xmlns:bpmndixmi="http://www.omg.org/spec/BPMN/20100524/DI-XMI" xmlns:xmi="http://schema.omg.org/spec/XMI" xmlns:bpmn2xmi="http://www.omg.org/spec/BPMN/20100524/MODEL-XMI" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:tns="http://www.jboss.org/drools" xsi:schemaLocation="http://www.omg.org/spec/BPMN/20100524/MODEL BPMN20.xsd" id="myProc" expressionLanguage="http://www.mvel.org/2.0" targetNamespace="http://www.jboss.org/drools" typeLanguage="http://www.java.com/javaTypes">
+<bpmn2:process id="EaProcessImpl_511813bf-95ef-4926-8689-f02fedf8d9d5" name="myProc">
+<bpmn2:laneSet id="laneSet_1" name="laneSet">
+<bpmn2:lane id="EaITResourceImpl_69f572d2-b6ff-45ae-93ac-b7da3d3b3de6" name="myResource">
+<bpmn2:flowNodeRef>EaAtomicExtendedActivityImpl_f6f02b1f-5e97-4ff8-b3c7-7f519fbc483b</bpmn2:flowNodeRef>
+</bpmn2:lane>
+</bpmn2:laneSet>
+<bpmn2:serviceTask id="EaAtomicExtendedActivityImpl_f6f02b1f-5e97-4ff8-b3c7-7f519fbc483b" name="myActivity">
+<bpmn2:incoming>EaAtomicExtendedActivityImpl_f6f02b1f-5e97-4ff8-b3c7-7f519fbc483bSequence_1</bpmn2:incoming>
+<bpmn2:outgoing>EaAtomicExtendedActivityImpl_f6f02b1f-5e97-4ff8-b3c7-7f519fbc483bSequence_2</bpmn2:outgoing>
+</bpmn2:serviceTask>
+<bpmn2:startEvent id="EaAtomicExtendedActivityImpl_f6f02b1f-5e97-4ff8-b3c7-7f519fbc483bStart" name="StartEvent">
+<bpmn2:outgoing>EaAtomicExtendedActivityImpl_f6f02b1f-5e97-4ff8-b3c7-7f519fbc483bSequence_1</bpmn2:outgoing>
+</bpmn2:startEvent>
+<bpmn2:endEvent id="EaAtomicExtendedActivityImpl_f6f02b1f-5e97-4ff8-b3c7-7f519fbc483bEnd" name="EndEvent">
+<bpmn2:incoming>EaAtomicExtendedActivityImpl_f6f02b1f-5e97-4ff8-b3c7-7f519fbc483bSequence_2</bpmn2:incoming>
+</bpmn2:endEvent>
+<bpmn2:sequenceFlow id="EaAtomicExtendedActivityImpl_f6f02b1f-5e97-4ff8-b3c7-7f519fbc483bSequence_1" sourceRef="EaAtomicExtendedActivityImpl_f6f02b1f-5e97-4ff8-b3c7-7f519fbc483bStart" targetRef="EaAtomicExtendedActivityImpl_f6f02b1f-5e97-4ff8-b3c7-7f519fbc483b"/>
+<bpmn2:sequenceFlow id="EaAtomicExtendedActivityImpl_f6f02b1f-5e97-4ff8-b3c7-7f519fbc483bSequence_2" sourceRef="EaAtomicExtendedActivityImpl_f6f02b1f-5e97-4ff8-b3c7-7f519fbc483b" targetRef="EaAtomicExtendedActivityImpl_f6f02b1f-5e97-4ff8-b3c7-7f519fbc483bEnd"/>
+</bpmn2:process>
+<bpmn2:collaboration id="collaboration_1" name="collaboration">
+<bpmn2:participant id="EaProcessImpl_511813bf-95ef-4926-8689-f02fedf8d9d5_Participant" name="myProc" processRef="EaProcessImpl_511813bf-95ef-4926-8689-f02fedf8d9d5"/>
+</bpmn2:collaboration>
+<bpmndi:BPMNDiagram id="BPMNDiagram">
+<bpmndi:BPMNPlane id="BPMNPlane" bpmnElement="EaProcessImpl_511813bf-95ef-4926-8689-f02fedf8d9d5">
+<bpmndi:BPMNShape isHorizontal="true" id="BPMNShape_Participant_1" bpmnElement="EaProcessImpl_511813bf-95ef-4926-8689-f02fedf8d9d5_Participant">
+<dc:Bounds height="200" width="1030.0" x="170" y="100"/>
+</bpmndi:BPMNShape>
+<bpmndi:BPMNShape id="BPMNShape_Lane_1" bpmnElement="EaITResourceImpl_69f572d2-b6ff-45ae-93ac-b7da3d3b3de6" isHorizontal="true">
+<dc:Bounds height="200" width="1000.0" x="200" y="100"/>
+</bpmndi:BPMNShape>
+<bpmndi:BPMNShape id="BPMNShape_ServiceTask_1" bpmnElement="EaAtomicExtendedActivityImpl_f6f02b1f-5e97-4ff8-b3c7-7f519fbc483b">
+<dc:Bounds height="50.0" width="110.0" x="200" y="175"/>
+</bpmndi:BPMNShape>
+<bpmndi:BPMNShape id="startEvent2" bpmnElement="EaAtomicExtendedActivityImpl_f6f02b1f-5e97-4ff8-b3c7-7f519fbc483bStart">
+<dc:Bounds height="36.0" width="36.0" x="250" y="175"/>
+</bpmndi:BPMNShape>
+<bpmndi:BPMNShape id="BPMNShape_EndEvent_4" bpmnElement="EaAtomicExtendedActivityImpl_f6f02b1f-5e97-4ff8-b3c7-7f519fbc483bEnd">
+<dc:Bounds height="36.0" width="36.0" x="350" y="175"/>
+</bpmndi:BPMNShape>
+<bpmndi:BPMNEdge id="BPMNEdge_SequenceFlow_3" bpmnElement="EaAtomicExtendedActivityImpl_f6f02b1f-5e97-4ff8-b3c7-7f519fbc483bSequence_1" sourceElement="EaAtomicExtendedActivityImpl_f6f02b1f-5e97-4ff8-b3c7-7f519fbc483bStart" targetElement="EaAtomicExtendedActivityImpl_f6f02b1f-5e97-4ff8-b3c7-7f519fbc483b">
+<di:waypoint xsi:type="dc:Point" x="12" y="12"/>
+<di:waypoint xsi:type="dc:Point" x="12" y="12"/>
+</bpmndi:BPMNEdge>
+<bpmndi:BPMNEdge id="BPMNEdge_SequenceFlow_5" bpmnElement="EaAtomicExtendedActivityImpl_f6f02b1f-5e97-4ff8-b3c7-7f519fbc483bSequence_2" sourceElement="EaAtomicExtendedActivityImpl_f6f02b1f-5e97-4ff8-b3c7-7f519fbc483b" targetElement="EaAtomicExtendedActivityImpl_f6f02b1f-5e97-4ff8-b3c7-7f519fbc483bEnd">
+<di:waypoint xsi:type="dc:Point" x="12" y="12"/>
+<di:waypoint xsi:type="dc:Point" x="12" y="12"/>
+</bpmndi:BPMNEdge>
+</bpmndi:BPMNPlane>
+</bpmndi:BPMNDiagram>
+</bpmn2:definitions>

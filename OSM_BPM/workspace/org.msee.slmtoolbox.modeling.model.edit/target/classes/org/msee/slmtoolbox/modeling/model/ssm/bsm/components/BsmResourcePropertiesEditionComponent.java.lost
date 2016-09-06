@@ -1,0 +1,102 @@
+
+Fri Feb 21 14:40:50 CET 2014
+================================================================================
+Start of user code
+					@Override
+					public Object[] filter(Viewer viewer, Object parent,
+							Object[] elements) {
+					
+						Object[] out = new Object[bsmResource.getBsmModel().getOrganizations().size()];
+						out= bsmResource.getBsmModel().getOrganizations().toArray();						
+					
+						return out;
+						
+					}
+					// End of user code
+Start of user code  for horizon
+				basePart.initType(
+						new BsmResourceType [] {
+								BsmResourceType.HUMAN,
+								BsmResourceType.IT,
+								BsmResourceType.PHYSICAL_MEAN,
+								BsmResourceType.UNDEFINED,
+						}
+						, bsmResource.getType());
+				// End of user code
+Start of user code for updateSemanticModel
+			String name = (java.lang.String)EEFConverterUtil.createFromString(EcorePackage.Literals.ESTRING, (String)event.getNewValue());
+			bsmResource.setName(name);
+			EList<EaResource> attachedResources = bsmResource.getEaResources();
+			for (int i = 0; i <attachedResources.size(); i++){
+				EaResource resource = attachedResources.get(i);
+				resource.setName(name);
+			}
+			// End of user code
+
+Fri Jul 18 14:24:50 CEST 2014
+================================================================================
+Start of user code
+					@Override
+					public Object[] filter(Viewer viewer, Object parent,
+							Object[] elements) {
+					
+						Object[] out = new Object[bsmResource.getBsmModel().getOrganizations().size()];
+						out= bsmResource.getBsmModel().getOrganizations().toArray();						
+					
+						return out;
+						
+					}
+					// End of user code
+Start of user code  for horizon
+				basePart.initType(
+						new BsmResourceType [] {
+								BsmResourceType.HUMAN,
+								BsmResourceType.IT,
+								BsmResourceType.PHYSICAL_MEAN,
+								BsmResourceType.UNDEFINED,
+						}
+						, bsmResource.getType());
+				// End of user code
+Start of user code for updateSemanticModel
+			String name = (java.lang.String)EEFConverterUtil.createFromString(EcorePackage.Literals.ESTRING, (String)event.getNewValue());
+			bsmResource.setName(name);
+			EList<EaResource> attachedResources = bsmResource.getEaResources();
+			for (int i = 0; i <attachedResources.size(); i++){
+				EaResource resource = attachedResources.get(i);
+				resource.setName(name);
+			}
+			// End of user code
+
+Mon Jul 21 10:00:43 CEST 2014
+================================================================================
+Start of user code
+					@Override
+					public Object[] filter(Viewer viewer, Object parent,
+							Object[] elements) {
+					
+						Object[] out = new Object[bsmResource.getBsmModel().getOrganizations().size()];
+						out= bsmResource.getBsmModel().getOrganizations().toArray();						
+					
+						return out;
+						
+					}
+					// End of user code
+Start of user code  for horizon
+				basePart.initType(
+						new BsmResourceType [] {
+								BsmResourceType.HUMAN,
+								BsmResourceType.IT,
+								BsmResourceType.PHYSICAL_MEAN,
+								BsmResourceType.UNDEFINED,
+						}
+						, bsmResource.getType());
+				// End of user code
+Start of user code for updateSemanticModel
+			String name = (java.lang.String)EEFConverterUtil.createFromString(EcorePackage.Literals.ESTRING, (String)event.getNewValue());
+			bsmResource.setName(name);
+			EList<EaResource> attachedResources = bsmResource.getEaResources();
+			for (int i = 0; i <attachedResources.size(); i++){
+				EaResource resource = attachedResources.get(i);
+				resource.setName(name);
+			}
+			// End of user code

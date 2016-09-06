@@ -1,0 +1,16 @@
+
+Tue Jan 29 11:26:44 CET 2013
+================================================================================
+Start of user code
+		BsmAddProductToServiceDialog dialog = new BsmAddProductToServiceDialog(PlatformUI.getWorkbench().getDisplay().getActiveShell(), product.getLabelProvider(), (org.msee.slmtoolbox.modeling.model.ssm.bsm.BsmService) ((ReferencesTableSettings)this.product.getInput()).getSource());		
+		dialog.open();
+		product.refresh();
+		// End of user code
+
+Thu Feb 14 15:52:22 CET 2013
+================================================================================
+Start of user code
+		BsmAddProductToServiceDialog dialog = new BsmAddProductToServiceDialog(PlatformUI.getWorkbench().getDisplay().getActiveShell(), product.getLabelProvider(), (org.msee.slmtoolbox.modeling.model.ssm.bsm.BsmService) ((ReferencesTableSettings)this.product.getInput()).getSource());		
+		dialog.open();
+		product.refresh();
+		// End of user code

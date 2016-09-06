@@ -1,0 +1,23 @@
+
+Fri Feb 21 14:40:50 CET 2014
+================================================================================
+Start of user code
+					@Override
+					public Object[] filter(Viewer viewer, Object parent,
+							Object[] elements) {
+					
+						List<BsmOrganization> out = new ArrayList<>();
+						BsmModel model = bsmVEParticipation.getVirtualEnterprise().getBsmModel();
+						if (null !=  model
+								&& null != model.getOrganizations()) {
+							for (BsmOrganization organization : model.getOrganizations()) {
+								if (organization instanceof BsmVirtualEnterprise) {
+									out.add(organization);
+								}
+							}
+							out.remove(bsmVEParticipation.getVirtualEnterprise());
+						}
+						return out.toArray();
+						
+					}
+					// End of user code

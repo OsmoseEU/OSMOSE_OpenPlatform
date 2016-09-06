@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <feature url="features/org.msee.slmtoolbox.modeling.feature_1.0.0.qualifier.jar" id="org.msee.slmtoolbox.modeling.feature" version="1.0.0.qualifier">
+      <category name="slmtoolbox"/>
+   </feature>
+   <category-def name="slmtoolbox" label="slmtoolbox"/>
+</site>

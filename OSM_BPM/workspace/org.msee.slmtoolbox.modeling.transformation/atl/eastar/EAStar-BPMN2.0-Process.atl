@@ -1,0 +1,826 @@
+-- @path EA=/org.msee.slmtoolbox.modeling.model/model/eaStar.ecore
+-- @path BPMN=/org.msee.slmtoolbox.modeling.model/model/BPMN20.ecore
+
+
+module BPMN;
+create OUT: BPMN from IN: EA;
+
+-- attribute used to store a created BPMN!Definitions instance
+helper def: definitions: BPMN!Definitions =
+	OclUndefined;
+
+-- attribute used to store a created BPMN!Collaboration instance
+helper def: collaborations: BPMN!Collaboration =
+	OclUndefined;
+
+-- attribute used to store a created BPMN!LaneSet instance
+helper def: laneSet: BPMN!LaneSet =
+	OclUndefined;
+
+helper def: bpmnFlowElements: Sequence(BPMN!FlowElement) = OclUndefined;
+-- attribute used to store a created BPMN!Process instance
+helper def: bpmnProcess: BPMN!Process =
+	OclUndefined;
+
+-- attribute used to store  BPMN!Process reference
+helper def: bpmnProcessRef: BPMN!Process =
+	OclUndefined;
+
+-- attribute used to store a created BPMN!Process instance
+helper def: eaStarProcessRef: EA!EaProcess =
+	OclUndefined;
+
+-- BPMN!MessageEventDefinition
+helper def: messageEventDefinition: BPMN!MessageEventDefinition =
+	OclUndefined;
+
+-- get required participant for references
+helper def: getParticipant(id : String): BPMN!Participant = 
+	thisModule.collaborations.participants -> any (e| e.id.toString().endsWith(id));
+
+-- get required flowElement
+helper def: getFlowElement(id: String): BPMN!FlowElement = 
+	thisModule.bpmnProcess.flowElements ->  any (e| e.id.toString().endsWith(id));
+
+-- get all Extended Activities with human resources
+helper def: getActivities_HumanRes(eaFlows : Set(EA!EaSupportFlow)): Set(EA!EaExtendedActivity) =
+	eaFlows -> select (e | e.source.oclIsTypeOf(EA!EaHumanResource) and e.resourceRole.toString().startsWith('res')) -> collect (e | e.target).asSet(); 
+	
+
+-- get all Extended Activities with IT resources
+helper def: getActivities_ITRes(eaFlows : Set(EA!EaSupportFlow)): Set(EA!EaExtendedActivity) =
+	eaFlows -> select (e | e.source.oclIsTypeOf(EA!EaITResource) and e.resourceRole.toString().startsWith('res')) -> collect (e | e.target).asSet();
+
+-- create UserTasks and test if it is a starting or ending task
+helper def: createUserTasks(activities: Set(EA!EaExtendedActivity)): Set(BPMN!UserTask) = 
+	activities -> select (e | e.oclIsTypeOf(EA!EaAtomicExtendedActivity) and not e.isEnding and not e.isStarting) -> collect(e | thisModule.ExtendedActivity2UserTask(e)).union(
+		activities -> select (e | e.oclIsTypeOf(EA!EaAtomicExtendedActivity) and  e.isEnding and  e.isStarting) -> collect(e | thisModule.ExtendedActivity2StartingEndingUserTask(e))).
+		union(activities -> select (e | e.oclIsTypeOf(EA!EaAtomicExtendedActivity) and not e.isEnding and e.isStarting) -> collect(e | thisModule.ExtendedActivity2StartingUserTask(e))).
+		union(activities -> select (e | e.oclIsTypeOf(EA!EaAtomicExtendedActivity) and e.isEnding and not e.isStarting) -> collect(e | thisModule.ExtendedActivity2EndingUserTask(e)));
+
+-- create ServiceTasks and test if it is a starting or ending task
+helper def: createServiceTasks(activities: Set(EA!EaExtendedActivity)): Set(BPMN!ServiceTask) = 
+	activities -> select (e | e.oclIsTypeOf(EA!EaAtomicExtendedActivity) and not e.isEnding and not e.isStarting) -> collect(e | thisModule.ExtendedActivity2ServiceTask(e)).union(
+		activities -> select (e | e.oclIsTypeOf(EA!EaAtomicExtendedActivity) and  e.isEnding and  e.isStarting) -> collect(e | thisModule.ExtendedActivity2StartingEndingServiceTask(e))).
+		union(activities -> select (e | e.oclIsTypeOf(EA!EaAtomicExtendedActivity) and not e.isEnding and e.isStarting) -> collect(e | thisModule.ExtendedActivity2StartingServiceTask(e))).
+		union(activities -> select (e | e.oclIsTypeOf(EA!EaAtomicExtendedActivity) and e.isEnding and not e.isStarting) -> collect(e | thisModule.ExtendedActivity2EndingServiceTask(e)));
+
+-- create tasks
+helper def: createTasks(activities: Set(EA!EaExtendedActivity)): Set(BPMN!Task) = 
+	activities -> select(e | e.oclIsTypeOf(EA!EaAtomicExtendedActivity) and not e.isEnding and not e.isStarting) -> collect(e | thisModule.ExtendedActivity2Task(e)).
+	union(activities -> select (e | e.oclIsTypeOf(EA!EaAtomicExtendedActivity) and  e.isEnding and  e.isStarting) -> collect(e | thisModule.ExtendedActivity2StartingEndingTask(e))).
+	union(activities -> select (e | e.oclIsTypeOf(EA!EaAtomicExtendedActivity) and not e.isEnding and e.isStarting) -> collect(e | thisModule.ExtendedActivity2StartingTask(e))).
+	union(activities -> select (e | e.oclIsTypeOf(EA!EaAtomicExtendedActivity) and e.isEnding and not e.isStarting) -> collect(e | thisModule.ExtendedActivity2EndingTask(e)));
+
+-- get all resources which are responsible for the execution of activities
+helper def: getResponsibleResources(flows: OrderedSet(EA!EaSupportFlow)): OrderedSet(EA!EaResource) = 
+	flows -> select(e | e.resourceRole.toString().startsWith('res') and thisModule.isFirstOrganization(e.target.organization)) -> collect ( e| e.source).asOrderedSet();
+
+helper def: isFirstOrganization(organization: EA!EaOrganization): Boolean = 
+	if (thisModule.eaStarProcessRef.model.organizations.indexOf(organization) <= 1 )
+		then true
+	else false
+	endif;
+-- create lanes with respect to responsible resources
+helper def: createLanes(resources: Set(EA!EaResource)): Set(BPMN!Lane) = 
+	resources -> collect(e| thisModule.Resource2Lane(e));
+
+-- create lanes with respect to organization
+helper def: createLanesForOrganization(organizations: Set(EA!EaOrganization)): Set(BPMN!Lane) = 
+	organizations -> collect(e| thisModule.Organization2Lane(e));
+
+-- get all the support flows 
+helper def: getAllSupportFlows(flowElements: Set(EA!EaFlowElement)): Set(EA!EaSupportFlow) = 
+	flowElements -> select(e | e.oclIsTypeOf(EA!EaSupportFlow));
+
+-- create flowNodeRefs in a lane
+helper def: createFlowNodeRefs(resourceid: String): Set(BPMN!Activity) = 
+	thisModule.getAllSupportFlows(thisModule.eaStarProcessRef.flowElements) -> select(e | e.source.id.startsWith(resourceid) and e.resourceRole.toString().startsWith('res')) -> collect(e | e.target); 
+
+-- create flowNodeRefs in a lane for organization
+helper def: createFlowNodeRefsForOrganization(organizationid: String): Set(BPMN!Activity) = 
+	thisModule.getAllExtendedActivities() -> select(e | not e.organization.oclIsUndefined()) ->select(e | e.organization.id.startsWith(organizationid)); 
+
+-- return all ExtendedActivities
+helper def: getAllExtendedActivities(): Set(EA!EaExtendedActivity) = 
+	thisModule.eaStarProcessRef.flowElements -> select(e | e.oclIsKindOf(EA!EaExtendedActivity));
+
+-- check if an Extended Activity is atomic or structural
+helper def: isAtomic( ea : EA!ExtendedActivity) : Boolean =
+	if (ea.oclIsTypeOf(EA!EaAtomicExtendedActivity))
+		then  true
+	else false
+	endif;
+
+-- check if source of a flow is Material Resource 
+helper def: isMaterialResource(support : EA!EaFlow) : Boolean = 
+	support.source.oclIsTypeOf(EA!EaMaterialResource);
+
+-- create subprocess from Structural Extended Activity
+helper def: createSubProcess(activities: Set(EA!EaStructuralExtendedActivity)): Set(BPMN!SubProcess) = 
+	activities -> select(e | e.isStarting and not e.isEnding ) -> collect(e | thisModule.StructuralExtendedActivity2StartingSubProcess(e)).union(
+		activities -> select(e | not e.isStarting and e.isEnding ) -> collect(e | thisModule.StructuralExtendedActivity2EndingSubProcess(e))).union(
+			activities -> select(e | e.isStarting and e.isEnding ) -> collect(e | thisModule.StructuralExtendedActivity2StartingEndingSubProcess(e))).union(
+			activities -> select(e | not e.isStarting and not e.isEnding ) -> collect(e | thisModule.StructuralExtendedActivity2SubProcess(e)));
+--create a Collaboration element at the
+--begining of the transformation
+entrypoint rule CreateCollaboration() {
+	to
+		b: BPMN!LaneSet(
+		name <- 'laneSet',
+		id <- 'laneSet_1'
+		),
+		c: BPMN!Process(
+		name <- 'ProcessToStoreFlowElements',
+		id <- 'processStore'
+		)
+	do {
+		thisModule.laneSet <- b ;
+		thisModule.bpmnFlowElements <- c.flowElements;
+	}
+}
+
+
+
+-- transform an ExtendedActigram element to a Definition element
+rule ExtendedActigramToDefinition {
+	from
+		s: EA!EaModel
+	to
+		a: BPMN!Definitions (
+			id <- s.name,
+			targetNamespace <- 'http://www.jboss.org/drools',
+			expressionLanguage <- 'http://www.mvel.org/2.0',
+			typeLanguage <- 'http://www.java.com/javaTypes',
+			rootElements <-thisModule.ProcessToProcess(s.process)
+			)
+	do {
+		let s: String =
+				''
+			in
+				'definition'.println(); 
+	}
+}
+
+-- --------------------------------------------
+-- transform a Process element to a BPMN Process element
+lazy rule ProcessToProcess {
+	from
+		s: EA!EaProcess (
+			s.oclIsTypeOf(EA!EaProcess)
+		)
+	to
+		a: BPMN!Process (
+			id <- s.id,
+			name <- s.name,
+			flowElements <- s.flowElements.
+			append(thisModule.createUserTasks(thisModule.getActivities_HumanRes(s.flowElements -> select (e|e.oclIsTypeOf(EA!EaSupportFlow))))).
+			append(thisModule.createServiceTasks(thisModule.getActivities_ITRes(s.flowElements -> select (e|e.oclIsTypeOf(EA!EaSupportFlow))))).
+			append(thisModule.createTasks(s.flowElements -> select(e | e.oclIsKindOf(EA!EaExtendedActivity)) -> select(e | (thisModule.getActivities_HumanRes(s.flowElements -> select (e|e.oclIsTypeOf(EA!EaSupportFlow))).union(thisModule.getActivities_ITRes(s.flowElements -> select (e|e.oclIsTypeOf(EA!EaSupportFlow))))).excludes(e))) 
+			)
+			.append(s.flowElements -> select (e| e.oclIsTypeOf(EA!EaOr))-> collect (e| thisModule.Or2ExclusiveGateway(e)))
+			.append(s.flowElements -> select (e| e.oclIsTypeOf(EA!EaAnd))-> collect (e| thisModule.And2ParallelGateway(e)))
+			.append(s.flowElements -> select (e| e.oclIsTypeOf(EA!EaMaterialResource)) -> collect (e| thisModule.Material2DataObject(e)))
+			.append(s.flowElements -> select (e| e.oclIsTypeOf(EA!EaProcessConnector)) -> collect (e| thisModule.ProcessConnector2CallActivity(e)))
+			.append(thisModule.createSubProcess(s.flowElements -> select(e | e.oclIsTypeOf(EA!EaStructuralExtendedActivity)))),
+			laneSets <- thisModule.laneSet
+		)
+	do{
+	let s: String = '' in a.name.toString().println();
+	thisModule.bpmnProcess <- a;
+	thisModule.bpmnProcess.flowElements <- thisModule.bpmnProcess.flowElements.union(thisModule.bpmnFlowElements);
+	thisModule.bpmnProcessRef <-a;
+	thisModule.eaStarProcessRef <- s;
+	thisModule.laneSet.lanes <- thisModule.laneSet.lanes.union(thisModule.createLanes(thisModule.getResponsibleResources(s.flowElements -> select (e| e.oclIsTypeOf(EA!EaSupportFlow))))).
+	union(thisModule.createLanesForOrganization(s.model.organizations.excluding(s.model.organizations.first())));
+	
+		
+	}
+}
+
+-- transform Structural Extended Activity to subProcess
+lazy rule StructuralExtendedActivity2SubProcess {
+	from
+		s: EA!EaStructuralExtendedActivity (
+		not s.isStarting and not s.isEnding	
+		)
+	
+	to
+		a: BPMN!SubProcess (
+			id <- s.id,
+			name <- s.name
+		)
+	do {
+		let s: String =
+				''
+			in
+				a.name.toString().println(); 
+	}
+}
+
+-- transform Structural Extended Activity to starting subProcess
+lazy rule StructuralExtendedActivity2StartingSubProcess {
+	from
+		s: EA!EaStructuralExtendedActivity (
+		 s.isStarting	and not s.isEnding
+		)
+	
+	to
+		a: BPMN!SubProcess (
+			id <- s.id,
+			name <- s.name
+		),
+		b: BPMN!StartEvent(
+			id <- s.id + 'Start',
+			name <- 'StartEvent'
+		),
+		c: BPMN!SequenceFlow (
+			id <- s.id + 'Sequence_1',
+			sourceRef <- b,
+			targetRef <- a
+		)
+	do {
+		thisModule.bpmnFlowElements <- thisModule.bpmnFlowElements.append(b);
+		thisModule.bpmnFlowElements <- thisModule.bpmnFlowElements.append(c);
+		let s: String =
+				''
+			in
+				a.name.toString().println(); 
+	}
+}
+
+-- transform Structural Extended Activity to ending subProcess
+lazy rule StructuralExtendedActivity2EndingSubProcess {
+	from
+		s: EA!EaStructuralExtendedActivity (
+		 not s.isStarting	and s.isEnding
+		)
+	
+	to
+		a: BPMN!SubProcess (
+			id <- s.id,
+			name <- s.name
+		),
+		b: BPMN!EndEvent(
+			id <- s.id + 'End',
+			name <- 'EndEvent'
+		),
+		c: BPMN!SequenceFlow (
+			id <- s.id + 'Sequence_1_EndEvent',
+			sourceRef <- a,
+			targetRef <- b
+		)
+	do {
+		thisModule.bpmnFlowElements <- thisModule.bpmnFlowElements.append(b);
+		thisModule.bpmnFlowElements <- thisModule.bpmnFlowElements.append(c);
+		let s: String =
+				''
+			in
+				a.name.toString().println(); 
+	}
+}
+
+-- transform Structural Extended Activity to ending subProcess
+lazy rule StructuralExtendedActivity2StartingEndingSubProcess {
+	from
+		s: EA!EaStructuralExtendedActivity (
+		 s.isStarting	and s.isEnding
+		)
+	
+	to
+		a: BPMN!SubProcess (
+			id <- s.id,
+			name <- s.name
+		),
+		b: BPMN!EndEvent(
+			id <- s.id + 'End',
+			name <- 'EndEvent'
+		),
+		c: BPMN!SequenceFlow (
+			id <- s.id + 'Sequence_1',
+			sourceRef <- a,
+			targetRef <- b
+		),
+		d: BPMN!StartEvent(
+			id <- s.id + 'Start',
+			name <- 'StartEvent'
+		),
+		e: BPMN!SequenceFlow (
+			id <- s.id + 'Sequence_1',
+			sourceRef <- d,
+			targetRef <- a
+		)
+	do {
+		thisModule.bpmnFlowElements <- thisModule.bpmnFlowElements.append(b);
+		thisModule.bpmnFlowElements <- thisModule.bpmnFlowElements.append(c);
+		thisModule.bpmnFlowElements <- thisModule.bpmnFlowElements.append(d);
+		thisModule.bpmnFlowElements <- thisModule.bpmnFlowElements.append(e);
+		let s: String =
+				''
+			in
+				a.name.toString().println(); 
+	}
+}
+-- transform atomic Extended Activity to task
+lazy rule ExtendedActivity2Task {
+	from
+		s: EA!EaAtomicExtendedActivity
+	to
+		a: BPMN!Task (
+			id <- s.id,
+			name <- s.name
+		)
+	do {
+		let s: String =
+				''
+			in
+				a.name.toString().println(); 
+	}
+}
+
+-- transform starting atomic Extended Activity to task
+lazy rule ExtendedActivity2StartingTask {
+	from
+		s: EA!EaAtomicExtendedActivity(
+		 s.isStarting	and not s.isEnding
+		)
+	to
+		a: BPMN!Task (
+			id <- s.id,
+			name <- s.name
+			
+		),
+		b: BPMN!StartEvent(
+			id <- s.id + 'Start',
+			name <- 'StartEvent'
+		),
+		c: BPMN!SequenceFlow (
+			id <- s.id + 'Sequence_1',
+			sourceRef <- b,
+			targetRef <- a
+		)
+	do {
+		thisModule.bpmnFlowElements <- thisModule.bpmnFlowElements.append(b);
+		thisModule.bpmnFlowElements <- thisModule.bpmnFlowElements.append(c);
+		let s: String =
+				''
+			in
+				a.name.toString().println(); 
+	}
+}
+
+-- transform an ending atomic Extended Activity to task
+lazy rule ExtendedActivity2EndingTask {
+	from
+		s: EA!EaAtomicExtendedActivity(
+		 not s.isStarting	and  s.isEnding
+		)
+	to
+		a: BPMN!Task (
+			id <- s.id,
+			name <- s.name
+			
+		),
+		b: BPMN!EndEvent(
+			id <- s.id + 'End',
+			name <- 'EndEvent'
+		),
+		c: BPMN!SequenceFlow (
+			id <- s.id + 'Sequence_1',
+			sourceRef <- a,
+			targetRef <- b
+		)
+	do {
+		thisModule.bpmnFlowElements <- thisModule.bpmnFlowElements.append(b);
+		thisModule.bpmnFlowElements <- thisModule.bpmnFlowElements.append(c);
+		let s: String =
+				''
+			in
+				a.name.toString().println(); 
+	}
+}
+
+-- transform starting ending atomic Extended Activity to task
+lazy rule ExtendedActivity2StartingEndingTask {
+	from
+		s: EA!EaAtomicExtendedActivity(
+		 s.isStarting	and s.isEnding
+		)
+	to
+		a: BPMN!Task (
+			id <- s.id,
+			name <- s.name
+			
+		),
+		b: BPMN!StartEvent(
+			id <- s.id + 'Start',
+			name <- 'StartEvent'
+		),
+		c: BPMN!SequenceFlow (
+			id <- s.id + 'Sequence_1',
+			sourceRef <- b,
+			targetRef <- a
+		),
+		d: BPMN!EndEvent(
+			id <- s.id + 'End',
+			name <- 'EndEvent'
+		),
+		e: BPMN!SequenceFlow (
+			id <- s.id + 'Sequence_2',
+			sourceRef <- a,
+			targetRef <- d
+		)
+	do {
+		thisModule.bpmnFlowElements <- thisModule.bpmnFlowElements.append(b);
+		thisModule.bpmnFlowElements <- thisModule.bpmnFlowElements.append(c);
+		thisModule.bpmnFlowElements <- thisModule.bpmnFlowElements.append(d);
+		thisModule.bpmnFlowElements <-thisModule.bpmnFlowElements.append(e);
+		let s: String =
+				''
+			in
+				a.name.toString().println(); 
+	}
+}
+
+-- transform atomic Extended Activity to Usertask
+lazy rule ExtendedActivity2UserTask {
+	from
+		s: EA!EaAtomicExtendedActivity(
+		not s.isStarting and not s.isEnding	
+		)
+	to
+		a: BPMN!UserTask (
+			id <- s.id,
+			name <- s.name
+		)
+	do {
+		
+		let s: String =
+				''
+			in
+				a.name.toString().println(); 
+	}
+}
+
+-- transform starting atomic Extended Activity to Usertask
+lazy rule ExtendedActivity2StartingUserTask {
+	from
+		s: EA!EaAtomicExtendedActivity(
+		 s.isStarting	and not s.isEnding
+		)
+	to
+		a: BPMN!UserTask (
+			id <- s.id,
+			name <- s.name
+			
+		),
+		b: BPMN!StartEvent(
+			id <- s.id + 'Start',
+			name <- 'StartEvent'
+		),
+		c: BPMN!SequenceFlow (
+			id <- s.id + 'Sequence_1',
+			sourceRef <- b,
+			targetRef <- a
+		)
+	do {
+		thisModule.bpmnFlowElements <- thisModule.bpmnFlowElements.append(b);
+		thisModule.bpmnFlowElements <- thisModule.bpmnFlowElements.append(c);
+		let s: String =
+				''
+			in
+				a.name.toString().println(); 
+	}
+}
+
+-- transform an ending atomic Extended Activity to Usertask
+lazy rule ExtendedActivity2EndingUserTask {
+	from
+		s: EA!EaAtomicExtendedActivity(
+		 not s.isStarting	and  s.isEnding
+		)
+	to
+		a: BPMN!UserTask (
+			id <- s.id,
+			name <- s.name
+			
+		),
+		b: BPMN!EndEvent(
+			id <- s.id + 'End',
+			name <- 'EndEvent'
+		),
+		c: BPMN!SequenceFlow (
+			id <- s.id + 'Sequence_1',
+			sourceRef <- a,
+			targetRef <- b
+		)
+	do {
+		thisModule.bpmnFlowElements <- thisModule.bpmnFlowElements.append(b);
+		thisModule.bpmnFlowElements <- thisModule.bpmnFlowElements.append(c);
+		let s: String =
+				''
+			in
+				a.name.toString().println(); 
+	}
+}
+
+-- transform starting ending atomic Extended Activity to Usertask
+lazy rule ExtendedActivity2StartingEndingUserTask {
+	from
+		s: EA!EaAtomicExtendedActivity(
+		 s.isStarting	and s.isEnding
+		)
+	to
+		a: BPMN!UserTask (
+			id <- s.id,
+			name <- s.name
+			
+		),
+		b: BPMN!StartEvent(
+			id <- s.id + 'Start',
+			name <- 'StartEvent'
+		),
+		c: BPMN!SequenceFlow (
+			id <- s.id + 'Sequence_1',
+			sourceRef <- b,
+			targetRef <- a
+		),
+		d: BPMN!EndEvent(
+			id <- s.id + 'End',
+			name <- 'EndEvent'
+		),
+		e: BPMN!SequenceFlow (
+			id <- s.id + 'Sequence_2',
+			sourceRef <- a,
+			targetRef <- d
+		)
+	do {
+		thisModule.bpmnFlowElements <- thisModule.bpmnFlowElements.append(b);
+		thisModule.bpmnFlowElements <- thisModule.bpmnFlowElements.append(c);
+		thisModule.bpmnFlowElements <- thisModule.bpmnFlowElements.append(d);
+		thisModule.bpmnFlowElements <-thisModule.bpmnFlowElements.append(e);
+		let s: String =
+				''
+			in
+				a.name.toString().println(); 
+	}
+}
+
+-- transform atomic Extended Activity to Servicetask
+lazy rule ExtendedActivity2ServiceTask {
+	from
+		s: EA!EaAtomicExtendedActivity(
+		 not s.isStarting and not s.isEnding
+		)
+	to
+		a: BPMN!ServiceTask (
+			id <- s.id,
+			name <- s.name
+		)
+	do {
+		let s: String =
+				''
+			in
+				a.name.toString().println(); 
+	}
+}
+
+-- transform a starting atomic Extended Activity to Usertask
+lazy rule ExtendedActivity2StartingServiceTask {
+	from
+		s: EA!EaAtomicExtendedActivity(
+		 s.isStarting	and not s.isEnding
+		)
+	to
+		a: BPMN!ServiceTask (
+			id <- s.id,
+			name <- s.name
+			
+		),
+		b: BPMN!StartEvent(
+			id <- s.id + 'Start',
+			name <- 'StartEvent'
+		),
+		c: BPMN!SequenceFlow (
+			id <- s.id + 'Sequence_1',
+			sourceRef <- b,
+			targetRef <- a
+		)
+	do {
+		thisModule.bpmnFlowElements <- thisModule.bpmnFlowElements.append(b);
+		thisModule.bpmnFlowElements <- thisModule.bpmnFlowElements.append(c);
+		let s: String =
+				''
+			in
+				a.name.toString().println(); 
+	}
+}
+
+-- transform an ending atomic Extended Activity to Usertask
+lazy rule ExtendedActivity2EndingServiceTask {
+	from
+		s: EA!EaAtomicExtendedActivity(
+		 not s.isStarting	and  s.isEnding
+		)
+	to
+		a: BPMN!ServiceTask (
+			id <- s.id,
+			name <- s.name
+			
+		),
+		b: BPMN!EndEvent(
+			id <- s.id + 'End',
+			name <- 'EndEvent'
+		),
+		c: BPMN!SequenceFlow (
+			id <- s.id + 'Sequence_1',
+			sourceRef <- a,
+			targetRef <- b
+		)
+	do {
+		thisModule.bpmnFlowElements <- thisModule.bpmnFlowElements.append(b);
+		thisModule.bpmnFlowElements <- thisModule.bpmnFlowElements.append(c);
+		let s: String =
+				''
+			in
+				a.name.toString().println(); 
+	}
+}
+
+-- transform starting ending atomic Extended Activity to Usertask
+lazy rule ExtendedActivity2StartingEndingServiceTask {
+	from
+		s: EA!EaAtomicExtendedActivity(
+		 s.isStarting	and s.isEnding
+		)
+	to
+		a: BPMN!ServiceTask (
+			id <- s.id,
+			name <- s.name
+			
+		),
+		b: BPMN!StartEvent(
+			id <- s.id + 'Start',
+			name <- 'StartEvent'
+		),
+		c: BPMN!SequenceFlow (
+			id <- s.id + 'Sequence_1',
+			sourceRef <- b,
+			targetRef <- a
+		),
+		d: BPMN!EndEvent(
+			id <- s.id + 'End',
+			name <- 'EndEvent'
+		),
+		e: BPMN!SequenceFlow (
+			id <- s.id + 'Sequence_2',
+			sourceRef <- a,
+			targetRef <- d
+		)
+	do {
+		thisModule.bpmnFlowElements <- thisModule.bpmnFlowElements.append(b);
+		thisModule.bpmnFlowElements <- thisModule.bpmnFlowElements.append(c);
+		thisModule.bpmnFlowElements <- thisModule.bpmnFlowElements.append(d);
+		thisModule.bpmnFlowElements <-thisModule.bpmnFlowElements.append(e);
+		let s: String =
+				''
+			in
+				a.name.toString().println(); 
+	}
+}
+
+-- transform a control flow to DataObject, and Associations
+rule control2DataObject_Associations{
+	from
+		s: EA!EaControlFlow (
+			(s.source.oclIsKindOf(EA!EaExtendedActivity) or s.source.
+					oclIsTypeOf(EA!EaProcessConnector)))
+	to	
+		a:	BPMN!DataObject(
+			id <- s.id + 'DataObject',
+			name <- 'DataObject'		
+			),			
+		b: BPMN!Association(
+			id <- s.id + 'Association_1',
+			sourceRef <- thisModule.getFlowElement(s.source.id),
+			targetRef <- a
+			),
+		c: BPMN!Association (
+			id <- s.id + 'Association_2',
+			sourceRef <- a,
+			targetRef <- thisModule.getFlowElement(s.target.id)
+		)
+	do{
+			thisModule.bpmnProcess.artifacts <- thisModule.bpmnProcess.artifacts.append(b).append(c);
+		}
+}
+
+-- transform a support flow to an association
+rule support2association{
+	from 
+		s: EA!EaSupportFlow (
+		thisModule.isMaterialResource(s)
+		)
+	to
+		a: BPMN!Association (
+			id <- s.id + 'Association_1',
+			sourceRef <- thisModule.getFlowElement(s.source.id),
+			targetRef <- thisModule.getFlowElement(s.target.id)
+		)
+	do{
+		thisModule.bpmnProcess.artifacts <- 	thisModule.bpmnProcess.artifacts.append(a);		
+	}
+
+}
+
+-- transform an OutputInput Flow to a sequence flow
+rule outputInput2SequenceFlow{
+	from 
+		s: EA!EaOutputInputFlow(
+		(s.source.oclIsTypeOf(EA!EaProcessConnector) or s.source.oclIsKindOf(EA!EaExtendedActivity)
+			or s.source.oclIsTypeOf(EA!EaAnd) or s.source.oclIsTypeOf(EA!EaOr)) and (s.target.oclIsKindOf(EA!EaExtendedActivity) or s.target.oclIsTypeOf(EA!EaAnd) or s.target.oclIsTypeOf(EA!EaOr) or s.target.oclIsTypeOf(EA!EaProcessConnector) 	)
+		)
+	to
+		a: BPMN!SequenceFlow(
+		id <- s.id + '_Sequence',
+		name <- s.name,
+		sourceRef <- thisModule.getFlowElement(s.source.id),
+		targetRef <- thisModule.getFlowElement(s.target.id)
+		)
+
+}
+
+-- transform Material resource to DataObject
+lazy rule Material2DataObject {
+	from 
+		s: EA!EaMaterialResource
+	to
+		a: BPMN!DataObject(
+		id <- s.id,
+		name <- s.name
+		)
+}
+
+
+-- transform a Process Connector to CallActivity
+lazy rule ProcessConnector2CallActivity {
+	from
+		s: EA!EaConnector (
+			s.oclIsTypeOf(EA!EaProcessConnector)
+		)
+	to
+		a: BPMN!CallActivity (
+			id <- s.id,
+			name <- s.name
+		)
+}
+
+
+
+lazy rule Or2ExclusiveGateway{
+	from 
+		s: EA!EaOr
+	to
+		a: BPMN!ExclusiveGateway(
+		id <- s.id,
+		name <-s.name
+		)		
+}
+
+lazy rule And2ParallelGateway{
+	from 
+		s:EA!EaAnd
+	to
+		a: BPMN!ParallelGateway(
+		id <- s.id,
+		name <- s.name
+		)
+
+}
+
+lazy rule Resource2Lane{
+	from 
+		s: EA!EaResource
+	to
+		a: BPMN!Lane(
+		id <- s.id,
+		name <- s.name,
+		flowNodeRefs <-a.flowNodeRefs.append(thisModule.createFlowNodeRefs(s.id))
+		)
+	do{		
+	
+	}
+}
+	lazy rule Organization2Lane{
+	from 
+		s: EA!EaOrganization
+	to
+		a: BPMN!Lane(
+		id <- s.id,
+		name <- s.name,
+		flowNodeRefs <-a.flowNodeRefs.append(thisModule.createFlowNodeRefsForOrganization(s.id))
+		)
+	do{		
+	
+	}
+}

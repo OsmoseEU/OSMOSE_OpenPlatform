@@ -1,0 +1,309 @@
+module OsmioticWorldExportBPMN;
+-- @path BPMN=/org.msee.slmtoolbox.modeling.model/model/BPMN20.ecore
+-- @path BPMNExp=/org.msee.slmtoolbox.modeling.model/model/BPMN20.ecore
+
+create OUT: BPMN from IN: BPMN;
+
+helper def: isOsmoticProcess(proc: BPMN!Process): Boolean = if (proc.id = 'osmoseProcess')
+		then  true
+	else false
+	endif;
+
+rule Bpmn2Bpmn {
+	from 
+		s: BPMN!Definitions
+	to
+		a: BPMN!Definitions (
+			id <- s.id,
+			targetNamespace <- s.targetNamespace,
+			typeLanguage <- s.typeLanguage,
+			rootElements <- s.rootElements,
+			expressionLanguage <- s.expressionLanguage
+		)
+	do {
+		--let s: String = '' in 'definition'.println(); 
+	}
+}
+
+rule ProcessToProcess {
+	from
+		s: BPMN!Process(thisModule.isOsmoticProcess(s))
+	to
+		a: BPMN!Process(
+			id <- s.id,
+			name <- s.name,
+			laneSets <- s.laneSets,
+			flowElements <- s.flowElements,
+			definitionalCollaborationRef <- s.definitionalCollaborationRef
+		)
+	do {	
+		--let s: String = '' in 'process'.println(); 
+	}
+}
+
+rule StartEventToStartEvent {
+	from 
+		s: BPMN!StartEvent
+	to
+		a: BPMN!StartEvent (
+			id <- s.id,
+			name <- s.name,
+			outgoing <- s.outgoing
+		)
+	do {
+		--let s: String = '' in 'startevent'.println(); 
+	}
+}
+
+rule EndEventToEndEvent {
+	from 
+		s: BPMN!EndEvent
+	to
+		a: BPMN!EndEvent (
+			id <- s.id,
+			name <- s.name,
+			incoming <- s.incoming
+		)
+	do {
+		--let s: String = '' in 'endevent'.println(); 
+	}
+}
+
+rule UserTaskToUserTask extends TaskToTask {
+	from 
+		s: BPMN!UserTask
+	to
+		a: BPMN!UserTask (
+			id <- s.id,
+			name <- s.name,
+			incoming <- s.incoming,
+			outgoing <- s.outgoing
+		)
+	do {
+		--let s: String = '' in 'usertask'.println(); 
+	}
+}
+
+rule ManualTaskToManualTask extends TaskToTask {
+	from 
+		s: BPMN!ManualTask
+	to
+		a: BPMN!ManualTask (
+			id <- s.id,
+			name <- s.name,
+			incoming <- s.incoming,
+			outgoing <- s.outgoing
+		)
+	do {
+		--let s: String = '' in 'manualtask'.println(); 
+	}
+}
+
+rule ScriptTaskToScriptTask extends TaskToTask {
+	from 
+		s: BPMN!ScriptTask
+	to
+		a: BPMN!ScriptTask (
+			id <- s.id,
+			name <- s.name,
+			incoming <- s.incoming,
+			outgoing <- s.outgoing
+		)
+	do {
+		--let s: String = '' in 'scripttask'.println(); 
+	}
+}
+
+rule BusinessRuleTaskToBusinessRuleTask extends TaskToTask {
+	from 
+		s: BPMN!BusinessRuleTask
+	to
+		a: BPMN!BusinessRuleTask (
+			id <- s.id,
+			name <- s.name,
+			incoming <- s.incoming,
+			outgoing <- s.outgoing
+		)
+	do {
+		--let s: String = '' in 'businessruletask'.println(); 
+	}
+}
+
+rule ServiceTaskToServiceTask extends TaskToTask {
+	from 
+		s: BPMN!ServiceTask
+	to
+		a: BPMN!ServiceTask (
+			id <- s.id,
+			name <- s.name,
+			incoming <- s.incoming,
+			outgoing <- s.outgoing
+		)
+	do {
+		--let s: String = '' in 'servicetask'.println(); 
+	}
+}
+
+rule SendTaskToSendTask extends TaskToTask {
+	from 
+		s: BPMN!SendTask
+	to
+		a: BPMN!SendTask (
+			id <- s.id,
+			name <- s.name,
+			incoming <- s.incoming,
+			outgoing <- s.outgoing
+		)
+	do {
+		--let s: String = '' in 'sendtask'.println(); 
+	}
+}
+
+rule ReceiveTaskToReceiveTask extends TaskToTask {
+	from 
+		s: BPMN!ReceiveTask
+	to
+		a: BPMN!ReceiveTask (
+			id <- s.id,
+			name <- s.name,
+			incoming <- s.incoming,
+			outgoing <- s.outgoing
+		)
+	do {
+		--let s: String = '' in 'receivetask'.println(); 
+	}
+}
+
+rule TaskToTask {
+	from 
+		s: BPMN!Task
+	to
+		a: BPMN!Task (
+			id <- s.id,
+			name <- s.name,
+			incoming <- s.incoming,
+			outgoing <- s.outgoing
+		)
+	do {
+		--let s: String = '' in 'task'.println(); 
+	}
+}
+
+rule SequenceFlowToSequenceFlow {
+	from 
+		s: BPMN!SequenceFlow
+	to
+		a: BPMN!SequenceFlow (
+			id <- s.id,
+			name <- s.name,
+			sourceRef <- s.sourceRef,
+			targetRef <- s.targetRef
+		)
+	do {
+		--let s: String = '' in 'sequenceflow'.println(); 
+	}
+}
+
+rule ExclusiveGatewayToExclusiveGateway {
+	from
+		s: BPMN!ExclusiveGateway
+	to
+		a: BPMN!ExclusiveGateway (
+			id <- s.id,
+			name <- s.name,
+			gatewayDirection <- s.gatewayDirection,
+			incoming <- s.incoming,
+			outgoing <- s.outgoing
+		)
+	do {
+		--let s: String = '' in 'exclusivegateway'.println(); 
+	}
+}
+
+rule InclusiveGatewayToInclusiveGateway {
+	from
+		s: BPMN!InclusiveGateway
+	to
+		a: BPMN!InclusiveGateway (
+			id <- s.id,
+			name <- s.name,
+			gatewayDirection <- s.gatewayDirection,
+			incoming <- s.incoming,
+			outgoing <- s.outgoing
+		)
+	do {
+		--let s: String = '' in 'inclusivegateway'.println(); 
+	}
+}
+
+rule ParallelGatewayToParallelGateway {
+	from
+		s: BPMN!ParallelGateway
+	to
+		a: BPMN!ParallelGateway (
+			id <- s.id,
+			name <- s.name,
+			gatewayDirection <- s.gatewayDirection,
+			incoming <- s.incoming,
+			outgoing <- s.outgoing
+		)
+	do {
+		--let s: String = '' in 'parallelgateway'.println(); 
+	}
+}
+
+rule EventBasedGatewayToEventBasedGateway {
+	from
+		s: BPMN!EventBasedGateway
+	to
+		a: BPMN!EventBasedGateway (
+			id <- s.id,
+			name <- s.name,
+			gatewayDirection <- s.gatewayDirection,
+			incoming <- s.incoming,
+			outgoing <- s.outgoing
+		)
+	do {
+		--let s: String = '' in 'eventbasedgateway'.println(); 
+	}
+}
+
+rule ComplexGatewayToComplexGateway {
+	from
+		s: BPMN!ComplexGateway
+	to
+		a: BPMN!ComplexGateway (
+			id <- s.id,
+			name <- s.name,
+			gatewayDirection <- s.gatewayDirection,
+			incoming <- s.incoming,
+			outgoing <- s.outgoing
+		)
+	do {
+		--let s: String = '' in 'complexgateway'.println(); 
+	}
+}
+
+--rule ThrowEventToTask {
+--	from
+--		s:BPMN!IntermediateThrowEvent
+--	to
+--		a: BPMN!Task (
+--			id <- s.id,
+--			name <- s.id,
+--			incoming <- s.incoming,
+--			outgoing <- s.outgoing
+--		)
+--}
+--
+--rule CatchEventToTask {
+--	from
+--		s:BPMN!IntermediateCatchEvent
+--	to
+--		a: BPMN!Task (
+--			id <- s.id,
+--			name <- s.id,
+--			incoming <- s.incoming,
+--			outgoing <- s.outgoing
+--		)
+--}

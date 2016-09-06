@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+ <plugin>
+
+  <!-- EEF extensions -->
+   <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
+      <factory
+            uri="http://org/msee/slmtoolbox/modeling/model/lang/graiGrid.ecore/2.0/root"
+            class="org.msee.slmtoolbox.modeling.model.lang.graiGrid.root.providers.RootEEFAdapterFactory"
+            supportedTypes="org.eclipse.emf.eef.runtime.providers.PropertiesEditingProvider"/>
+   </extension>
+   <extension
+         point="org.eclipse.emf.eef.runtime.PropertiesEditionPartProvider">
+      <PropertiesEditionPartProvider
+            providerClass="org.msee.slmtoolbox.modeling.model.lang.eaStar.root.providers.RootPropertiesEditionPartProvider">
+      </PropertiesEditionPartProvider>
+   </extension>
+   <extension
+         point="org.eclipse.emf.eef.runtime.PropertiesEditionPartProvider">
+      <PropertiesEditionPartProvider
+            providerClass="org.msee.slmtoolbox.modeling.model.lang.graiGrid.root.providers.RootPropertiesEditionPartProvider">
+      </PropertiesEditionPartProvider>
+   </extension>
+   <extension
+         point="org.eclipse.emf.eef.runtime.PropertiesEditionPartProvider">
+      <PropertiesEditionPartProvider
+            providerClass="org.msee.slmtoolbox.modeling.model.lang.eaStar.coreElements.providers.CoreElementsPropertiesEditionPartProvider">
+      </PropertiesEditionPartProvider>
+   </extension>
+   <extension
+         point="org.eclipse.emf.eef.runtime.PropertiesEditionPartProvider">
+      <PropertiesEditionPartProvider
+            providerClass="org.msee.slmtoolbox.modeling.model.lang.eaStar.generalElements.providers.GeneralElementsPropertiesEditionPartProvider">
+      </PropertiesEditionPartProvider>
+   </extension>
+   <extension
+         point="org.eclipse.emf.eef.runtime.PropertiesEditionPartProvider">
+      <PropertiesEditionPartProvider
+            providerClass="org.msee.slmtoolbox.modeling.model.ssm.bsm.providers.BsmPropertiesEditionPartProvider">
+      </PropertiesEditionPartProvider>
+   </extension>
+   <extension
+         point="org.eclipse.emf.eef.runtime.PropertiesEditionPartProvider">
+      <PropertiesEditionPartProvider
+            providerClass="org.msee.slmtoolbox.modeling.model.lang.graiGrid.coreElements.providers.CoreElementsPropertiesEditionPartProvider">
+      </PropertiesEditionPartProvider>
+   </extension>
+   <extension
+         point="org.eclipse.emf.eef.runtime.PropertiesEditionPartProvider">
+      <PropertiesEditionPartProvider
+            providerClass="org.msee.slmtoolbox.modeling.model.lang.graiGrid.generalElements.providers.GeneralElementsPropertiesEditionPartProvider">
+      </PropertiesEditionPartProvider>
+   </extension>
+
+  <!-- Tabbed properties views extension -->
+   <extension
+         point="org.eclipse.ui.views.properties.tabbed.propertyContributor">
+      <propertyContributor
+            contributorId="org.msee.slmtoolbox.modeling.model.lang.graiGrid.root.properties"
+            labelProvider="org.eclipse.emf.eef.runtime.ui.utils.EEFLabelProvider">
+         <propertyCategory
+               category="default">
+         </propertyCategory>
+         <propertyCategory
+               category="extended">
+         </propertyCategory>
+         <propertyCategory
+               category="advanced">
+         </propertyCategory>
+      </propertyContributor>
+   </extension>
+   <extension
+         point="org.eclipse.ui.views.properties.tabbed.propertyTabs">
+      <propertyTabs
+            contributorId="org.msee.slmtoolbox.modeling.model.lang.graiGrid.root.properties">
+         <propertyTab
+               id="Base"
+               label="Base"
+               category="default">
+         </propertyTab>
+
+      </propertyTabs>
+   </extension>
+   <extension
+         point="org.eclipse.ui.views.properties.tabbed.propertySections">
+      <propertySections
+            contributorId="org.msee.slmtoolbox.modeling.model.lang.graiGrid.root.properties">
+         <propertySection
+               class="org.msee.slmtoolbox.modeling.model.lang.graiGrid.root.parts.forms.GraiGridModelPropertiesEditionPartForm"
+               filter="org.msee.slmtoolbox.modeling.model.lang.graiGrid.root.providers.GraiGridModelPropertiesEditionProvider$EditionFilter"
+               id="org.msee.slmtoolbox.modeling.model.lang.graiGrid.root.section.GraiGridModel"
+               tab="Base">
+         </propertySection>
+      </propertySections>
+   </extension>
+ </plugin>

@@ -1,0 +1,8 @@
+
+Fri Feb 21 14:40:55 CET 2014
+================================================================================
+Start of user code
+		BsmAddPIToVariableDialog dialog = new BsmAddPIToVariableDialog(PlatformUI.getWorkbench().getDisplay().getActiveShell(), performanceIndicators.getLabelProvider(), (BsmDecisionVariable) ((ReferencesTableSettings)this.performanceIndicators.getInput()).getSource());		
+		dialog.open();
+		performanceIndicators.refresh();	
+		// End of user code

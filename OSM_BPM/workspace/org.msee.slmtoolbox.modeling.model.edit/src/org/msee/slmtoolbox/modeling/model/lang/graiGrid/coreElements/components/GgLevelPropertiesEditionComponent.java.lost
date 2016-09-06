@@ -1,0 +1,47 @@
+
+Tue Oct 29 18:43:35 CET 2013
+================================================================================
+Start of user code updateSemanticModel
+		//Horizon
+		if (CoreElementsViewsRepository.GgLevel.Properties.Horizon.hUnit == event.getAffectedEditor()) {
+			GgTimeValue horizon = EcoreUtil.copy(ggLevel.getHorizon());
+			horizon.setUnit((GgTimeUnits)event.getNewValue());
+			ggLevel.setHorizon(horizon);
+		}
+		if (CoreElementsViewsRepository.GgLevel.Properties.Horizon.hValue == event.getAffectedEditor()) {
+			GgTimeValue horizon = EcoreUtil.copy(ggLevel.getHorizon());
+			if("" != (String)event.getNewValue())
+				horizon.setValue(Integer.parseInt((String)event.getNewValue()));
+			else
+				horizon.setValue(0);
+			ggLevel.setHorizon(horizon);
+		}
+		//Period
+		if (CoreElementsViewsRepository.GgLevel.Properties.Period.pUnit == event.getAffectedEditor()) {
+			GgTimeValue period = EcoreUtil.copy(ggLevel.getPeriod());
+			period.setUnit((GgTimeUnits)event.getNewValue());
+			ggLevel.setPeriod(period);
+		}
+		if (CoreElementsViewsRepository.GgLevel.Properties.Period.pValue == event.getAffectedEditor()) {
+			GgTimeValue period = EcoreUtil.copy(ggLevel.getPeriod());
+			if("" != (String)event.getNewValue())
+				period.setValue(Integer.parseInt((String)event.getNewValue()));
+			else
+				period.setValue(0);
+			ggLevel.setPeriod(period);
+		}
+		//Processing Unit
+		if (CoreElementsViewsRepository.GgLevel.Properties.ProcessingUnit.puUnit == event.getAffectedEditor()) {
+			GgTimeValue processingUnit = EcoreUtil.copy(ggLevel.getProcessingUnit());
+			processingUnit.setUnit((GgTimeUnits)event.getNewValue());
+			ggLevel.setProcessingUnit(processingUnit);
+		}
+		if (CoreElementsViewsRepository.GgLevel.Properties.ProcessingUnit.puValue == event.getAffectedEditor()) {
+			GgTimeValue processingUnit = EcoreUtil.copy(ggLevel.getProcessingUnit());
+			if("" != (String)event.getNewValue())
+				processingUnit.setValue(Integer.parseInt((String)event.getNewValue()));
+			else
+				processingUnit.setValue(0);
+			ggLevel.setProcessingUnit(processingUnit);
+		}
+		// End of user code
