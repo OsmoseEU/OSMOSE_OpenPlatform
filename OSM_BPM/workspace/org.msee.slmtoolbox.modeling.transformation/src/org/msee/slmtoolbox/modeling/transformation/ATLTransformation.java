@@ -88,9 +88,9 @@ public class ATLTransformation {
 	
 	// ################## EXPORT ########################
 	/** ATL path file : Export single BPMN process to multi BPMN process (collaboration) */
-	public final static String ATL_BPMN_BPMN_EXPORT_world1_PATH = "atl/exportBpmn/World1ExportBPMN.ASM";
-	public final static String ATL_BPMN_BPMN_EXPORT_world2_PATH = "atl/exportBpmn/World2ExportBPMN.ASM";
-	public final static String ATL_BPMN_BPMN_EXPORT_osmioticWorld_PATH = "atl/exportBpmn/OsmioticWorldExportBPMN.ASM";
+	public final static String ATL_BPMN_BPMN_EXPORT_world1_PATH = "atl/exportBpmn/World1ExportBPMN.asm";
+	public final static String ATL_BPMN_BPMN_EXPORT_world2_PATH = "atl/exportBpmn/World2ExportBPMN.asm";
+	public final static String ATL_BPMN_BPMN_EXPORT_osmioticWorld_PATH = "atl/exportBpmn/OsmioticWorldExportBPMN.asm";
 	/** XSLT path file : transformation BPMN to XMI */
 	public final static String XSLT_XMI_PATH = "xslt/BPMN20-ToXMI_No_Diagram.xslt";
 	/** XSLT path file : transformation XMI to BPMN withoun Diagram */
