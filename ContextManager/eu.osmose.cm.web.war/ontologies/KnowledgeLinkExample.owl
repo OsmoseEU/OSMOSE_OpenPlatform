@@ -1,0 +1,226 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY knowledgelinks "http://www.semanticweb.org/artur.felic/ontologies/2015/4/knowledgelinks#" >
+    <!ENTITY CamshaftMeasurement "http://www.semanticweb.org/artur.felic/ontologies/2015/6/RealWorld/CamshaftMeasurement#" >
+    <!ENTITY CamshaftDeviation "http://www.semanticweb.org/artur.felic/ontologies/2015/6/DigitalWorld/CamshaftDeviation#" >
+]>
+
+
+<rdf:RDF xmlns="http://www.semanticweb.org/artur.felic/ontologies/2015/6/KnowledgeLinks/example#"
+     xml:base="http://www.semanticweb.org/artur.felic/ontologies/2015/6/KnowledgeLinks/example"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:knowledgelinks="http://www.semanticweb.org/artur.felic/ontologies/2015/4/knowledgelinks#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:CamshaftMeasurement="http://www.semanticweb.org/artur.felic/ontologies/2015/6/RealWorld/CamshaftMeasurement#"
+     xmlns:CamshaftDeviation="http://www.semanticweb.org/artur.felic/ontologies/2015/6/DigitalWorld/CamshaftDeviation#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/artur.felic/ontologies/2015/6/KnowledgeLinks/example">
+        <owl:imports rdf:resource="http://www.semanticweb.org/artur.felic/ontologies/2015/4/knowledgelinks"/>
+        <owl:imports rdf:resource="http://www.semanticweb.org/artur.felic/ontologies/2015/6/DigitalWorld/CamshaftDeviation"/>
+        <owl:imports rdf:resource="http://www.semanticweb.org/artur.felic/ontologies/2015/6/RealWorld/CamshaftMeasurement"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/artur.felic/ontologies/2015/6/KnowledgeLinks/example#assocatedProcess -->
+
+    <owl:AnnotationProperty rdf:about="http://www.semanticweb.org/artur.felic/ontologies/2015/6/KnowledgeLinks/example#assocatedProcess"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/artur.felic/ontologies/2015/6/DigitalWorld/CamshaftDeviation#hasDeviationValue -->
+
+    <rdf:Description rdf:about="&CamshaftDeviation;hasDeviationValue">
+        <rdfs:range rdf:resource="&xsd;long"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.semanticweb.org/artur.felic/ontologies/2015/6/RealWorld/CamshaftMeasurement#hasMeasurementDataType -->
+
+    <owl:DatatypeProperty rdf:about="&CamshaftMeasurement;hasMeasurementDataType"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/artur.felic/ontologies/2015/4/knowledgelinks#Subtraction -->
+
+    <rdf:Description rdf:about="&knowledgelinks;Subtraction">
+        <assocatedProcess rdf:datatype="&xsd;anyURI">http://www.snowflake-framework.com/processes/subtraction</assocatedProcess>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.semanticweb.org/artur.felic/ontologies/2015/6/CamshaftMeasurement#CamshaftMeasurement -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/artur.felic/ontologies/2015/6/CamshaftMeasurement#CamshaftMeasurement">
+        <rdfs:subClassOf rdf:resource="&knowledgelinks;SourceConcept"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.semanticweb.org/artur.felic/ontologies/2015/6/CamshaftMeasurement#CamshaftSetPoint -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/artur.felic/ontologies/2015/6/CamshaftMeasurement#CamshaftSetPoint">
+        <rdfs:subClassOf rdf:resource="&knowledgelinks;SourceConcept"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.semanticweb.org/artur.felic/ontologies/2015/6/DigitalWorld/CamshaftDeviation#CamshaftDeviation -->
+
+    <rdf:Description rdf:about="&CamshaftDeviation;CamshaftDeviation">
+        <rdfs:subClassOf rdf:resource="&knowledgelinks;TargetConcept"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.semanticweb.org/artur.felic/ontologies/2015/6/KnowledgeLinks/example#CamshaftDeviationKnowledgeLink -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/artur.felic/ontologies/2015/6/KnowledgeLinks/example#CamshaftDeviationKnowledgeLink">
+        <rdfs:subClassOf rdf:resource="&knowledgelinks;ComplexKnowledgeLink"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&knowledgelinks;hasComplexAssignmentSource"/>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/artur.felic/ontologies/2015/6/KnowledgeLinks/example#CamshaftDeviationSubtraction"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&knowledgelinks;hasAssignmentTarget"/>
+                <owl:onClass rdf:resource="&CamshaftDeviation;CamshaftDeviation"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/artur.felic/ontologies/2015/6/KnowledgeLinks/example#CamshaftDeviationSubtraction -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/artur.felic/ontologies/2015/6/KnowledgeLinks/example#CamshaftDeviationSubtraction">
+        <rdfs:subClassOf rdf:resource="&knowledgelinks;Subtraction"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&knowledgelinks;hasConceptInput"/>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/artur.felic/ontologies/2015/6/CamshaftMeasurement#CamshaftSetPoint"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&knowledgelinks;hasConceptInput"/>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/artur.felic/ontologies/2015/6/CamshaftMeasurement#CamshaftMeasurement"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/artur.felic/ontologies/2015/6/KnowledgeLinks/example#CamshaftDeviationKL_1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/artur.felic/ontologies/2015/6/KnowledgeLinks/example#CamshaftDeviationKL_1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/artur.felic/ontologies/2015/6/KnowledgeLinks/example#CamshaftDeviationKnowledgeLink"/>
+        <knowledgelinks:hasComplexAssignmentSource rdf:resource="http://www.semanticweb.org/artur.felic/ontologies/2015/6/KnowledgeLinks/example#CamshaftDeviationSubtraction_1"/>
+        <knowledgelinks:hasAssignmentTarget rdf:resource="http://www.semanticweb.org/artur.felic/ontologies/2015/6/KnowledgeLinks/example#CamshaftDeviation_1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/artur.felic/ontologies/2015/6/KnowledgeLinks/example#CamshaftDeviationSubtraction_1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/artur.felic/ontologies/2015/6/KnowledgeLinks/example#CamshaftDeviationSubtraction_1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/artur.felic/ontologies/2015/6/KnowledgeLinks/example#CamshaftDeviationSubtraction"/>
+        <assocatedProcess rdf:datatype="&xsd;anyURI">http://www.snowflake-framework.com/processes/subtraction</assocatedProcess>
+        <knowledgelinks:isComplexAssignmentSourceOf rdf:resource="http://www.semanticweb.org/artur.felic/ontologies/2015/6/KnowledgeLinks/example#CamshaftDeviationKL_1"/>
+        <knowledgelinks:hasOperatorInput rdf:resource="http://www.semanticweb.org/artur.felic/ontologies/2015/6/KnowledgeLinks/example#CamshaftMeasurement_1"/>
+        <knowledgelinks:hasOperatorInput rdf:resource="http://www.semanticweb.org/artur.felic/ontologies/2015/6/KnowledgeLinks/example#CamshaftSetPoint_1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/artur.felic/ontologies/2015/6/KnowledgeLinks/example#CamshaftDeviation_1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/artur.felic/ontologies/2015/6/KnowledgeLinks/example#CamshaftDeviation_1">
+        <rdf:type rdf:resource="&CamshaftDeviation;CamshaftDeviation"/>
+        <CamshaftDeviation:hasDeviationValue rdf:datatype="&xsd;long">-2</CamshaftDeviation:hasDeviationValue>
+        <knowledgelinks:isAssignmentTargetOf rdf:resource="http://www.semanticweb.org/artur.felic/ontologies/2015/6/KnowledgeLinks/example#CamshaftDeviationKL_1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/artur.felic/ontologies/2015/6/KnowledgeLinks/example#CamshaftMeasurement_1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/artur.felic/ontologies/2015/6/KnowledgeLinks/example#CamshaftMeasurement_1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/artur.felic/ontologies/2015/6/CamshaftMeasurement#CamshaftMeasurement"/>
+        <CamshaftMeasurement:hasMeasurementDataType rdf:datatype="&xsd;unsignedLong">213423513</CamshaftMeasurement:hasMeasurementDataType>
+        <knowledgelinks:isOperatorInputOf rdf:resource="http://www.semanticweb.org/artur.felic/ontologies/2015/6/KnowledgeLinks/example#CamshaftDeviationSubtraction_1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/artur.felic/ontologies/2015/6/KnowledgeLinks/example#CamshaftSetPoint_1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/artur.felic/ontologies/2015/6/KnowledgeLinks/example#CamshaftSetPoint_1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/artur.felic/ontologies/2015/6/CamshaftMeasurement#CamshaftSetPoint"/>
+        <CamshaftMeasurement:hasSetPointValue rdf:datatype="&xsd;unsignedLong">213423515</CamshaftMeasurement:hasSetPointValue>
+        <knowledgelinks:isOperatorInputOf rdf:resource="http://www.semanticweb.org/artur.felic/ontologies/2015/6/KnowledgeLinks/example#CamshaftDeviationSubtraction_1"/>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.4.2) http://owlapi.sourceforge.net -->
+

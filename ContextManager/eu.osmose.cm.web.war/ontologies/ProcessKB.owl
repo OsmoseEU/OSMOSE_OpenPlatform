@@ -1,0 +1,441 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+]>
+
+
+<rdf:RDF xmlns="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-47#"
+     xml:base="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-47"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-47">
+        <owl:imports rdf:resource="http://dkm.fbk.eu/index.php/BPMN2_Ontology#"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-47#activity_type -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-47#activity_type">
+        <rdfs:domain rdf:resource="http://dkm.fbk.eu/index.php/BPMN2_Ontology#activity"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-47#Activity_type"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-47#describes -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-47#describes">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-47#BPMN20"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-47#Process"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-47#constraint -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-47#constraint">
+        <rdfs:domain rdf:resource="http://dkm.fbk.eu/index.php/BPMN2_Ontology#activity"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-47#Enterprise_Process"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-47#description -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-47#description">
+        <rdfs:domain rdf:resource="http://dkm.fbk.eu/index.php/BPMN2_Ontology#activity"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-47#functionality -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-47#functionality">
+        <rdfs:domain rdf:resource="http://dkm.fbk.eu/index.php/BPMN2_Ontology#activity"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-47#Osmiotic_Process"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-47#identifier -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-47#identifier">
+        <rdfs:domain rdf:resource="http://dkm.fbk.eu/index.php/BPMN2_Ontology#activity"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-47#Process"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-47#name -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-47#name">
+        <rdfs:domain rdf:resource="http://dkm.fbk.eu/index.php/BPMN2_Ontology#activity"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-47#Process"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-47#objective -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-47#objective">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-47#Process"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-47#operationMode -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-47#operationMode">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-47#Osmiotic_Process"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-47#representation -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-47#representation">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-47#Osmiotic_Process"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-47#result -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-47#result">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-47#Enterprise_Process"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-47#trigger -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-47#trigger">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-47#Enterprise_Process"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://dkm.fbk.eu/index.php/BPMN2_Ontology#Bounds -->
+
+    <rdf:Description rdf:about="http://dkm.fbk.eu/index.php/BPMN2_Ontology#Bounds">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-47#BPMN20"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://dkm.fbk.eu/index.php/BPMN2_Ontology#Diagram -->
+
+    <rdf:Description rdf:about="http://dkm.fbk.eu/index.php/BPMN2_Ontology#Diagram">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-47#BPMN20"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://dkm.fbk.eu/index.php/BPMN2_Ontology#DiagramElement -->
+
+    <rdf:Description rdf:about="http://dkm.fbk.eu/index.php/BPMN2_Ontology#DiagramElement">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-47#BPMN20"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://dkm.fbk.eu/index.php/BPMN2_Ontology#Font -->
+
+    <rdf:Description rdf:about="http://dkm.fbk.eu/index.php/BPMN2_Ontology#Font">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-47#BPMN20"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://dkm.fbk.eu/index.php/BPMN2_Ontology#Point -->
+
+    <rdf:Description rdf:about="http://dkm.fbk.eu/index.php/BPMN2_Ontology#Point">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-47#BPMN20"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://dkm.fbk.eu/index.php/BPMN2_Ontology#Style -->
+
+    <rdf:Description rdf:about="http://dkm.fbk.eu/index.php/BPMN2_Ontology#Style">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-47#BPMN20"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://dkm.fbk.eu/index.php/BPMN2_Ontology#baseElement -->
+
+    <rdf:Description rdf:about="http://dkm.fbk.eu/index.php/BPMN2_Ontology#baseElement">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-47#BPMN20"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://dkm.fbk.eu/index.php/BPMN2_Ontology#baseElementWithMixedContent -->
+
+    <rdf:Description rdf:about="http://dkm.fbk.eu/index.php/BPMN2_Ontology#baseElementWithMixedContent">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-47#BPMN20"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://dkm.fbk.eu/index.php/BPMN2_Ontology#definitions -->
+
+    <rdf:Description rdf:about="http://dkm.fbk.eu/index.php/BPMN2_Ontology#definitions">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-47#BPMN20"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://dkm.fbk.eu/index.php/BPMN2_Ontology#documentation -->
+
+    <rdf:Description rdf:about="http://dkm.fbk.eu/index.php/BPMN2_Ontology#documentation">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-47#BPMN20"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://dkm.fbk.eu/index.php/BPMN2_Ontology#element -->
+
+    <rdf:Description rdf:about="http://dkm.fbk.eu/index.php/BPMN2_Ontology#element">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-47#BPMN20"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://dkm.fbk.eu/index.php/BPMN2_Ontology#eventSubprocess -->
+
+    <rdf:Description rdf:about="http://dkm.fbk.eu/index.php/BPMN2_Ontology#eventSubprocess">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-47#BPMN20"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://dkm.fbk.eu/index.php/BPMN2_Ontology#extension -->
+
+    <rdf:Description rdf:about="http://dkm.fbk.eu/index.php/BPMN2_Ontology#extension">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-47#BPMN20"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://dkm.fbk.eu/index.php/BPMN2_Ontology#extensionDefinition -->
+
+    <rdf:Description rdf:about="http://dkm.fbk.eu/index.php/BPMN2_Ontology#extensionDefinition">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-47#BPMN20"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://dkm.fbk.eu/index.php/BPMN2_Ontology#extensionElements -->
+
+    <rdf:Description rdf:about="http://dkm.fbk.eu/index.php/BPMN2_Ontology#extensionElements">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-47#BPMN20"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://dkm.fbk.eu/index.php/BPMN2_Ontology#import -->
+
+    <rdf:Description rdf:about="http://dkm.fbk.eu/index.php/BPMN2_Ontology#import">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-47#BPMN20"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://dkm.fbk.eu/index.php/BPMN2_Ontology#interactionNode -->
+
+    <rdf:Description rdf:about="http://dkm.fbk.eu/index.php/BPMN2_Ontology#interactionNode">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-47#BPMN20"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://dkm.fbk.eu/index.php/BPMN2_Ontology#itemAwareElement -->
+
+    <rdf:Description rdf:about="http://dkm.fbk.eu/index.php/BPMN2_Ontology#itemAwareElement">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-47#BPMN20"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://dkm.fbk.eu/index.php/BPMN2_Ontology#script -->
+
+    <rdf:Description rdf:about="http://dkm.fbk.eu/index.php/BPMN2_Ontology#script">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-47#BPMN20"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://dkm.fbk.eu/index.php/BPMN2_Ontology#shapeElement -->
+
+    <rdf:Description rdf:about="http://dkm.fbk.eu/index.php/BPMN2_Ontology#shapeElement">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-47#BPMN20"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://dkm.fbk.eu/index.php/BPMN2_Ontology#subprocess -->
+
+    <rdf:Description rdf:about="http://dkm.fbk.eu/index.php/BPMN2_Ontology#subprocess">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-47#BPMN20"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://dkm.fbk.eu/index.php/BPMN2_Ontology#text -->
+
+    <rdf:Description rdf:about="http://dkm.fbk.eu/index.php/BPMN2_Ontology#text">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-47#BPMN20"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://dkm.fbk.eu/index.php/BPMN2_Ontology#type -->
+
+    <rdf:Description rdf:about="http://dkm.fbk.eu/index.php/BPMN2_Ontology#type">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-47#BPMN20"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-47#Activity_type -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-47#Activity_type">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-47#ProcessKB"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-47#BPMN20 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-47#BPMN20">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-47#ProcessKB"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-47#Enterprise_Process -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-47#Enterprise_Process">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-47#Process"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-47#Osmiotic_Process -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-47#Osmiotic_Process">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-47#Process"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-47#Process -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-47#Process">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-47#ProcessKB"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-47#ProcessKB -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-47#ProcessKB"/>
+    
+
+
+    <!-- http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-47#business_rule_task -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-47#business_rule_task">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-47#Activity_type"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-47#manual_task -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-47#manual_task">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-47#Activity_type"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-47#receive_task -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-47#receive_task">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-47#Activity_type"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-47#script_task -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-47#script_task">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-47#Activity_type"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-47#user_task -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-47#user_task">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-47#Activity_type"/>
+    </owl:Class>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.4.2) http://owlapi.sourceforge.net -->
+

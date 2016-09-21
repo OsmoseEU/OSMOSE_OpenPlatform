@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- Use this file to deploy some handlers/chains and services      --><!-- Two ways to do this:                                           --><!--   java org.apache.axis.client.AdminClient deploy.wsdd          --><!--      after the axis server is running                          --><!-- or                                                             --><!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   --><!--      from the same directory that the Axis engine runs         --><deployment xmlns="http://xml.apache.org/axis/wsdd/" xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from ContextManagerWebServiceService WSDL service -->
+
+  <service name="ContextManagerWebService" provider="java:RPC" style="wrapped" use="literal">
+      <parameter name="wsdlTargetNamespace" value="http://webservice.cm.osmose.eu"/>
+      <parameter name="wsdlServiceElement" value="ContextManagerWebServiceService"/>
+      <parameter name="schemaQualified" value="http://webservice.cm.osmose.eu"/>
+      <parameter name="wsdlServicePort" value="ContextManagerWebService"/>
+      <parameter name="className" value="eu.osmose.cm.webservice.ContextManagerWebService"/>
+      <parameter name="wsdlPortType" value="ContextManagerWebService"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <operation xmlns:operNS="http://webservice.cm.osmose.eu" xmlns:retNS="http://webservice.cm.osmose.eu" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="getProperty" qname="operNS:getProperty" returnQName="retNS:getPropertyReturn" returnType="rtns:string" soapAction="">
+        <parameter xmlns:pns="http://webservice.cm.osmose.eu" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:ontologyName" type="tns:string"/>
+        <parameter xmlns:pns="http://webservice.cm.osmose.eu" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:propertyUri" type="tns:string"/>
+      </operation>
+      <operation xmlns:operNS="http://webservice.cm.osmose.eu" xmlns:retNS="http://webservice.cm.osmose.eu" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="getResource" qname="operNS:getResource" returnQName="retNS:getResourceReturn" returnType="rtns:string" soapAction="">
+        <parameter xmlns:pns="http://webservice.cm.osmose.eu" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:ontologyName" type="tns:string"/>
+        <parameter xmlns:pns="http://webservice.cm.osmose.eu" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:propertyUri" type="tns:string"/>
+      </operation>
+      <operation xmlns:operNS="http://webservice.cm.osmose.eu" name="addLiteral" qname="operNS:addLiteral" soapAction="">
+        <parameter xmlns:pns="http://webservice.cm.osmose.eu" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:ontologyName" type="tns:string"/>
+        <parameter xmlns:pns="http://webservice.cm.osmose.eu" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:resourceUri" type="tns:string"/>
+        <parameter xmlns:pns="http://webservice.cm.osmose.eu" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:propertyUri" type="tns:string"/>
+        <parameter xmlns:pns="http://webservice.cm.osmose.eu" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:literal" type="tns:string"/>
+      </operation>
+      <operation xmlns:operNS="http://webservice.cm.osmose.eu" xmlns:retNS="http://webservice.cm.osmose.eu" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="executeQuery" qname="operNS:executeQuery" returnQName="retNS:executeQueryReturn" returnType="rtns:string" soapAction="">
+        <parameter xmlns:pns="http://webservice.cm.osmose.eu" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:queryString" type="tns:string"/>
+        <parameter xmlns:pns="http://webservice.cm.osmose.eu" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:ontologyName" type="tns:string"/>
+      </operation>
+      <operation xmlns:operNS="http://webservice.cm.osmose.eu" name="createResource" qname="operNS:createResource" soapAction="">
+        <parameter xmlns:pns="http://webservice.cm.osmose.eu" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:ontologyName" type="tns:string"/>
+        <parameter xmlns:pns="http://webservice.cm.osmose.eu" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:resourceUri" type="tns:string"/>
+      </operation>
+      <operation xmlns:operNS="http://webservice.cm.osmose.eu" xmlns:retNS="http://webservice.cm.osmose.eu" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="createStatement" qname="operNS:createStatement" returnQName="retNS:createStatementReturn" returnType="rtns:string" soapAction="">
+        <parameter xmlns:pns="http://webservice.cm.osmose.eu" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:ontologyName" type="tns:string"/>
+        <parameter xmlns:pns="http://webservice.cm.osmose.eu" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:subjectUri" type="tns:string"/>
+        <parameter xmlns:pns="http://webservice.cm.osmose.eu" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:predicateUri" type="tns:string"/>
+        <parameter xmlns:pns="http://webservice.cm.osmose.eu" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:object" type="tns:string"/>
+      </operation>
+      <operation xmlns:operNS="http://webservice.cm.osmose.eu" xmlns:retNS="http://webservice.cm.osmose.eu" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="createProperty" qname="operNS:createProperty" returnQName="retNS:createPropertyReturn" returnType="rtns:string" soapAction="">
+        <parameter xmlns:pns="http://webservice.cm.osmose.eu" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:ontologyName" type="tns:string"/>
+        <parameter xmlns:pns="http://webservice.cm.osmose.eu" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:propertyUri" type="tns:string"/>
+      </operation>
+      <operation xmlns:operNS="http://webservice.cm.osmose.eu" xmlns:retNS="http://webservice.cm.osmose.eu" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="createIndividual" qname="operNS:createIndividual" returnQName="retNS:createIndividualReturn" returnType="rtns:string" soapAction="">
+        <parameter xmlns:pns="http://webservice.cm.osmose.eu" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:ontologyName" type="tns:string"/>
+        <parameter xmlns:pns="http://webservice.cm.osmose.eu" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:ontologyClassName" type="tns:string"/>
+        <parameter xmlns:pns="http://webservice.cm.osmose.eu" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:individualName" type="tns:string"/>
+      </operation>
+      <parameter name="allowedMethods" value="addLiteral createResource getProperty createStatement getResource createProperty executeQuery createIndividual"/>
+
+  </service>
+</deployment>

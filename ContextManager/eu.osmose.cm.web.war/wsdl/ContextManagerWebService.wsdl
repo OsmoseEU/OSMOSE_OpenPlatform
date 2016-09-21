@@ -1,0 +1,515 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://webservice.cm.osmose.eu" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://webservice.cm.osmose.eu" xmlns:intf="http://webservice.cm.osmose.eu" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://webservice.cm.osmose.eu" xmlns="http://www.w3.org/2001/XMLSchema">
+   <element name="getProperty">
+    <complexType>
+     <sequence>
+      <element name="ontologyName" type="xsd:string"/>
+      <element name="propertyUri" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getPropertyResponse">
+    <complexType>
+     <sequence>
+      <element name="getPropertyReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getResource">
+    <complexType>
+     <sequence>
+      <element name="ontologyName" type="xsd:string"/>
+      <element name="propertyUri" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getResourceResponse">
+    <complexType>
+     <sequence>
+      <element name="getResourceReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="addLiteral">
+    <complexType>
+     <sequence>
+      <element name="ontologyName" type="xsd:string"/>
+      <element name="resourceUri" type="xsd:string"/>
+      <element name="propertyUri" type="xsd:string"/>
+      <element name="literal" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="addLiteralResponse">
+    <complexType/>
+   </element>
+   <element name="executeQuery">
+    <complexType>
+     <sequence>
+      <element name="queryString" type="xsd:string"/>
+      <element name="ontologyName" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="executeQueryResponse">
+    <complexType>
+     <sequence>
+      <element name="executeQueryReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="createResource">
+    <complexType>
+     <sequence>
+      <element name="ontologyName" type="xsd:string"/>
+      <element name="resourceUri" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="createResourceResponse">
+    <complexType/>
+   </element>
+   <element name="createStatement">
+    <complexType>
+     <sequence>
+      <element name="ontologyName" type="xsd:string"/>
+      <element name="subjectUri" type="xsd:string"/>
+      <element name="predicateUri" type="xsd:string"/>
+      <element name="object" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="createStatementResponse">
+    <complexType>
+     <sequence>
+      <element name="createStatementReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="createProperty">
+    <complexType>
+     <sequence>
+      <element name="ontologyName" type="xsd:string"/>
+      <element name="propertyUri" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="createPropertyResponse">
+    <complexType>
+     <sequence>
+      <element name="createPropertyReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="createIndividual">
+    <complexType>
+     <sequence>
+      <element name="ontologyName" type="xsd:string"/>
+      <element name="ontologyClassName" type="xsd:string"/>
+      <element name="individualName" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="createIndividualResponse">
+    <complexType>
+     <sequence>
+      <element name="createIndividualReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="createIndividualRequest">
+
+      <wsdl:part element="impl:createIndividual" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="createResourceResponse">
+
+      <wsdl:part element="impl:createResourceResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="createStatementRequest">
+
+      <wsdl:part element="impl:createStatement" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getPropertyRequest">
+
+      <wsdl:part element="impl:getProperty" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getResourceRequest">
+
+      <wsdl:part element="impl:getResource" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="executeQueryResponse">
+
+      <wsdl:part element="impl:executeQueryResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="addLiteralRequest">
+
+      <wsdl:part element="impl:addLiteral" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="createPropertyRequest">
+
+      <wsdl:part element="impl:createProperty" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="addLiteralResponse">
+
+      <wsdl:part element="impl:addLiteralResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="executeQueryRequest">
+
+      <wsdl:part element="impl:executeQuery" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="createResourceRequest">
+
+      <wsdl:part element="impl:createResource" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getPropertyResponse">
+
+      <wsdl:part element="impl:getPropertyResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="createStatementResponse">
+
+      <wsdl:part element="impl:createStatementResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="createIndividualResponse">
+
+      <wsdl:part element="impl:createIndividualResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="createPropertyResponse">
+
+      <wsdl:part element="impl:createPropertyResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getResourceResponse">
+
+      <wsdl:part element="impl:getResourceResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="ContextManagerWebService">
+
+      <wsdl:operation name="getProperty">
+
+         <wsdl:input message="impl:getPropertyRequest" name="getPropertyRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getPropertyResponse" name="getPropertyResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getResource">
+
+         <wsdl:input message="impl:getResourceRequest" name="getResourceRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getResourceResponse" name="getResourceResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="addLiteral">
+
+         <wsdl:input message="impl:addLiteralRequest" name="addLiteralRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:addLiteralResponse" name="addLiteralResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="executeQuery">
+
+         <wsdl:input message="impl:executeQueryRequest" name="executeQueryRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:executeQueryResponse" name="executeQueryResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="createResource">
+
+         <wsdl:input message="impl:createResourceRequest" name="createResourceRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:createResourceResponse" name="createResourceResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="createStatement">
+
+         <wsdl:input message="impl:createStatementRequest" name="createStatementRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:createStatementResponse" name="createStatementResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="createProperty">
+
+         <wsdl:input message="impl:createPropertyRequest" name="createPropertyRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:createPropertyResponse" name="createPropertyResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="createIndividual">
+
+         <wsdl:input message="impl:createIndividualRequest" name="createIndividualRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:createIndividualResponse" name="createIndividualResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="ContextManagerWebServiceSoapBinding" type="impl:ContextManagerWebService">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="getProperty">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getPropertyRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getPropertyResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getResource">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getResourceRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getResourceResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="addLiteral">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="addLiteralRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="addLiteralResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="executeQuery">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="executeQueryRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="executeQueryResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="createResource">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="createResourceRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="createResourceResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="createStatement">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="createStatementRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="createStatementResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="createProperty">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="createPropertyRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="createPropertyResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="createIndividual">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="createIndividualRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="createIndividualResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="ContextManagerWebServiceService">
+
+      <wsdl:port binding="impl:ContextManagerWebServiceSoapBinding" name="ContextManagerWebService">
+
+         <wsdlsoap:address location="http://localhost:8080/eu.osmose.cm.web/services/ContextManagerWebService"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>

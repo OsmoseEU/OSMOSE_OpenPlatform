@@ -1,0 +1,159 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+]>
+
+
+<rdf:RDF xmlns="http://www.semanticweb.org/artur.felic/ontologies/2015/6/RealWorld/CamshaftMeasurement#"
+     xml:base="http://www.semanticweb.org/artur.felic/ontologies/2015/6/RealWorld/CamshaftMeasurement"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/artur.felic/ontologies/2015/6/RealWorld/CamshaftMeasurement"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/artur.felic/ontologies/2015/6/CamshaftMeasurement#hasMeasurement -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/artur.felic/ontologies/2015/6/CamshaftMeasurement#hasMeasurement">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/artur.felic/ontologies/2015/6/CamshaftMeasurement#EngineComponents"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/artur.felic/ontologies/2015/6/CamshaftMeasurement#Measurement"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/artur.felic/ontologies/2015/6/CamshaftMeasurement#hasSetPoint -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/artur.felic/ontologies/2015/6/CamshaftMeasurement#hasSetPoint">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/artur.felic/ontologies/2015/6/CamshaftMeasurement#Measurement"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/artur.felic/ontologies/2015/6/CamshaftMeasurement#SetPoint"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/artur.felic/ontologies/2015/6/RealWorld/CamshaftMeasurement#hasMeasurementValue -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/artur.felic/ontologies/2015/6/RealWorld/CamshaftMeasurement#hasMeasurementValue">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/artur.felic/ontologies/2015/6/CamshaftMeasurement#CamshaftMeasurement"/>
+        <rdfs:range rdf:resource="&xsd;unsignedLong"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/artur.felic/ontologies/2015/6/RealWorld/CamshaftMeasurement#hasSetPointValue -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/artur.felic/ontologies/2015/6/RealWorld/CamshaftMeasurement#hasSetPointValue">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/artur.felic/ontologies/2015/6/CamshaftMeasurement#CamshaftSetPoint"/>
+        <rdfs:range rdf:resource="&xsd;unsignedLong"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/artur.felic/ontologies/2015/6/CamshaftMeasurement#Camshaft -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/artur.felic/ontologies/2015/6/CamshaftMeasurement#Camshaft">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/artur.felic/ontologies/2015/6/CamshaftMeasurement#EngineComponents"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/artur.felic/ontologies/2015/6/CamshaftMeasurement#CamshaftMeasurement -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/artur.felic/ontologies/2015/6/CamshaftMeasurement#CamshaftMeasurement">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/artur.felic/ontologies/2015/6/CamshaftMeasurement#Measurement"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/artur.felic/ontologies/2015/6/RealWorld/CamshaftMeasurement#hasMeasurementValue"/>
+                <owl:someValuesFrom rdf:resource="&xsd;unsignedLong"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/artur.felic/ontologies/2015/6/CamshaftMeasurement#CamshaftSetPoint -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/artur.felic/ontologies/2015/6/CamshaftMeasurement#CamshaftSetPoint">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/artur.felic/ontologies/2015/6/CamshaftMeasurement#SetPoint"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/artur.felic/ontologies/2015/6/RealWorld/CamshaftMeasurement#hasSetPointValue"/>
+                <owl:someValuesFrom rdf:resource="&xsd;unsignedLong"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/artur.felic/ontologies/2015/6/CamshaftMeasurement#EngineComponents -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/artur.felic/ontologies/2015/6/CamshaftMeasurement#EngineComponents">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/artur.felic/ontologies/2015/6/CamshaftMeasurement#RealWorldEntity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/artur.felic/ontologies/2015/6/CamshaftMeasurement#Measurement -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/artur.felic/ontologies/2015/6/CamshaftMeasurement#Measurement">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/artur.felic/ontologies/2015/6/CamshaftMeasurement#RealWorldEntity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/artur.felic/ontologies/2015/6/CamshaftMeasurement#RealWorldEntity -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/artur.felic/ontologies/2015/6/CamshaftMeasurement#RealWorldEntity"/>
+    
+
+
+    <!-- http://www.semanticweb.org/artur.felic/ontologies/2015/6/CamshaftMeasurement#SetPoint -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/artur.felic/ontologies/2015/6/CamshaftMeasurement#SetPoint">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/artur.felic/ontologies/2015/6/CamshaftMeasurement#RealWorldEntity"/>
+    </owl:Class>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.5.1) http://owlapi.sourceforge.net -->
+

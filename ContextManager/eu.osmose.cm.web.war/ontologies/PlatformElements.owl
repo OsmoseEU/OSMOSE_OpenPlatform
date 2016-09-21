@@ -1,0 +1,1859 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY ontology "http://linkedevents.org/ontology/" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY bfo "http://purl.obolibrary.org/obo/bfo.owl#" >
+    <!ENTITY BPMN2_Ontology "http://dkm.fbk.eu/index.php/BPMN2_Ontology#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY untitled-ontology-47 "http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-47#" >
+]>
+
+
+<rdf:RDF xmlns="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#"
+     xml:base="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7"
+     xmlns:BPMN2_Ontology="http://dkm.fbk.eu/index.php/BPMN2_Ontology#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:untitled-ontology-47="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-47#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:ontology="http://linkedevents.org/ontology/"
+     xmlns:bfo="http://purl.obolibrary.org/obo/bfo.owl#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/bfo.owl#name -->
+
+    <owl:AnnotationProperty rdf:about="&bfo;name"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/bfo.owl#resource_type -->
+
+    <owl:AnnotationProperty rdf:about="&bfo;resource_type"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Activity_type -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Activity_type">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Activity"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Activity_type"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Enterprise_Process_type -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Enterprise_Process_type">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Enterprise_Process"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Enterprise_Process_type"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Event_type -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Event_type">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Event"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Event_type"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Organization_type -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Organization_type">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Organization"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Organization_type"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Osmiotic_Process_type -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Osmiotic_Process_type">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Osmiotic_Process"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Osmiotic_Process_type"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Resource_type -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Resource_type">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Resource"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Resource_type"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Service_type -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Service_type">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Service"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Service_type"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#acts_upon -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#acts_upon">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Activity"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Resource"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Service"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#applies -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#applies">
+        <rdfs:range rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Enterprise_Process_type"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Organization"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#calls -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#calls">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Service"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Service"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#executes -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#executes">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Event"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Service"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#has_actions -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#has_actions">
+        <rdfs:range rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Activity"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Osmiotic_Process"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#has_enterprise_process -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#has_enterprise_process">
+        <rdfs:range rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Enterprise_Process_type"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Osmiotic_Process"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#has_resources -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#has_resources">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Organization"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Resource"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#has_service -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#has_service">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Activity"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Service"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#has_shadow_image -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#has_shadow_image">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Resource"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Resource"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#has_sub_Enterprise_Process -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#has_sub_Enterprise_Process">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Enterprise_Process"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Enterprise_Process_type"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#has_sub_event -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#has_sub_event">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Event"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Event"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#has_world -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#has_world">
+        <rdfs:range rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#OSMOSIS_World"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Resource"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#moderates_flow_between -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#moderates_flow_between">
+        <rdfs:range rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#OSMOSIS_World"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Osmiotic_Process"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#triggers -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#triggers">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Activity"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Event"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Resource"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Service"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#uses_resources -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#uses_resources">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Enterprise_Process"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Resource"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#access -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#access">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Service"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#business_value -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#business_value">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Service"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#capability -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#capability">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Resource"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#cause -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#cause">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Event"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#constraint -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#constraint">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Activity"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Enterprise_Process"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Resource"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Service"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#description -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#description">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Activity"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Event"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Organization"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Service"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#executableCode -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#executableCode">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Knowledge_Trasformation"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#function -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#function">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Resource"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#functionality -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#functionality">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Activity"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Osmiotic_Process"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Service"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#hasAdminWebInterface -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#hasAdminWebInterface"/>
+    
+
+
+    <!-- http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#hasPublicAugmentedInterface -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#hasPublicAugmentedInterface">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Liquid_Stargate"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#hasPublisWebInterface -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#hasPublisWebInterface">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Liquid_Stargate"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#identifier -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#identifier">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Activity"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Event"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Organization"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Process"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Resource"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Service"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#mode_of_operation -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#mode_of_operation">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Osmiotic_Process"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Service"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#name -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#name">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Activity"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Event"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Organization"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Process"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Resource"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Service"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#objective -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#objective">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Process"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#performance_indicators -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#performance_indicators">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Service"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#privacyConstraints -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#privacyConstraints">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Knowledge_Link"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#representation -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#representation">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Osmiotic_Process"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#result -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#result">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Enterprise_Process"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#securityProtocols -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#securityProtocols">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Knowledge_Trasformation"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#specificRelationship -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#specificRelationship">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Knowledge_Link"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#timestamp -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#timestamp">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Event"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#trigger -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#trigger">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Enterprise_Process"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://linkedevents.org/ontology/EventKB -->
+
+    <owl:Class rdf:about="&ontology;EventKB">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#OSMOSIS_Concept"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/bfo.owl#EntityKB -->
+
+    <owl:Class rdf:about="&bfo;EntityKB">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#OSMOSIS_Concept"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-47#ProcessKB -->
+
+    <owl:Class rdf:about="&untitled-ontology-47;ProcessKB">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#OSMOSIS_Concept"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Accounting -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Accounting">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Supporting_Process"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Activity -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Activity">
+        <rdfs:subClassOf rdf:resource="&untitled-ontology-47;ProcessKB"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Activity_type -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Activity_type">
+        <rdfs:subClassOf rdf:resource="&untitled-ontology-47;ProcessKB"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Actuation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Actuation">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Osmiotic_Process_type"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Advertising -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Advertising">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Operational_Process"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Aggregation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Aggregation">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Knowledge_Trasformation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Augmentation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Augmentation">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Osmiotic_Process_type"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Boundary_Event -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Boundary_Event">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Catch_Event"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Business_Rule_Task -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Business_Rule_Task">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Task"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Call_Activity -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Call_Activity">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Activity_type"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Cancel_Event -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Cancel_Event">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Event_type"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Cancel_Event_Interrupting -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Cancel_Event_Interrupting">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Cancel_Event"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Catch_Event -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Catch_Event">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Event_type"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Centralized_Organization -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Centralized_Organization">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Organization_type"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Compensation_Event -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Compensation_Event">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Event_type"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Compensation_Event_Interrupting -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Compensation_Event_Interrupting">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Compensation_Event"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Conditional_Event -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Conditional_Event">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Event_type"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Conditional_Event_Interrupting -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Conditional_Event_Interrupting">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Conditional_Event"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Conditional_Event_Non_Interrupting -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Conditional_Event_Non_Interrupting">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Conditional_Event"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Corporative_Governance -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Corporative_Governance">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Management_Process"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Debug_Event -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Debug_Event">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Event_type"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Decentralized_Organization -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Decentralized_Organization">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Organization_type"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Digital_World -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Digital_World">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#OSMOSIS_World"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Digitalization -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Digitalization">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Osmiotic_Process_type"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Enrichment -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Enrichment">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Osmiotic_Process_type"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Enterprise_Process -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Enterprise_Process">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Process"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Enterprise_Process_type -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Enterprise_Process_type">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Process_type"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Error_Event -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Error_Event">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Event_type"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Errot_Event_Interrupting -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Errot_Event_Interrupting">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Error_Event"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Escalation_Event_Interrupting -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Escalation_Event_Interrupting">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Escallation_Event"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Escalation_Event_Non_Interrupting -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Escalation_Event_Non_Interrupting">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Escallation_Event"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Escallation_Event -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Escallation_Event">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Event_type"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Event -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Event">
+        <rdfs:subClassOf rdf:resource="&ontology;EventKB"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Event_type -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Event_type">
+        <rdfs:subClassOf rdf:resource="&ontology;EventKB"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Hierarchical_Organization -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Hierarchical_Organization">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Organization_type"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Human_Resource -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Human_Resource">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#material_entity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#IT_Resource -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#IT_Resource">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#immaterial_entity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Implicit_Trow_Event -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Implicit_Trow_Event">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Trow_Event"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Info_Event -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Info_Event">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Event_type"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Intermediate_Catch_Event -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Intermediate_Catch_Event">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Catch_Event"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Intermediate_Trow_Event -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Intermediate_Trow_Event">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Trow_Event"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Knowledge_Link -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Knowledge_Link">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#OSMOSE_Platform_Model"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Knowledge_Trasformation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Knowledge_Trasformation">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#OSMOSE_Platform_Model"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Link_Event -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Link_Event">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Event_type"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Link_Event_Interrupting -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Link_Event_Interrupting">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Link_Event"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Liquid_Stargate -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Liquid_Stargate">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#OSMOSE_Platform_Model"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Management_Process -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Management_Process">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Enterprise_Process_type"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Manual_Task -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Manual_Task">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Task"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Manufacturing_Process -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Manufacturing_Process">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Operational_Process"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Manufacturing_Service -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Manufacturing_Service">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Service_type"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Marketing -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Marketing">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Operational_Process"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Material_Resource -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Material_Resource">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#material_entity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Message_Event -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Message_Event">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Event_type"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Message_Event_Interrupting -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Message_Event_Interrupting">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Message_Event"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Message_Event_Non_Interrupting -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Message_Event_Non_Interrupting">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Message_Event"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Multiple_Event -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Multiple_Event">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Event_type"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Multiple_Event_Interrupting -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Multiple_Event_Interrupting">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Multiple_Event"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Multiple_Event_Non_Interrupting -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Multiple_Event_Non_Interrupting">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Multiple_Event"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Networked_Organization -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Networked_Organization">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Organization_type"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Non_Event_Interrupting -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Non_Event_Interrupting">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#None_Event"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#None_Event -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#None_Event">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Event_type"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#OSMOSE_Platform_Model -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#OSMOSE_Platform_Model"/>
+    
+
+
+    <!-- http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#OSMOSIS_Concept -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#OSMOSIS_Concept">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#OSMOSE_Platform_Model"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#OSMOSIS_World -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#OSMOSIS_World">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#OSMOSE_Platform_Model"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Operational_Process -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Operational_Process">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Enterprise_Process_type"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Organization -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Organization">
+        <rdfs:subClassOf rdf:resource="&bfo;EntityKB"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Organization_type -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Organization_type">
+        <rdfs:subClassOf rdf:resource="&bfo;EntityKB"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Osmiotic_Process -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Osmiotic_Process">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Process"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Osmiotic_Process_type -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Osmiotic_Process_type">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Process_type"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#P2PTrasformation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#P2PTrasformation">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Knowledge_Trasformation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Parallel_Multiple_Event -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Parallel_Multiple_Event">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Event_type"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Parallel_Multiple_Event_Interrupting -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Parallel_Multiple_Event_Interrupting">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Parallel_Multiple_Event"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Parallel_Multiple_Event_Non_Interrupting -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Parallel_Multiple_Event_Non_Interrupting">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Parallel_Multiple_Event"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Process -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Process">
+        <rdfs:subClassOf rdf:resource="&untitled-ontology-47;ProcessKB"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Process_type -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Process_type">
+        <rdfs:subClassOf rdf:resource="&untitled-ontology-47;ProcessKB"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Purchasing -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Purchasing">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Operational_Process"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Real_World -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Real_World">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#OSMOSIS_World"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Receive_Task -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Receive_Task">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Task"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Recruitment -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Recruitment">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Supporting_Process"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Resource -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Resource">
+        <rdfs:subClassOf rdf:resource="&bfo;EntityKB"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Resource_type -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Resource_type">
+        <rdfs:subClassOf rdf:resource="&bfo;EntityKB"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Script_Task -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Script_Task">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Task"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Send_Task -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Send_Task">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Task"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Service -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Service">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#ServiceKB"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#ServiceKB -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#ServiceKB">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#OSMOSIS_Concept"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Service_Task -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Service_Task">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Task"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Service_type -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Service_type">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#ServiceKB"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Signal_Event -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Signal_Event">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Event_type"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Signal_Event_Interrupting -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Signal_Event_Interrupting">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Signal_Event"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Signal_Event_Non_Interrupting -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Signal_Event_Non_Interrupting">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Signal_Event"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Simulation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Simulation">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Osmiotic_Process_type"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Site -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Site">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#IT_Resource"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Software_Service -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Software_Service">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Service_type"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Spacial_region -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Spacial_region">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#immaterial_entity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Start_Event -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Start_Event">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Catch_Event"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Start_Event_Event_SubProcess -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Start_Event_Event_SubProcess">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Start_Event"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Start_Event_Not_Event_SubProcess -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Start_Event_Not_Event_SubProcess">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Start_Event"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Strategic_Management -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Strategic_Management">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Management_Process"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#SubProcess -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#SubProcess">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Activity_type"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Support_Service -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Support_Service">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Service_type"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Supporting_Process -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Supporting_Process">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Enterprise_Process_type"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Task -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Task">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Activity_type"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Technical_Support -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Technical_Support">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Supporting_Process"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Terminate_Event -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Terminate_Event">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Event_type"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Terminate_Event_Interrupting -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Terminate_Event_Interrupting">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Terminate_Event"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Terminate_Event_Non_Interrupting -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Terminate_Event_Non_Interrupting">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Terminate_Event"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Timer_Event -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Timer_Event">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Event_type"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Timer_Event_Interrupting -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Timer_Event_Interrupting">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Timer_Event"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Timer_Event_Non_Interrupting -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Timer_Event_Non_Interrupting">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Timer_Event"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Tool -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Tool">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Resource"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Transaction -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Transaction">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#SubProcess"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Trow_Event -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Trow_Event">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Event_type"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#User_Task -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#User_Task">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Task"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Virtual_World -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Virtual_World">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#OSMOSIS_World"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Virtualization -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Virtualization">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Osmiotic_Process_type"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Warning_Event -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Warning_Event">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Event_type"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#adHocSubProcess -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#adHocSubProcess">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#SubProcess"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#continuant -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#continuant">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Resource_type"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#continuant_fiat_coundary -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#continuant_fiat_coundary">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#immaterial_entity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#disposition -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#disposition">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#realizable_entity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#fiat_object -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#fiat_object">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#material_entity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#function -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#function">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#disposition"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#generically_dependent_continuant -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#generically_dependent_continuant">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#continuant"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#history -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#history">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#process"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#immaterial_entity -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#immaterial_entity">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#independent_continuant"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#independent_continuant -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#independent_continuant">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#continuant"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#material_entity -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#material_entity">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#independent_continuant"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#object -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#object">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#material_entity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#object_aggregate -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#object_aggregate">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#material_entity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#occurrent -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#occurrent">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Resource_type"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#process -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#process">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#occurrent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#process_boundary -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#process_boundary">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#occurrent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#process_profile -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#process_profile">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#process"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#quality -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#quality">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#specifically_dependent_continuant"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#realizable_entity -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#realizable_entity">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#specifically_dependent_continuant"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#role -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#role">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#realizable_entity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#spatiotemporal_region -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#spatiotemporal_region">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#occurrent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#specifically_dependent_continuant -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#specifically_dependent_continuant">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#continuant"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#temporal_region -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#temporal_region">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#occurrent"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#CPU -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#CPU">
+        <rdf:type rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Resource"/>
+        <name>CPU</name>
+        <identifier>cpu001</identifier>
+        <triggers rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#HW_Warning"/>
+        <triggers rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#HW_errors"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Digital_World -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Digital_World">
+        <rdf:type rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Digital_World"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#DsikUsage -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#DsikUsage">
+        <rdf:type rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Resource"/>
+        <identifier>pcdisk001</identifier>
+        <name>PC disk</name>
+        <triggers rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#HW_Warning"/>
+        <triggers rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#HW_errors"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#HW_Warning -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#HW_Warning">
+        <rdf:type rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Event"/>
+        <name>HW Warnings</name>
+        <cause>cause of event</cause>
+        <identifier>E002</identifier>
+        <timestamp>2014-02-11</timestamp>
+        <description>description of event</description>
+        <Event_type rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#warning_event"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#HW_errors -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#HW_errors">
+        <rdf:type rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Event"/>
+        <description>description of event</description>
+        <name>HW Warnings</name>
+        <identifier>E001</identifier>
+        <timestamp>2014-02-10</timestamp>
+        <cause>cause of event</cause>
+        <Event_type rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#error_event"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Real_World -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Real_World">
+        <rdf:type rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Real_World"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Tool -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Tool">
+        <rdf:type rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Tool"/>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#has_world"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Digital_World"/>
+            </owl:Restriction>
+        </rdf:type>
+        <has_world rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Digital_World"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#VIRAW1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#VIRAW1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Osmiotic_Process"/>
+        <name>HW Warnings/errors</name>
+        <objective>Monitoring of the meaningful elements composing the flight simulator in order to detect malfunctions or drift from the correct behavior as soon as they are raised. Continuous checks about the HW running the simulator are executed in the RW. </objective>
+        <identifier>VIR-AW-1</identifier>
+        <Osmiotic_Process_type rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#virtualization_instance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Visual_Projector -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Visual_Projector">
+        <name>Visual Projector</name>
+        <identifier>projector001</identifier>
+        <triggers rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#data_from_control_system"/>
+        <triggers rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#lighting_system"/>
+        <triggers rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#motion_platform"/>
+        <triggers rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#projectoraligment"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#data_from_control_system -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#data_from_control_system">
+        <rdf:type rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Event"/>
+        <description>description of event</description>
+        <identifier>data001</identifier>
+        <timestamp>2014-02-10</timestamp>
+        <name>Data from control system</name>
+        <cause>cause of event</cause>
+        <Event_type rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#info_event"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#error_event -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#error_event">
+        <rdf:type rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Error_Event"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#info_event -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#info_event">
+        <rdf:type rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Info_Event"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#lighting_system -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#lighting_system">
+        <rdf:type rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Event"/>
+        <name>Lightning system</name>
+        <identifier>lighting001</identifier>
+        <cause>cause of event</cause>
+        <timestamp>2014-02-11</timestamp>
+        <description>description of event</description>
+        <Event_type rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#warning_event"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#motion_platform -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#motion_platform">
+        <rdf:type rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Event"/>
+        <description>description of event</description>
+        <timestamp>2014-03-10</timestamp>
+        <name>Motion platform</name>
+        <identifier>motion001</identifier>
+        <cause>cause of event</cause>
+        <Event_type rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#info_event"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#projectoraligment -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#projectoraligment">
+        <rdf:type rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Event"/>
+        <identifier>projector001</identifier>
+        <name>Projector aligment</name>
+        <timestamp>2014-02-11</timestamp>
+        <cause>cause of event</cause>
+        <description>description of event</description>
+        <Event_type rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#warning_event"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#virtualization_instance -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#virtualization_instance">
+        <rdf:type rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Virtualization"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#warning_event -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#warning_event">
+        <rdf:type rdf:resource="http://www.semanticweb.org/catarina/ontologies/2015/2/untitled-ontology-7#Warning_Event"/>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.4.2) http://owlapi.sourceforge.net -->
+

@@ -1,0 +1,308 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+]>
+
+
+<rdf:RDF xmlns="http://www.semanticweb.org/artur.felic/ontologies/2015/4/knowledgelinks#"
+     xml:base="http://www.semanticweb.org/artur.felic/ontologies/2015/4/knowledgelinks"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/artur.felic/ontologies/2015/4/knowledgelinks"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/artur.felic/ontologies/2015/4/knowledgelinks#hasAssignmentSource -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/artur.felic/ontologies/2015/4/knowledgelinks#hasAssignmentSource">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/artur.felic/ontologies/2015/4/knowledgelinks#KnowledgeLink"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/artur.felic/ontologies/2015/4/knowledgelinks#isAssignmentSourceOf"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/artur.felic/ontologies/2015/4/knowledgelinks#Operator"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/artur.felic/ontologies/2015/4/knowledgelinks#SourceConcept"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/artur.felic/ontologies/2015/4/knowledgelinks#hasAssignmentTarget -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/artur.felic/ontologies/2015/4/knowledgelinks#hasAssignmentTarget">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/artur.felic/ontologies/2015/4/knowledgelinks#KnowledgeLink"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/artur.felic/ontologies/2015/4/knowledgelinks#TargetConcept"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/artur.felic/ontologies/2015/4/knowledgelinks#isAssignmentTargetOf"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/artur.felic/ontologies/2015/4/knowledgelinks#hasComplexAssignmentSource -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/artur.felic/ontologies/2015/4/knowledgelinks#hasComplexAssignmentSource">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/artur.felic/ontologies/2015/4/knowledgelinks#ComplexKnowledgeLink"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/artur.felic/ontologies/2015/4/knowledgelinks#Operator"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/artur.felic/ontologies/2015/4/knowledgelinks#hasAssignmentSource"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/artur.felic/ontologies/2015/4/knowledgelinks#hasSimpleAssignmentSource"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/artur.felic/ontologies/2015/4/knowledgelinks#hasConceptInput -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/artur.felic/ontologies/2015/4/knowledgelinks#hasConceptInput">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/artur.felic/ontologies/2015/4/knowledgelinks#Operator"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/artur.felic/ontologies/2015/4/knowledgelinks#SourceConcept"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/artur.felic/ontologies/2015/4/knowledgelinks#hasInput"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/artur.felic/ontologies/2015/4/knowledgelinks#hasInput -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/artur.felic/ontologies/2015/4/knowledgelinks#hasInput">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/artur.felic/ontologies/2015/4/knowledgelinks#Operator"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/artur.felic/ontologies/2015/4/knowledgelinks#Operator"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/artur.felic/ontologies/2015/4/knowledgelinks#SourceConcept"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/artur.felic/ontologies/2015/4/knowledgelinks#hasOperatorInput -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/artur.felic/ontologies/2015/4/knowledgelinks#hasOperatorInput">
+        <rdfs:range rdf:resource="http://www.semanticweb.org/artur.felic/ontologies/2015/4/knowledgelinks#Operator"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/artur.felic/ontologies/2015/4/knowledgelinks#Operator"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/artur.felic/ontologies/2015/4/knowledgelinks#hasInput"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/artur.felic/ontologies/2015/4/knowledgelinks#hasSimpleAssignmentSource -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/artur.felic/ontologies/2015/4/knowledgelinks#hasSimpleAssignmentSource">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/artur.felic/ontologies/2015/4/knowledgelinks#SimpleKnowledgeLink"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/artur.felic/ontologies/2015/4/knowledgelinks#SourceConcept"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/artur.felic/ontologies/2015/4/knowledgelinks#hasAssignmentSource"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/artur.felic/ontologies/2015/4/knowledgelinks#isAssignmentSourceOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/artur.felic/ontologies/2015/4/knowledgelinks#isAssignmentSourceOf">
+        <rdfs:range rdf:resource="http://www.semanticweb.org/artur.felic/ontologies/2015/4/knowledgelinks#KnowledgeLink"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/artur.felic/ontologies/2015/4/knowledgelinks#Operator"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/artur.felic/ontologies/2015/4/knowledgelinks#SourceConcept"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/artur.felic/ontologies/2015/4/knowledgelinks#isAssignmentTargetOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/artur.felic/ontologies/2015/4/knowledgelinks#isAssignmentTargetOf">
+        <rdfs:range rdf:resource="http://www.semanticweb.org/artur.felic/ontologies/2015/4/knowledgelinks#KnowledgeLink"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/artur.felic/ontologies/2015/4/knowledgelinks#TargetConcept"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/artur.felic/ontologies/2015/4/knowledgelinks#isComplexAssignmentSourceOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/artur.felic/ontologies/2015/4/knowledgelinks#isComplexAssignmentSourceOf">
+        <rdfs:range rdf:resource="http://www.semanticweb.org/artur.felic/ontologies/2015/4/knowledgelinks#ComplexKnowledgeLink"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/artur.felic/ontologies/2015/4/knowledgelinks#Operator"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/artur.felic/ontologies/2015/4/knowledgelinks#hasComplexAssignmentSource"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/artur.felic/ontologies/2015/4/knowledgelinks#isAssignmentSourceOf"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/artur.felic/ontologies/2015/4/knowledgelinks#isSimpleAssignmentSourceOf"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/artur.felic/ontologies/2015/4/knowledgelinks#isConceptInputOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/artur.felic/ontologies/2015/4/knowledgelinks#isConceptInputOf">
+        <rdfs:range rdf:resource="http://www.semanticweb.org/artur.felic/ontologies/2015/4/knowledgelinks#Operator"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/artur.felic/ontologies/2015/4/knowledgelinks#SourceConcept"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/artur.felic/ontologies/2015/4/knowledgelinks#hasConceptInput"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/artur.felic/ontologies/2015/4/knowledgelinks#isInputOf"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/artur.felic/ontologies/2015/4/knowledgelinks#isInputOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/artur.felic/ontologies/2015/4/knowledgelinks#isInputOf">
+        <rdfs:range rdf:resource="http://www.semanticweb.org/artur.felic/ontologies/2015/4/knowledgelinks#Operator"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/artur.felic/ontologies/2015/4/knowledgelinks#hasInput"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/artur.felic/ontologies/2015/4/knowledgelinks#Concept"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/artur.felic/ontologies/2015/4/knowledgelinks#Operator"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/artur.felic/ontologies/2015/4/knowledgelinks#isOperatorInputOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/artur.felic/ontologies/2015/4/knowledgelinks#isOperatorInputOf">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/artur.felic/ontologies/2015/4/knowledgelinks#Operator"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/artur.felic/ontologies/2015/4/knowledgelinks#Operator"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/artur.felic/ontologies/2015/4/knowledgelinks#hasOperatorInput"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/artur.felic/ontologies/2015/4/knowledgelinks#isInputOf"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/artur.felic/ontologies/2015/4/knowledgelinks#isSimpleAssignmentSourceOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/artur.felic/ontologies/2015/4/knowledgelinks#isSimpleAssignmentSourceOf">
+        <rdfs:range rdf:resource="http://www.semanticweb.org/artur.felic/ontologies/2015/4/knowledgelinks#SimpleKnowledgeLink"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/artur.felic/ontologies/2015/4/knowledgelinks#SourceConcept"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/artur.felic/ontologies/2015/4/knowledgelinks#hasSimpleAssignmentSource"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/artur.felic/ontologies/2015/4/knowledgelinks#isAssignmentSourceOf"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/artur.felic/ontologies/2015/4/knowledgelinks#hasNumberOfInputs -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/artur.felic/ontologies/2015/4/knowledgelinks#hasNumberOfInputs">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/artur.felic/ontologies/2015/4/knowledgelinks#Operator"/>
+        <rdfs:range rdf:resource="&xsd;unsignedLong"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/artur.felic/ontologies/2015/4/knowledgelinks#ComplexKnowledgeLink -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/artur.felic/ontologies/2015/4/knowledgelinks#ComplexKnowledgeLink">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/artur.felic/ontologies/2015/4/knowledgelinks#KnowledgeLink"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/artur.felic/ontologies/2015/4/knowledgelinks#SimpleKnowledgeLink"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/artur.felic/ontologies/2015/4/knowledgelinks#Concept -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/artur.felic/ontologies/2015/4/knowledgelinks#Concept">
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/artur.felic/ontologies/2015/4/knowledgelinks#KnowledgeLink"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/artur.felic/ontologies/2015/4/knowledgelinks#Operator"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/artur.felic/ontologies/2015/4/knowledgelinks#KnowledgeLink -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/artur.felic/ontologies/2015/4/knowledgelinks#KnowledgeLink">
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/artur.felic/ontologies/2015/4/knowledgelinks#Operator"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/artur.felic/ontologies/2015/4/knowledgelinks#Operator -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/artur.felic/ontologies/2015/4/knowledgelinks#Operator"/>
+    
+
+
+    <!-- http://www.semanticweb.org/artur.felic/ontologies/2015/4/knowledgelinks#SimpleKnowledgeLink -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/artur.felic/ontologies/2015/4/knowledgelinks#SimpleKnowledgeLink">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/artur.felic/ontologies/2015/4/knowledgelinks#KnowledgeLink"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/artur.felic/ontologies/2015/4/knowledgelinks#SourceConcept -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/artur.felic/ontologies/2015/4/knowledgelinks#SourceConcept">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/artur.felic/ontologies/2015/4/knowledgelinks#Concept"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/artur.felic/ontologies/2015/4/knowledgelinks#Subtraction -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/artur.felic/ontologies/2015/4/knowledgelinks#Subtraction">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/artur.felic/ontologies/2015/4/knowledgelinks#Operator"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/artur.felic/ontologies/2015/4/knowledgelinks#hasNumberOfInputs"/>
+                <owl:minQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">2</owl:minQualifiedCardinality>
+                <owl:onDataRange rdf:resource="&xsd;unsignedLong"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/artur.felic/ontologies/2015/4/knowledgelinks#TargetConcept -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/artur.felic/ontologies/2015/4/knowledgelinks#TargetConcept">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/artur.felic/ontologies/2015/4/knowledgelinks#Concept"/>
+    </owl:Class>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.4.2) http://owlapi.sourceforge.net -->
+

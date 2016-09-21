@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- Use this file to deploy some handlers/chains and services      --><!-- Two ways to do this:                                           --><!--   java org.apache.axis.client.AdminClient deploy.wsdd          --><!--      after the axis server is running                          --><!-- or                                                             --><!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   --><!--      from the same directory that the Axis engine runs         --><deployment xmlns="http://xml.apache.org/axis/wsdd/" xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from ContextManagerTestServiceService WSDL service -->
+
+  <service name="ContextManagerTestService" provider="java:RPC" style="wrapped" use="literal">
+      <parameter name="wsdlTargetNamespace" value="http://webservice.cm.osmose.eu"/>
+      <parameter name="wsdlServiceElement" value="ContextManagerTestServiceService"/>
+      <parameter name="schemaQualified" value="http://webservice.cm.osmose.eu"/>
+      <parameter name="wsdlServicePort" value="ContextManagerTestService"/>
+      <parameter name="className" value="eu.osmose.cm.webservice.ContextManagerTestService"/>
+      <parameter name="wsdlPortType" value="ContextManagerTestService"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <operation xmlns:operNS="http://webservice.cm.osmose.eu" xmlns:retNS="http://webservice.cm.osmose.eu" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="getResourceTest" qname="operNS:getResourceTest" returnQName="retNS:getResourceTestReturn" returnType="rtns:string" soapAction="">
+      </operation>
+      <parameter name="allowedMethods" value="getResourceTest"/>
+
+  </service>
+</deployment>
