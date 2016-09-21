@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://example.open.osmose.eu" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://example.open.osmose.eu" xmlns:intf="http://example.open.osmose.eu" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://example.open.osmose.eu" xmlns="http://www.w3.org/2001/XMLSchema">
+   <element name="increaseProduction">
+    <complexType>
+     <sequence>
+      <element name="toolId" type="xsd:string"/>
+      <element name="numberOfProductions" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="increaseProductionResponse">
+    <complexType>
+     <sequence>
+      <element name="increaseProductionReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="setMaintenanceToolLifetime">
+    <complexType>
+     <sequence>
+      <element name="toolId" type="xsd:string"/>
+      <element name="lifetime" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="setMaintenanceToolLifetimeResponse">
+    <complexType>
+     <sequence>
+      <element name="setMaintenanceToolLifetimeReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="increaseProductionRequest">
+
+      <wsdl:part element="impl:increaseProduction" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="setMaintenanceToolLifetimeRequest">
+
+      <wsdl:part element="impl:setMaintenanceToolLifetime" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="increaseProductionResponse">
+
+      <wsdl:part element="impl:increaseProductionResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="setMaintenanceToolLifetimeResponse">
+
+      <wsdl:part element="impl:setMaintenanceToolLifetimeResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="MaintenanceToolConfiguration">
+
+      <wsdl:operation name="increaseProduction">
+
+         <wsdl:input message="impl:increaseProductionRequest" name="increaseProductionRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:increaseProductionResponse" name="increaseProductionResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setMaintenanceToolLifetime">
+
+         <wsdl:input message="impl:setMaintenanceToolLifetimeRequest" name="setMaintenanceToolLifetimeRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:setMaintenanceToolLifetimeResponse" name="setMaintenanceToolLifetimeResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="MaintenanceToolConfigurationSoapBinding" type="impl:MaintenanceToolConfiguration">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="increaseProduction">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="increaseProductionRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="increaseProductionResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setMaintenanceToolLifetime">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="setMaintenanceToolLifetimeRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="setMaintenanceToolLifetimeResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="MaintenanceToolConfigurationService">
+
+      <wsdl:port binding="impl:MaintenanceToolConfigurationSoapBinding" name="MaintenanceToolConfiguration">
+
+         <wsdlsoap:address location="http://localhost:8090/eu.osmose.open.example/services/MaintenanceToolConfiguration"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>

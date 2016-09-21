@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://webservice.client.cm.osmose.eu" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://webservice.client.cm.osmose.eu" xmlns:intf="http://webservice.client.cm.osmose.eu" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://webservice.client.cm.osmose.eu" xmlns="http://www.w3.org/2001/XMLSchema">
+   <element name="sendMessage">
+    <complexType>
+     <sequence>
+      <element name="userInput" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="sendMessageResponse">
+    <complexType/>
+   </element>
+   <element name="newCamshaftSetPoint">
+    <complexType>
+     <sequence>
+      <element name="value" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="newCamshaftSetPointResponse">
+    <complexType/>
+   </element>
+   <element name="newCamshaftMeasurement">
+    <complexType>
+     <sequence>
+      <element name="value" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="newCamshaftMeasurementResponse">
+    <complexType/>
+   </element>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="newCamshaftSetPointRequest">
+
+      <wsdl:part element="impl:newCamshaftSetPoint" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="newCamshaftMeasurementRequest">
+
+      <wsdl:part element="impl:newCamshaftMeasurement" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="newCamshaftSetPointResponse">
+
+      <wsdl:part element="impl:newCamshaftSetPointResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="sendMessageResponse">
+
+      <wsdl:part element="impl:sendMessageResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="newCamshaftMeasurementResponse">
+
+      <wsdl:part element="impl:newCamshaftMeasurementResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="sendMessageRequest">
+
+      <wsdl:part element="impl:sendMessage" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="ContextManagerClientWebService">
+
+      <wsdl:operation name="sendMessage">
+
+         <wsdl:input message="impl:sendMessageRequest" name="sendMessageRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:sendMessageResponse" name="sendMessageResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="newCamshaftSetPoint">
+
+         <wsdl:input message="impl:newCamshaftSetPointRequest" name="newCamshaftSetPointRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:newCamshaftSetPointResponse" name="newCamshaftSetPointResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="newCamshaftMeasurement">
+
+         <wsdl:input message="impl:newCamshaftMeasurementRequest" name="newCamshaftMeasurementRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:newCamshaftMeasurementResponse" name="newCamshaftMeasurementResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="ContextManagerClientWebServiceSoapBinding" type="impl:ContextManagerClientWebService">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="sendMessage">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="sendMessageRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="sendMessageResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="newCamshaftSetPoint">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="newCamshaftSetPointRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="newCamshaftSetPointResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="newCamshaftMeasurement">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="newCamshaftMeasurementRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="newCamshaftMeasurementResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="ContextManagerClientWebServiceService">
+
+      <wsdl:port binding="impl:ContextManagerClientWebServiceSoapBinding" name="ContextManagerClientWebService">
+
+         <wsdlsoap:address location="http://localhost:8090/eu.osmose.cm.client/services/ContextManagerClientWebService"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>

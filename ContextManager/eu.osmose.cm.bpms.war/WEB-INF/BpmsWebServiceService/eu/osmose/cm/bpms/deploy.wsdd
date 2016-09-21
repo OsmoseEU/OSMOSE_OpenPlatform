@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- Use this file to deploy some handlers/chains and services      --><!-- Two ways to do this:                                           --><!--   java org.apache.axis.client.AdminClient deploy.wsdd          --><!--      after the axis server is running                          --><!-- or                                                             --><!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   --><!--      from the same directory that the Axis engine runs         --><deployment xmlns="http://xml.apache.org/axis/wsdd/" xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from BpmsWebServiceService WSDL service -->
+
+  <service name="BpmsWebService" provider="java:RPC" style="wrapped" use="literal">
+      <parameter name="wsdlTargetNamespace" value="http://bpms.cm.osmose.eu"/>
+      <parameter name="wsdlServiceElement" value="BpmsWebServiceService"/>
+      <parameter name="schemaQualified" value="http://bpms.cm.osmose.eu"/>
+      <parameter name="wsdlServicePort" value="BpmsWebService"/>
+      <parameter name="className" value="eu.osmose.cm.bpms.BpmsWebService"/>
+      <parameter name="wsdlPortType" value="BpmsWebService"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <operation xmlns:operNS="http://bpms.cm.osmose.eu" name="test" qname="operNS:test" soapAction="">
+      </operation>
+      <operation xmlns:operNS="http://bpms.cm.osmose.eu" name="executeProcess" qname="operNS:executeProcess" soapAction="">
+        <parameter xmlns:pns="http://bpms.cm.osmose.eu" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:operator" type="tns:string"/>
+        <parameter xmlns:pns="http://bpms.cm.osmose.eu" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:params" type="tns:string"/>
+      </operation>
+      <parameter name="allowedMethods" value="test executeProcess"/>
+
+  </service>
+</deployment>

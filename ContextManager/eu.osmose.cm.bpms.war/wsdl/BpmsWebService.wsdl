@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://bpms.cm.osmose.eu" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://bpms.cm.osmose.eu" xmlns:intf="http://bpms.cm.osmose.eu" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://bpms.cm.osmose.eu" xmlns="http://www.w3.org/2001/XMLSchema">
+   <element name="test">
+    <complexType/>
+   </element>
+   <element name="testResponse">
+    <complexType/>
+   </element>
+   <element name="executeProcess">
+    <complexType>
+     <sequence>
+      <element name="operator" type="xsd:string"/>
+      <element name="params" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="executeProcessResponse">
+    <complexType/>
+   </element>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="testRequest">
+
+      <wsdl:part element="impl:test" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="testResponse">
+
+      <wsdl:part element="impl:testResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="executeProcessResponse">
+
+      <wsdl:part element="impl:executeProcessResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="executeProcessRequest">
+
+      <wsdl:part element="impl:executeProcess" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="BpmsWebService">
+
+      <wsdl:operation name="test">
+
+         <wsdl:input message="impl:testRequest" name="testRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:testResponse" name="testResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="executeProcess">
+
+         <wsdl:input message="impl:executeProcessRequest" name="executeProcessRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:executeProcessResponse" name="executeProcessResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="BpmsWebServiceSoapBinding" type="impl:BpmsWebService">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="test">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="testRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="testResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="executeProcess">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="executeProcessRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="executeProcessResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="BpmsWebServiceService">
+
+      <wsdl:port binding="impl:BpmsWebServiceSoapBinding" name="BpmsWebService">
+
+         <wsdlsoap:address location="http://localhost:8090/eu.osmose.cm.bpms/services/BpmsWebService"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>

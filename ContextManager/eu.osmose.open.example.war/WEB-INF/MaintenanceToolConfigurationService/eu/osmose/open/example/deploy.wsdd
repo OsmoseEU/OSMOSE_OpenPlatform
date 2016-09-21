@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- Use this file to deploy some handlers/chains and services      --><!-- Two ways to do this:                                           --><!--   java org.apache.axis.client.AdminClient deploy.wsdd          --><!--      after the axis server is running                          --><!-- or                                                             --><!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   --><!--      from the same directory that the Axis engine runs         --><deployment xmlns="http://xml.apache.org/axis/wsdd/" xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from MaintenanceToolConfigurationService WSDL service -->
+
+  <service name="MaintenanceToolConfiguration" provider="java:RPC" style="wrapped" use="literal">
+      <parameter name="wsdlTargetNamespace" value="http://example.open.osmose.eu"/>
+      <parameter name="wsdlServiceElement" value="MaintenanceToolConfigurationService"/>
+      <parameter name="schemaQualified" value="http://example.open.osmose.eu"/>
+      <parameter name="wsdlServicePort" value="MaintenanceToolConfiguration"/>
+      <parameter name="className" value="eu.osmose.open.example.MaintenanceToolConfiguration"/>
+      <parameter name="wsdlPortType" value="MaintenanceToolConfiguration"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <operation xmlns:operNS="http://example.open.osmose.eu" xmlns:retNS="http://example.open.osmose.eu" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="increaseProduction" qname="operNS:increaseProduction" returnQName="retNS:increaseProductionReturn" returnType="rtns:string" soapAction="">
+        <parameter xmlns:pns="http://example.open.osmose.eu" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:toolId" type="tns:string"/>
+        <parameter xmlns:pns="http://example.open.osmose.eu" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:numberOfProductions" type="tns:int"/>
+      </operation>
+      <operation xmlns:operNS="http://example.open.osmose.eu" xmlns:retNS="http://example.open.osmose.eu" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="setMaintenanceToolLifetime" qname="operNS:setMaintenanceToolLifetime" returnQName="retNS:setMaintenanceToolLifetimeReturn" returnType="rtns:string" soapAction="">
+        <parameter xmlns:pns="http://example.open.osmose.eu" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:toolId" type="tns:string"/>
+        <parameter xmlns:pns="http://example.open.osmose.eu" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:lifetime" type="tns:string"/>
+      </operation>
+      <parameter name="allowedMethods" value="increaseProduction setMaintenanceToolLifetime"/>
+
+  </service>
+</deployment>
