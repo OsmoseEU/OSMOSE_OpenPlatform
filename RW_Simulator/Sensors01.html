@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <div class="w3-container w3-blue">
+  <h1 align="center" style = "color:blue">OSMOSE Open Platform Demo</h1>      
+    <p></p>      
+</div>
+
+<div id="content">
+    <img src="OSMOSE_colorLogo.png" style = " height:100px; width:250px; position: absolute;top: 100px; right: 60px;"  />
+  <meta charset="utf-8"/>
+
+
+<!--form id="Sensor" action="http://localhost:8080/JAXRS-RESTEasy/rest/rest/param" method="get" target="_blank"-->
+<form id="Sensor" method="get" >
+<fieldset>
+<legend> Simulator for the physical sensors data</legend>
+  <p> Temperature:<br>
+  <input id="temp" type="text" name="temperature" value=""> </p>
+  <br>
+  <!--p> Pressure:<br>
+  <input id="pres" type="text" name="pressure" value=""></p>
+  <br>
+  <p> Humidity:<br>
+  <input id="hum" type="text" name="humidity" value=""></p>
+  <br-->
+  <p> Axelerometer Xaxis:<br>
+  <input id="axX" type="text" name="axelerometerXaxis" value=""></p>
+  <br>
+  <p> Axelerometer Yaxis:<br>
+  <input id="axY" type="text" name="axelerometerYaxis" value=""></p>
+  <br>
+   <br>
+  <p> Gas:<br>
+  <input id="gas" type="text" name="gas" value=""></p>
+  <br>
+  <br>
+  <!--input type="submit" value="Submit"-->
+ <input type="button" value="Submit values" onClick="myFunction()">
+ <input type="button" value="PANIC" onClick="myFunctionPanic()" style="color:red;height:100px; width:250px;position: absolute;top: 300px; right: 1050px;">
+ 
+</form> 
+
+<script>
+function myFunctionPanic() {
+var tempi=document.getElementById("Sensor").elements["temp"].value;
+//var press=document.getElementById("Sensor").elements["pres"].value;
+//var humid=document.getElementById("Sensor").elements["hum"].value;
+var axelX=document.getElementById("Sensor").elements["axX"].value;
+var axelY=document.getElementById("Sensor").elements["axY"].value;
+var gas=document.getElementById("Sensor").elements["gas"].value;
+var url="http://localhost:8080/JAXRS-RESTEasy/rest/rest/param?temperature=" + tempi+"&axelerometerXaxis="+axelX+"&axelerometerYaxis="+axelY+"&gas="+gas+"&panic=1";
+//var url="http://192.168.56.101:8180/JAXRS-RESTEasy/rest/rest/param?temperature=" + tempi+ "&pressure="+press+"&humidity="+humid+"&axelerometer="+axel;
+//var url="http://msv-91196.sb.dfki.de:8280/services/SensorSimulator.SensorSimulatorHttpEndpoint?+ tempi+ "&pressure="+press+"&humidity="+humid+"&axelerometerXaxis="+axelX+"+&axelerometerYaxis="+axelY+"&gas="+gas+"&PANIC=1";
+var client = new XMLHttpRequest();
+client.open("GET", url, true);
+client.send();
+document.getElementById("Sensor").reset();
+ //window.alert(url);
+}
+function myFunction() {
+var tempi=document.getElementById("Sensor").elements["temp"].value;
+//var press=document.getElementById("Sensor").elements["pres"].value;
+//var humid=document.getElementById("Sensor").elements["hum"].value;
+var axelX=document.getElementById("Sensor").elements["axX"].value;
+var axelY=document.getElementById("Sensor").elements["axY"].value;
+var gas=document.getElementById("Sensor").elements["gas"].value;
+//var url="http://localhost:8080/JAXRS-REST/rest/rest/param?temperature=" + tempi+ "&pressure="+press+"&humidity="+humid+"&axelerometerXaxis="+axelX+"&axelerometerYaxis="+axelY+"&gas="+gas+"&PANIC=0";
+var url="http://localhost:8080/JAXRS-RESTEasy/rest/rest/param?temperature=" + tempi+"&axelerometerXaxis="+axelX+"&axelerometerYaxis="+axelY+"&gas="+gas+"&panic=0";
+//var url="http://192.168.56.101:8180/JAXRS-RESTEasy/rest/rest/param?temperature=" + tempi+ "&pressure="+press+"&humidity="+humid+"&axelerometer="+axel;
+
+var client = new XMLHttpRequest();
+client.open("GET", url, true);
+client.send();
+document.getElementById("Sensor").reset();
+//window.alert(url);
+}
+ </script>
+
+<p>Click the "Submit values" button, the form-data will be sent to a sensor data processor.</p>
+  <style type='text/css'>
+            * {color:blue;}
+			fieldset {width: 500px; border: solid black;}
+			legend {font-size: 30px;}
+            p {background-color:white;}
+			input.text-300 {width:100px; float:left;}
+        </style>
+</body>
+</html>
